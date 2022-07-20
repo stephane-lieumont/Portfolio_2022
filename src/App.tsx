@@ -1,20 +1,26 @@
 import React from 'react';
 
 import { BrowserRouter  as Router, Route, Routes } from 'react-router-dom';
-import Component from './components/sample/Component.sample';
+import Footer from './layout/Footer';
+import Header from './layout/Header';
+import RoutesApp from './routes/Routes.app';
 
 const App: React.FunctionComponent = () => {
   return (
-    <div className="react-app">
+    <div data-testid="app" className="react-app">
       <Router basename={process.env.PUBLIC_URL}>
-        <header></header>
-          <main>
-            <Routes>
-              <Route path="/" element={<Component />} ></Route> 
-            </Routes>
-          </main>
+        <Header />
+        <main>
+          <div className='main-content'>
+          <Routes>
+            { RoutesApp.routeList.map(({ path, Component, title }) => (
+              <Route key={path} path={path} element={<Component title={title} />} /> 
+            ))}
+          </Routes>
+          </div>
+        </main>
+        <Footer />
       </Router>
-      <footer></footer>
     </div>
   );
 }
