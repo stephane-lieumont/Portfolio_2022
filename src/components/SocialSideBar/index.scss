@@ -3,6 +3,12 @@
   bottom:60px;
   right:60px;
   z-index: 1;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+
+  &--hidden {
+    opacity: 0;
+  }
 
   ul {
     display:flex;

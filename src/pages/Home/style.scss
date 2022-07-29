@@ -15,24 +15,51 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 30px 60px;
   }
 
-  &__rigthside {
+  &__rigthside {    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: $primary;
-  }
+    overflow: hidden;
 
-  &__leftside {
-    &__title {
-      span {
-        color: $primary;
-      }
+    &__demo-real {
+      width: 100%;
+      height: 40%;
+      background: $secondary;
+      opacity: 0.3;
+      margin-bottom: 25%;
     }
 
-    &__nav {
-      display: flex;
-      justify-content: flex-start;
-      gap:20px;
+    img {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__leftside {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 60px;
+
+    &__content {
+      max-width: 700px;
+
+      &__title {
+        span {
+          color: $primary;
+        }
+      }
+  
+      &__nav {
+        display: flex;
+        justify-content: flex-start;
+        gap:20px;
+      }
     }
   }
 }

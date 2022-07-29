@@ -25,7 +25,7 @@ const App: React.FunctionComponent = () => {
           </Routes>
           </div>
         </main>
-        <SocialSideBar />
+        <SocialSideBar menuIsOpen={menuIsOpen} />
       </Router>      
     </div>
   );

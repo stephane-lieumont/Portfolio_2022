@@ -74,7 +74,7 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
 
       <div className='navbar__slider' ref={wrapper}>
         <svg fill='none' height='100%' preserveAspectRatio='none' viewBox='0 0 210 297' width='100%' xmlns='http://www.w3.org/2000/svg'>
-          <path d='M 210,297 H 0 C 0,297 0,230.472 0,148.5 0,66.528001 0,0 0,0 h 210 z' fill={Colors.secondary} id='start' ref={startPoints}></path>
+          <path d='M 210,297 H 0 C 0,297 0,230.472 0,148.5 0,66.528001 0,0 0,0 h 210 z' fill={Colors.secondary} opacity="0.95" id='start' ref={startPoints}></path>
           <defs>
             <path d='M 210,297 H 49.560001 C 49.560001,297 0,230.472 0,148.5 0,66.528001 49.560001,0 49.560001,0 H 210 Z' id='end' ref={endPoints}></path>
             <path d='M 210,297 H 0 C 0,297 51.660001,230.472 51.660001,148.5 51.660001,66.528001 0,0 0,0 h 210 z' id='middle' ref={middlePoints}></path>

@@ -4,10 +4,14 @@ import Colors from '../../sass/themes/colors.module.scss'
 import { ArtstationIcon } from '../../assets/icons/SocialIconsCustom';
 import './index.scss';
 
-const SocialSideBar: React.FunctionComponent = () => {
+type SocialSideBarProps = {
+  menuIsOpen?: boolean
+}
+
+const SocialSideBar: React.FunctionComponent<SocialSideBarProps> = ({menuIsOpen = false}) => {
  
   return (
-    <div className='social-sidebar'>
+    <div className={`social-sidebar${ menuIsOpen ? ' social-sidebar--hidden' : ''}`}>
       <ul>
         <li><SocialIcon url='https://github.com/StephaneLi' bgColor={Colors.secondary} /></li>
         <li><SocialIcon url='https://www.linkedin.com/in/stephane-lieumont/'  bgColor={Colors.secondary} /></li>
