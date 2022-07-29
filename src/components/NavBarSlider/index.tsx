@@ -73,11 +73,11 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
       </div>
 
       <div className='navbar__slider' ref={wrapper}>
-        <svg fill='none' height='100%' preserveAspectRatio='none' viewBox='0 0 200 400' width='100%' xmlns='http://www.w3.org/2000/svg'>
-          <path d='M500 500H0c0 0 0-112 0-250S0 0 0 0l500 0V500z' fill={Colors.secondary} id='start' ref={startPoints}></path>
+        <svg fill='none' height='100%' preserveAspectRatio='none' viewBox='0 0 210 297' width='100%' xmlns='http://www.w3.org/2000/svg'>
+          <path d='M 210,297 H 0 C 0,297 0,230.472 0,148.5 0,66.528001 0,0 0,0 h 210 z' fill={Colors.secondary} id='start' ref={startPoints}></path>
           <defs>
-            <path d='M500 500H118c0 0-118-112-118-250S118 0 118 0l382 0V500z' id='end' ref={endPoints}></path>
-            <path d='M500 500H0c0 0 123-112 123-250S0 0 0 0l500 0V500z' id='middle' ref={middlePoints}></path>
+            <path d='M 210,297 H 49.560001 C 49.560001,297 0,230.472 0,148.5 0,66.528001 49.560001,0 49.560001,0 H 210 Z' id='end' ref={endPoints}></path>
+            <path d='M 210,297 H 0 C 0,297 51.660001,230.472 51.660001,148.5 51.660001,66.528001 0,0 0,0 h 210 z' id='middle' ref={middlePoints}></path>
           </defs>
         </svg>
         <nav className='navbar__slider__menu'>
