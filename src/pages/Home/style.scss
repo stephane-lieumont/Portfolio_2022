@@ -1,0 +1,38 @@
+@import '../../sass/themes/colors';
+
+.homepage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+
+  &__rigthside, &__leftside {
+    flex: 1 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 60px;
+  }
+
+  &__rigthside {
+    background: $primary;
+  }
+
+  &__leftside {
+    &__title {
+      span {
+        color: $primary;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      justify-content: flex-start;
+      gap:20px;
+    }
+  }
+}

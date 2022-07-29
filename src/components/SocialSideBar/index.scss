@@ -1,0 +1,21 @@
+.social-sidebar {
+  position: absolute;
+  bottom:60px;
+  right:60px;
+  z-index: 1;
+
+  ul {
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      opacity: 0.5;
+      transition: opacity .15s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }  
+}

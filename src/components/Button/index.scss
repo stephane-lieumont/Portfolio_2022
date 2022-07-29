@@ -1,0 +1,30 @@
+@import '../../sass/themes/colors';
+
+.button {
+  outline: none;
+  background: none;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  text-transform: uppercase;
+  background-color: $primary;
+  color: white;
+  padding: 7px 30px;
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  &--outlined {
+    box-shadow:inset 0px 0px 0px 2px $primary;
+    background: transparent;
+    color: $primary;
+    font-weight: 600;
+  }
+
+  &--white {
+    box-shadow:inset 0px 0px 0px 2px white;
+    color: white;
+  }
+}

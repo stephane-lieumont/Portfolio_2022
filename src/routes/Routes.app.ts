@@ -10,30 +10,30 @@ const routeList: RouteAppObject[] = [
   { 
     path: '/', 
     name: 'home',
-    label: 'Create Employee',
+    label: 'Accueil',
     Component: Home,
     title: 'Portfolio | Stéphane Lieumont',
     icon: faUserPlus
   },
   { 
     path: '/portfolio-stephane-lieumont-developpeur', 
-    name: 'employees',
-    label: 'View Employees',
+    name: 'dev',
+    label: 'Portfolio Web',
     Component: PortfolioDev, 
     title: 'Portfolio Developpeur | Stéphane Lieumont',   
     icon: faUsers
   },
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
-    name: 'employees',
-    label: 'View Employees',
+    name: 'cgi',
+    label: 'Portfolio CGI',
     Component: PortfolioCGI, 
     title: 'Portfolio CGI | Stéphane Lieumont',   
     icon: faUsers
   },
   {
     path: '*', 
-    name: 'Error',
+    name: 'error',
     Component: Error,
     title: 'Error404',
     icon: faCircleExclamation
