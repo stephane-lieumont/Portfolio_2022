@@ -1,0 +1,22 @@
+@import '../../sass/abstract/variables';
+@import '../../sass/themes/colors';
+
+.footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: $grey;
+  color:white;
+  font-size: 0.75rem;
+  
+  p {
+    margin: 0;
+    span {
+      color: $primary;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../sass/themes/colors';
+
+.portfolio-dev {
+  &__specialities {
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      gap: 20px;
+    }
+  }
+
+  &__projects {
+    background-color: $grey-shade500;
+    ul {
+      align-self: flex-start!important;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      overflow: hidden;
+      gap: 20px;
+    }
+  }
+}

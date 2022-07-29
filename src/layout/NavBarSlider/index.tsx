@@ -19,7 +19,7 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
     animated = true, 
     ligth = false,
     routeList = [],
-    onClick
+    onClick,
   }) => {
   
   const wrapper = useRef<HTMLDivElement>(null)
@@ -39,7 +39,7 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
 
     if (!isAnimated) {
       setOpen(isOpen) 
-      isOpen ? slideIn.current.restart() : slideOut.current.restart(); 
+      isOpen ? slideIn.current.restart() : slideOut.current.restart() 
       if(onClick) onClick(isOpen)
     }
   }
@@ -65,13 +65,9 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
 
   return (
     <div>
-      <div 
-        className={`navbar__button${ animated ? ' navbar__button--animated' : ''}${ ligth ? ' navbar__button--ligth' : ''}${ open ? ' open' : ''}`}
-        onClick={handleClick}
-      >
+      <div className={`navbar__button${ animated ? ' navbar__button--animated' : ''}${ ligth ? ' navbar__button--ligth' : ''}${ open ? ' open' : ''}`} onClick={handleClick} >
         <div className='navbar__button__burger'></div>
       </div>
-
       <div className='navbar__slider' ref={wrapper}>
         <svg fill='none' height='100%' preserveAspectRatio='none' viewBox='0 0 210 297' width='100%' xmlns='http://www.w3.org/2000/svg'>
           <path d='M 210,297 H 0 C 0,297 0,230.472 0,148.5 0,66.528001 0,0 0,0 h 210 z' fill={Colors.secondary} opacity="0.95" id='start' ref={startPoints}></path>
@@ -84,7 +80,7 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
           <ul ref={menu}>
           { routeList.map(({ path, label, name }) => (
               path !== '*' ?
-              <li key={name}>
+              <li key={name} onClick={handleClick}>
                 <NavLink to={path}>{label}</NavLink>
               </li>
               : null

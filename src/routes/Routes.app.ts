@@ -18,7 +18,7 @@ const routeList: RouteAppObject[] = [
   { 
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
-    label: 'Portfolio Web',
+    label: 'Portfolio Dev',
     Component: PortfolioDev, 
     title: 'Portfolio Developpeur | Stéphane Lieumont',   
     icon: faUsers

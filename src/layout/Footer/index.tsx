@@ -2,9 +2,12 @@ import React from 'react';
 import './style.scss'
 
 const Footer: React.FunctionComponent = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <header data-testid='layout-footer'>
-    </header>
+    <footer className="footer" data-testid='layout-footer'>
+      <p>Design & Development  ©{currentYear} <span>Stéphane Lieumont</span></p>
+    </footer>
   );
 }
 

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import RoutesApp from '../../routes/Routes.app';
 import './style.scss'
-import NavBarButton from '../../components/NavBarSlider';
+import NavBarButton from '../NavBarSlider';
 import Button from '../../components/Button';
 
 type HeaderProps = {
