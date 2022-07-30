@@ -2,7 +2,8 @@ import RoutesApp from '../../routes/Routes.app';
 import './style.scss'
 import NavBarButton from '../NavBarSlider';
 import Button from '../../components/Button';
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
 type HeaderProps = {
   menuIsOpen?: boolean
@@ -13,6 +14,9 @@ type HeaderProps = {
 
 const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, onClick = () => {}}) => {
   const [menuHide, setMenuHide] = useState<boolean>(false)
+  const navigate = useNavigate()
+
+  const homePageRoutePath = RoutesApp.getRouteByName('home')!.path 
 
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
@@ -34,13 +38,13 @@ const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuI
             <span className='text--primary'>P</span>
             <span>ortfolio </span>
             { headerTitle ? 
-              <Fragment>
+              <div className="head-title__append">
                 <span className='text--primary'>{ headerTitle[0].toUpperCase() }</span>
                 <span>{ headerTitle.slice(1) }</span>
-              </Fragment>
+              </div>
             : null}
           </span>
-          <span className='head-subtitle'>
+          <span className='head-subtitle' onClick={() => navigate(homePageRoutePath) }>
             <span>Stéphane</span>
             <span className='text--primary text--bold'>Lieumont</span>
           </span>
