@@ -8,21 +8,26 @@ import RoutesApp from './routes/Routes.app';
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   const [menuIsLigth, setMenuIsLigth] = useState<boolean>(false)
+  const [headerTitle, setHeaderTitle] = useState<string>()
 
   const location = useLocation()
 
   const handleClickMenu = (value: boolean) => {
     setMenuIsOpen(value)
+    value ? 
+    document.body.classList.add('heigth-auto') :
+    document.body.classList.remove('heigth-auto')
   }
 
   useEffect(() => {
-    const menuLigth = RoutesApp.getRouteByPath(location.pathname)?.menuIconLigth ?? false;
-    setMenuIsLigth(menuLigth)    
+    const route = RoutesApp.getRouteByPath(location.pathname)
+    setHeaderTitle(route?.headerTitle)
+    setMenuIsLigth(route?.menuIconLigth ?? false)
   }, [location])
 
   return (
     <div data-testid="app" className="react-app">      
-      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} />
+      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} />
       <main className={`${menuIsOpen ? 'scale' : ''}`}>
         <Routes>
           { RoutesApp.routeList.map(({ path, Component, title }) => (

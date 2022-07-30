@@ -1,7 +1,8 @@
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Button from '../../components/Button';
+import useWindowSize from '../../hooks/useWindowsSize';
 import { PageProps } from '../../interfaces/Routes.intf';
 
 import './style.scss'
@@ -9,12 +10,19 @@ import './style.scss'
 
 
 const Home: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+  const currentPage = useRef<HTMLDivElement>(null)
+  const windowSize = useWindowSize();
+
   useEffect(() => {
     document.title = title
-  })
+  }, [title])
+
+  useEffect(() => {
+    document.body.style.height = `${ currentPage.current?.getBoundingClientRect().height }px`
+  }, [windowSize.height]);
 
   return (
-    <div className='homepage' data-testid='page-home'>
+    <div ref={currentPage} className='homepage' data-testid='page-home'>
       <div className='homepage__blockquote'>
         <blockquote>
           <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
