@@ -4,6 +4,7 @@ import reportWebVitals from './config/config.report';
 
 import './sass/main.scss'
 import App from './App';
+import { BrowserRouter  as Router } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router basename={process.env.PUBLIC_URL}>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 

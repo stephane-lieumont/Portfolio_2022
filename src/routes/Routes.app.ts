@@ -3,7 +3,6 @@ import Home from '../pages/Home'
 import PortfolioCGI from '../pages/PortfolioCGI'
 import PortfolioDev from '../pages/PortfolioDev'
 import { RouteAppObject } from '../interfaces/Routes.intf'
-import { faUserPlus, faUsers, faCircleExclamation } from '@fortawesome/free-solid-svg-icons'
 
 
 const routeList: RouteAppObject[] = [
@@ -13,15 +12,15 @@ const routeList: RouteAppObject[] = [
     label: 'Accueil',
     Component: Home,
     title: 'Portfolio | Stéphane Lieumont',
-    icon: faUserPlus
+    menuIconLigth: true
   },
   { 
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
     label: 'Portfolio Dev',
     Component: PortfolioDev, 
-    title: 'Portfolio Developpeur | Stéphane Lieumont',   
-    icon: faUsers
+    title: 'Portfolio Developpeur | Stéphane Lieumont',
+    menuIconLigth: false
   },
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
@@ -29,14 +28,14 @@ const routeList: RouteAppObject[] = [
     label: 'Portfolio CGI',
     Component: PortfolioCGI, 
     title: 'Portfolio CGI | Stéphane Lieumont',   
-    icon: faUsers
+    menuIconLigth: false
   },
   {
     path: '*', 
     name: 'error',
     Component: Error,
     title: 'Error404',
-    icon: faCircleExclamation
+    menuIconLigth: false
   }
 ]
 
@@ -44,10 +43,15 @@ const getRouteByName = (name: string):RouteAppObject | undefined => {
   return routeList.find(route => route.name === name)
 }
 
+const getRouteByPath = (path: string):RouteAppObject | undefined => {
+  return routeList.find(route => route.path.includes(path))
+}
+
 
 const RoutesApp = {
   routeList,
-  getRouteByName
+  getRouteByName,
+  getRouteByPath
 }
 
 export default RoutesApp

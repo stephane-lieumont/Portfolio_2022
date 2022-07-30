@@ -1,3 +1,5 @@
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
 import Button from '../../components/Button';
 import { PageProps } from '../../interfaces/Routes.intf';
@@ -13,6 +15,12 @@ const Home: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
 
   return (
     <div className='homepage' data-testid='page-home'>
+      <div className='homepage__blockquote'>
+        <blockquote>
+          <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
+          <small>Romain Guilleaumes</small>
+        </blockquote>
+      </div>   
       <div className='homepage__leftside'>
         <div className='homepage__leftside__content'>
           <h2 className='homepage__leftside__content__title'>Developpeur Frontend & <span>Graphiste 3D</span></h2>

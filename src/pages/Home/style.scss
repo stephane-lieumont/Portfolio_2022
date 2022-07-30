@@ -10,6 +10,17 @@
   width: 100%;
   z-index: 1;
 
+  &__blockquote {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    padding: 30px 60px;
+    width: 50%;
+    p {
+      margin:0;
+    }
+  }
+
   &__rigthside, &__leftside {
     flex: 1 0 50%;
     display: flex;
