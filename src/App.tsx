@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SocialSideBar from './layout/SocialSideBar';
 import Header from './layout/Header';
 import RoutesApp from './routes/Routes.app';
+import { CSSTransition } from 'react-transition-group';
+import MyRoute from './components/MyRoute';
+
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
@@ -29,11 +32,13 @@ const App: React.FunctionComponent = () => {
     <div data-testid="app" className="react-app">      
       <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} />
       <main className={`${menuIsOpen ? 'scale' : ''}`}>
-        <Routes>
-          { RoutesApp.routeList.map(({ path, Component, title }) => (
-            <Route key={path} path={path} element={<Component title={title} />} /> 
-          ))}
-        </Routes>
+        { RoutesApp.routeList.map(({ path, Component, title }) => (
+          <MyRoute key={path} path={path} >
+            <CSSTransition key={location.pathname} classNames="fade" timeout={300} >
+              <Component title={title} />
+            </CSSTransition>
+          </MyRoute>
+        ))}
       </main>
       <SocialSideBar menuIsOpen={menuIsOpen} />     
     </div>

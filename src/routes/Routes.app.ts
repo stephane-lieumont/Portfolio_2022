@@ -20,7 +20,7 @@ const routeList: RouteAppObject[] = [
     label: 'Portfolio Dev',
     Component: PortfolioDev, 
     title: 'Portfolio Developpeur | Stéphane Lieumont',
-    headerTitle: "developpeur Web & mobile",
+    headerTitle: "Web & mobile",
     menuIconLigth: false
   },
   { 

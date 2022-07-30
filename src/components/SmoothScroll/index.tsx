@@ -10,7 +10,6 @@ const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children }) 
   const windowSize = useWindowSize();
   const scrollingContainerRef = useRef<HTMLDivElement>(null);
 
-
   useEffect(() => {
     const params = {
       ease: 0.1,
@@ -41,11 +40,13 @@ const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children }) 
     let timer = setTimeout(() => {
       setBodyHeight();
       clearTimeout(timer)
-    }, 500);    
+    }, 700);    
   }, [windowSize.height]);
 
   const setBodyHeight = () => {
-    document.body.style.height = `${ scrollingContainerRef.current!.getBoundingClientRect().height }px`
+    if(scrollingContainerRef.current) {
+      document.body.style.height = `${ scrollingContainerRef.current.getBoundingClientRect().height }px`
+    }    
   };
 
   return (

@@ -1,9 +1,11 @@
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router';
 import Button from '../../components/Button';
 import useWindowSize from '../../hooks/useWindowsSize';
 import { PageProps } from '../../interfaces/Routes.intf';
+import RoutesApp from '../../routes/Routes.app';
 
 import './style.scss'
 
@@ -11,7 +13,11 @@ import './style.scss'
 
 const Home: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const currentPage = useRef<HTMLDivElement>(null)
-  const windowSize = useWindowSize();
+  const windowSize = useWindowSize()
+  const navigate = useNavigate()
+
+  const portfolioDevPath = RoutesApp.getRouteByName('dev')!.path
+  const portfolioCgiPath = RoutesApp.getRouteByName('cgi')!.path
 
   useEffect(() => {
     document.title = title
@@ -20,6 +26,8 @@ const Home: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
   useEffect(() => {
     document.body.style.height = `${ currentPage.current?.getBoundingClientRect().height }px`
   }, [windowSize.height]);
+
+
 
   return (
     <div ref={currentPage} className='homepage' data-testid='page-home'>
@@ -34,8 +42,8 @@ const Home: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
           <h2 className='homepage__leftside__content__title'>Developpeur Frontend & <span>Graphiste 3D</span></h2>
           <p>Captivé par les nouvelles technologies depuis 2006, ma curiosité m’a amené à découvrir le développement informatique et le graphisme 3D.</p>
           <div className='homepage__leftside__content__nav'>
-            <Button label='profil dev' />
-            <Button label="profil 3D" outlined />
+            <Button label='profil dev' onClick={() => navigate(portfolioDevPath)} />
+            <Button label="profil 3D" outlined onClick={() => navigate(portfolioCgiPath)} />
           </div>
         </div>
       </div>
