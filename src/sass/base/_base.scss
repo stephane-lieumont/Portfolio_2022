@@ -85,10 +85,10 @@ body {
 
     &--indent {
       &::first-letter {
-        display: inline;
+        display: inline-block;
         font-size: 1.5rem;
-        font-weight: 800;
-        float: left;
+        font-weight: 700;
+        color: $grey-shade200;
       }
     }
   }

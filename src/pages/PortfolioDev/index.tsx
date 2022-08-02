@@ -3,14 +3,16 @@ import SmoothScroll from '../../components/SmoothScroll';
 import { PageProps } from '../../interfaces/Routes.intf';
 import Footer from '../../layout/Footer';
 import SoftSkillsPicture from '../../assets/pictures/softskills-illustration.svg'
-
+import { ProjectsDevData } from '../../__mock__/data/dev.projects.data';
 import './style.scss'
 import ProjectCard from '../../components/ProjectCard';
 
 const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+ 
   useEffect(() => {
     document.title = title
   })
+
   return (
     <SmoothScroll>
       <div className='page portfolio-dev' data-testid='page-portfolio-dev'>      
@@ -52,7 +54,7 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
               <div className='row--col1'>
                 <h3>Autonomie et curiosité</h3>
                 <p className="text--indent">
-                  Mon expérience de 14 ans dans le domaine de l’aéronautique et les divers projets personnels que 
+                  Mon expérience de 14 années dans le domaine de l'industrie aéronautique et les divers projets personnels que 
                   j’ai pu entreprendre mon apporter des compétences que j’utilisent au quotidien. La curiosité et 
                   la créativité sont les éléments fondamentaux qui m’animent, et me poussent à exploiter tout mon 
                   potentiel pour atteindre mes objectifs.
@@ -68,12 +70,11 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
           <div className='section__content'>
             <h2 className='display1'>Réalisations</h2>
             <ul className="portfolio-dev__projects__list">
-              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
-              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
-              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
-              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
-              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
-              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
+              {ProjectsDevData.map( (project) => (
+                <li key={`project${project.id}`} className="portfolio-dev__projects__item">
+                  <ProjectCard projectData={project} />
+                </li>
+              ))}
              </ul>
           </div>
         </section>

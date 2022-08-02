@@ -6,7 +6,7 @@ const Footer: React.FunctionComponent = () => {
 
   return (
     <footer className="footer" data-testid='layout-footer'>
-      <p>designed & developed on ReactJs ©{currentYear} by <span>Stéphane Lieumont</span></p>
+      <p>Designed & Developed on ReactJs ©{currentYear} by <span>Stéphane Lieumont</span></p>
     </footer>
   );
 }
