@@ -37,6 +37,7 @@ const routeList: RouteAppObject[] = [
     name: 'error',
     Component: Error,
     title: 'Error404',
+    headerTitle: "Oups!!",
     menuIconLigth: false
   }
 ]

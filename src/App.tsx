@@ -4,16 +4,24 @@ import { useLocation } from 'react-router-dom';
 import SocialSideBar from './layout/SocialSideBar';
 import Header from './layout/Header';
 import RoutesApp from './routes/Routes.app';
-import { CSSTransition } from 'react-transition-group';
 import MyRoute from './components/MyRoute';
-
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   const [menuIsLigth, setMenuIsLigth] = useState<boolean>(false)
   const [headerTitle, setHeaderTitle] = useState<string>()
+  const [locationError, setLocationError] = useState<boolean>(false)
 
   const location = useLocation()
+
+  // get routes navigation
+  const globalRoutes = RoutesApp.routeList.filter(route => route.name !== 'error')
+  const errorRoute = RoutesApp.routeList.filter(route => route.name === 'error')[0]
+
+  // onChange location route to transition CSS
+  useEffect(() => {
+    setLocationError( RoutesApp.getRouteByPath(location.pathname) ? false : true )
+  }, [location])  
 
   const handleClickMenu = (value: boolean) => {
     setMenuIsOpen(value)
@@ -32,13 +40,16 @@ const App: React.FunctionComponent = () => {
     <div data-testid="app" className="react-app">      
       <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} />
       <main className={`${menuIsOpen ? 'scale' : ''}`}>
-        { RoutesApp.routeList.map(({ path, Component, title }) => (
-          <MyRoute key={path} path={path} >
-            <CSSTransition key={location.pathname} classNames="fade" timeout={300} >
+        { locationError === false ?
+          globalRoutes.map(({ path, Component, title }) => (
+            <MyRoute key={path} path={path} >
               <Component title={title} />
-            </CSSTransition>
+            </MyRoute>
+          )) :
+          <MyRoute key={errorRoute.path} path={errorRoute.path} >
+            <errorRoute.Component title={errorRoute.title} />
           </MyRoute>
-        ))}
+        }        
       </main>
       <SocialSideBar menuIsOpen={menuIsOpen} />     
     </div>
