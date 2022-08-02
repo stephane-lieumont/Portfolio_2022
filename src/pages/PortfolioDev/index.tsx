@@ -16,12 +16,30 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
           <div className='section__content'>
             <h2 className='display1'>Spécialités</h2>
             <ul>
-              <li>VueJS</li>
-              <li>React</li>
-              <li>Webpack</li>
-              <li>Flutter</li>
-              <li>Sass</li>
-              <li>Node JS</li>          
+              <li>
+                <img height={100} src={require('../../assets/icons/vue.png')} alt="Vue js framework javascript"/>
+                <p>Vuejs</p>
+              </li>
+              <li>
+                <img height={100} src={require('../../assets/icons/react.png')} alt="Vue js framework javascript"/>
+                <p>React</p>
+              </li>
+              <li>
+                <img height={100} src={require('../../assets/icons/webpack.png')} alt="Vue js framework javascript"/>
+                <p>Webpack</p>
+              </li>
+              <li>
+                <img height={100} src={require('../../assets/icons/flutter.png')} alt="Vue js framework javascript"/>
+                <p>Flutter</p>
+              </li>
+              <li>
+                <img height={100} src={require('../../assets/icons/sass.png')} alt="Vue js framework javascript"/>
+                <p>Sass</p>
+              </li>
+              <li>
+                <img height={100} src={require('../../assets/icons/node.png')} alt="Vue js framework javascript"/>
+                <p>Node JS</p>
+              </li>         
             </ul>
           </div>
         </section>

@@ -3,10 +3,21 @@
 .portfolio-dev {
   &__specialities {
     ul {
+      width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
-      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: $primary;
+      font-weight: 600;
+      gap: 3%;
+
+      li {
+        img {
+          margin-bottom: 20px;
+        }
+      }
     }
   }
 

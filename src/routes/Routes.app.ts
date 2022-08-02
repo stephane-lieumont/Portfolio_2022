@@ -3,6 +3,8 @@ import Home from '../pages/Home'
 import PortfolioCGI from '../pages/PortfolioCGI'
 import PortfolioDev from '../pages/PortfolioDev'
 import { RouteAppObject } from '../interfaces/Routes.intf'
+import { Theme } from '../interfaces/Theme.intf'
+
 
 
 const routeList: RouteAppObject[] = [
@@ -12,7 +14,10 @@ const routeList: RouteAppObject[] = [
     label: 'Accueil',
     Component: Home,
     title: 'Portfolio | Stéphane Lieumont',
-    menuIconLigth: true
+    menuIconLigth: true,
+    params: {
+      theme: Theme.ligth
+    }
   },
   { 
     path: '/portfolio-stephane-lieumont-developpeur', 
@@ -21,7 +26,10 @@ const routeList: RouteAppObject[] = [
     Component: PortfolioDev, 
     title: 'Portfolio Developpeur | Stéphane Lieumont',
     headerTitle: "Web & mobile",
-    menuIconLigth: false
+    menuIconLigth: false,
+    params: {
+      theme: Theme.ligth
+    }
   },
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
@@ -30,15 +38,21 @@ const routeList: RouteAppObject[] = [
     Component: PortfolioCGI, 
     title: 'Portfolio CGI | Stéphane Lieumont',   
     headerTitle: "graphiste 3D",
-    menuIconLigth: false
+    menuIconLigth: false,
+    params: {
+      theme: Theme.dark
+    }
   },
   {
     path: '*', 
     name: 'error',
     Component: Error,
     title: 'Error404',
-    headerTitle: "Oups!!",
-    menuIconLigth: false
+    headerTitle: 'Page introuvable',
+    menuIconLigth: false,
+    params: {
+      theme: Theme.ligth
+    }
   }
 ]
 

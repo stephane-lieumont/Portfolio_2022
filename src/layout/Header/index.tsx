@@ -4,15 +4,17 @@ import NavBarButton from '../NavBarSlider';
 import Button from '../../components/Button';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { Theme } from '../../interfaces/Theme.intf';
 
 type HeaderProps = {
   menuIsOpen?: boolean
   menuIsLigth?: boolean
   headerTitle?: string
+  theme?: Theme
   onClick?: (isOpen: boolean) => void
 }
 
-const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, onClick = () => {}}) => {
+const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, theme, onClick = () => {}}) => {
   const [menuHide, setMenuHide] = useState<boolean>(false)
   const navigate = useNavigate()
 
@@ -31,7 +33,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuI
   } 
 
   return (
-    <header className='header' data-testid='layout-header'>
+    <header className={`header${ theme === Theme.dark ? ' header--dark' : ' header--ligth' }`} data-testid='layout-header'>
       <div className={`header__main${ menuIsOpen || menuHide ? ' header__main--hidden' : ''}`}>
         <h1>
           <span className='head-title'>
@@ -51,12 +53,12 @@ const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuI
         </h1>
         <div className='navigation'>
           <ul className='navigation__buttons'>
-            <li><Button label='Contact' outlined white={menuIsLigth} /></li>
-            <li><Button label='Mon CV' outlined white={menuIsLigth} /></li>
+            <li><Button label='Contact' outlined white={menuIsLigth || theme === Theme.dark} /></li>
+            <li><Button label='Mon CV' outlined white={menuIsLigth || theme === Theme.dark} /></li>
           </ul>
         </div>   
       </div>
-      <NavBarButton routeList={RoutesApp.routeList} ligth={menuIsLigth} onClick={onClick}/>  
+      <NavBarButton routeList={RoutesApp.routeList} ligth={menuIsLigth || theme === Theme.dark} onClick={onClick}/>  
     </header>
   );
 }

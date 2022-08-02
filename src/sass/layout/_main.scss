@@ -9,4 +9,29 @@ main {
   &.scale {
     transform: scale(0.9);
   }
+
+  &.theme-dark {
+    background-color: $grey;
+    color: white;
+
+    h2 {
+      background-image: url('../../assets/icons/triangle002-primary.svg')!important;
+    }
+  }
+
+  &.theme-ligth {
+    background-color: white;
+    color: $secondary;
+  }
+
+ .page {
+    width: 100%;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: all;
+  }
 }
+

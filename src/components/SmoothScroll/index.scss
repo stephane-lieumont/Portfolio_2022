@@ -6,9 +6,12 @@
   height: 100%;
   overflow: hidden;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
 
   &__child {
-    box-sizing: content-box!important;  
     padding-top: 160px;
+    flex-grow: 1;
   }
 }

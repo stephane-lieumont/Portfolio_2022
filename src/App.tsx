@@ -5,12 +5,15 @@ import SocialSideBar from './layout/SocialSideBar';
 import Header from './layout/Header';
 import RoutesApp from './routes/Routes.app';
 import MyRoute from './components/MyRoute';
+import { RouteAppObject } from './interfaces/Routes.intf';
+import { Theme } from './interfaces/Theme.intf';
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   const [menuIsLigth, setMenuIsLigth] = useState<boolean>(false)
   const [headerTitle, setHeaderTitle] = useState<string>()
   const [locationError, setLocationError] = useState<boolean>(false)
+  const [currentRoute, setCurrentRoute] = useState<RouteAppObject>()
 
   const location = useLocation()
 
@@ -20,8 +23,11 @@ const App: React.FunctionComponent = () => {
 
   // onChange location route to transition CSS
   useEffect(() => {
-    setLocationError( RoutesApp.getRouteByPath(location.pathname) ? false : true )
-  }, [location])  
+    setCurrentRoute( RoutesApp.getRouteByPath(location.pathname) )
+    setLocationError( currentRoute ? false : true )
+    setHeaderTitle(currentRoute?.headerTitle)
+    setMenuIsLigth(currentRoute?.menuIconLigth ?? false)
+  }, [location, currentRoute])  
 
   const handleClickMenu = (value: boolean) => {
     setMenuIsOpen(value)
@@ -30,16 +36,10 @@ const App: React.FunctionComponent = () => {
     document.body.classList.remove('heigth-auto')
   }
 
-  useEffect(() => {
-    const route = RoutesApp.getRouteByPath(location.pathname)
-    setHeaderTitle(route?.headerTitle)
-    setMenuIsLigth(route?.menuIconLigth ?? false)
-  }, [location])
-
   return (
     <div data-testid="app" className="react-app">      
-      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} />
-      <main className={`${menuIsOpen ? 'scale' : ''}`}>
+      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentRoute?.params?.theme } />
+      <main className={`${menuIsOpen ? 'scale' : ''}${ currentRoute?.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
         { locationError === false ?
           globalRoutes.map(({ path, Component, title }) => (
             <MyRoute key={path} path={path} >

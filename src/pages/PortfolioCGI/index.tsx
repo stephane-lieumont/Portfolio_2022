@@ -12,52 +12,27 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
 
   return (
     <SmoothScroll>
-      <div className='page portfolio-dev' data-testid='page-portfolio-cgi'>      
-        <section className='section portfolio-dev__specialities'>
+      <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'>      
+        <section className='section'>
           <div className='section__content'>
             <h2 className='display1'>Spécialités</h2>
             <ul>
-              <li>VueJS</li>
-              <li>React</li>
-              <li>Webpack</li>
-              <li>Flutter</li>
-              <li>Sass</li>
-              <li>Node JS</li>          
+              <li>
+                <img src={require('../../assets/icons/vue.png')} alt="Vue js framework javascript"/>
+                <p>Zbrush</p>
+              </li>
+              <li>3Dsmax</li>
+              <li>Vray</li>
+              <li>Substance</li>
+              <li>Photoshop</li>
+              <li>Illustrator</li>          
             </ul>
-          </div>
+          </div>          
         </section>
-        <section className='section portfolio-dev__softskills'>
-          <div className='section__content'>
-            <h2 className='display1'>Compétences transverses</h2>
-            <div className='row'>
-              <div className='row--col1'>
-                <h3>Autonomie et curiosité</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum laoreet metus. 
-                  Nulla hendrerit malesuada velit, sit amet elementum eros dapibus nec. Aenean quis commodo mi, 
-                  sed vestibulum sem. In lacinia molestie cursus. Nunc eleifend suscipit sollicitudin. 
-                  Pellentesque sit amet tempor tellus. Integer at mi et nisl maximus pellentesque. 
-                  Sed sodales lorem non elementum luctus.
-                </p>
-              </div>
-              <div className='row--col1'>
-                <div className='image-placeholder'></div>
-              </div>          
-            </div>
-          </div>
-        </section>
-        <section className='section portfolio-dev__projects'>
+        <section className='section'>
           <div className='section__content'>
             <h2 className='display1'>Réalisations</h2>
-            <ul>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-            </ul>
-          </div>
+          </div>          
         </section>
         <Footer />      
       </div>
