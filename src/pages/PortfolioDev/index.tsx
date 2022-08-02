@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import SmoothScroll from '../../components/SmoothScroll';
 import { PageProps } from '../../interfaces/Routes.intf';
 import Footer from '../../layout/Footer';
+import SoftSkillsPicture from '../../assets/pictures/softskills-illustration.svg'
 
 import './style.scss'
+import ProjectCard from '../../components/ProjectCard';
 
 const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   useEffect(() => {
@@ -25,12 +27,12 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
                 <p>React</p>
               </li>
               <li>
-                <img height={100} src={require('../../assets/icons/webpack.png')} alt="Vue js framework javascript"/>
-                <p>Webpack</p>
-              </li>
-              <li>
                 <img height={100} src={require('../../assets/icons/flutter.png')} alt="Vue js framework javascript"/>
                 <p>Flutter</p>
+              </li>
+              <li>
+                <img height={100} src={require('../../assets/icons/webpack.png')} alt="Vue js framework javascript"/>
+                <p>Webpack</p>
               </li>
               <li>
                 <img height={100} src={require('../../assets/icons/sass.png')} alt="Vue js framework javascript"/>
@@ -49,16 +51,15 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
             <div className='row'>
               <div className='row--col1'>
                 <h3>Autonomie et curiosité</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum laoreet metus. 
-                  Nulla hendrerit malesuada velit, sit amet elementum eros dapibus nec. Aenean quis commodo mi, 
-                  sed vestibulum sem. In lacinia molestie cursus. Nunc eleifend suscipit sollicitudin. 
-                  Pellentesque sit amet tempor tellus. Integer at mi et nisl maximus pellentesque. 
-                  Sed sodales lorem non elementum luctus.
+                <p className="text--indent">
+                  Mon expérience de 14 ans dans le domaine de l’aéronautique et les divers projets personnels que 
+                  j’ai pu entreprendre mon apporter des compétences que j’utilisent au quotidien. La curiosité et 
+                  la créativité sont les éléments fondamentaux qui m’animent, et me poussent à exploiter tout mon 
+                  potentiel pour atteindre mes objectifs.
                 </p>
               </div>
-              <div className='row--col1'>
-                <div className='image-placeholder'></div>
+              <div className='row--col1 grow0'>
+                <img src={SoftSkillsPicture} width={500} alt="soft-skills stéphane lieumont" />
               </div>          
             </div>
           </div>
@@ -66,14 +67,14 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
         <section className='section portfolio-dev__projects'>
           <div className='section__content'>
             <h2 className='display1'>Réalisations</h2>
-            <ul>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-              <li className='image-placeholder'></li>
-            </ul>
+            <ul className="portfolio-dev__projects__list">
+              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
+              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
+              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
+              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
+              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
+              <li className="portfolio-dev__projects__item"><ProjectCard /></li>
+             </ul>
           </div>
         </section>
         <Footer />      

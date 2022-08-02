@@ -1,6 +1,8 @@
 @import '../../sass/themes/colors';
 
 .portfolio-dev {
+  background-color: white;
+
   &__specialities {
     ul {
       width: 100%;
@@ -14,24 +16,48 @@
       gap: 3%;
 
       li {
+        font-size: 1.2rem;
         img {
           margin-bottom: 20px;
         }
       }
     }
+
+    .section__content {
+      margin-bottom: 0;
+    }
+  }
+
+  &__softskills {  
+    h3 {
+      font-size: 1.3rem;
+    }
+    img {
+      max-width: 500px;
+      min-width: 400px;
+    }
   }
 
   &__projects {
     background-color: $grey-shade500;
-    ul {
+
+    &__list {
       align-self: flex-start!important;
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      justify-content: space-evenly;
-      overflow: hidden;
-      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow:auto;
+      gap: 3%;
+      padding: 20px;
+      width: 100%;
+    }
+
+    &__item {
+      flex: 1 0 31%;
+      max-width: 31%;
+      margin-bottom: 30px;
+      min-width: 280px;
     }
   }
 }

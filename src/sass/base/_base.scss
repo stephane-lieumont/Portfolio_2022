@@ -21,9 +21,9 @@ body {
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   h3 {
@@ -53,7 +53,8 @@ body {
 
       width: 100%;
       max-width: $screen-xl;
-      margin-bottom:30px;
+      margin-top:30px;
+      margin-bottom:60px;
       padding: 0 60px;
       overflow: hidden;
     }
@@ -81,12 +82,22 @@ body {
     &--bold {
       font-weight: 600;
     }
+
+    &--indent {
+      &::first-letter {
+        display: inline;
+        font-size: 1.5rem;
+        font-weight: 800;
+        float: left;
+      }
+    }
   }
 
   .display1 {
     display: inline-block;
     line-height: 45px;
-    margin: 20px 0 40px 0;
+    font-size: 1.7rem;
+    margin: 40px 0;
     padding: 0 25px;
     text-align: center;
     background-image: url('../../assets/icons/triangle001-primary.svg');
@@ -111,6 +122,11 @@ body {
     &--col1 {
       flex: 1 0 calc(50% - 30px);
     }
+  }
+
+  .grow0 {
+    flex-grow: 0;
+    flex-basis: auto;
   }
 }
 
