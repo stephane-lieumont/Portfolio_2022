@@ -1,27 +1,24 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Carousel from '../../components/Carousel';
 import SmoothScroll from '../../components/SmoothScroll';
 import { PageProps } from '../../interfaces/Routes.intf';
 import Footer from '../../layout/Footer';
+import { SliderImagesData } from '~/__mock__/data/3d.projects.data';
 
 import './style.scss'
 
 const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+  const [scrollY, setScrollY] = useState<number>()
+
   useEffect(() => {
     document.title = title
   })
 
   return (
-    <SmoothScroll>
+    <SmoothScroll onChanged={(value) => setScrollY(value)}>
       <Fragment>
-        <Carousel 
-          pictures={[
-            'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg',
-            'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg'
-          ]}
-        /> 
-        <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'>  
-    
+        <Carousel slides={SliderImagesData} parralaxScrollY={scrollY} /> 
+        <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'> 
           <section className='section portfolio-cgi__specialities'>          
             <div className='section__content'>            
               <h2 className='display1'>Spécialités</h2>

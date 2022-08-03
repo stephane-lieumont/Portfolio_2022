@@ -3,10 +3,12 @@ import useWindowSize from "../../hooks/useWindowsSize";
 import "./index.scss";
 
 type SmoothScrollProps = {
-  children: JSX.Element
+  children: JSX.Element,
+  offset?: boolean,
+  onChanged?: (scrollY: number) => void
 }
 
-const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children }) => {
+const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children, offset = false, onChanged = () => {} }) => {
   const windowSize = useWindowSize();
   const scrollingContainerRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +30,8 @@ const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children }) 
         scrollingContainerRef.current.style.transform = `translateY(-${params.rounded }px)` :
         scrollingContainerRef.current.style.transform = `translateY(0px)`
       }
-  
+
+      onChanged(params.rounded)  
       requestAnimationFrame(() => smoothScrollingHandler());
     };
 
@@ -51,7 +54,7 @@ const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children }) 
 
   return (
     <div className="smoothscroll-container">
-      <div className="smoothscroll-container__child" ref={scrollingContainerRef}>{children}</div>
+      <div className={`smoothscroll-container__child${ offset ? ' smoothscroll-container__child--offset' : ''}`} ref={scrollingContainerRef}>{children}</div>
     </div>
   );
 };

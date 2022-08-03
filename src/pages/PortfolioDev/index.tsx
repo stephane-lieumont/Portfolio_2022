@@ -14,7 +14,7 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
   })
 
   return (
-    <SmoothScroll>
+    <SmoothScroll offset>
       <div className='page portfolio-dev' data-testid='page-portfolio-dev'>      
         <section className='section portfolio-dev__specialities'>
           <div className='section__content'>

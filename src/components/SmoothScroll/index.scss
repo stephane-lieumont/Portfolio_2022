@@ -10,8 +10,17 @@
   flex-direction: column;
   pointer-events: none;
 
-  &__child {
-    padding-top: 160px;
+  &__child {    
     flex-grow: 1;
+    .page {
+      min-height: 100vh;
+    }    
+
+    &--offset {
+      padding-top: 160px;
+      .page {
+        min-height: calc(100vh - 160px);
+      }      
+    }
   }
 }

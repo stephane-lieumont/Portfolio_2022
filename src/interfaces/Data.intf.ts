@@ -8,3 +8,10 @@ export interface ProjectDevData {
   released: Date,
   demoLink?: string
 }
+
+export interface SliderImageData {
+  title: string;
+  released: Date;
+  imgFile: string;
+  imgAlt: string;
+}
