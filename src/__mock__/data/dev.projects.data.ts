@@ -1,11 +1,19 @@
-import { ProjectDevData } from "../../interfaces/Data.intf";
+import { ProjectDevData } from "../../interfaces/Data.intf"
+
+import CTPappMobileImg from '~/assets/medias/case-tes-potes-mobile-2022.jpg'
+import CTPlandingPageImg from '~/assets/medias/case-tes-potes-landingpage-2022.jpg'
+import CTPwebAppImg from '~/assets/medias/case-tes-potes-webapp-2021.jpg'
+import KasaOcImg from '~/assets/medias/oc-kasa-fromation-2021.jpg'
+import Portfolio2018Img from '~/assets/medias/portfolio-3d-2018.jpg'
+import Pixmodels2015Img from '~/assets/medias/pixmodels-2016-service-comminucation.jpg'
+
 
 export const ProjectsDevData: ProjectDevData[] = [
   {
     id:'1',
     title: 'Case Tes Potes - Mobile',
     description: 'Application mobile android & IOS Case tes potes',
-    imgFileName: 'case-tes-potes-mobile-2022.jpg',
+    imgFile: CTPappMobileImg,
     imgAlt: 'case tes potes - mobile',
     hashtags: [
       'flutter',
@@ -19,7 +27,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'2',
     title: 'Case Tes Potes - LP',
     description: 'Développement de la landing page et de l’application mobile de Case tes potes.',
-    imgFileName: 'case-tes-potes-landingpage-2022.jpg',
+    imgFile: CTPlandingPageImg,
     imgAlt: 'case tes potes - landingpage 2022',
     hashtags: [
       'react',
@@ -34,7 +42,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'3',
     title: 'Case Tes Potes - WebApp',
     description: 'Formulaire web responsive pour publier des stories sur l\'application mobile',
-    imgFileName: 'case-tes-potes-webapp-2021.jpg',
+    imgFile: CTPwebAppImg,
     imgAlt: 'case tes potes - web application 2021',
     hashtags: [
       'webpack',
@@ -49,7 +57,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'4',
     title: 'Kasa - Openclassrooms',
     description: 'Application React dans le cadre de la formation Developpeur FrontEnd',
-    imgFileName: 'oc-kasa-fromation-2021.jpg',
+    imgFile: KasaOcImg,
     imgAlt: 'case tes potes - landingpage 2022',
     hashtags: [
       'react',
@@ -64,7 +72,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'5',
     title: 'Portfolio',
     description: 'Portfolio 3d sur mes réalisation 2014-2016',
-    imgFileName: 'portfolio-3d-2018.jpg',
+    imgFile: Portfolio2018Img,
     imgAlt: 'portfolio 3d - 2018',
     hashtags: [
       'javascript',
@@ -77,7 +85,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'6',
     title: 'Pixmodels',
     description: 'Projets d\'auto-entrepreneur en 2015. Je proposais divers services marqueting',
-    imgFileName: 'pixmodels-2016-service-comminucation.jpg',
+    imgFile: Pixmodels2015Img,
     imgAlt: 'pixmodels - agence de communication audiovisuel',
     hashtags: [
       'javascript',

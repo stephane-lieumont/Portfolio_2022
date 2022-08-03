@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react'
-import { ProjectDevData } from '../../interfaces/Data.intf'
-import Button from '../Button'
-import { firstLetterUpper } from '../../utils/formatString'
+import { ProjectDevData } from '~/interfaces/Data.intf'
+import Button from '~/components/Button'
+import { firstLetterUpper } from '~/utils/formatString'
 import './style.scss'
 
 export type ProjectCardProps = {
@@ -12,13 +12,13 @@ const ProjectCard: React.FunctionComponent<ProjectCardProps> = ({ projectData })
 
   const handleClickDemo = (e: MouseEvent<HTMLButtonElement>) => {
 
-  } 
+  }
 
   return (
     <div className='project-card-container' data-testid='project-card'>
       <div className='project-card'>
         <div className='project-card__picture'>
-          <img width={400} src={require(`../../assets/medias/projects_dev/`+ projectData.imgFileName)} alt={projectData.imgAlt} />
+          <img width={400} src={projectData.imgFile} alt={projectData.imgAlt} />
         </div>
         <div className='project-card__content'>
           <ul className='project-card__content__hashtags'>
