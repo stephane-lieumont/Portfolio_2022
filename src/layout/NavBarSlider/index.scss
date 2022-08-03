@@ -115,6 +115,10 @@
     height: 100vh;
     transform: translateX(100%);
 
+    svg path{
+      fill: $grey!important;
+    }
+
     &__menu {
       ul {
         position: fixed;

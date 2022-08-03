@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useRef, useState } from "react"
+import { FunctionComponent, useEffect, useState } from "react"
 import { SliderImageData } from "~/interfaces/Data.intf"
 import './style.scss'
 
@@ -31,10 +31,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
   return (
     <div className="carousel">
       <div className="carousel__container">
-        <div 
-          className={`carousel__container__progress`} 
-          style={{animationDuration: delay + 'ms'}}
-        ></div>
+        <div className={`carousel__container__progress`} style={{animationDuration: delay + 'ms'}}></div>
         <ul className="carousel__group" style={{transform: 'translateY(' + parallaxValue + 'px)'  }}>
           {slides?.map(({title, released, imgFile, imgAlt}, index) => (
             <li 
@@ -49,6 +46,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
               }
             >
               <img width={500} src={imgFile} alt={imgAlt} onLoad={onLoadPicture} />
+              <p className={`carousel__item__alt${parallaxValue !== 0 ? ' carousel__item__alt--hide' : ''}`}>{ title } © { released.getFullYear() }</p>
             </li>
           ))}
         </ul>

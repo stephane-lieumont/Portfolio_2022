@@ -36,6 +36,7 @@ const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children, of
     };
 
     requestAnimationFrame(() => smoothScrollingHandler());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
