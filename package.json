@@ -21,6 +21,7 @@
     "babel-plugin-root-import": "^6.6.0",
     "customize-cra": "^1.0.0",
     "gsap": "^3.10.4",
+    "js-file-download": "^0.4.12",
     "react": "^18.1.0",
     "react-app-rewired": "^2.2.1",
     "react-dom": "^18.1.0",

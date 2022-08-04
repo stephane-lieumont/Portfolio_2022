@@ -18,7 +18,7 @@
       height: 3px;
       background: $primary;
       z-index: 3;
-      animation-name: progress;
+      animation-name: carrousel-progress;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       opacity: 0.5;
@@ -54,7 +54,7 @@
     }
 
     &--animate-show {
-      animation-name: appear;
+      animation-name: carrousel-appear;
       animation-duration: 500ms;
       animation-timing-function: ease-in;
       animation-fill-mode: forwards;
@@ -66,22 +66,23 @@
       object-fit: cover;
     }
   }
+
+  @keyframes carrousel-appear {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes carrousel-progress {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
 }
 
-@keyframes appear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes progress {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}

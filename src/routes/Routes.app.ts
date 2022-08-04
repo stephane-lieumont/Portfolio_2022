@@ -44,12 +44,12 @@ const routeList: RouteAppObject[] = [
     }
   },
   {
-    path: '*', 
+    path: '/*', 
     name: 'error',
     Component: Error,
     title: 'Error404',
     headerTitle: 'Page introuvable',
-    menuIconLigth: false,
+    menuIconLigth: true,
     params: {
       theme: Theme.ligth
     }
@@ -61,7 +61,7 @@ const getRouteByName = (name: string):RouteAppObject | undefined => {
 }
 
 const getRouteByPath = (path: string):RouteAppObject | undefined => {
-  return routeList.find(route => route.path.includes(path))
+  return routeList.find(route => route.path === path)
 }
 
 

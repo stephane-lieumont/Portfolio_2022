@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
 import SocialSideBar from './layout/SocialSideBar';
@@ -23,11 +23,11 @@ const App: React.FunctionComponent = () => {
 
   // onChange location route to transition CSS
   useEffect(() => {
-    setCurrentRoute( RoutesApp.getRouteByPath(location.pathname) )
+    setCurrentRoute( RoutesApp.getRouteByPath(location.pathname))
     setLocationError( currentRoute ? false : true )
     setHeaderTitle(currentRoute?.headerTitle)
     setMenuIsLigth(currentRoute?.menuIconLigth ?? false)
-  }, [location, currentRoute])  
+  }, [location, currentRoute])
 
   const handleClickMenu = (value: boolean) => {
     setMenuIsOpen(value)
@@ -36,24 +36,34 @@ const App: React.FunctionComponent = () => {
     document.body.classList.remove('heigth-auto')
   }
 
+
   return (
-    <div data-testid="app" className="react-app">      
-      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentRoute?.params?.theme } />
-      <main className={`${menuIsOpen ? 'scale' : ''}${ currentRoute?.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
-        { locationError === false ?
-          globalRoutes.map(({ path, Component, title }) => (
-            <MyRoute key={path} path={path} >
-              <Component title={title} />
-            </MyRoute>
-          )) :
+    <div data-testid="app" className="react-app"> 
+    { locationError ? ( 
+      <Fragment>      
+        <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={errorRoute.menuIconLigth} headerTitle={errorRoute.headerTitle} theme={ errorRoute.params?.theme } />
+        <main className={`${menuIsOpen ? 'scale' : ''}${ errorRoute.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
           <MyRoute key={errorRoute.path} path={errorRoute.path} >
             <errorRoute.Component title={errorRoute.title} />
-          </MyRoute>
-        }        
-      </main>
-      <SocialSideBar menuIsOpen={menuIsOpen} />     
+          </MyRoute> 
+        </main>
+      </Fragment>    
+    ) : (  
+      <Fragment>    
+      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentRoute?.params?.theme } />
+        <main className={`${menuIsOpen ? 'scale' : ''}${ currentRoute?.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
+          { globalRoutes.map(({ path, Component, title }) => (
+              <MyRoute key={path} path={path} >
+                <Component title={title} />
+              </MyRoute>
+            ))
+          }        
+        </main>
+        <SocialSideBar menuIsOpen={menuIsOpen} />  
+      </Fragment>   
+    )}
     </div>
-  );
+  )
 }
 
 export default App;

@@ -129,5 +129,24 @@ body {
     flex-grow: 0;
     flex-basis: auto;
   }
+
+  .fa-icon {
+    margin-right: 5px!important;
+  }
+  
+  .fa-close-btn {
+    border: 1px solid;
+    height: 14px;
+    width: 14px;
+    padding: 3px;
+    border-radius: 50%;
+    color:$secondary;
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+  
+    &:hover {
+      color: $primary
+    }
+  }
 }
 
