@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import useWindowSize from "../../hooks/useWindowsSize";
-import "./index.scss";
+import "./style.scss";
 
 type SmoothScrollProps = {
   children: JSX.Element,

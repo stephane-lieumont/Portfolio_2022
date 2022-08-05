@@ -6,6 +6,7 @@ import Footer from '../../layout/Footer';
 import { SliderImagesData } from '~/__mock__/data/3d.projects.data';
 
 import './style.scss'
+import Gallery from '~/components/Gallery';
 
 const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const [scrollY, setScrollY] = useState<number>()
@@ -53,6 +54,7 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
           <section className='section portfolio-cgi__projects'>
             <div className='section__content'>
               <h2 className='display1'>Réalisations</h2>
+              <Gallery />
             </div>          
           </section>
           <Footer />      

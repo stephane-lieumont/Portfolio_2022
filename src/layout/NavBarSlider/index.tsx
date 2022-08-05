@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { RouteAppObject } from '../../interfaces/Routes.intf'
 import Colors from '../../sass/themes/colors.module.scss'
 
-import './index.scss';
+import './style.scss';
 
 type NavBarSliderProps = {
   defaultValueOpen?: boolean

@@ -1,11 +1,11 @@
 import { ProjectDevData } from "../../interfaces/Data.intf"
 
-import CTPappMobileImg from '~/assets/medias/case-tes-potes-mobile-2022.jpg'
-import CTPlandingPageImg from '~/assets/medias/case-tes-potes-landingpage-2022.jpg'
-import CTPwebAppImg from '~/assets/medias/case-tes-potes-webapp-2021.jpg'
-import KasaOcImg from '~/assets/medias/oc-kasa-fromation-2021.jpg'
-import Portfolio2018Img from '~/assets/medias/portfolio-3d-2018.jpg'
-import Pixmodels2015Img from '~/assets/medias/pixmodels-2016-service-comminucation.jpg'
+import CTPappMobileImg from '~/assets/medias/projects/case-tes-potes-mobile-2022.jpg'
+import CTPlandingPageImg from '~/assets/medias/projects/case-tes-potes-landingpage-2022.jpg'
+import CTPwebAppImg from '~/assets/medias/projects/case-tes-potes-webapp-2021.jpg'
+import KasaOcImg from '~/assets/medias/projects/oc-kasa-fromation-2021.jpg'
+import Portfolio2018Img from '~/assets/medias/projects/portfolio-3d-2018.jpg'
+import Pixmodels2015Img from '~/assets/medias/projects/pixmodels-2016-service-comminucation.jpg'
 
 
 export const ProjectsDevData: ProjectDevData[] = [

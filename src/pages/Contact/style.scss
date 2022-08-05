@@ -2,8 +2,24 @@
 
 .contact {
   width: 100%;
-  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  form {    
+    flex: 1 0 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    max-width: 370px;
+    min-width: 240px;
+  }
+
   p {
+    margin-top:30px;
     width: 50%;
   }
 
@@ -40,5 +56,10 @@
     font-size: 0.7rem;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .button {
+    margin: 0;
+    margin-top: 10px;
   }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import Colors from '../../sass/themes/colors.module.scss'
 import { ArtstationIcon } from '../../assets/icons/SocialIconsCustom';
-import './index.scss';
+import './style.scss';
 
 type SocialSideBarProps = {
   menuIsOpen?: boolean
