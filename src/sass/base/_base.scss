@@ -58,6 +58,16 @@ body {
       margin-bottom:60px;
       padding: 0 60px;
       overflow: hidden;
+
+      &--fullwidth {
+        width: 100vw;
+        min-width: 100vw;
+        padding-left:0;
+        padding-right: 0;
+        margin-left:0;
+        margin-right: 0;
+        text-align: center;
+      }
     }
   }
 

@@ -3,7 +3,7 @@ import Carousel from '../../components/Carousel';
 import SmoothScroll from '../../components/SmoothScroll';
 import { PageProps } from '../../interfaces/Routes.intf';
 import Footer from '../../layout/Footer';
-import { SliderImagesData } from '~/__mock__/data/3d.projects.data';
+import { PortfolioImagesData, SliderImagesData } from '~/__mock__/data/3d.projects.data';
 
 import './style.scss'
 import Gallery from '~/components/Gallery';
@@ -52,9 +52,9 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
             </div>       
           </section>
           <section className='section portfolio-cgi__projects'>
-            <div className='section__content'>
+            <div className='section__content--fullwidth'>
               <h2 className='display1'>Réalisations</h2>
-              <Gallery />
+              <Gallery portfolioData={ PortfolioImagesData } />
             </div>          
           </section>
           <Footer />      

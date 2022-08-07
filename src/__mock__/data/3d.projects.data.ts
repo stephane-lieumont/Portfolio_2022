@@ -5,7 +5,7 @@ import ImgSlideLego from '~/assets/medias/slider/legos-minions-2015.jpg'
 
 import ImgPortfolio001 from '~/assets/medias/portfolio/1-1-escart-wild-2015.jpg'
 import ImgPortfolio002 from '~/assets/medias/portfolio/2-1-bibopp-2015.jpg'
-import ImgPortfolio003 from '~/assets/medias/portfolio/3-1-pelluche-2015.jpg'
+import ImgPortfolio003 from '~/assets/medias/portfolio/4-1-gorgotte-2015.jpg'
 import ImgPortfolio004 from '~/assets/medias/portfolio/5-1-auto-portrait-pixmodels-2014.jpg'
 import ImgPortfolio005 from '~/assets/medias/portfolio/6-1-immeuble-2015.jpg'
 import ImgPortfolio006 from '~/assets/medias/portfolio/7-1-maison-moderne-2014.jpg'
@@ -21,7 +21,8 @@ import ImgPortfolio015 from '~/assets/medias/portfolio/21-Lego-Minions-2016.jpg'
 import ImgPortfolio016 from '~/assets/medias/portfolio/22-1-Extraterrestre-2016.jpg'
 
 
-import { SliderImageData, PortfolioData, Stack } from '~/interfaces/Data.intf'
+import { SliderImageData, PortfolioData, StackType } from '~/interfaces/Data.intf'
+import { getStack } from '~/utils/stackUtils'
 
 export const SliderImagesData: SliderImageData[] = [
   {
@@ -57,194 +58,209 @@ export const SliderImagesData: SliderImageData[] = [
 export const PortfolioImagesData: PortfolioData[] = [
   {
     id: '001',
-    title: 'TitleImage',
+    title: 'escart wild',
     imgFile: ImgPortfolio001,
     imgFileThumb: ImgPortfolio001,
-    imgAlt: 'alt text',
+    imgAlt: 'escargot cartoon photo-réaliste',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
+      getStack(StackType.zbrush)!,
+      getStack(StackType.photoshop)!,
     ]
   },
   {
     id: '002',
-    title: 'TitleImage',
+    title: 'beebop',
     imgFile: ImgPortfolio002,
     imgFileThumb: ImgPortfolio002,
-    imgAlt: 'alt text',
+    imgAlt: 'robot Beebop',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.substance)!,
+      getStack(StackType.zbrush)!,
+      getStack(StackType.photoshop)!,
     ]
   },
   {
     id: '003',
-    title: 'TitleImage',
+    title: 'gorgotte',
     imgFile: ImgPortfolio003,
     imgFileThumb: ImgPortfolio003,
-    imgAlt: 'alt text',
-    released: new Date('2014-01-01'),
+    imgAlt: 'monstre 3d',
+    released: new Date('2015-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.zbrush)!,
+      getStack(StackType.photoshop)!,
     ]
   },
   {
     id: '004',
-    title: 'TitleImage',
+    title: 'caricature',
     imgFile: ImgPortfolio004,
     imgFileThumb: ImgPortfolio004,
-    imgAlt: 'alt text',
-    released: new Date('2014-01-01'),
+    imgAlt: 'caricature stéphane lieumont',
+    released: new Date('2015-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
+      getStack(StackType.zbrush)!,
+      getStack(StackType.photoshop)!,
     ]
   },
   {
     id: '005',
-    title: 'TitleImage',
+    title: 'immeuble',
     imgFile: ImgPortfolio005,
     imgFileThumb: ImgPortfolio005,
-    imgAlt: 'alt text',
+    imgAlt: 'imeuble photo-réaliste',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
     ]
   },
   {
     id: '006',
-    title: 'TitleImage',
+    title: 'maison moderne',
     imgFile: ImgPortfolio006,
     imgFileThumb: ImgPortfolio006,
-    imgAlt: 'alt text',
-    released: new Date('2014-01-01'),
+    imgAlt: 'maison moderne',
+    released: new Date('2015-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
     ]
   },
   {
     id: '007',
-    title: 'TitleImage',
+    title: 'architecture d\'intérieur salon',
     imgFile: ImgPortfolio007,
     imgFileThumb: ImgPortfolio007,
-    imgAlt: 'alt text',
+    imgAlt: 'architecture d\'intérieur salon',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
     ]
   },
   {
     id: '008',
-    title: 'TitleImage',
+    title: 'architecture d\'intérieur chambre',
     imgFile: ImgPortfolio008,
     imgFileThumb: ImgPortfolio008,
-    imgAlt: 'alt text',
+    imgAlt: 'architecture d\'intérieur chambre',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
     ]
   },
   {
     id: '009',
-    title: 'TitleImage',
+    title: 'architecture d\'intérieur salon',
     imgFile: ImgPortfolio009,
     imgFileThumb: ImgPortfolio009,
-    imgAlt: 'alt text',
+    imgAlt: 'architecture d\'intérieur salon',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
     ]
   },
   {
     id: '010',
-    title: 'TitleImage',
+    title: 'ampoule',
     imgFile: ImgPortfolio010,
     imgFileThumb: ImgPortfolio010,
-    imgAlt: 'alt text',
+    imgAlt: 'ampoule photo-réaliste',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
     ]
   },
   {
     id: '011',
-    title: 'TitleImage',
+    title: 'support marketing',
     imgFile: ImgPortfolio011,
     imgFileThumb: ImgPortfolio011,
-    imgAlt: 'alt text',
-    released: new Date('2014-01-01'),
+    imgAlt: 'canette pixmodels',
+    released: new Date('2015-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
+      getStack(StackType.photoshop)!,
     ]
   },
   {
     id: '012',
-    title: 'TitleImage',
+    title: 'architecture d\'intérieur entrée',
     imgFile: ImgPortfolio012,
     imgFileThumb: ImgPortfolio012,
-    imgAlt: 'alt text',
+    imgAlt: 'architecture d\'intérieur entrée',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
     ]
   },
   {
     id: '013',
-    title: 'TitleImage',
+    title: 'exterieur',
     imgFile: ImgPortfolio013,
     imgFileThumb: ImgPortfolio013,
-    imgAlt: 'alt text',
-    released: new Date('2014-01-01'),
+    imgAlt: 'exterieur photo-réalise',
+    released: new Date('2015-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
+      getStack(StackType.photoshop)!,
     ]
   },
   {
     id: '014',
-    title: 'TitleImage',
+    title: 'tomates',
     imgFile: ImgPortfolio014,
     imgFileThumb: ImgPortfolio014,
-    imgAlt: 'alt text',
+    imgAlt: 'tomates photo-réaliste',
     released: new Date('2014-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
+      getStack(StackType.photoshop)!,
     ]
   },
   {
     id: '015',
-    title: 'TitleImage',
+    title: 'légos : les minions',
     imgFile: ImgPortfolio015,
     imgFileThumb: ImgPortfolio015,
-    imgAlt: 'alt text',
-    released: new Date('2014-01-01'),
+    imgAlt: 'légos : les minions',
+    released: new Date('2015-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
+      getStack(StackType.photoshop)!,
+      getStack(StackType.illustrator)!,
     ]
   },
   {
     id: '016',
-    title: 'TitleImage',
+    title: 'extraterrestre',
     imgFile: ImgPortfolio016,
     imgFileThumb: ImgPortfolio016,
-    imgAlt: 'alt text',
-    released: new Date('2014-01-01'),
+    imgAlt: 'extraterrestre CGI',
+    released: new Date('2016-01-01'),
     stack: [
-      Stack.max,
-      Stack.vray
+      getStack(StackType.max)!,
+      getStack(StackType.vray)!,
+      getStack(StackType.photoshop)!,
+      getStack(StackType.substance)!,
     ]
   }
 ]
+

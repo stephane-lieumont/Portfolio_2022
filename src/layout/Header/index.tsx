@@ -38,7 +38,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuI
   }
 
   return (
-    <header className={`header${ theme === Theme.dark ? ' header--dark' : ' header--ligth' }`} data-testid='layout-header'>
+    <header className={`header${ theme === Theme.dark ? ' header--dark' : ' header--ligth' }${ menuIsOpen || menuHide ? ' header--eventnone' : ''}`} data-testid='layout-header'>
       <div className={`header__main${ menuIsOpen || menuHide ? ' header__main--hidden' : ''}`}>
         <h1>
           <span className='head-title'>

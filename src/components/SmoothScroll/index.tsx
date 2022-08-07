@@ -45,7 +45,7 @@ const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children, of
       setBodyHeight();
       clearTimeout(timer)
     }, 700);    
-  }, [windowSize.height]);
+  }, [windowSize]);
 
   const setBodyHeight = () => {
     if(scrollingContainerRef.current) {

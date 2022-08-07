@@ -23,11 +23,17 @@ export interface PortfolioData {
   imgFileThumb: string,
   imgAlt: string,
   title: string,
-  stack: Stack[]
+  stack: StackItem[]
   released: Date,
 }
 
-export enum Stack {
+export interface StackItem {
+  toString: string,
+  iconClass: string,
+  type: StackType
+}
+
+export enum StackType {
   max,
   vray,
   substance,

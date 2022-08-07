@@ -8,6 +8,14 @@
   padding: 30px 60px;
   z-index: 2;
 
+  &--eventnone {
+    pointer-events: none!important;
+
+    .navbar__button, .navbar__slider {
+      pointer-events: all!important;
+    }
+  }
+
   &--dark {
     color: white;
   }
@@ -20,8 +28,8 @@
     transition: all .3s ease-in-out;
 
     &--hidden {
-      transform: translateY(-10px);
-      opacity: 0;
+      transform: translateY(-50px);
+      opacity: 0;      
     }
       
     h1 {

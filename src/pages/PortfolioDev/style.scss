@@ -29,6 +29,14 @@
   }
 
   &__softskills {  
+    .section__content {
+      margin-top: 0px!important;
+    }   
+
+    h2 {
+      margin-top:0px!important;
+    }
+
     h3 {
       font-size: 1.3rem;
     }
