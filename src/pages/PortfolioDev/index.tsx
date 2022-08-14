@@ -32,21 +32,21 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
           <Background 
             ligthen
             triangleProperties = {{
-              top: '00%',
+              top: `${1 + (scrollYPosition / 90)}%`,
               rigth: '45%',
               rotate: '260deg',
               size: '150px',
               delayAnimation: 0
             }}
             pointsProperties = {{
-              top: '80%',
+              top: `${80 - (scrollYPosition / 60)}%`,
               left: '90%',
               rotate: '145deg',
               size: '300px',
               delayAnimation:150
             }}
             circleProperties = {{
-              top: '85%',
+              top: `${85 - (scrollYPosition / 50)}%`,
               rigth: '90%',
               size: '350px',
               delayAnimation: 300

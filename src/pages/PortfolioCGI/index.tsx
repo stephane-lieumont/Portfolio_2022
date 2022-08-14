@@ -12,7 +12,7 @@ import ImageViewer from '~/components/ImageViewer';
 import Background from '~/components/Background';
 
 const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
-  const [scrollY, setScrollY] = useState<number>()
+  const [scrollYPosition, setScrollYPosition] = useState<number>(0)
   const [imgViewerData, setImageViewerData] = useState<PortfolioData>()
   const [displayImageViewer, setDisplayImageViewer] = useState<boolean>(false)
 
@@ -31,22 +31,22 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
 
   return (
     <Fragment >
-      <SmoothScroll onChanged={(value) => setScrollY(value)}>
+      <SmoothScroll onChanged={(value) => setScrollYPosition(value)}>
         <Fragment>
-          <Carousel slides={SliderImagesData} parralaxScrollY={scrollY} /> 
+          <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} /> 
           <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'> 
             <Background
                 darken
                 triangle={false}
                 pointsProperties = {{
-                  top: '10%',
+                  top: `${10 + (scrollYPosition / 90)}%`,
                   left: '90%',
                   rotate: '145deg',
                   size: '300px',
                   delayAnimation:150
                 }}
                 circleProperties = {{
-                  top: '15%',
+                  top: `${20 - (scrollYPosition / 70)}%`,
                   rigth: '90%',
                   size: '350px',
                   delayAnimation: 300

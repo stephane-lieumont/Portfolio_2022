@@ -62,10 +62,11 @@
     }
 
     &__item {
+      position:relative;
       flex: 1 0 31%;
       max-width: 31%;
       margin-bottom: 30px;
-      min-width: 280px;
+      min-width: 280px; 
     }
   }
 }
