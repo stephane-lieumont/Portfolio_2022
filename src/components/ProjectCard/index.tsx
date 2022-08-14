@@ -6,17 +6,18 @@ import './style.scss'
 
 export type ProjectCardProps = {
   projectData: ProjectDevData
+  className?:string
 }
 
-const ProjectCard: React.FunctionComponent<ProjectCardProps> = ({ projectData }) => {
+const ProjectCard: React.FunctionComponent<ProjectCardProps> = ({ projectData, className }) => {
 
   const handleClickDemo = (e: MouseEvent<HTMLButtonElement>) => {
 
   }
 
   return (
-    <div className='project-card-container' data-testid='project-card'>
-      <div className='project-card'>
+    <div className={`project-card-container ${className}`} data-testid='project-card'>
+      <div className={`project-card`}>
         <div className='project-card__picture'>
           <img width={400} src={projectData.imgFile} alt={projectData.imgAlt} />
         </div>

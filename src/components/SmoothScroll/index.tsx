@@ -30,7 +30,7 @@ const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children, of
         scrollingContainerRef.current.style.transform = `translateY(-${params.rounded }px)` :
         scrollingContainerRef.current.style.transform = `translateY(0px)`
       }
-
+      
       onChanged(params.rounded)  
       requestAnimationFrame(() => smoothScrollingHandler());
     };

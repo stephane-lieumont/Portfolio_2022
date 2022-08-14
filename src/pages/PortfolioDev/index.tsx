@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import SmoothScroll from '../../components/SmoothScroll';
 import { PageProps } from '../../interfaces/Routes.intf';
 import Footer from '../../layout/Footer';
@@ -7,15 +7,26 @@ import { ProjectsDevData } from '../../__mock__/data/dev.projects.data';
 import './style.scss'
 import ProjectCard from '../../components/ProjectCard';
 import Background from '~/components/Background';
+import useWindowSize from '~/hooks/useWindowsSize';
 
-const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
- 
+const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+  const [scrollYPosition, setScrollPosition] = useState<number>(0)
+  const [appearSectionProjects, setAppearSectionProjects] = useState(false)
+  const sectionProject = useRef<HTMLDivElement>(null)
+  const windowSize = useWindowSize();
+
   useEffect(() => {
     document.title = title
   })
 
+  useEffect(() => {
+    const offsetApear = windowSize.height * 0.6;
+    const appearSection = scrollYPosition >= sectionProject.current!.offsetTop - windowSize.height + offsetApear
+    setAppearSectionProjects(appearSection)
+  }, [scrollYPosition, windowSize])
+
   return (
-    <SmoothScroll offset>
+    <SmoothScroll offset onChanged={(value) => setScrollPosition(value)}>
       <div className='page portfolio-dev' data-testid='page-portfolio-dev'>
         <div className="section__group">
           <Background 
@@ -92,13 +103,13 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
             </div>
           </section>
         </div>        
-        <section className='section portfolio-dev__projects'>
+        <section ref={sectionProject} className='section portfolio-dev__projects'>
           <div className='section__content'>
             <h2 className='display1'>Réalisations</h2>
             <ul className="portfolio-dev__projects__list">
-              {ProjectsDevData.map( (project) => (
+              {ProjectsDevData.map( (project, index) => (
                 <li key={`project${project.id}`} className="portfolio-dev__projects__item">
-                  <ProjectCard projectData={project} />
+                  <ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} />
                 </li>
               ))}
              </ul>
