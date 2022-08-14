@@ -21,16 +21,24 @@
       left: 0;      
       width: 100%;
       height: 100%;
-      background-color: transparent;
+      background-color: rgba($grey-shade100, 0.2)!important;;
       border-radius: 50%;
       box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 16px;
       opacity: 0;
       transition: opacity .3s ease-in-out;
+      z-index: -1;
     }
     
     &:hover {
       &::before {
         opacity: 1;
+      }
+
+      .navbar__button__burger {
+        background: $primary!important;
+        &::before, &::after {
+          background: $primary!important;
+        }
       }
     }
   
@@ -67,6 +75,15 @@
           background: #fff!important;
         }
       }
+
+      &:hover {
+        .navbar__button__burger {
+          background: #fff!important;
+          &::before, &::after {
+            background: #fff!important;
+          }
+        }
+      }
     }
   
     &.open {
@@ -84,7 +101,7 @@
         &::before, &::after {
           background: $primary!important
         } 
-      }       
+      }
     }
   
     &.open.navbar__button--animated {

@@ -28,8 +28,6 @@ const Home: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
     document.body.style.height = `${ currentPage.current?.getBoundingClientRect().height }px`
   }, [windowSize.height]);
 
-
-
   return (
     <div ref={currentPage} className='homepage' data-testid='page-home'>      
       <div className='homepage__blockquote'>

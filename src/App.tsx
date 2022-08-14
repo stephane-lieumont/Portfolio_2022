@@ -59,7 +59,7 @@ const App: React.FunctionComponent = () => {
             ))
           }        
         </main>
-        <SocialSideBar menuIsOpen={menuIsOpen} />  
+        <SocialSideBar menuIsOpen={menuIsOpen} ligthen={currentRoute?.params?.theme === Theme.dark} />  
       </Fragment>   
     )}    
     </div>

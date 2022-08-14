@@ -12,9 +12,16 @@
   background-color: $primary;
   color: white;
   padding: 7px 30px;
-  border-radius: 20px;
+  border-radius: 17px;
+  transition: all 0.2s ease-in-out;
 
   cursor: pointer;
+
+  &:hover {
+    color: $primary;
+    background-color: rgba($orange-shade300, 0.9);
+    box-shadow:inset 0px 0px 0px 0px transparent
+  }
 
   &--outlined {
     box-shadow:inset 0px 0px 0px 2px $primary;
@@ -26,5 +33,11 @@
   &--white {
     box-shadow:inset 0px 0px 0px 2px white;
     color: white;
+
+    &:hover {
+      color: white;
+      background-color: rgba($orange-shade300, 0.5);
+      box-shadow:inset 0px 0px 0px 2px $orange-shade300;
+    }
   }
 }

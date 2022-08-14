@@ -16,12 +16,13 @@
     gap: 10px;
 
     li {
-      opacity: 0.5;
-      transition: opacity .15s ease-in-out;
-
+      opacity: 0.2;
+      transition: all .17s ease-in-out;
+      
       &:hover {
         opacity: 1;
+        transform: scale(1.1);
       }
     }
-  }  
+  }
 }
