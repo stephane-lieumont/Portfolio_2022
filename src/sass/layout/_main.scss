@@ -1,4 +1,4 @@
-main {
+main {  
   transition: transform 0.45s ease-in-out;
   height: 100vh;
   width: 100%;
@@ -25,6 +25,7 @@ main {
   }
 
  .page {
+    position: relative;
     width: 100%;    
     display: flex;
     flex-direction: column;

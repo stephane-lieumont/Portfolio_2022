@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   pointer-events: none;
+  z-index: 1;
 
   &__child {    
     flex-grow: 1;

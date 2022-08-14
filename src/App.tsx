@@ -61,7 +61,7 @@ const App: React.FunctionComponent = () => {
         </main>
         <SocialSideBar menuIsOpen={menuIsOpen} />  
       </Fragment>   
-    )}
+    )}    
     </div>
   )
 }

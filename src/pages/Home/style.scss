@@ -23,6 +23,7 @@
   }
 
   &__rigthside, &__leftside {
+    position: relative;
     flex: 1 0 50%;
     display: flex;
     flex-direction: column;
