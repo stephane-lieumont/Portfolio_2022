@@ -58,6 +58,10 @@
     &--primary500 {
       fill: $orange-shade400;
     }
+
+    &--grey {
+      fill: $grey-shade100;
+    }
   }
 
   .stroke {
@@ -78,7 +82,11 @@
       stroke: $orange-shade400;
     }
     &--primary500 {
-      fill: $orange-shade400;
+      stroke: $orange-shade400;
+    }
+
+    &--grey {
+      stroke: $grey-shade100;
     }
   }
 }

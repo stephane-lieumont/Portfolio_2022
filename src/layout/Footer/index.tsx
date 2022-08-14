@@ -7,7 +7,23 @@ const Footer: React.FunctionComponent = () => {
 
   return (
     <footer className="footer" data-testid='layout-footer'>
-      <Background points={false} darken />
+      <Background 
+        points={false} 
+        darken
+        triangleProperties = {{
+          top: '30%',
+          left: '70%',
+          rotate: '210deg',
+          size: '130px',
+          delayAnimation: 0
+        }}
+        circleProperties = {{
+          top: '60%',
+          rigth: '63%',
+          size: '250px',
+          delayAnimation: 300
+        }}
+      />
       <p>Designed & Developed on ReactJs ©{currentYear} by <span>Stéphane Lieumont</span></p>
     </footer>
   );

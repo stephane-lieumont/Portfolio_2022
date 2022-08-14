@@ -54,7 +54,7 @@
         cursor: pointer;
 
         .text--primary {         
-          background: linear-gradient(65deg, $orange-shade300, $orange-shade200);
+          background: $primary;
           background-clip: text;
           -webkit-background-clip: text; 
           color: transparent;

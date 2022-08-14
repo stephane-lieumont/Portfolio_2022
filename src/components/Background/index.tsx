@@ -69,7 +69,7 @@ const Background: FunctionComponent<BackgroundProps> = ({
             }}
           >
             <TriangleSVG 
-              className={`${ darken ? ' fill--primary300' : ligthen ? ' fill--primary500' : ' fill--primary100' }`}
+              className={`${ darken ? ' fill--grey' : ligthen ? ' fill--primary400' : ' fill--primary100' }`}
               style= {{ 
                 width: triangleProperties.size,
                 height: triangleProperties.size,
@@ -90,7 +90,7 @@ const Background: FunctionComponent<BackgroundProps> = ({
             }}
           >
             <ReapeatPointsSVG 
-              className={`${ darken ? ' fill--primary300' : ligthen ? 'fill--primary500' : 'fill--primary100'}`} 
+              className={`${ darken ? ' fill--grey' : ligthen ? 'fill--primary400' : 'fill--primary100'}`} 
               style= {{
                 transform: `rotate(${pointsProperties.rotate})`,
                 width: pointsProperties.size,
@@ -111,7 +111,7 @@ const Background: FunctionComponent<BackgroundProps> = ({
             }}
           >
             <CircleDoubleSVG 
-              className={`${ darken ? ' stroke--primary200' : ligthen ? 'stroke--primary300' : 'stroke--primary100'}`}
+              className={`${ darken ? ' stroke--grey' : ligthen ? 'stroke--primary400' : 'stroke--primary100'}`}
               style= {{
                 transform: `rotate(${circleProperties.rotate})`,
                 width: circleProperties.size,

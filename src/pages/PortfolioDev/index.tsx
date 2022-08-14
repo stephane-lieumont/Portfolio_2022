@@ -18,7 +18,29 @@ const PortfolioDev: React.FunctionComponent<PageProps> = ({title = 'titre de la 
     <SmoothScroll offset>
       <div className='page portfolio-dev' data-testid='page-portfolio-dev'>
         <div className="section__group">
-          <Background />   
+          <Background 
+            ligthen
+            triangleProperties = {{
+              top: '00%',
+              rigth: '45%',
+              rotate: '260deg',
+              size: '150px',
+              delayAnimation: 0
+            }}
+            pointsProperties = {{
+              top: '80%',
+              left: '90%',
+              rotate: '145deg',
+              size: '300px',
+              delayAnimation:150
+            }}
+            circleProperties = {{
+              top: '85%',
+              rigth: '90%',
+              size: '350px',
+              delayAnimation: 300
+            }}
+          />   
           <section className='section portfolio-dev__specialities'>          
             <div className='section__content'>            
               <h2 className='display1'>Spécialités</h2>
