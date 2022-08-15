@@ -5,6 +5,7 @@
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+  max-width: 300px;
 
   &--textarea {
     height: 100%;
@@ -21,7 +22,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: rgba($color: white, $alpha: 0.8);
     border-radius: 5px;
     pointer-events: none;
   }
@@ -46,7 +47,7 @@
     flex-direction: row; 
     align-items: center;   
     border: none;    
-    border: 1px  solid $grey-shade400;
+    border: 2px  solid $grey-shade400;
     border-radius: 5px;
     width: 100%;
 

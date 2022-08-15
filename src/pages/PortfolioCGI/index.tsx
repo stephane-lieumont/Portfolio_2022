@@ -1,25 +1,52 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import Carousel from '../../components/Carousel';
 import SmoothScroll from '../../components/SmoothScroll';
 import { PageProps } from '../../interfaces/Routes.intf';
 import Footer from '../../layout/Footer';
-import { PortfolioImagesData, SliderImagesData } from '~/__mock__/data/3d.projects.data';
+import { PortfolioImagesData, SliderImagesData, SpecialitiesCgiData } from '~/__mock__/data/3d.projects.data';
 
 import './style.scss'
 import Gallery from '~/components/Gallery';
-import { PortfolioData } from '~/interfaces/Data.intf';
+import { PortfolioData, SpecialityData } from '~/interfaces/Data.intf';
 import ImageViewer from '~/components/ImageViewer';
 import Background from '~/components/Background';
+import { firstLetterUpper } from '~/utils/formatString';
+import useWindowSize from '~/hooks/useWindowsSize';
 
 const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+  const specialities: SpecialityData[] = SpecialitiesCgiData
+
   const [scrollYPosition, setScrollYPosition] = useState<number>(0)
   const [imgViewerData, setImageViewerData] = useState<PortfolioData>()
+  const [appearSectionSpecialities, setAppearSectionSpecialities] = useState<boolean>()
+  const [appearSectionPortfolio, setAppearSectionPortfolio] = useState<boolean>()
   const [displayImageViewer, setDisplayImageViewer] = useState<boolean>(false)
+  const [contentLoaded, setContentLoaded] = useState<boolean>(false)
+
+  const sectionSpecialities = useRef<HTMLDivElement>(null)
+  const sectionPortfolio = useRef<HTMLDivElement>(null)
+
+  const windowSize = useWindowSize();  
 
   useEffect(() => {
     document.title = title
+
+    setTimeout(() => {
+      setContentLoaded(true)
+    }, 500);
   })
 
+  useEffect(() => {
+    const offsetApear = windowSize.height * 0.6;
+
+    const revealSectionSpecialities = scrollYPosition >= sectionSpecialities.current!.offsetTop + 300
+    const revealSectionPortfolio = scrollYPosition >= sectionPortfolio.current!.offsetTop + windowSize.height - offsetApear
+
+    if(!appearSectionSpecialities) setAppearSectionSpecialities(revealSectionSpecialities)
+    if(!appearSectionPortfolio) setAppearSectionPortfolio(revealSectionPortfolio)
+
+  }, [appearSectionSpecialities, appearSectionPortfolio, scrollYPosition, windowSize])
+ 
   const handleImageViewerOnClose = () => {
     setDisplayImageViewer(false)
   }
@@ -52,41 +79,23 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
                   delayAnimation: 300
                 }}
               /> 
-              <section className='section portfolio-cgi__specialities'>          
+              <section ref={sectionSpecialities} className='section portfolio-cgi__specialities'>          
                 <div className='section__content'>            
-                  <h2 className='display1'>Spécialités</h2>
-                  <ul>
-                    <li>
-                      <img height={90} src={require('../../assets/icons/zbrush.png')} alt="Vue js framework javascript"/>
-                      <p>Zbrush</p>
-                    </li>
-                    <li>
-                      <img height={90} src={require('../../assets/icons/3dsmax.png')} alt="Vue js framework javascript"/>
-                      <p>3DSmax</p>
-                    </li>
-                    <li>
-                      <img height={90} src={require('../../assets/icons/vray.png')} alt="Vue js framework javascript"/>
-                      <p>Vray</p>
-                    </li>
-                    <li>
-                      <img height={90} src={require('../../assets/icons/substance-painter.png')} alt="Vue js framework javascript"/>
-                      <p>Substance</p>
-                    </li>
-                    <li>
-                      <img height={90} src={require('../../assets/icons/photoshop.png')} alt="Vue js framework javascript"/>
-                      <p>Photoshop</p>
-                    </li>
-                    <li>
-                      <img height={90} src={require('../../assets/icons/illustrator.png')} alt="Vue js framework javascript"/>
-                      <p>Illustrator</p>
-                    </li>         
+                  <h2 className={`display1 reveal${ appearSectionSpecialities && contentLoaded ? ' reveal--0' : '' }`}>Spécialités</h2>
+                  <ul className='specialities'>
+                    { specialities.map((speciality, index) => (
+                     <li key={`speciality-${index}`} className={`specialities__item${ appearSectionSpecialities && contentLoaded ? ` specialities__item__reveal--${index}` : ''}`}>
+                        <img height={speciality.size} src={speciality.src} alt={speciality.alt} />
+                        <p>{ firstLetterUpper(speciality.name) }</p>
+                      </li>
+                    ))}
                   </ul>
                 </div>       
               </section>
-              <section className='section portfolio-cgi__projects'>
+              <section ref={sectionPortfolio} className='section portfolio-cgi__projects'>
                 <div className='section__content--fullwidth'>
-                  <h2 className='display1'>Réalisations</h2>
-                  <Gallery portfolioData={ PortfolioImagesData } onClick={ (imageData) => handleGalleryImageOnClick(imageData) } />
+                  <h2 className={`display1 reveal${ appearSectionPortfolio && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
+                  <Gallery portfolioData={ PortfolioImagesData } onClick={ (imageData) => handleGalleryImageOnClick(imageData) } />          
                 </div>          
               </section>
               <Footer />      

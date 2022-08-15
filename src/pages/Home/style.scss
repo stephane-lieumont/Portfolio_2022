@@ -8,6 +8,7 @@
   flex-direction: row;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   z-index: 1;
 
   &__blockquote {
@@ -27,7 +28,7 @@
     flex: 1 0 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;    
   }
 
   &__rigthside {    
@@ -37,6 +38,8 @@
     justify-content: flex-start;
     background: $primary;
     overflow: hidden;
+    transition: opacity .45s ease-in;
+    opacity: 1;
 
     &__demo-real {
       width: 100%;
@@ -50,6 +53,10 @@
       position: absolute;
       left: 0;
       bottom: 0;
+      transform: translateX(0);
+      opacity: 1;
+
+      transition: all 1s cubic-bezier(0,.43,.16,1);
     }
   }
 
@@ -58,6 +65,7 @@
     justify-content: center;
     align-items: center;
     padding: 30px 60px;
+    transition: flex-basis .45s cubic-bezier(0,.43,.16,1);
 
     &__content {
       max-width: 700px;
@@ -72,6 +80,23 @@
         display: flex;
         justify-content: flex-start;
         gap:20px;
+      }
+    }
+  }
+
+  &--loading {
+    .homepage {
+      &__leftside {
+        flex-basis:100%!important;
+      }
+
+      &__rigthside {
+        opacity: 0;
+
+        img {
+          transform: translateX(500px);
+          opacity: 0;
+        }
       }
     }
   }

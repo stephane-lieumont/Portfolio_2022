@@ -27,6 +27,13 @@ export interface PortfolioData {
   released: Date,
 }
 
+export type SpecialityData = {
+  name: string,
+  src: string,
+  alt: string,
+  size: number
+}
+
 export interface StackItem {
   toString: string,
   iconClass: string,

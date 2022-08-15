@@ -1,4 +1,4 @@
-import { ProjectDevData } from "../../interfaces/Data.intf"
+import { ProjectDevData, SpecialityData } from "../../interfaces/Data.intf"
 
 import CTPappMobileImg from '~/assets/medias/projects/case-tes-potes-mobile-2022.jpg'
 import CTPlandingPageImg from '~/assets/medias/projects/case-tes-potes-landingpage-2022.jpg'
@@ -96,3 +96,41 @@ export const ProjectsDevData: ProjectDevData[] = [
   }
 ]
 
+export const SpecialitiesDevData: SpecialityData[] = [
+  {
+    name: 'vue.js',
+    src: require('../../assets/icons/vue.png'),
+    alt: 'vue js framework javascript',
+    size: 100,
+  },
+  {
+    name: 'react.js',
+    src: require('../../assets/icons/react.png'),
+    alt: 'react js framework javascript',
+    size: 100,
+  },
+  {
+    name: 'flutter',
+    src: require('../../assets/icons/flutter.png'),
+    alt: 'flutter application mobiles',
+    size: 100,
+  },
+  {
+    name: 'webpack',
+    src: require('../../assets/icons/webpack.png'),
+    alt: 'webpack framework javascript',
+    size: 100,
+  },
+  {
+    name: 'sass',
+    src: require('../../assets/icons/sass.png'),
+    alt: 'sass framework css',
+    size: 100,
+  },
+  {
+    name: 'node.js',
+    src: require('../../assets/icons/node.png'),
+    alt: 'node plateforme logicielle libre javascript',
+    size: 100,
+  },
+]

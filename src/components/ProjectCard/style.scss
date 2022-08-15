@@ -13,27 +13,6 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   overflow: hidden;
 
-  &::after {
-    position: absolute;
-    top:0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    content: '';
-    background-color: rgba($color: #ffffff, $alpha: 0.2);
-    opacity: 0;
-    pointer-events: none;
-    transition: all .15s ease-in-out;
-  }
-
-  &:hover {
-    &::after {
-      opacity: 1;
-      border-radius: 10px;
-      box-shadow:inset 0px 0px 5px rgba($primary, 0.4);
-    }
-  }
-
   &__reveal {
     @for $i from 0 through 50 {
       &--#{$i} {

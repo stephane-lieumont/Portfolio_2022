@@ -15,7 +15,13 @@ main {
     color: white;
 
     h2 {
-      background-image: url('../../assets/icons/triangle002-primary.svg');
+      background-image: url('../../assets/icons/triangle002-primary.svg')!important;
+    }
+
+    .specialities {
+      p {
+        color:white!important;
+      }
     }
   }
 

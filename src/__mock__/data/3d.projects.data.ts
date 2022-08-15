@@ -21,7 +21,7 @@ import ImgPortfolio015 from '~/assets/medias/portfolio/21-Lego-Minions-2016.jpg'
 import ImgPortfolio016 from '~/assets/medias/portfolio/22-1-Extraterrestre-2016.jpg'
 
 
-import { SliderImageData, PortfolioData, StackType } from '~/interfaces/Data.intf'
+import { SliderImageData, PortfolioData, StackType, SpecialityData } from '~/interfaces/Data.intf'
 import { getStack } from '~/utils/stackUtils'
 
 export const SliderImagesData: SliderImageData[] = [
@@ -261,6 +261,45 @@ export const PortfolioImagesData: PortfolioData[] = [
       getStack(StackType.photoshop)!,
       getStack(StackType.substance)!,
     ]
+  }
+]
+
+export const SpecialitiesCgiData: SpecialityData[] = [
+  {
+    name: 'zbrush',
+    src: require('../../assets/icons/zbrush.png'),
+    alt: 'zbrush, modélisation organique sculpture 3d',
+    size: 90,
+  },
+  {
+    name: '3dsmax',
+    src: require('../../assets/icons/3dsmax.png'),
+    alt: '3dsmax, logiciel de production 3d',
+    size: 90,
+  },
+  {
+    name: 'vray',
+    src: require('../../assets/icons/vray.png'),
+    alt: 'moteur de rendu 3d',
+    size: 90,
+  },
+  {
+    name: 'substance',
+    src: require('../../assets/icons/substance-painter.png'),
+    alt: 'substance, outil de création de shaders 3d',
+    size: 90,
+  },
+  {
+    name: 'photoshop',
+    src: require('../../assets/icons/photoshop.png'),
+    alt: 'photoshop, outil de retouches photos',
+    size: 90,
+  },
+  {
+    name: 'illustrator',
+    src: require('../../assets/icons/illustrator.png'),
+    alt: 'illustrator, outil de créations 2d vectorielles',
+    size: 90,
   }
 ]
 
