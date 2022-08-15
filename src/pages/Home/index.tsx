@@ -56,9 +56,9 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
             }}
             pointsProperties = {{
               top: '80%',
-              left: '80%',
+              left: '70%',
               rotate: '145deg',
-              size: '300px',
+              size: '400px',
               delayAnimation:150
             }}
             circleProperties = {{

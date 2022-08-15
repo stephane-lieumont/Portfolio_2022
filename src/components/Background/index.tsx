@@ -2,7 +2,7 @@ import { Fragment, FunctionComponent } from 'react';
 
 import { ReactComponent as TriangleSVG } from '../../assets/background/triangle.svg'
 import { ReactComponent as CircleDoubleSVG } from '../../assets/background/double-circle.svg'
-import { ReactComponent as ReapeatPointsSVG } from '../../assets/background/repeat-points.svg'
+import { ReactComponent as ReapeatPointsSVG } from '../../assets/background/repeat-points-2.svg'
 
 import './style.scss';
 
