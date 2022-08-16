@@ -1,0 +1,14 @@
+@import './colors';
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+  orange-shade100: $orange-shade100;
+  orange-shade200: $orange-shade200;
+  orange-shade300: $orange-shade300;
+  orange-shade400: $orange-shade400;
+
+  grey: $grey;
+  grey-shade100: $grey-shade100;
+  grey-shade200: $grey-shade200;
+}

@@ -1,0 +1,27 @@
+.smoothscroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  z-index: 1;
+
+  &__child {    
+    flex-grow: 1;
+    .page {
+      min-height: 100vh;
+    }    
+
+    &--offset {
+      padding-top: 160px;
+      .page {
+        min-height: calc(100vh - 160px);
+      }      
+    }
+  }
+}

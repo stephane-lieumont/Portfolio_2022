@@ -1,0 +1,28 @@
+.social-sidebar {
+  position: fixed;
+  bottom:160px;
+  right:60px;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  ul {
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      opacity: 0.2;
+      transition: all .17s ease-in-out;
+      
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

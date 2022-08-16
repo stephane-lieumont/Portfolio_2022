@@ -1,0 +1,53 @@
+@import './../../sass/themes/colors';
+
+.error-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+  &__leftside {
+    flex: 1 0 50%;
+    height: 100vh;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+      width: 70%;
+      max-width: 400px;
+    }
+  }
+
+  &__rigthside {
+    flex: 1 0 50%;
+    background: $primary;
+    color:white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 2vw;
+      line-height: 2.8vw;
+      font-weight: 400;
+
+      .not-found {
+        color: $orange-shade100;
+        font-size: 10vw;
+        line-height: 12vw;
+      }
+
+      span {
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

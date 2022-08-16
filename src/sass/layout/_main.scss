@@ -1,0 +1,43 @@
+main {  
+  transition: transform 0.45s ease-in-out;
+  height: 100vh;
+  width: 100%;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  background-color: white;
+  overflow: hidden;
+
+  &.scale {
+    transform: scale(0.9);
+  }
+
+  &.theme-dark {
+    background-color: $grey;
+    color: white;
+
+    h2 {
+      background-image: url('../../assets/icons/triangle002-primary.svg')!important;
+    }
+
+    .specialities {
+      p {
+        color:white!important;
+      }
+    }
+  }
+
+  &.theme-ligth {
+    background-color: white;
+    color: $secondary;
+  }
+
+ .page {
+    position: relative;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: all;
+  }
+}
+

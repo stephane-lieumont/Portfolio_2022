@@ -1,0 +1,51 @@
+@import '../../sass/themes/colors';
+
+.portfolio-dev {
+  background-color: white; 
+
+  &__softskills {  
+    .section__content {
+      margin-top: 0px!important;
+    }   
+
+    h2 {
+      margin-top:0px!important;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+    img {
+      max-width: 500px;
+      min-width: 400px;
+    }
+  }
+
+  &__projects {
+    background-color: $grey-shade500;
+
+    &__list {
+      align-self: flex-start!important;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3%;
+      padding: 20px;
+      width: 100%;
+    }
+
+    &__item {
+      position:relative;
+      flex: 1 0 31%;
+      max-width: 31%;
+      margin-bottom: 30px;
+      min-width: 280px;
+      transition: all .15s ease-in-out;
+
+      &:hover {
+        transform: translateY(-20px) scale(1.05);
+      }
+    }
+  }
+}
