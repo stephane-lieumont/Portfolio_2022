@@ -1,6 +1,9 @@
 @import './abstract/variables';
-@import './base/reset';
-
 @import './themes/colors';
+@import './themes/icons';
 
+@import './base/reset';
 @import './base/base';
+
+
+@import './layout/main';

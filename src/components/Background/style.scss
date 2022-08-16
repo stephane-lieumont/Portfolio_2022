@@ -1,0 +1,92 @@
+@import '../../sass/themes/colors';
+
+.background-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  .triangle, .repeat-point, .circle-double {
+    position: absolute;
+    animation-name: svg-appear;
+    animation-duration: 650ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+
+  @keyframes svg-appear {
+    0% {
+      opacity: 0;
+      transform: rotate(0deg) scale(0);
+    }
+
+    50% {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    70% {
+      transform: rotate(-10deg) scale(0.9);
+    }
+
+    100% {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+  }
+
+  .fill {
+    &--primary {
+      fill: $primary;
+    }
+
+    &--primary100 {
+      fill: $orange-shade100;
+    }
+    &--primary200 {
+      fill: $orange-shade200;
+    }
+    &--primary300 {
+      fill: $orange-shade300;
+    }
+    &--primary400 {
+      fill: $orange-shade400;
+    }
+    &--primary500 {
+      fill: $orange-shade400;
+    }
+
+    &--grey {
+      fill: $grey-shade100;
+    }
+  }
+
+  .stroke {
+    &--primary {
+      stroke: $primary;
+    }
+
+    &--primary100 {
+      stroke: $orange-shade100;
+    }
+    &--primary200 {
+      stroke: $orange-shade200;
+    }
+    &--primary300 {
+      stroke: $orange-shade300;
+    }
+    &--primary400 {
+      stroke: $orange-shade400;
+    }
+    &--primary500 {
+      stroke: $orange-shade400;
+    }
+
+    &--grey {
+      stroke: $grey-shade100;
+    }
+  }
+}

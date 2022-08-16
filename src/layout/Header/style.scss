@@ -1,0 +1,113 @@
+@import '../../sass/themes/colors';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 60px;
+  z-index: 2;
+
+  &--eventnone {
+    pointer-events: none!important;
+
+    .navbar__button, .navbar__slider {
+      pointer-events: all!important;
+    }
+  }
+
+  &--dark {
+    color: white;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    justify-content: space-between;
+    transition: all .3s ease-in-out;
+
+    .navigation {
+      opacity: 1;
+      transition: all .3s ease-in-out .5s;
+    }
+
+    &--hidden {
+      transform: translateY(-50px);
+      opacity: 0;
+
+      .navigation {
+        opacity: 0;
+      }
+    }
+      
+    h1 {
+      flex: 1 0 50%;
+
+      .head-title {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 2rem;
+
+        &__append {
+          display: inline-block;
+          opacity: 0;
+          animation: title-append .25s ease-out both 0.3s;         
+        }
+      }
+  
+      .head-subtitle {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        cursor: pointer;
+
+        .text--primary {         
+          background: $primary;
+          background-clip: text;
+          -webkit-background-clip: text; 
+          color: transparent;
+        }
+      }
+  
+      display: flex;
+      flex-direction: column;
+    } 
+  
+    .navigation {
+      flex: 1 0 50%;
+      max-width: 50%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 60px;
+
+      &__buttons {
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: nowrap;      
+        align-items: center;
+        gap: 30px;
+      }
+    }
+  }
+}
+
+@keyframes title-append {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  60% {
+    opacity: .3;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

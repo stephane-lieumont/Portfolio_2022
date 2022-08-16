@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'icons';
+  src: local('icons'), url('../../assets/fonts/icons.woff') format('woff');
+}
+
+.icon-custom {
+  display:block;
+  font-size:2em;
+  padding:3px;
+
+  &__list {
+    text-align: center;
+  }
+
+  &__container {    
+    font-family: 'icons'!important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align:middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &--cv::before {    
+    content: "\e912";
+  }
+  &--portfolio::before {
+    content: "\e910";
+  }
+  &--about::before {
+    content: "\e911";
+  }
+  &--moveDown::before {
+    content: "\e90e";
+  }
+  &--mail::before {
+    content: "\e90f";
+  }
+  &--photoshop::before {
+    content: "\e902";
+  }
+  &--premiere::before {
+    content: "\e905";
+  }
+  &--aftereffect::before {
+    content: "\e906";
+  }
+  &--illustrator::before {
+    content: "\e901";
+  }
+  &--substance-designer::before {
+    content: "\e907";
+  }
+
+  &--substance-painter::before {
+    content: "\e908";
+  }
+  &--zbrush::before {
+    content: "\e904";
+  }
+  &--3dsmax::before {
+    content: "\e900";
+  }
+  &--vray::before {
+    content: "\e903";
+  }
+  &--corona::before {
+    content: "\e909";
+  }
+  &--artStation::before {
+    content: "\e90a";
+  }
+  &--linkedin::before {
+    content: "\e90b";
+  }
+  &--twitter::before {
+    content: "\e90c";
+  }
+  &--facebook::before {
+    content: "\e90d";
+  }
+
+}
+
+.icon-CV:before {content: "\e912";}
+.icon-Portfolio:before {content: "\e910";}
+.icon-About:before {content: "\e911";}
+.icon-MoveDown:before {content: "\e90e";}
+.icon-Mail:before {content: "\e90f";}
+.icon-Photoshop:before {content: "\e902";}
+.icon-Premiere:before {content: "\e905";}
+.icon-AfterEffect:before {content: "\e906";}
+.icon-Illustrator:before {content: "\e901";}
+.icon-Substance-Designer:before {content: "\e907";}
+.icon-Substance-Painter:before {content: "\e908";}
+.icon-Zbrush:before {content: "\e904";}
+.icon-3DSmax:before {content: "\e900";}
+.icon-Vray:before {content: "\e903";}
+.icon-Corona:before {content: "\e909";}
+.icon-ArtStation:before {content: "\e90a";}
+.icon-Linkedin:before {content: "\e90b";}
+.icon-Twitter:before {content: "\e90c";}
+.icon-Facebook:before {content: "\e90d";}

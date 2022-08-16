@@ -1,0 +1,120 @@
+@import '../../sass/themes/colors';
+
+.project-card-container {
+  display: block;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-property: all;
+  transition-duration: 0.45s;
+  transition-timing-function: ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  overflow: hidden;
+
+  &__reveal {
+    @for $i from 0 through 50 {
+      &--#{$i} {
+        opacity: 1;
+        transform: translateY(0px);
+        transition-delay: 0.15s * $i;
+      }
+    }
+  }
+}
+
+.project-card {
+  position: relative;
+  height: 100%;
+  width: 100%;   
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+
+    .project-card {
+      &__content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+
+  &__picture {
+    flex-grow: 1;
+    width: 100%;
+    background: $grey-shade400;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top:0;
+    left:0;
+    content:'';
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 15%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+    padding:20px;
+    padding-top: 20%;
+    transition: all .15s ease-in-out;
+    opacity: 0;
+    transform: translateY(50%);
+    z-index: 2;
+
+    &__hashtags {
+      display: flex;
+      flex-wrap: wrap;      
+      color:$orange-shade200;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      gap: 10px!important;
+
+      li::before {
+        content: '#';
+      }
+    }
+
+    &__title {
+      color: white!important;
+      margin-bottom: 5px!important;
+      width: 100%;
+
+      span {
+        margin-left: 5px;
+        font-size: 0.8rem;
+        color: $grey-shade100;
+        opacity: 0.5;
+      }
+    }
+  }
+}

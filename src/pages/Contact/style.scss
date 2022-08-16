@@ -1,0 +1,65 @@
+@import '../../sass/themes/colors';
+
+.contact {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  form {    
+    flex: 1 0 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    max-width: 370px;
+    min-width: 240px;
+  }
+
+  p {
+    margin-top:30px;
+    width: 50%;
+  }
+
+  span {
+    font-size: 0.7rem!important;
+    font-weight: 700;
+  }
+
+  &__bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    text-align: right;
+      
+    img {
+      object-fit:cover;
+      height: 100%;
+      min-width: 50%;
+      object-position: top;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: inline-block;
+    background-color: $primary;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .button {
+    margin: 10px 5px;
+    align-self: flex-start;
+  }
+}
