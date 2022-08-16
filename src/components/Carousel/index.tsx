@@ -30,8 +30,8 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
   }
 
   return (
-    <div className={`carousel ${ visible ? ' carousel--visible' : ''}`}>
-      <div className="carousel__container">
+    <div className={`carousel${ visible ? ' carousel--visible' : ''}`}>
+      <div className={`carousel__container`}>
         <div className={`carousel__container__progress`} style={{animationDuration: delay + 'ms'}}></div>
         <ul className="carousel__group" style={{transform: 'translateY(' + parallaxValue + 'px)'  }}>
           {slides?.map(({title, released, imgFile, imgAlt}, index) => (

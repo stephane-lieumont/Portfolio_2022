@@ -1,6 +1,5 @@
-import React, { MouseEvent } from 'react'
+import { FunctionComponent } from 'react'
 import { ProjectDevData } from '~/interfaces/Data.intf'
-import Button from '~/components/Button'
 import { firstLetterUpper } from '~/utils/formatString'
 import './style.scss'
 
@@ -9,11 +8,7 @@ export type ProjectCardProps = {
   className?:string
 }
 
-const ProjectCard: React.FunctionComponent<ProjectCardProps> = ({ projectData, className }) => {
-
-  const handleClickDemo = (e: MouseEvent<HTMLButtonElement>) => {
-
-  }
+const ProjectCard: FunctionComponent<ProjectCardProps> = ({ projectData, className }) => {
 
   return (
     <div className={`project-card-container ${className}`} data-testid='project-card'>
@@ -27,11 +22,7 @@ const ProjectCard: React.FunctionComponent<ProjectCardProps> = ({ projectData, c
               <li key={hashtag}>{firstLetterUpper(hashtag)}</li>
             ))}
           </ul>
-          <h3 className='project-card__content__title'>{projectData.title} <span>({projectData.released.getFullYear()})</span></h3>
-          <p className='project-card__content__desc'>{projectData.description}</p>
-          {projectData.demoLink ? (
-            <Button label='Démo' onClick={handleClickDemo}/>
-          ) : null}          
+          <h3 className='project-card__content__title'>{projectData.title} <span>({projectData.released.getFullYear()})</span></h3>         
         </div>
       </div>
     </div>

@@ -39,8 +39,8 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
   useEffect(() => {
     const offsetApear = windowSize.height * 0.6;
 
-    const revealSectionSpecialities = scrollYPosition >= sectionSpecialities.current!.offsetTop + 300
-    const revealSectionPortfolio = scrollYPosition >= sectionPortfolio.current!.offsetTop + windowSize.height - offsetApear
+    const revealSectionSpecialities = scrollYPosition >= sectionSpecialities.current!.offsetTop - windowSize.height + 100
+    const revealSectionPortfolio = scrollYPosition >= sectionPortfolio.current!.offsetTop - windowSize.height + offsetApear
 
     if(!appearSectionSpecialities) setAppearSectionSpecialities(revealSectionSpecialities)
     if(!appearSectionPortfolio) setAppearSectionPortfolio(revealSectionPortfolio)
@@ -60,8 +60,9 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
     <Fragment >
       <SmoothScroll onChanged={(value) => setScrollYPosition(value)}>
         <Fragment>
-          <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} visible={contentLoaded} /> 
+          
           <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'> 
+            <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} visible={contentLoaded} /> 
             <Background
                 darken
                 triangle={false}
@@ -79,7 +80,24 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
                   delayAnimation: 300
                 }}
               /> 
-              <section ref={sectionSpecialities} className='section portfolio-cgi__specialities'>          
+              <section ref={sectionSpecialities} className='section portfolio-cgi__specialities'>      
+                <Background
+                  darken
+                  triangle={false}
+                  pointsProperties = {{
+                    top: `${50 - (scrollYPosition / 30)}%`,
+                    left: '90%',
+                    rotate: '145deg',
+                    size: '300px',
+                    delayAnimation:150
+                  }}
+                  circleProperties = {{
+                    bottom: `${50 - (scrollYPosition / 20)}%`,
+                    rigth: '90%',
+                    size: '350px',
+                    delayAnimation: 300
+                  }}
+                />    
                 <div className='section__content'>            
                   <h2 className={`display1 reveal${ appearSectionSpecialities && contentLoaded ? ' reveal--0' : '' }`}>Spécialités</h2>
                   <ul className='specialities'>

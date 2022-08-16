@@ -6,6 +6,8 @@
   &__projects {
     background-color: $secondary;
     min-height: 500px;
+    overflow: visible!important;
+    z-index: 10;
 
     &__list {
       align-self: flex-start!important;

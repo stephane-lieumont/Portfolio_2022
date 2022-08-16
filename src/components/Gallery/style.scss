@@ -7,14 +7,12 @@
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-auto-rows: 240px;
     gap:3px;
-    overflow: hidden;
     grid-auto-flow:dense;
 
     &__item {
       position: relative;
       overflow: hidden;
       cursor: pointer;
-      transition: all 0.2s ease;
 
       &:hover {
         img {
@@ -68,11 +66,14 @@
 
       &__reveal {
         opacity: 0!important;
+        transition: all .45s ease-out;
+        transform: translateY(15px) scale(1.2);
         
         @for $i from 0 through 50 {
           &--#{$i} {
             opacity: 1!important;
             transition-delay: 0.15s * $i;
+            transform: translateX(0) scale(1);
           }
         }
       }

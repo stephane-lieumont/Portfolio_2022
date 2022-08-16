@@ -1,14 +1,22 @@
-import { FunctionComponent, MouseEvent } from 'react';
+import { FunctionComponent, MouseEvent, useEffect, useState } from 'react';
 import { PortfolioData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
 import './style.scss';
 
 type GalleryProps = {
- portfolioData?: PortfolioData[],
+ portfolioData?: PortfolioData[], 
  onClick?: (imageData: PortfolioData) => void
 }
 
 const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick}) => {
+  const [galeryLoaded, setGaleryLoaded] = useState<boolean>(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+        setGaleryLoaded(true)
+    }, 2000);
+  }, [])
+
   const handleClick = (e: MouseEvent<HTMLDivElement>, imageData: PortfolioData) => {
     e.preventDefault()
     if(onClick) onClick(imageData)
@@ -27,7 +35,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick})
               'gallery__grid__item--single '
             }  
             gallery__grid__item__reveal 
-            gallery__grid__item__reveal--${index}
+            ${ galeryLoaded ? ` gallery__grid__item__reveal--${index}` : '' }
             `}              
           >
           <img src={imageData.imgFileThumb} alt={imageData.imgAlt} />

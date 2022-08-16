@@ -30,7 +30,6 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      overflow:auto;
       gap: 3%;
       padding: 20px;
       width: 100%;
@@ -41,7 +40,12 @@
       flex: 1 0 31%;
       max-width: 31%;
       margin-bottom: 30px;
-      min-width: 280px; 
+      min-width: 280px;
+      transition: all .15s ease-in-out;
+
+      &:hover {
+        transform: translateY(-20px) scale(1.05);
+      }
     }
   }
 }

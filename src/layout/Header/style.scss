@@ -27,9 +27,18 @@
     justify-content: space-between;
     transition: all .3s ease-in-out;
 
+    .navigation {
+      opacity: 1;
+      transition: all .3s ease-in-out .5s;
+    }
+
     &--hidden {
       transform: translateY(-50px);
-      opacity: 0;      
+      opacity: 0;
+
+      .navigation {
+        opacity: 0;
+      }
     }
       
     h1 {
@@ -43,7 +52,7 @@
         &__append {
           display: inline-block;
           opacity: 0;
-          animation: title-append .25s ease-out both 0.3s;          
+          animation: title-append .25s ease-out both 0.3s;         
         }
       }
   
