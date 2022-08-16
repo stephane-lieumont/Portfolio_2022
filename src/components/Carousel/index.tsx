@@ -5,11 +5,12 @@ import './style.scss'
 type CarouselProps = {
   slides: SliderImageData[],
   delay?: number,
+  visible?: boolean,
   parralaxScrollY?: number,
   handleLoad?: CallableFunction
 }
 
-const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScrollY = 0, delay = 5000, handleLoad = () => {}}: CarouselProps) => {
+const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScrollY = 0, visible = true, delay = 5000, handleLoad = () => {}}: CarouselProps) => {
   const [indexImg, setIndexImg] = useState<number>(-1)
   const [parallaxValue, setParallaxValue] = useState<number>()
 
@@ -29,7 +30,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
   }
 
   return (
-    <div className="carousel">
+    <div className={`carousel ${ visible ? ' carousel--visible' : ''}`}>
       <div className="carousel__container">
         <div className={`carousel__container__progress`} style={{animationDuration: delay + 'ms'}}></div>
         <ul className="carousel__group" style={{transform: 'translateY(' + parallaxValue + 'px)'  }}>

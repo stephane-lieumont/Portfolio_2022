@@ -33,7 +33,7 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
 
     setTimeout(() => {
       setContentLoaded(true)
-    }, 500);
+    }, 2000);
   })
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
     <Fragment >
       <SmoothScroll onChanged={(value) => setScrollYPosition(value)}>
         <Fragment>
-          <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} /> 
+          <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} visible={contentLoaded} /> 
           <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'> 
             <Background
                 darken

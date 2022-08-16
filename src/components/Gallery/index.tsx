@@ -19,13 +19,17 @@ const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick})
       { portfolioData.map((imageData, index) => (
         <div key={imageData.id} 
           onClick={(e) => handleClick(e, imageData)}
-          className={
-            `gallery__grid__item
+          className={`
+            gallery__grid__item 
             ${ 
-              index % 5 === 0 && index < portfolioData.length - 3 ? ' gallery__grid__item--double-row' :
-              (index ) % 3 === 0 && index < portfolioData.length - 7 ? ' gallery__grid__item--double-column' :
-              ' gallery__grid__item--single' }          
-            `}>
+              index % 5 === 0 && index < portfolioData.length - 3 ? 'gallery__grid__item--double-row ' :
+              (index ) % 3 === 0 && index < portfolioData.length - 7 ? 'gallery__grid__item--double-column ' :
+              'gallery__grid__item--single '
+            }  
+            gallery__grid__item__reveal 
+            gallery__grid__item__reveal--${index}
+            `}              
+          >
           <img src={imageData.imgFileThumb} alt={imageData.imgAlt} />
           <div className='gallery__grid__item__desc'>
             <h4>{ firstLetterUpper(imageData.title) }</h4>

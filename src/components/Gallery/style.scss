@@ -66,6 +66,17 @@
         }
       }
 
+      &__reveal {
+        opacity: 0!important;
+        
+        @for $i from 0 through 50 {
+          &--#{$i} {
+            opacity: 1!important;
+            transition-delay: 0.15s * $i;
+          }
+        }
+      }
+
       &--single {
         grid-row: span 1;
         grid-column: span 1;
