@@ -1,11 +1,11 @@
-import { Fragment, FunctionComponent, useEffect } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import Button from '~/components/Button';
 import './style.scss'
 import fileDownload from 'js-file-download';
 import axios from 'axios';
 import { PageProps } from '~/interfaces/Routes.intf';
 
-const CV: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
+const CVModal: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
   useEffect(() => {
     document.title = title
   })
@@ -20,13 +20,13 @@ const CV: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
   }
 
   return (
-    <Fragment>
+    <div className='cv-container'>
       <div className='cv'>
         <img height={1132} width={800} src={require('../../assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.jpg')} alt='CV stéphane Lieumont Developpeur Frontend'/>
       </div>
       <Button label='Télécharger' onClick={handleDownload} />
-    </Fragment>
+    </div>
   );
 }
 
-export default CV;
+export default CVModal;

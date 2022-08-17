@@ -11,11 +11,12 @@ type HeaderProps = {
   menuIsOpen?: boolean
   menuIsLigth?: boolean
   headerTitle?: string
+  headerButtonsEnabled?: boolean
   theme?: Theme
   onClick?: (isOpen: boolean) => void
 }
 
-const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, theme, onClick = () => {}}) => {
+const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, headerButtonsEnabled, theme, onClick = () => {}}) => {
   const location = useLocation();
 
   const [menuHide, setMenuHide] = useState<boolean>(false)
@@ -55,12 +56,14 @@ const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuI
             <span>Stéphane</span>
             <span className='text--primary text--bold'>Lieumont</span>
           </span>
-        </h1>
+        </h1>                
         <div className='navigation'>
-          <ul className='navigation__buttons'>
-            <li><Link to={contactPage!.path} state={{ backgroundLocation: location }} ><Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} /></Link></li>
-            <li><Link to={cvPage!.path} state={{ backgroundLocation: location }} ><Button label={cvPage!.label} outlined white={menuIsLigth || theme === Theme.dark} /></Link></li>
-          </ul>
+          { headerButtonsEnabled !== false && (
+            <ul className='navigation__buttons'>
+              <li><Link to={contactPage!.path} state={{ backgroundLocation: location }} ><Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} /></Link></li>
+              <li><Link to={cvPage!.path} state={{ backgroundLocation: location }} ><Button label={cvPage!.label} outlined white={menuIsLigth || theme === Theme.dark} /></Link></li>
+            </ul>
+          )}
         </div>   
       </div>
       <NavBarButton routeList={RoutesApp.routeList} ligth={menuIsLigth || theme === Theme.dark} onClick={onClick}/>

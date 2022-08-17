@@ -44,78 +44,80 @@ const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) =
   }
 
   return (
-    <div className='contact'>
-      <div className="contact__bg">
-        <img src={require('../../assets/profile/profil-stephane-lieumont-contact.jpg')} alt="profil stéphane lieumont"/>
+    <div className={`contact`}>
+      <div className='contact__content'>
+        <p>
+          Un projet, une question où juste un Hello World ?
+        </p>
+        <form>
+          <Input 
+            label={firstLetterUpper(formInputName.label)}
+            name={formInputName.name}
+            error={formInputName.error}
+            errorMessage={formInputName.errorMessage}
+            text={formInputName.text}
+            inputIsValid={formInputName.inputIsValid}
+            onChange={(value: string) => {
+              dispatch(FormContactActions.updateState({
+                formInputName: {
+                  ...formInputName,
+                  value: value,
+                  inputIsValid: FormValidator.checkAlphabetWithAccent(value, 2),
+                  error: false,
+                  text: value
+                }})
+              )
+            }}
+          />
+          <Input 
+            label={firstLetterUpper(formInputEmail.label)}
+            name={formInputEmail.name}
+            error={formInputEmail.error}
+            errorMessage={formInputEmail.errorMessage}
+            text={formInputEmail.text}
+            inputIsValid={formInputEmail.inputIsValid}
+            onChange={(value: string) => {
+              dispatch(FormContactActions.updateState({
+                formInputEmail: {
+                  ...formInputEmail,
+                  value: value,
+                  inputIsValid: FormValidator.checkEmail(value),
+                  error: false,
+                  text: value
+                }})
+              )
+            }}
+          />
+          <Input
+            htmlFormType={ HTMLFormType.textarea } 
+            label={firstLetterUpper(formInputMessage.label)}
+            name={formInputMessage.name}
+            error={formInputMessage.error}
+            errorMessage={formInputMessage.errorMessage}
+            text={formInputMessage.text}
+            inputIsValid={formInputMessage.inputIsValid}
+            onChange={(value: string) => {
+              dispatch(FormContactActions.updateState({
+                formInputMessage: {
+                  ...formInputMessage,
+                  value: value,
+                  inputIsValid: FormValidator.checkTextarea(value, 15),
+                  error: false,
+                  text: value
+                }})
+              )
+            }}
+          />
+          <Button label='Envoyer' onClick={onSubmit} />
+        </form>
       </div>
-      <p>
-        Un projet, une question où juste un Hello World ?
-      </p>
-      <form>
-        <Input 
-          label={firstLetterUpper(formInputName.label)}
-          name={formInputName.name}
-          error={formInputName.error}
-          errorMessage={formInputName.errorMessage}
-          text={formInputName.text}
-          inputIsValid={formInputName.inputIsValid}
-          onChange={(value: string) => {
-            dispatch(FormContactActions.updateState({
-              formInputName: {
-                ...formInputName,
-                value: value,
-                inputIsValid: FormValidator.checkAlphabetWithAccent(value, 2),
-                error: false,
-                text: value
-              }})
-            )
-          }}
-        />
-        <Input 
-          label={firstLetterUpper(formInputEmail.label)}
-          name={formInputEmail.name}
-          error={formInputEmail.error}
-          errorMessage={formInputEmail.errorMessage}
-          text={formInputEmail.text}
-          inputIsValid={formInputEmail.inputIsValid}
-          onChange={(value: string) => {
-            dispatch(FormContactActions.updateState({
-              formInputEmail: {
-                ...formInputEmail,
-                value: value,
-                inputIsValid: FormValidator.checkEmail(value),
-                error: false,
-                text: value
-              }})
-            )
-          }}
-        />
-        <Input
-          htmlFormType={ HTMLFormType.textarea } 
-          label={firstLetterUpper(formInputMessage.label)}
-          name={formInputMessage.name}
-          error={formInputMessage.error}
-          errorMessage={formInputMessage.errorMessage}
-          text={formInputMessage.text}
-          inputIsValid={formInputMessage.inputIsValid}
-          onChange={(value: string) => {
-            dispatch(FormContactActions.updateState({
-              formInputMessage: {
-                ...formInputMessage,
-                value: value,
-                inputIsValid: FormValidator.checkTextarea(value, 15),
-                error: false,
-                text: value
-              }})
-            )
-          }}
-        />
-        <Button label='Envoyer' onClick={onSubmit} />
-      </form>
       <ul className='contact__card'>
         <li><FontAwesomeIcon icon={faPhone} className={'fa-icon'}/> 06.37.35.35.79</li>
         <li><FontAwesomeIcon icon={faLocation} className={'fa-icon'}/> 31470 Fontenilles, FRANCE</li>
       </ul>
+      <div className="contact__bg">
+        <img src={require('../../assets/profile/profil-stephane-lieumont-contact.jpg')} alt="profil stéphane lieumont"/>
+      </div>
     </div>
   );
 }

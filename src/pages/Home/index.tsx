@@ -73,8 +73,12 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           <h2 className={`homepage__leftside__content__title reveal${ contentLoaded ? ' reveal--3' : ''}`}>Developpeur Frontend & <span>Graphiste 3D</span></h2>
           <p className={`reveal${ contentLoaded ? ' reveal--4' : ''}`}>Captivé par les nouvelles technologies depuis 2006, ma curiosité m’a amené à découvrir le développement informatique et le graphisme 3D.</p>
           <div className='homepage__leftside__content__nav'>
-            <Button label='profil dev' onClick={() => navigate(portfolioDevPath)} className={`reveal${ contentLoaded ? ' reveal--5' : ''}`} />
-            <Button label="profil 3D" outlined onClick={() => navigate(portfolioCgiPath)} className={`reveal${ contentLoaded ? ' reveal--6' : ''}`} />
+            <div className={`reveal${ contentLoaded ? ' reveal--5' : ''}`}>
+              <Button label='profil dev' onClick={() => navigate(portfolioDevPath)} />
+            </div>
+            <div className={`reveal${ contentLoaded ? ' reveal--6' : ''}`}>
+              <Button label="profil 3D" outlined onClick={() => navigate(portfolioCgiPath)} />
+            </div>
           </div>
         </div>
       </div>

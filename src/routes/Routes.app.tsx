@@ -61,7 +61,8 @@ const routeList: RouteAppObject[] = [
     Component: <Contact title='Contactez-moi'/>,   
     params: {
       theme: Theme.ligth,
-      mainMenuEnabled: false
+      mainMenuEnabled: false,
+      headerButtonsEnabled: false
     } 
   },
   { 
@@ -72,7 +73,8 @@ const routeList: RouteAppObject[] = [
     Component: <CV title='CV Stéphane Lieumont' />, 
     params: {
       theme: Theme.ligth,
-      mainMenuEnabled: false
+      mainMenuEnabled: false,
+      headerButtonsEnabled: false
     }  
   },
   {

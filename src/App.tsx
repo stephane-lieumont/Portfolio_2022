@@ -38,7 +38,7 @@ const App: React.FunctionComponent = () => {
   return (
     <div data-testid="app" className="react-app"> 
       <Fragment>    
-      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentRoute?.params?.theme } />
+      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentRoute?.params?.theme } headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled } />
         <main className={`${menuIsOpen ? 'scale' : ''}${ currentRoute?.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
           <Routes location={state?.backgroundLocation || location}>
             { globalRoutes.map(({ path, Component }) => (              
