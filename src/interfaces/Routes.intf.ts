@@ -13,6 +13,7 @@ export type RouteAppObject = {
 export type RouteParams = {
   theme: Theme
   mainMenuEnabled?: boolean
+  headerButtonsEnabled?: boolean
 }
 
 export type PageProps = {

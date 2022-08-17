@@ -1,41 +1,61 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .contact {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center!important;
+  align-items: center!important;
+  width: 100%;
+  height: 100vh;
 
-  form {    
-    flex: 1 0 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 50%;
-    max-width: 370px;
-    min-width: 240px;
-  }
+  &__content {
+    position: relative;
+    z-index: 3;
+    height: 70%;
+    width: 100%;
+    max-width: 600px;
 
-  p {
-    margin-top:30px;
-    width: 50%;
-  }
+    form {    
+      flex: 1 0 100%;
+      width: 100%;
+      height: 100%;
+      max-width: $screen-lg;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      max-height: 600px;
+      min-width: 240px;
+    }
+  
+    p {
+      margin-top:30px;
+      width: 100%;
+      max-width: $screen-lg;
+      font-weight: 600;
+    }
+  
+    span {
+      font-size: 0.7rem!important;
+      font-weight: 700;
+    }
 
-  span {
-    font-size: 0.7rem!important;
-    font-weight: 700;
+    .button {
+      align-self: center;
+      margin-top: 10px;
+    }
   }
 
   &__bg {
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 0;
+    max-width: 500px;
+    bottom: 0;
     right: 0;
-    z-index: -1;
     text-align: right;
+    z-index: 1;
       
     img {
       object-fit:cover;
@@ -56,10 +76,17 @@
     font-size: 0.7rem;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 2;
   }
+}
 
-  .button {
-    margin: 10px 5px;
-    align-self: flex-start;
+.modal {  
+  .contact {
+    justify-content: flex-start!important;
+    &__content {
+      align-self: flex-start;
+      height: calc(100% - 70px);
+      width: 50%;
+    }
   }
 }
