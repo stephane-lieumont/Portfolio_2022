@@ -16,8 +16,4 @@ export type RouteParams = {
   headerButtonsEnabled?: boolean
 }
 
-export type PageProps = {
-  title?: string
-  isModal?: boolean
-}
 

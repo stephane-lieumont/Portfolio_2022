@@ -1,14 +1,8 @@
 import { FunctionComponent, useEffect, useState } from "react"
-import { SliderImageData } from "~/interfaces/Data.intf"
+import { CarouselProps } from "~/interfaces/Component.intf"
 import './style.scss'
 
-type CarouselProps = {
-  slides: SliderImageData[],
-  delay?: number,
-  visible?: boolean,
-  parralaxScrollY?: number,
-  handleLoad?: CallableFunction
-}
+
 
 const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScrollY = 0, visible = true, delay = 5000, handleLoad = () => {}}: CarouselProps) => {
   const [indexImg, setIndexImg] = useState<number>(-1)

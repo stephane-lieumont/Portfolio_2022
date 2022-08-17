@@ -1,14 +1,12 @@
-import Error from '../pages/Error'
-import Home from '../pages/Home'
-import PortfolioCGI from '../pages/PortfolioCGI'
-import PortfolioDev from '../pages/PortfolioDev'
-import { RouteAppObject } from '../interfaces/Routes.intf'
-import { Theme } from '../interfaces/Theme.intf'
+import Error from '~/pages/Error'
+import Home from '~/pages/Home'
+import PortfolioCGI from '~/pages/PortfolioCGI'
+import PortfolioDev from '~/pages/PortfolioDev'
+import { RouteAppObject } from '~/interfaces/Routes.intf'
+import { Theme } from '~/interfaces/Theme.intf'
 import Contact from '~/pages/Contact'
 import CV from '~/pages/CV'
-import Modal from '~/components/Modal'
-
-
+import ProjectWeb from '~/pages/ProjectWeb'
 
 const routeList: RouteAppObject[] = [
   { 
@@ -33,10 +31,10 @@ const routeList: RouteAppObject[] = [
     }
   },
   { 
-    path: '/portfolio-stephane-lieumont-developpeur/projects/:id', 
-    name: 'project',
-    label: 'projet',
-    Component: <Modal />,
+    path: '/portfolio-stephane-lieumont-developpeur/projects-:id', 
+    name: 'project-web',
+    label: 'Projet Web',
+    Component: <ProjectWeb />,
     params: {
       theme: Theme.ligth,
       mainMenuEnabled: false

@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
 
 import { Route, Routes, useLocation } from 'react-router-dom';
-import SocialSideBar from './layout/SocialSideBar';
-import Header from './layout/Header';
-import RoutesApp from './routes/Routes.app';
-import { RouteAppObject } from './interfaces/Routes.intf';
-import { Theme } from './interfaces/Theme.intf';
-import Modal from './components/Modal';
+import SocialSideBar from '~/layout/SocialSideBar';
+import Header from '~/layout/Header';
+import RoutesApp from '~/routes/Routes.app';
+import { RouteAppObject } from '~/interfaces/Routes.intf';
+import { Theme } from '~/interfaces/Theme.intf';
+import Modal from '~/components/Modal';
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)

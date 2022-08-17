@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import reportWebVitals from './config/config.report';
-import App from './App';
+import reportWebVitals from '~/config/config.report';
+import App from '~/App';
 import { BrowserRouter  as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './store/main.store';
+import store from '~/store/main.store';
 
 import './sass/main.scss'
 
