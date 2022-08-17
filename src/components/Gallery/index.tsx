@@ -1,12 +1,10 @@
 import { FunctionComponent, MouseEvent, useEffect, useState } from 'react';
+import { GalleryProps } from '~/interfaces/Component.intf';
 import { PortfolioData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
 import './style.scss';
 
-type GalleryProps = {
- portfolioData?: PortfolioData[], 
- onClick?: (imageData: PortfolioData) => void
-}
+
 
 const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick}) => {
   const [galeryLoaded, setGaleryLoaded] = useState<boolean>(false)

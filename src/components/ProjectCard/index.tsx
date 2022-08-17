@@ -1,12 +1,7 @@
 import { FunctionComponent } from 'react'
-import { ProjectDevData } from '~/interfaces/Data.intf'
+import { ProjectCardProps } from '~/interfaces/Component.intf'
 import { firstLetterUpper } from '~/utils/formatString'
 import './style.scss'
-
-export type ProjectCardProps = {
-  projectData: ProjectDevData
-  className?:string
-}
 
 const ProjectCard: FunctionComponent<ProjectCardProps> = ({ projectData, className }) => {
 

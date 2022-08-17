@@ -1,19 +1,9 @@
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FunctionComponent, MouseEvent, ReactElement, useEffect, useState} from 'react'
+import { FunctionComponent, MouseEvent, useEffect, useState} from 'react'
 import { useNavigate } from 'react-router'
+import { ModalProps } from '~/interfaces/Component.intf'
 import './style.scss'
-
-export type ModalProps = {
-  title?: string, 
-  children?: ReactElement,
-  width?: string,
-  heigth?: string,
-  displayOn?: boolean,
-  dismissNavigator?: boolean
-  duration?: number,
-  onClose?: CallableFunction
-}
 
 const Modal: FunctionComponent<ModalProps> = ({
   children, 

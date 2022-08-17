@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Background from '~/components/Background';
-import Button from '../../components/Button';
-import useWindowSize from '../../hooks/useWindowsSize';
-import { PageProps } from '../../interfaces/Routes.intf';
-import RoutesApp from '../../routes/Routes.app';
+import Button from '~/components/Button';
+import useWindowSize from '~/hooks/useWindowsSize';
+import { PageProps } from '~/interfaces/Component.intf';
+import RoutesApp from '~/routes/Routes.app';
 
 import './style.scss'
 
@@ -96,7 +96,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           />
         ) : null}
         <div className='homepage__rigthside__demo-real'></div>
-        <img width={600} height={470} src={require('../../assets/profile/profil-stephane-lieumont.png')} alt='profil stéphane lieumont' />
+        <img width={600} height={470} src={require('~/assets/profile/profil-stephane-lieumont.png')} alt='profil stéphane lieumont' />
       </div>
     </div>
   );

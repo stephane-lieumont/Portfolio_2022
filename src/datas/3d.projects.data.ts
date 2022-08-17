@@ -267,37 +267,37 @@ export const PortfolioImagesData: PortfolioData[] = [
 export const SpecialitiesCgiData: SpecialityData[] = [
   {
     name: 'zbrush',
-    src: require('../../assets/icons/zbrush.png'),
+    src: require('~/assets/icons/zbrush.png'),
     alt: 'zbrush, modélisation organique sculpture 3d',
     size: 90,
   },
   {
     name: '3dsmax',
-    src: require('../../assets/icons/3dsmax.png'),
+    src: require('~/assets/icons/3dsmax.png'),
     alt: '3dsmax, logiciel de production 3d',
     size: 90,
   },
   {
     name: 'vray',
-    src: require('../../assets/icons/vray.png'),
+    src: require('~/assets/icons/vray.png'),
     alt: 'moteur de rendu 3d',
     size: 90,
   },
   {
     name: 'substance',
-    src: require('../../assets/icons/substance-painter.png'),
+    src: require('~/assets/icons/substance-painter.png'),
     alt: 'substance, outil de création de shaders 3d',
     size: 90,
   },
   {
     name: 'photoshop',
-    src: require('../../assets/icons/photoshop.png'),
+    src: require('~/assets/icons/photoshop.png'),
     alt: 'photoshop, outil de retouches photos',
     size: 90,
   },
   {
     name: 'illustrator',
-    src: require('../../assets/icons/illustrator.png'),
+    src: require('~/assets/icons/illustrator.png'),
     alt: 'illustrator, outil de créations 2d vectorielles',
     size: 90,
   }

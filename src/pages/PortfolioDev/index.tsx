@@ -1,16 +1,16 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
-import SmoothScroll from '../../components/SmoothScroll';
-import { PageProps } from '../../interfaces/Routes.intf';
-import Footer from '../../layout/Footer';
-import SoftSkillsPicture from '../../assets/pictures/softskills-illustration.svg'
-import { ProjectsDevData, SpecialitiesDevData } from '../../__mock__/data/dev.projects.data';
+import SmoothScroll from '~/components/SmoothScroll';
+import Footer from '~/layout/Footer';
+import SoftSkillsPicture from '~/assets/pictures/softskills-illustration.svg'
+import { ProjectsDevData, SpecialitiesDevData } from '~/datas/dev.projects.data';
 import './style.scss'
-import ProjectCard from '../../components/ProjectCard';
+import ProjectCard from '~/components/ProjectCard';
 import Background from '~/components/Background';
 import useWindowSize from '~/hooks/useWindowsSize';
 import { SpecialityData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
 import { Link, useLocation } from 'react-router-dom';
+import { PageProps } from '~/interfaces/Component.intf';
 
 const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const specialities: SpecialityData[] = SpecialitiesDevData

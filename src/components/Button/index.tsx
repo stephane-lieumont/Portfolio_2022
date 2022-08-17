@@ -1,13 +1,7 @@
 import React from 'react';
+import { ButtonProps } from '~/interfaces/Component.intf';
 import './style.scss';
 
-type ButtonProps = {
-  label?: string
-  outlined?: boolean
-  white?:boolean
-  className?:string
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-}
 
 const Button: React.FunctionComponent<ButtonProps> = ({
     label = 'label',

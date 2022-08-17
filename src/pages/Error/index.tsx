@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect } from 'react';
-import { PageProps } from '../../interfaces/Routes.intf';
+import { PageProps } from '~/interfaces/Component.intf';
 
 import './style.scss'
 
@@ -11,7 +11,7 @@ const Error: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   return (
     <div className='error-page' data-testid='page-error'>
       <div className='error-page__leftside'>
-        <img src={require('../../assets/gif/travolta-comfused.gif')} alt="travolta confusion page introuvable" />
+        <img src={require('~/assets/gif/travolta-comfused.gif')} alt="travolta confusion page introuvable" />
       </div>
       <div className='error-page__rigthside'>
         <h2>

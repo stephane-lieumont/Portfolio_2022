@@ -1,22 +1,14 @@
-import RoutesApp from '../../routes/Routes.app';
+import RoutesApp from '~/routes/Routes.app';
 import './style.scss'
 import NavBarButton from '../NavBarSlider';
-import Button from '../../components/Button';
-import { useEffect, useState } from 'react';
+import Button from '~/components/Button';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { Theme } from '../../interfaces/Theme.intf';
+import { Theme } from '~/interfaces/Theme.intf';
 import { Link } from 'react-router-dom';
+import { HeaderProps } from '~/interfaces/Component.intf';
 
-type HeaderProps = {
-  menuIsOpen?: boolean
-  menuIsLigth?: boolean
-  headerTitle?: string
-  headerButtonsEnabled?: boolean
-  theme?: Theme
-  onClick?: (isOpen: boolean) => void
-}
-
-const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, headerButtonsEnabled, theme, onClick = () => {}}) => {
+const Header: FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, headerButtonsEnabled, theme, onClick = () => {}}) => {
   const location = useLocation();
 
   const [menuHide, setMenuHide] = useState<boolean>(false)

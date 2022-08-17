@@ -3,7 +3,7 @@ import Button from '~/components/Button';
 import './style.scss'
 import fileDownload from 'js-file-download';
 import axios from 'axios';
-import { PageProps } from '~/interfaces/Routes.intf';
+import { PageProps } from '~/interfaces/Component.intf';
 
 const CVModal: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const CVModal: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) =
   })
 
   const handleDownload = () => {
-    axios.get(require('../../assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.pdf'), {
+    axios.get(require('~/assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.pdf'), {
       responseType: 'blob',
     })
     .then((res) => {
@@ -22,7 +22,7 @@ const CVModal: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) =
   return (
     <div className='cv-container'>
       <div className='cv'>
-        <img height={1132} width={800} src={require('../../assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.jpg')} alt='CV stéphane Lieumont Developpeur Frontend'/>
+        <img height={1132} width={800} src={require('~/assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.jpg')} alt='CV stéphane Lieumont Developpeur Frontend'/>
       </div>
       <Button label='Télécharger' onClick={handleDownload} />
     </div>

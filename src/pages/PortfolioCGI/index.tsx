@@ -1,9 +1,8 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
-import Carousel from '../../components/Carousel';
-import SmoothScroll from '../../components/SmoothScroll';
-import { PageProps } from '../../interfaces/Routes.intf';
-import Footer from '../../layout/Footer';
-import { PortfolioImagesData, SliderImagesData, SpecialitiesCgiData } from '~/__mock__/data/3d.projects.data';
+import Carousel from '~/components/Carousel';
+import SmoothScroll from '~/components/SmoothScroll';
+import Footer from '~/layout/Footer';
+import { PortfolioImagesData, SliderImagesData, SpecialitiesCgiData } from '~/datas/3d.projects.data';
 
 import './style.scss'
 import Gallery from '~/components/Gallery';
@@ -12,6 +11,7 @@ import ImageViewer from '~/components/ImageViewer';
 import Background from '~/components/Background';
 import { firstLetterUpper } from '~/utils/formatString';
 import useWindowSize from '~/hooks/useWindowsSize';
+import { PageProps } from '~/interfaces/Component.intf';
 
 const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const specialities: SpecialityData[] = SpecialitiesCgiData

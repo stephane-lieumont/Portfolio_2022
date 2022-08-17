@@ -1,8 +1,8 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import Background from '~/components/Background';
 import './style.scss'
 
-const Footer: React.FunctionComponent = () => {
+const Footer: FunctionComponent = () => {
   const currentYear = new Date().getFullYear();
 
   return (
