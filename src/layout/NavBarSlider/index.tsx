@@ -78,8 +78,8 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
         </svg>
         <nav className='navbar__slider__menu'>
           <ul ref={menu}>
-          { routeList.map(({ path, label, name }) => (
-              path !== '*' ?
+          { routeList.map(({ path, label, name, params }) => (
+              path !== '*' && params?.mainMenuEnabled !== false ?
               <li key={name} onClick={handleClick}>
                 <NavLink to={path}>{label}</NavLink>
               </li>

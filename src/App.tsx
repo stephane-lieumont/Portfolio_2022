@@ -1,33 +1,32 @@
 import React, { Fragment, useEffect, useState } from 'react';
 
-import { useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import SocialSideBar from './layout/SocialSideBar';
 import Header from './layout/Header';
 import RoutesApp from './routes/Routes.app';
-import MyRoute from './components/MyRoute';
 import { RouteAppObject } from './interfaces/Routes.intf';
 import { Theme } from './interfaces/Theme.intf';
+import Modal from './components/Modal';
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   const [menuIsLigth, setMenuIsLigth] = useState<boolean>(false)
   const [headerTitle, setHeaderTitle] = useState<string>()
-  const [locationError, setLocationError] = useState<boolean>(false)
   const [currentRoute, setCurrentRoute] = useState<RouteAppObject>()
 
   const location = useLocation()
+  let state = location.state as { backgroundLocation?: Location };
+  const globalRoutes = RoutesApp.routeList
+  const contactRoute = RoutesApp.getRouteByName('contact')
+  const cvRoute = RoutesApp.getRouteByName('cv')
 
-  // get routes navigation
-  const globalRoutes = RoutesApp.routeList.filter(route => route.name !== 'error')
-  const errorRoute = RoutesApp.routeList.filter(route => route.name === 'error')[0]
-
-  // onChange location route to transition CSS
   useEffect(() => {
-    setCurrentRoute( RoutesApp.getRouteByPath(location.pathname))
-    setLocationError( currentRoute ? false : true )
-    setHeaderTitle(currentRoute?.headerTitle)
-    setMenuIsLigth(currentRoute?.menuIconLigth ?? false)
-  }, [location, currentRoute])
+    if(!state) {
+      setCurrentRoute( RoutesApp.getRouteByPath(location.pathname))
+      setHeaderTitle(currentRoute?.headerTitle)
+      setMenuIsLigth(currentRoute?.menuIconLigth ?? false)
+    }
+  }, [location, currentRoute, state])
 
   const handleClickMenu = (value: boolean) => {
     setMenuIsOpen(value)
@@ -36,32 +35,26 @@ const App: React.FunctionComponent = () => {
     document.body.classList.remove('heigth-auto')
   }
 
-
   return (
     <div data-testid="app" className="react-app"> 
-    { locationError ? ( 
-      <Fragment>      
-        <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={errorRoute.menuIconLigth} headerTitle={errorRoute.headerTitle} theme={ errorRoute.params?.theme } />
-        <main className={`${menuIsOpen ? 'scale' : ''}${ errorRoute.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
-          <MyRoute key={errorRoute.path} path={errorRoute.path} >
-            <errorRoute.Component title={errorRoute.title} />
-          </MyRoute> 
-        </main>
-      </Fragment>    
-    ) : (  
       <Fragment>    
       <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentRoute?.params?.theme } />
         <main className={`${menuIsOpen ? 'scale' : ''}${ currentRoute?.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
-          { globalRoutes.map(({ path, Component, title }) => (
-              <MyRoute key={path} path={path} >
-                <Component title={title} />
-              </MyRoute>
-            ))
-          }        
+          <Routes location={state?.backgroundLocation || location}>
+            { globalRoutes.map(({ path, Component }) => (              
+              <Route key={path} path={path} element={Component} />
+            ))} 
+          </Routes>
+          {/* Show the modal when a `backgroundLocation` is set */}
+          {state?.backgroundLocation && (
+            <Routes>
+              <Route path={contactRoute?.path} element={<Modal title={contactRoute?.headerTitle} heigth='70%' dismissNavigator >{contactRoute?.Component}</Modal>} />
+              <Route path={cvRoute?.path} element={<Modal title={cvRoute?.headerTitle}  width='40%' heigth='80%' dismissNavigator >{cvRoute?.Component}</Modal>} />
+            </Routes>
+          )}
         </main>
-        <SocialSideBar menuIsOpen={menuIsOpen} ligthen={currentRoute?.params?.theme === Theme.dark} />  
-      </Fragment>   
-    )}    
+        <SocialSideBar menuIsOpen={menuIsOpen} ligthen={currentRoute?.params?.theme === Theme.dark} />
+      </Fragment>
     </div>
   )
 }

@@ -4,18 +4,19 @@ export type RouteAppObject = {
   path: string
   name: string
   label?: string
-  title: string
   headerTitle?:string
-  Component: React.FunctionComponent<PageProps>
+  Component: JSX.Element
   menuIconLigth?: boolean
   params?: RouteParams
 }
 
 export type RouteParams = {
   theme: Theme
+  mainMenuEnabled?: boolean
 }
 
 export type PageProps = {
   title?: string
+  isModal?: boolean
 }
 
