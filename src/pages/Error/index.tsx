@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import { PageProps } from '../../interfaces/Routes.intf';
 
 import './style.scss'
 
-const Error: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+const Error: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   useEffect(() => {
     document.title = title
   })

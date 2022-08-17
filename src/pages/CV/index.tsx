@@ -1,10 +1,15 @@
-import { Fragment, FunctionComponent } from 'react';
+import { Fragment, FunctionComponent, useEffect } from 'react';
 import Button from '~/components/Button';
 import './style.scss'
 import fileDownload from 'js-file-download';
 import axios from 'axios';
+import { PageProps } from '~/interfaces/Routes.intf';
 
-const CV: FunctionComponent = () => {
+const CV: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
+  useEffect(() => {
+    document.title = title
+  })
+
   const handleDownload = () => {
     axios.get(require('../../assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.pdf'), {
       responseType: 'blob',

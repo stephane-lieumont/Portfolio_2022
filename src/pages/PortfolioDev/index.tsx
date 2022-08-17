@@ -10,8 +10,7 @@ import Background from '~/components/Background';
 import useWindowSize from '~/hooks/useWindowsSize';
 import { SpecialityData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
-
-
+import { Link, useLocation } from 'react-router-dom';
 
 const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const specialities: SpecialityData[] = SpecialitiesDevData
@@ -27,6 +26,7 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
   const sectionSoftSkills = useRef<HTMLDivElement>(null)
   const windowSize = useWindowSize();
 
+  const location = useLocation();
 
   useEffect(() => {
     document.title = title
@@ -116,14 +116,14 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
             <h2 className={`display1 reveal${ appearSectionProjects && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
             <ul className="portfolio-dev__projects__list">
               {ProjectsDevData.map( (project, index) => (
-                <li key={`project${project.id}`} className="portfolio-dev__projects__item">
-                  <ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} />
-                </li>
+                <Link className="portfolio-dev__projects__item" key={`project${project.id}`} to={`/portfolio-stephane-lieumont-developpeur/projects/${project.id}`} state={{ backgroundLocation: location }}>
+                  <li><ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} /></li>
+                </Link>
               ))}
-             </ul>
+            </ul>
           </div>
         </section>
-        <Footer />      
+        <Footer />
       </div>
     </SmoothScroll>
   );
