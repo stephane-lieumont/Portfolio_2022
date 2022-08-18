@@ -59,6 +59,7 @@ body {
     }
     
     &__content {
+      position: relative;
       display:flex;
       flex-direction: column;
       justify-content: center;
@@ -172,6 +173,17 @@ body {
     cursor: pointer;
     transition: color .15s ease-in-out;
   
+    &:hover {
+      color: $primary
+    }
+  }
+
+  .fa-return-btn {
+    color:$orange-shade300;
+    transition: color .15s ease-in-out;
+    cursor: pointer;
+    font-size: 24px;
+
     &:hover {
       color: $primary
     }

@@ -6,6 +6,9 @@ export interface ProjectDevData {
   title: string,
   hashName: string,
   description: string,
+  mission: string,
+  missionSteps: string[],
+  technos: string[],
   hashtags: string[],
   released: Date,
   demoLink?: string

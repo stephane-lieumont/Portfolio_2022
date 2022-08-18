@@ -1,21 +1,52 @@
-.project {
+@import '../../sass/themes/colors';
 
-  h3 {
-    margin-top: 10px;
-    font-size: 1.4rem!important;
-  }
+.project-web {
+  .project {
 
-  &__pitch {
-    img {
-      width: 100%;
+
+
+    h3 {
+      margin-top: 10px;
+      font-size: 1.4rem!important;
+    }
+
+    &__title {
+      h2 {
+        margin-left: 20px;
+      }
+    }
+  
+    &__pitch {
+      img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+  
+    &__release {
       margin-bottom: 30px;
+      &__content {
+        width: 70%;
+      }
     }
-  }
 
-  &__release {
-    margin-bottom: 30px;
-    &__content {
-      width: 50%;
+    .icon-custom {
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: flex-start;
+        gap: 10px;
+      }
+
+      &__container{
+        font-size: 35px;
+        color:$primary
+      }
     }
+
+
   }
 }
+
