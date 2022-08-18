@@ -14,7 +14,28 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'1',
     title: 'Case Tes Potes - Mobile',
     hashName: 'case-tes-potes-application-mobile-2022',
-    description: 'Application mobile android & IOS Case tes potes',
+    description: `Case Tes Potes veut casser les codes des sites de rencontre en mettant 
+    l'amitié au cœur de l'amour pour faciliter les rencontres et accompagner les célibataires, 
+    de la recherche de profils à l'organisation de la première rencontre. Ces dernier·ères 
+    n'ont plus qu'à se laisser guider et faire confiance à leur meilleur·e ami·e "Caseur" / "Caseuse".`,
+    mission: `Mon rôle en tant que co-fondateur et lead developpeur était de réaliser une application avec les fonctionnalités essentiels pour tester le produit sur le marché`,
+    missionSteps: [
+      'Etude et définition des <strong>Users Stories</strong>',
+      'Mise en place d\'une <strong>Roadmap produit</strong>',
+      'Réalisation d\'une maquette interactive sous <strong>AdobeXD</strong>',
+      '<strong>Gestion du projet</strong> avec une équipe de deux developpeurs',
+      'Developpement d\'une application avec <strong>Flutter</strong>'
+    ],
+    technos:[
+      'flutter',
+      'dart',
+      'xd',
+      'illustrator',
+      'git',
+      'gitlab',
+      'confluence',
+      'jira'
+    ],
     imgFile: CTPappMobileImg,
     imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - mobile',
@@ -30,7 +51,28 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'2',
     title: 'Case Tes Potes - LP',
     hashName: 'case-tes-potes-landing-page-2022',
-    description: 'Développement de la landing page et de l’application mobile de Case tes potes.',
+    description: `Case Tes Potes veut casser les codes des sites de rencontre en mettant 
+    l'amitié au cœur de l'amour pour faciliter les rencontres et accompagner les célibataires, 
+    de la recherche de profils à l'organisation de la première rencontre. Ces dernier·ères 
+    n'ont plus qu'à se laisser guider et faire confiance à leur meilleur·e ami·e "Caseur" / "Caseuse".`,
+    mission: `Mon rôle en tant que co-fondateur et lead developpeur était de réaliser une application avec les fonctionnalités essentiels pour tester le produit sur le marché`,
+    missionSteps: [
+      'Etude et définition des Users Stories',
+      'Mise en place d\'une Roadmap produit',
+      'Réalisation d\'une maquette interactive sous AdobeXD',
+      'Gestion du projet avec une équipe de deux developpeurs',
+      'Developpement d\'une application avec Flutter'
+    ],
+    technos:[
+      'flutter',
+      'dart',
+      'xd',
+      'illustrator',
+      'git',
+      'gitlab',
+      'confluence',
+      'jira'
+    ],
     imgFile: CTPlandingPageImg,
     imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - landingpage 2022',
@@ -47,7 +89,28 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'3',
     title: 'Case Tes Potes - WebApp',
     hashName: 'case-tes-potes-webapp-pour-app-mobile-2021',
-    description: 'Formulaire web responsive pour publier des stories sur l\'application mobile',
+    description: `Case Tes Potes veut casser les codes des sites de rencontre en mettant 
+    l'amitié au cœur de l'amour pour faciliter les rencontres et accompagner les célibataires, 
+    de la recherche de profils à l'organisation de la première rencontre. Ces dernier·ères 
+    n'ont plus qu'à se laisser guider et faire confiance à leur meilleur·e ami·e "Caseur" / "Caseuse".`,
+    mission: `Mon rôle en tant que co-fondateur et lead developpeur était de réaliser une application avec les fonctionnalités essentiels pour tester le produit sur le marché`,
+    missionSteps: [
+      'Etude et définition des Users Stories',
+      'Mise en place d\'une Roadmap produit',
+      'Réalisation d\'une maquette interactive sous AdobeXD',
+      'Gestion du projet avec une équipe de deux developpeurs',
+      'Developpement d\'une application avec Flutter'
+    ],
+    technos:[
+      'flutter',
+      'dart',
+      'xd',
+      'illustrator',
+      'git',
+      'gitlab',
+      'confluence',
+      'jira'
+    ],
     imgFile: CTPwebAppImg,
     imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - web application 2021',
@@ -64,7 +127,28 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'4',
     title: 'Kasa - Openclassrooms',
     hashName: 'kasa-application-react-openclassrooms-2021',
-    description: 'Application React dans le cadre de la formation Developpeur FrontEnd',
+    description: `Case Tes Potes veut casser les codes des sites de rencontre en mettant 
+    l'amitié au cœur de l'amour pour faciliter les rencontres et accompagner les célibataires, 
+    de la recherche de profils à l'organisation de la première rencontre. Ces dernier·ères 
+    n'ont plus qu'à se laisser guider et faire confiance à leur meilleur·e ami·e "Caseur" / "Caseuse".`,
+    mission: `Mon rôle en tant que co-fondateur et lead developpeur était de réaliser une application avec les fonctionnalités essentiels pour tester le produit sur le marché`,
+    missionSteps: [
+      'Etude et définition des Users Stories',
+      'Mise en place d\'une Roadmap produit',
+      'Réalisation d\'une maquette interactive sous AdobeXD',
+      'Gestion du projet avec une équipe de deux developpeurs',
+      'Developpement d\'une application avec Flutter'
+    ],
+    technos:[
+      'flutter',
+      'dart',
+      'xd',
+      'illustrator',
+      'git',
+      'gitlab',
+      'confluence',
+      'jira'
+    ],
     imgFile: KasaOcImg,
     imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - landingpage 2021',
@@ -81,7 +165,28 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'5',
     title: 'Portfolio',
     hashName: 'portfolio-3d-stephane-lieumont-2018',
-    description: 'Portfolio 3d sur mes réalisation 2014-2016',
+    description: `Case Tes Potes veut casser les codes des sites de rencontre en mettant 
+    l'amitié au cœur de l'amour pour faciliter les rencontres et accompagner les célibataires, 
+    de la recherche de profils à l'organisation de la première rencontre. Ces dernier·ères 
+    n'ont plus qu'à se laisser guider et faire confiance à leur meilleur·e ami·e "Caseur" / "Caseuse".`,
+    mission: `Mon rôle en tant que co-fondateur et lead developpeur était de réaliser une application avec les fonctionnalités essentiels pour tester le produit sur le marché`,
+    missionSteps: [
+      'Etude et définition des Users Stories',
+      'Mise en place d\'une Roadmap produit',
+      'Réalisation d\'une maquette interactive sous AdobeXD',
+      'Gestion du projet avec une équipe de deux developpeurs',
+      'Developpement d\'une application avec Flutter'
+    ],
+    technos:[
+      'flutter',
+      'dart',
+      'xd',
+      'illustrator',
+      'git',
+      'gitlab',
+      'confluence',
+      'jira'
+    ],
     imgFile: Portfolio2018Img,
     imgFileProject: CTPappMobileImgProject,
     imgAlt: 'portfolio 3d - 2018',
@@ -96,7 +201,28 @@ export const ProjectsDevData: ProjectDevData[] = [
     id:'6',
     title: 'Pixmodels',
     hashName: 'pixmodels-communication-ausiovisuelle-2015',
-    description: 'Projets d\'auto-entrepreneur en 2015. Je proposais divers services marqueting',
+    description: `Case Tes Potes veut casser les codes des sites de rencontre en mettant 
+    l'amitié au cœur de l'amour pour faciliter les rencontres et accompagner les célibataires, 
+    de la recherche de profils à l'organisation de la première rencontre. Ces dernier·ères 
+    n'ont plus qu'à se laisser guider et faire confiance à leur meilleur·e ami·e "Caseur" / "Caseuse".`,
+    mission: `Mon rôle en tant que co-fondateur et lead developpeur était de réaliser une application avec les fonctionnalités essentiels pour tester le produit sur le marché`,
+    missionSteps: [
+      'Etude et définition des Users Stories',
+      'Mise en place d\'une Roadmap produit',
+      'Réalisation d\'une maquette interactive sous AdobeXD',
+      'Gestion du projet avec une équipe de deux developpeurs',
+      'Developpement d\'une application avec Flutter'
+    ],
+    technos:[
+      'flutter',
+      'dart',
+      'xd',
+      'illustrator',
+      'git',
+      'gitlab',
+      'confluence',
+      'jira'
+    ],
     imgFile: Pixmodels2015Img,
     imgFileProject: CTPappMobileImgProject,
     imgAlt: 'pixmodels - agence de communication audiovisuel',

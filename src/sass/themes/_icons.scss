@@ -8,6 +8,12 @@
   font-size:2em;
   padding:3px;
 
+  span {
+    position: absolute;
+    text-indent: 999px;
+    visibility: hidden;
+  }
+
   &__list {
     text-align: center;
   }
@@ -54,7 +60,6 @@
   &--substance-designer::before {
     content: "\e907";
   }
-
   &--substance-painter::before {
     content: "\e908";
   }
@@ -82,25 +87,70 @@
   &--facebook::before {
     content: "\e90d";
   }
-
+  &--flutter::before {
+    content: "\e917";
+  }
+  &--react::before {
+    content: "\919";
+  }
+  &--vue::before {
+    content: "\918";
+  }
+  &--webpack::before {
+    content: "\e91a";
+  }
+  &--symfony::before {
+    content: "\e914";
+  }
+  &--html::before {
+    content: "\eae4";
+  }
+  &--sass::before {
+    content: "";
+  }
+  &--jquery::before {
+    content: "\e91b";
+  }
+  &--javascript::before {
+    content: "\e91c";
+  }
+  &--php::before {
+    content: "\e91f";
+  }
+  &--dart::before {
+    content: "\e915";
+  }
+  &--sass::before {
+    content: "\e924";
+  }
+  &--mongo::before {
+    content: "\e91c";
+  }
+  &--mysql::before {
+    content: "\e91e";
+  }
+  &--xd::before {
+    content: "\e923";
+  }
+  &--figma::before {
+    content: "\e922";
+  }
+  &--postman::before {
+    content: "\e916";
+  }
+  &--git::before {
+    content: "\eae7";
+  }
+  &--github::before {
+    content: "\eab0";
+  }
+  &--gitlab::before {
+    content: "\e913";
+  }
+  &--confluence::before {
+    content: "\e920";
+  }
+  &--jira::before {
+    content: "\e921";
+  }
 }
-
-.icon-CV:before {content: "\e912";}
-.icon-Portfolio:before {content: "\e910";}
-.icon-About:before {content: "\e911";}
-.icon-MoveDown:before {content: "\e90e";}
-.icon-Mail:before {content: "\e90f";}
-.icon-Photoshop:before {content: "\e902";}
-.icon-Premiere:before {content: "\e905";}
-.icon-AfterEffect:before {content: "\e906";}
-.icon-Illustrator:before {content: "\e901";}
-.icon-Substance-Designer:before {content: "\e907";}
-.icon-Substance-Painter:before {content: "\e908";}
-.icon-Zbrush:before {content: "\e904";}
-.icon-3DSmax:before {content: "\e900";}
-.icon-Vray:before {content: "\e903";}
-.icon-Corona:before {content: "\e909";}
-.icon-ArtStation:before {content: "\e90a";}
-.icon-Linkedin:before {content: "\e90b";}
-.icon-Twitter:before {content: "\e90c";}
-.icon-Facebook:before {content: "\e90d";}
