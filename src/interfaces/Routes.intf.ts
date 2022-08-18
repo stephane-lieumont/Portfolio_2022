@@ -5,13 +5,13 @@ export type RouteAppObject = {
   name: string
   label?: string
   headerTitle?:string
-  Component: JSX.Element
-  menuIconLigth?: boolean
+  Component: JSX.Element  
   params?: RouteParams
 }
 
 export type RouteParams = {
-  theme: Theme
+  theme: Theme,
+  menuIconLigth?: boolean
   mainMenuEnabled?: boolean
   headerButtonsEnabled?: boolean
 }

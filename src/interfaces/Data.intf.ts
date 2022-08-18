@@ -3,6 +3,7 @@ export interface ProjectDevData {
   imgFile: string,
   imgAlt: string,
   title: string,
+  hashName: string,
   description: string,
   hashtags: string[],
   released: Date,

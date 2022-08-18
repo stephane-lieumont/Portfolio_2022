@@ -12,6 +12,7 @@ export const ProjectsDevData: ProjectDevData[] = [
   {
     id:'1',
     title: 'Case Tes Potes - Mobile',
+    hashName: 'case-tes-potes-application-mobile-2022',
     description: 'Application mobile android & IOS Case tes potes',
     imgFile: CTPappMobileImg,
     imgAlt: 'case tes potes - mobile',
@@ -26,6 +27,7 @@ export const ProjectsDevData: ProjectDevData[] = [
   {
     id:'2',
     title: 'Case Tes Potes - LP',
+    hashName: 'case-tes-potes-landing-page-2022',
     description: 'Développement de la landing page et de l’application mobile de Case tes potes.',
     imgFile: CTPlandingPageImg,
     imgAlt: 'case tes potes - landingpage 2022',
@@ -41,6 +43,7 @@ export const ProjectsDevData: ProjectDevData[] = [
   {
     id:'3',
     title: 'Case Tes Potes - WebApp',
+    hashName: 'case-tes-potes-webapp-pour-app-mobile-2021',
     description: 'Formulaire web responsive pour publier des stories sur l\'application mobile',
     imgFile: CTPwebAppImg,
     imgAlt: 'case tes potes - web application 2021',
@@ -56,9 +59,10 @@ export const ProjectsDevData: ProjectDevData[] = [
   {
     id:'4',
     title: 'Kasa - Openclassrooms',
+    hashName: 'kasa-application-react-openclassrooms-2021',
     description: 'Application React dans le cadre de la formation Developpeur FrontEnd',
     imgFile: KasaOcImg,
-    imgAlt: 'case tes potes - landingpage 2022',
+    imgAlt: 'case tes potes - landingpage 2021',
     hashtags: [
       'react',
       'typescript',
@@ -71,6 +75,7 @@ export const ProjectsDevData: ProjectDevData[] = [
   {
     id:'5',
     title: 'Portfolio',
+    hashName: 'portfolio-3d-stephane-lieumont-2018',
     description: 'Portfolio 3d sur mes réalisation 2014-2016',
     imgFile: Portfolio2018Img,
     imgAlt: 'portfolio 3d - 2018',
@@ -84,6 +89,7 @@ export const ProjectsDevData: ProjectDevData[] = [
   {
     id:'6',
     title: 'Pixmodels',
+    hashName: 'pixmodels-communication-ausiovisuelle-2015',
     description: 'Projets d\'auto-entrepreneur en 2015. Je proposais divers services marqueting',
     imgFile: Pixmodels2015Img,
     imgAlt: 'pixmodels - agence de communication audiovisuel',

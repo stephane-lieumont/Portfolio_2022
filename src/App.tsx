@@ -21,12 +21,13 @@ const App: React.FunctionComponent = () => {
   const cvRoute = RoutesApp.getRouteByName('cv')
 
   useEffect(() => {
-    if(!state) {
-      setCurrentRoute( RoutesApp.getRouteByPath(location.pathname))
-      setHeaderTitle(currentRoute?.headerTitle)
-      setMenuIsLigth(currentRoute?.menuIconLigth ?? false)
-    }
-  }, [location, currentRoute, state])
+    const route = RoutesApp.getRouteByPath(location.pathname)
+
+    if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
+    setCurrentRoute(route)
+    setHeaderTitle(route?.headerTitle)
+
+  }, [location, state])
 
   const handleClickMenu = (value: boolean) => {
     setMenuIsOpen(value)
