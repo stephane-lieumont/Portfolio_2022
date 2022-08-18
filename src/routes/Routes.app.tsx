@@ -13,9 +13,9 @@ const routeList: RouteAppObject[] = [
     path: '/', 
     name: 'home',
     label: 'Accueil',
-    Component: <Home title='Portfolio | Stéphane Lieumont' />,
-    menuIconLigth: true,
+    Component: <Home title='Portfolio | Stéphane Lieumont' />,    
     params: {
+      menuIconLigth: true,
       theme: Theme.ligth
     }
   },
@@ -23,18 +23,19 @@ const routeList: RouteAppObject[] = [
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
     label: 'Portfolio Dev',
-    Component: <PortfolioDev title='Portfolio Developpeur | Stéphane Lieumont' />, 
-    headerTitle: "Web & mobile",
-    menuIconLigth: false,
+    Component: <PortfolioDev title='Web | Stéphane Lieumont' />, 
+    headerTitle: "Web & mobile",    
     params: {
+      menuIconLigth: false,
       theme: Theme.ligth
     }
   },
   { 
-    path: '/portfolio-stephane-lieumont-developpeur/projects-:id', 
+    path: '/portfolio-stephane-lieumont-developpeur/:params', 
     name: 'project-web',
     label: 'Projet Web',
-    Component: <ProjectWeb />,
+    headerTitle: 'Projet web',
+    Component: <ProjectWeb title='Web | Projet' />,
     params: {
       theme: Theme.ligth,
       mainMenuEnabled: false
@@ -44,10 +45,10 @@ const routeList: RouteAppObject[] = [
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',
     label: 'Portfolio CGI',
-    Component: <PortfolioCGI title='Portfolio CGI | Stéphane Lieumont'/>,
-    headerTitle: "graphiste 3D",
-    menuIconLigth: false,
+    Component: <PortfolioCGI title='CGI | Stéphane Lieumont'/>,
+    headerTitle: "graphiste 3D",    
     params: {
+      menuIconLigth: false,
       theme: Theme.dark
     }
   },
@@ -79,21 +80,31 @@ const routeList: RouteAppObject[] = [
     path: '*', 
     name: 'error',
     Component: <Error title='Error404'/>,
-    headerTitle: 'Page introuvable',
-    menuIconLigth: true,
+    headerTitle: 'Page introuvable',    
     params: {
+      menuIconLigth: true,
       theme: Theme.ligth
     }
   }
 ]
-
 
 const getRouteByName = (name: string):RouteAppObject | undefined => {
   return routeList.find(route => route.name === name)
 }
 
 const getRouteByPath = (path: string):RouteAppObject | undefined => {
-  return routeList.find(route => route.path === path)
+  // Keep dynamic pass level 1
+  const dynamicPath : string = path.split('/').pop() ?? ''
+
+  return routeList.find((route) => { 
+    // check route exactPath
+    let routeMatch = route.path === path
+
+    // check route dynamic path level 1
+    if (!routeMatch) routeMatch = route.path === path.replace( dynamicPath, ':params')
+
+    return routeMatch  
+  })
 }
 
 

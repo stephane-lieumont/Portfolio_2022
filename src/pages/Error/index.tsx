@@ -6,7 +6,8 @@ import './style.scss'
 const Error: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   useEffect(() => {
     document.title = title
-  })
+    window.scrollTo(0,0)
+  }, [title])
 
   return (
     <div className='error-page' data-testid='page-error'>

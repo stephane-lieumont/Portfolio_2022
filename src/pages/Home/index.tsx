@@ -23,11 +23,12 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
 
   useEffect(() => {
     document.title = title
+    window.scrollTo(0,0)
 
     setTimeout(() => {
       setContentLoaded(true)
     }, 500);
-  })
+  }, [title])
 
 
 

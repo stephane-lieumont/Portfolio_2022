@@ -4,22 +4,34 @@ import Footer from '~/layout/Footer';
 import './style.scss'
 import Background from '~/components/Background';
 import { PageProps } from '~/interfaces/Component.intf';
+import { useNavigate, useParams } from 'react-router';
+import { ProjectDevData } from '~/interfaces/Data.intf';
+import { ProjectsDevData } from '~/datas/dev.projects.data';
 
 const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+  const params = useParams()  
+
   const [scrollYPosition, setScrollPosition] = useState<number>(0)
   const [contentLoaded, setContentLoaded] = useState<boolean>(false)
+  const [dataProject, setDataProjet] = useState<ProjectDevData>()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
-    document.title = title
+    const data = ProjectsDevData.find( item => item.hashName === params.params)
+    !data ? navigate('/page-introuvable') : setDataProjet(data)
+
+    document.title = title + ' ' + data?.title
+    window.scrollTo(0,0)
 
     setTimeout(() => {
       setContentLoaded(true)
     }, 500);
-  })
+  }, [title, params, navigate])
 
   return (
     <SmoothScroll offset onChanged={(value) => setScrollPosition(value)}>
-      <div className='page portfolio-dev' data-testid='page-portfolio-dev'>
+      <div className='page project-web' data-testid='page-project-web'>
         <div className="section__group">
           { contentLoaded ? (
             <Background 
@@ -45,9 +57,12 @@ const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
                 delayAnimation: 300
               }}
             />  
-          ) : null }
-          <Footer />
+          ) : null }          
         </div>
+        <section>
+
+        </section>
+        <Footer />
       </div>
     </SmoothScroll>
   );

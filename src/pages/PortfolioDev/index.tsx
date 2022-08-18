@@ -9,7 +9,7 @@ import Background from '~/components/Background';
 import useWindowSize from '~/hooks/useWindowsSize';
 import { SpecialityData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { PageProps } from '~/interfaces/Component.intf';
 
 const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
@@ -26,15 +26,14 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
   const sectionSoftSkills = useRef<HTMLDivElement>(null)
   const windowSize = useWindowSize();
 
-  const location = useLocation();
-
   useEffect(() => {
     document.title = title
+    window.scrollTo(0,0)
 
     setTimeout(() => {
       setContentLoaded(true)
     }, 500);
-  })
+  }, [title])
 
   useEffect(() => {
     const offsetApear = windowSize.height * 0.6;
@@ -116,7 +115,7 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
             <h2 className={`display1 reveal${ appearSectionProjects && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
             <ul className="portfolio-dev__projects__list">
               {ProjectsDevData.map( (project, index) => (
-                <Link className="portfolio-dev__projects__item" key={`project${project.id}`} to={`/portfolio-stephane-lieumont-developpeur/projects/${project.id}`} state={{ backgroundLocation: location }}>
+                <Link className="portfolio-dev__projects__item" key={`${project.id}`} to={`${project.hashName}`}>
                   <li><ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} /></li>
                 </Link>
               ))}

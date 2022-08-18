@@ -30,11 +30,12 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
 
   useEffect(() => {
     document.title = title
+    window.scrollTo(0,0)
 
     setTimeout(() => {
       setContentLoaded(true)
     }, 2000);
-  })
+  }, [title])
 
   useEffect(() => {
     const offsetApear = windowSize.height * 0.6;
