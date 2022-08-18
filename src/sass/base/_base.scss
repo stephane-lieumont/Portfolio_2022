@@ -38,6 +38,11 @@ body {
     margin-bottom: 20px;
   }
 
+  .list-style {
+    list-style-type: disc;
+    padding-left: 30px;
+  }
+
   .section {
     position: relative;
     display: flex;
@@ -108,8 +113,13 @@ body {
         font-size: 1.5rem;
         font-weight: 700;
         color: $grey-shade200;
+        padding-right: 2px;
       }
     }
+  }
+
+  strong {
+    font-weight: 700;
   }
 
   .display1 {

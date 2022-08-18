@@ -1,6 +1,7 @@
 export interface ProjectDevData {
   id: string,
   imgFile: string,
+  imgFileProject: string,
   imgAlt: string,
   title: string,
   hashName: string,

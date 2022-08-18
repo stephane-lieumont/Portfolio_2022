@@ -1,6 +1,7 @@
 import { ProjectDevData, SpecialityData } from "~/interfaces/Data.intf"
 
 import CTPappMobileImg from '~/assets/medias/projects/case-tes-potes-mobile-2022.jpg'
+import CTPappMobileImgProject from '~/assets/medias/projects/case-tes-potes-mobile-2022_project.jpg'
 import CTPlandingPageImg from '~/assets/medias/projects/case-tes-potes-landingpage-2022.jpg'
 import CTPwebAppImg from '~/assets/medias/projects/case-tes-potes-webapp-2021.jpg'
 import KasaOcImg from '~/assets/medias/projects/oc-kasa-fromation-2021.jpg'
@@ -15,6 +16,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     hashName: 'case-tes-potes-application-mobile-2022',
     description: 'Application mobile android & IOS Case tes potes',
     imgFile: CTPappMobileImg,
+    imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - mobile',
     hashtags: [
       'flutter',
@@ -30,6 +32,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     hashName: 'case-tes-potes-landing-page-2022',
     description: 'Développement de la landing page et de l’application mobile de Case tes potes.',
     imgFile: CTPlandingPageImg,
+    imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - landingpage 2022',
     hashtags: [
       'react',
@@ -46,6 +49,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     hashName: 'case-tes-potes-webapp-pour-app-mobile-2021',
     description: 'Formulaire web responsive pour publier des stories sur l\'application mobile',
     imgFile: CTPwebAppImg,
+    imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - web application 2021',
     hashtags: [
       'webpack',
@@ -62,6 +66,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     hashName: 'kasa-application-react-openclassrooms-2021',
     description: 'Application React dans le cadre de la formation Developpeur FrontEnd',
     imgFile: KasaOcImg,
+    imgFileProject: CTPappMobileImgProject,
     imgAlt: 'case tes potes - landingpage 2021',
     hashtags: [
       'react',
@@ -78,6 +83,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     hashName: 'portfolio-3d-stephane-lieumont-2018',
     description: 'Portfolio 3d sur mes réalisation 2014-2016',
     imgFile: Portfolio2018Img,
+    imgFileProject: CTPappMobileImgProject,
     imgAlt: 'portfolio 3d - 2018',
     hashtags: [
       'javascript',
@@ -92,6 +98,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     hashName: 'pixmodels-communication-ausiovisuelle-2015',
     description: 'Projets d\'auto-entrepreneur en 2015. Je proposais divers services marqueting',
     imgFile: Pixmodels2015Img,
+    imgFileProject: CTPappMobileImgProject,
     imgAlt: 'pixmodels - agence de communication audiovisuel',
     hashtags: [
       'javascript',
