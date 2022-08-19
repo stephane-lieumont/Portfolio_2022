@@ -7,15 +7,43 @@
   display:block;
   font-size:2em;
   padding:3px;
+  position: relative;
+  
+  cursor: pointer;
 
   span {
     position: absolute;
-    text-indent: 999px;
+    bottom: 50%;
+    left: 50%;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
     visibility: hidden;
+    transform: translate(-50%, 50%);
+    background-color: $orange-shade300;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    opacity: 0;
   }
+
+  &:hover {
+    span {
+      transition: all .25s ease-in-out .1s;
+      opacity: 1;
+      transform: translate(-50%, -100%)!important;
+      visibility: visible;
+    }
+  } 
 
   &__list {
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    gap: 10px;
   }
 
   &__container {    
@@ -25,6 +53,7 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+    font-size: 35px;
     vertical-align:middle;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -90,17 +119,23 @@
   &--flutter::before {
     content: "\e917";
   }
+  &--node::before {
+    content: "\e925";
+  }
   &--react::before {
-    content: "\919";
+    content: "\e919";
   }
   &--vue::before {
-    content: "\918";
+    content: "\e918";
   }
   &--webpack::before {
     content: "\e91a";
   }
   &--symfony::before {
     content: "\e914";
+  }
+  &--docker::before {
+    content: "\e926";
   }
   &--html::before {
     content: "\eae4";
@@ -114,6 +149,9 @@
   &--javascript::before {
     content: "\e91c";
   }
+  &--typescript::before {
+    content: "\e927";
+  }
   &--php::before {
     content: "\e91f";
   }
@@ -124,7 +162,7 @@
     content: "\e924";
   }
   &--mongo::before {
-    content: "\e91c";
+    content: "\e91d";
   }
   &--mysql::before {
     content: "\e91e";

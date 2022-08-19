@@ -38,6 +38,11 @@ body {
     margin-bottom: 20px;
   }
 
+  a {
+    color:$primary;
+    font-weight: 500;
+  }
+
   .list-style {
     list-style-type: disc;
     padding-left: 30px;

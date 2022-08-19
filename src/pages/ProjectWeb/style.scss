@@ -31,22 +31,10 @@
     }
 
     .icon-custom {
-      &__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
-        align-content: flex-start;
-        gap: 10px;
-      }
-
       &__container{
-        font-size: 35px;
         color:$primary
       }
     }
-
-
   }
 }
 

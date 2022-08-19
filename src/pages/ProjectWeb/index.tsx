@@ -87,7 +87,7 @@ const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
                 </p>
               </div>
               <div className='project__release'>
-                <h3 className={`reveal${ contentLoaded ? ' reveal--3' : '' }`}>Réalisations</h3>
+                <h3 className={`reveal${ contentLoaded ? ' reveal--3' : '' }`}>Mission</h3>
                 <div className='row'>
                   <div className={`project__release__content reveal${ contentLoaded ? ' reveal--4' : '' }`}>
                     <p>{ parse(dataProject?.mission ?? '') } :</p>
