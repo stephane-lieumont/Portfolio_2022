@@ -21,12 +21,12 @@ const App: React.FunctionComponent = () => {
   const cvRoute = RoutesApp.getRouteByName('cv')
 
   useEffect(() => {
-    const route = RoutesApp.getRouteByPath(location.pathname)
+    let route = RoutesApp.getRouteByPath(location.pathname)
+    if(!route) route = RoutesApp.getRouteByName('error')
 
     if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
     setCurrentRoute(route)
-    setHeaderTitle(route?.headerTitle)
-
+    if(!state) setHeaderTitle(route?.headerTitle)
   }, [location, state])
 
   const handleClickMenu = (value: boolean) => {
