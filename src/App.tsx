@@ -11,6 +11,7 @@ import Modal from '~/components/Modal';
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   const [menuIsLigth, setMenuIsLigth] = useState<boolean>(false)
+  const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.ligth)
   const [headerTitle, setHeaderTitle] = useState<string>()
   const [currentRoute, setCurrentRoute] = useState<RouteAppObject>()
 
@@ -23,8 +24,8 @@ const App: React.FunctionComponent = () => {
   useEffect(() => {
     let route = RoutesApp.getRouteByPath(location.pathname)
     if(!route) route = RoutesApp.getRouteByName('error')
-
     if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
+    if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)
     setCurrentRoute(route)
     if(!state) setHeaderTitle(route?.headerTitle)
   }, [location, state])
@@ -39,7 +40,7 @@ const App: React.FunctionComponent = () => {
   return (
     <div data-testid="app" className="react-app"> 
       <Fragment>    
-      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentRoute?.params?.theme } headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled } />
+      <Header onClick={handleClickMenu} menuIsOpen={menuIsOpen} menuIsLigth={menuIsLigth} headerTitle={headerTitle} theme={ currentTheme } headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled } />
         <main className={`${menuIsOpen ? 'scale' : ''}${ currentRoute?.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
           <Routes location={state?.backgroundLocation || location}>
             { globalRoutes.map(({ path, Component }) => (              
