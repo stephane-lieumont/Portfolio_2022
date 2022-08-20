@@ -21,7 +21,6 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
   const [appearSectionSpecialities, setAppearSectionSpecialities] = useState<boolean>()
   const [appearSectionPortfolio, setAppearSectionPortfolio] = useState<boolean>()
   const [displayImageViewer, setDisplayImageViewer] = useState<boolean>(false)
-  const [contentLoaded, setContentLoaded] = useState<boolean>(false)
 
   const sectionSpecialities = useRef<HTMLDivElement>(null)
   const sectionPortfolio = useRef<HTMLDivElement>(null)
@@ -31,10 +30,6 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
   useEffect(() => {
     document.title = title
     window.scrollTo(0,0)
-
-    setTimeout(() => {
-      setContentLoaded(true)
-    }, 2000);
   }, [title])
 
   useEffect(() => {
@@ -60,10 +55,9 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
   return (
     <Fragment >
       <SmoothScroll onChanged={(value) => setScrollYPosition(value)}>
-        <Fragment>
-          
+        <Fragment>          
           <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'> 
-            <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} visible={contentLoaded} /> 
+            <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} /> 
             <Background
                 darken
                 triangle={false}
@@ -100,10 +94,10 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
                   }}
                 />    
                 <div className='section__content'>            
-                  <h2 className={`display1 reveal${ appearSectionSpecialities && contentLoaded ? ' reveal--0' : '' }`}>Spécialités</h2>
+                  <h2 className={`display1 reveal${ appearSectionSpecialities ? ' reveal--0' : '' }`}>Spécialités</h2>
                   <ul className='specialities'>
                     { specialities.map((speciality, index) => (
-                     <li key={`speciality-${index}`} className={`specialities__item${ appearSectionSpecialities && contentLoaded ? ` specialities__item__reveal--${index}` : ''}`}>
+                     <li key={`speciality-${index}`} className={`specialities__item${ appearSectionSpecialities ? ` specialities__item__reveal--${index}` : ''}`}>
                         <img height={speciality.size} src={speciality.src} alt={speciality.alt} />
                         <p>{ firstLetterUpper(speciality.name) }</p>
                       </li>
@@ -113,7 +107,7 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
               </section>
               <section ref={sectionPortfolio} className='section portfolio-cgi__projects'>
                 <div className='section__content--fullwidth'>
-                  <h2 className={`display1 reveal${ appearSectionPortfolio && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
+                  <h2 className={`display1 reveal${ appearSectionPortfolio ? ' reveal--0' : '' }`}>Réalisations</h2>
                   <Gallery portfolioData={ PortfolioImagesData } onClick={ (imageData) => handleGalleryImageOnClick(imageData) } />          
                 </div>          
               </section>

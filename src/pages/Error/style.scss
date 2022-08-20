@@ -6,6 +6,7 @@
   flex-wrap: nowrap;
   
   &__leftside {
+    position: relative;
     flex: 1 0 50%;
     height: 100vh;
 
@@ -21,6 +22,7 @@
   }
 
   &__rigthside {
+    position: relative;
     flex: 1 0 50%;
     background: $primary;
     color:white;

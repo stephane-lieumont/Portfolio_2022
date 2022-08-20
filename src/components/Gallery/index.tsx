@@ -1,4 +1,4 @@
-import { FunctionComponent, MouseEvent, useEffect, useState } from 'react';
+import { createRef, FunctionComponent, MouseEvent, SyntheticEvent, useMemo } from 'react';
 import { GalleryProps } from '~/interfaces/Component.intf';
 import { PortfolioData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
@@ -6,22 +6,27 @@ import './style.scss';
 
 
 
-const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick}) => {
-  const [galeryLoaded, setGaleryLoaded] = useState<boolean>(false)
-
-  useEffect(() => {
-    setTimeout(() => {
-        setGaleryLoaded(true)
-    }, 2000);
-  }, [])
+const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick}) => { 
+  const refsById = useMemo(() => {
+    const refs: any = {}
+    portfolioData.forEach((item) => {
+        refs[item.id] = createRef<HTMLImageElement>()
+    })
+    return refs
+  }, [portfolioData])
 
   const handleClick = (e: MouseEvent<HTMLDivElement>, imageData: PortfolioData) => {
     e.preventDefault()
     if(onClick) onClick(imageData)
   }
 
+  const handleLoadImage= (e: SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.classList.remove('loading')
+    e.currentTarget.parentNode?.querySelector('.gallery__grid__item__desc')?.classList.remove('loading')
+  }
+
   return (
-    <div className='gallery gallery__grid'>   
+    <div className='gallery gallery__grid'>      
       { portfolioData.map((imageData, index) => (
         <div key={imageData.id} 
           onClick={(e) => handleClick(e, imageData)}
@@ -31,13 +36,10 @@ const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick})
               index % 5 === 0 && index < portfolioData.length - 3 ? 'gallery__grid__item--double-row ' :
               (index ) % 3 === 0 && index < portfolioData.length - 7 ? 'gallery__grid__item--double-column ' :
               'gallery__grid__item--single '
-            }  
-            gallery__grid__item__reveal 
-            ${ galeryLoaded ? ` gallery__grid__item__reveal--${index}` : '' }
-            `}              
+            }`}      
           >
-          <img src={imageData.imgFileThumb} alt={imageData.imgAlt} />
-          <div className='gallery__grid__item__desc'>
+          <img className='loading' src={imageData.imgFileThumb} alt={imageData.imgAlt} ref={refsById[imageData.id]} onLoad={handleLoadImage} />
+          <div className='gallery__grid__item__desc loading'>
             <h4>{ firstLetterUpper(imageData.title) }</h4>
             <p>{ imageData.released.getFullYear() }</p>
             <ul className='icon-custom__list'>

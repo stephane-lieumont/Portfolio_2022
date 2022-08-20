@@ -1,7 +1,7 @@
 .gallery {
   width: 100%;
   margin-top: 30px;
-
+  
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -41,6 +41,10 @@
         z-index: 10;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
+
+        &.loading {
+          display: none;
+        }
 
         h4 {
           font-size: 1rem;
@@ -98,7 +102,11 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.2s ease;
+        transition: all 0.3s ease!important;
+
+        &.loading {
+          transform: scale(1.2);
+        }
       }
     }
   }
