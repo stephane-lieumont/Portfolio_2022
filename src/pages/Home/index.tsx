@@ -4,6 +4,7 @@ import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Background from '~/components/Background';
 import Button from '~/components/Button';
+import Loader from '~/components/Loader';
 import useWindowSize from '~/hooks/useWindowsSize';
 import { PageProps } from '~/interfaces/Component.intf';
 import RoutesApp from '~/routes/Routes.app';
@@ -19,15 +20,11 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const portfolioDevPath = RoutesApp.getRouteByName('dev')!.path
   const portfolioCgiPath = RoutesApp.getRouteByName('cgi')!.path
 
-  const [contentLoaded, setContentLoaded] = useState<boolean>(false)
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false)  
 
   useEffect(() => {
     document.title = title
     window.scrollTo(0,0)
-
-    setTimeout(() => {
-      setContentLoaded(true)
-    }, 500);
   }, [title])
 
 
@@ -37,7 +34,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   }, [windowSize.height]);
 
   return (
-    <div ref={currentPage} className={`homepage${ !contentLoaded ? ' homepage--loading' : ''}`} data-testid='page-home'>      
+    <div ref={currentPage} className={`homepage${ !imgLoaded ? ' homepage--loading' : ''}`} data-testid='page-home'>      
       <div className='homepage__blockquote'>
         <blockquote>
           <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
@@ -45,7 +42,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
         </blockquote>
       </div>   
       <div className='homepage__leftside'>
-        { contentLoaded ? (
+        { imgLoaded ? (
           <Background 
             ligthen
             triangleProperties = {{
@@ -69,22 +66,24 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
               delayAnimation: 300
             }}
           />
-        ) : null}
+        ) : (
+          <Loader />
+        )}
         <div className='homepage__leftside__content'>
-          <h2 className={`homepage__leftside__content__title reveal${ contentLoaded ? ' reveal--3' : ''}`}>Developpeur Frontend & <span>Graphiste 3D</span></h2>
-          <p className={`reveal${ contentLoaded ? ' reveal--4' : ''}`}>Captivé par les nouvelles technologies depuis 2006, ma curiosité m’a amené à découvrir le développement informatique et le graphisme 3D.</p>
+          <h2 className={`homepage__leftside__content__title reveal${ imgLoaded ? ' reveal--3' : ''}`}>Developpeur Frontend & <span>Graphiste 3D</span></h2>
+          <p className={`reveal${ imgLoaded ? ' reveal--4' : ''}`}>Captivé par les nouvelles technologies depuis 2006, ma curiosité m’a amené à découvrir le développement informatique et le graphisme 3D.</p>
           <div className='homepage__leftside__content__nav'>
-            <div className={`reveal${ contentLoaded ? ' reveal--5' : ''}`}>
+            <div className={`reveal${ imgLoaded ? ' reveal--5' : ''}`}>
               <Button label='profil dev' onClick={() => navigate(portfolioDevPath)} />
             </div>
-            <div className={`reveal${ contentLoaded ? ' reveal--6' : ''}`}>
+            <div className={`reveal${ imgLoaded ? ' reveal--6' : ''}`}>
               <Button label="profil 3D" outlined onClick={() => navigate(portfolioCgiPath)} />
             </div>
           </div>
         </div>
       </div>
       <div className='homepage__rigthside'>
-        { contentLoaded ? (
+        { imgLoaded ? (
           <Background 
             triangle={false} 
             points={false}
@@ -97,7 +96,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           />
         ) : null}
         <div className='homepage__rigthside__demo-real'></div>
-        <img width={600} height={470} src={require('~/assets/profile/profil-stephane-lieumont.png')} alt='profil stéphane lieumont' />
+        <img className={!imgLoaded ? 'loading' : '' } width={600} height={470} onLoad={() => setImgLoaded(true) } src={require('~/assets/profile/profil-stephane-lieumont.png')} alt='profil stéphane lieumont' />
       </div>
     </div>
   );

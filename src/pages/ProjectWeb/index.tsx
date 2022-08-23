@@ -11,12 +11,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import parse from 'html-react-parser'
 import { firstLetterUpper } from '~/utils/formatString';
+import Loader from '~/components/Loader';
 
 const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const params = useParams()
 
   const [scrollYPosition, setScrollPosition] = useState<number>(0)
-  const [contentLoaded, setContentLoaded] = useState<boolean>(false)
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false)
   const [dataProject, setDataProject] = useState<ProjectDevData>()
 
   const navigate = useNavigate()
@@ -29,10 +30,6 @@ const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
 
     document.title = title + ' ' + data?.title
     window.scrollTo(0,0)
-
-    setTimeout(() => {
-      setContentLoaded(true)
-    }, 500);
   }, [title, params, navigate])
 
   const handleReturn = (e: MouseEvent<SVGSVGElement>) => {
@@ -44,7 +41,7 @@ const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
     <SmoothScroll offset onChanged={(value) => setScrollPosition(value)}>
       <div className='page project-web' data-testid='page-project-web'>
         <div className="section__group">
-          { contentLoaded ? (
+          { imgLoaded ? (
             <Background 
               ligthen
               triangleProperties = {{
@@ -68,28 +65,31 @@ const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
                 delayAnimation: 300
               }}
             />  
-          ) : null }
+          ) : (
+            <Loader />
+          ) }
           <section className='section'>
             <div className='project section__content'>
-              <div className={`project__title reveal${ contentLoaded ? ' reveal--0' : '' }`}>
+              <div className={`project__title reveal${ imgLoaded ? ' reveal--0' : '' }`}>
                 <FontAwesomeIcon icon={faArrowAltCircleLeft} className='fa-return-btn' onClick={handleReturn} />
                 <h2 className={`display1`}>{ dataProject?.title }</h2>
               </div>
               <div className='project__pitch'>
                 <img
-                  className={`reveal${ contentLoaded ? ' reveal--1' : '' }`}
+                  onLoad={ () => setImgLoaded(true) }
+                  className={`reveal${ imgLoaded ? ' reveal--1' : '' }`}
                   width="800" 
                   src={dataProject?.imgFileProject} 
                   alt={dataProject?.imgAlt}
                 />
-                <p className={`text--indent reveal${ contentLoaded ? ' reveal--2' : '' }`}>
+                <p className={`text--indent reveal${ imgLoaded ? ' reveal--2' : '' }`}>
                   { parse(dataProject?.description ?? '') }
                 </p>
               </div>
               <div className='project__release'>
-                <h3 className={`reveal${ contentLoaded ? ' reveal--3' : '' }`}>Mission</h3>
+                <h3 className={`reveal${ imgLoaded ? ' reveal--3' : '' }`}>Mission</h3>
                 <div className='row'>
-                  <div className={`project__release__content reveal${ contentLoaded ? ' reveal--4' : '' }`}>
+                  <div className={`project__release__content reveal${ imgLoaded ? ' reveal--4' : '' }`}>
                     <p>{ parse(dataProject?.mission ?? '') } :</p>
                     <ul className='list-style'>
                       { dataProject?.missionSteps.map((item, index) => (
@@ -97,7 +97,7 @@ const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
                       ))}
                     </ul>
                   </div>
-                  <ul className={`icon-custom__list reveal${ contentLoaded ? ' reveal--4' : '' }`}>
+                  <ul className={`icon-custom__list reveal${ imgLoaded ? ' reveal--4' : '' }`}>
                     { dataProject?.technos.map((item, index) => (
                       <li key={`techno-${index}`} className="icon-custom"><i className={`icon-custom__container icon-custom--${ item } }`}></i><span>{firstLetterUpper(item)}</span></li>
                     ))}
