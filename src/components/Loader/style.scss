@@ -28,12 +28,12 @@ $color: $primary;
   
   .lightgreen {
     z-index: 999;
-    background-color: $orange-shade200;
+    background-color: rgba($color: $orange-shade200, $alpha: 0.8);
     animation: hide1 2s ease infinite;
   }
   
   .darkgreen {
-    background-color: $orange-shade100;
+    background-color: rgba($color: $orange-shade300, $alpha: 0.4);
     animation: hide2 2s ease infinite;
   }
   
