@@ -14,8 +14,12 @@ main {
     background-color: $grey;
     color: white;
 
+    .smoothscroll-container {
+      background-color: $grey;
+    }
+
     h2 {
-      background-image: url('../../assets/icons/triangle002-primary.svg')!important;
+      background-image: url('../../assets/icons/triangle002-primary.svg');
     }
 
     .specialities {
@@ -28,11 +32,15 @@ main {
   &.theme-ligth {
     background-color: white;
     color: $secondary;
+
+    .smoothscroll-container {
+      background-color: white;
+    }
   }
 
  .page {
     position: relative;
-    width: 100%;    
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

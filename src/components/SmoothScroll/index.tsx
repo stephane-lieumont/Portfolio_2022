@@ -1,14 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import useWindowSize from "../../hooks/useWindowsSize";
+import { FunctionComponent, useEffect, useRef } from "react";
+import useWindowSize from "~/hooks/useWindowsSize";
+import { SmoothScrollProps } from "~/interfaces/Component.intf";
 import "./style.scss";
 
-type SmoothScrollProps = {
-  children: JSX.Element,
-  offset?: boolean,
-  onChanged?: (scrollY: number) => void
-}
 
-const SmoothScroll: React.FunctionComponent<SmoothScrollProps> = ({ children, offset = false, onChanged = () => {} }) => {
+const SmoothScroll: FunctionComponent<SmoothScrollProps> = ({ children, offset = false, onChanged = () => {} }) => {
   const windowSize = useWindowSize();
   const scrollingContainerRef = useRef<HTMLDivElement>(null);
 

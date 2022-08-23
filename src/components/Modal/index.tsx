@@ -1,27 +1,22 @@
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FunctionComponent, MouseEvent, ReactElement, useEffect, useState} from 'react'
+import { FunctionComponent, MouseEvent, useEffect, useState} from 'react'
+import { useNavigate } from 'react-router'
+import { ModalProps } from '~/interfaces/Component.intf'
 import './style.scss'
-
-export type ModalProps = {
-  title?: string, 
-  children?: ReactElement,
-  width?: string,
-  heigth?: string,
-  displayOn?: boolean,
-  duration?: number,
-  onClose?: CallableFunction
-}
 
 const Modal: FunctionComponent<ModalProps> = ({
   children, 
   title = 'Title', 
   width = '50%', 
   heigth = '50%', 
-  displayOn = true, 
+  displayOn = true,
+  dismissNavigator = false,
   duration = 300,
   onClose = () => {}
 }) => {
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState<boolean>()
   const [isAnimateClose, setIsAnimateClose] = useState<boolean>(false)
 
@@ -38,9 +33,14 @@ const Modal: FunctionComponent<ModalProps> = ({
 
     const timer = setTimeout(() => {
       setIsAnimateClose(false)
+      if(dismissNavigator) onDismiss()
       onClose()
       clearTimeout(timer)
     }, duration);
+  }
+
+  const onDismiss = () => {
+    navigate(-1);
   }
 
   return (

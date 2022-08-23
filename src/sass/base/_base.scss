@@ -38,6 +38,24 @@ body {
     margin-bottom: 20px;
   }
 
+  a {
+    color:$primary;
+    font-weight: 500;
+  }
+
+  img{
+    transition: opacity .3s ease-in-out;
+    opacity: 1;
+    &.loading {
+      opacity: 0;
+    }
+  }
+
+  .list-style {
+    list-style-type: disc;
+    padding-left: 30px;
+  }
+
   .section {
     position: relative;
     display: flex;
@@ -50,9 +68,11 @@ body {
     &__group {
       position:relative;
       width: 100%;
+      flex-grow: 1;
     }
     
     &__content {
+      position: relative;
       display:flex;
       flex-direction: column;
       justify-content: center;
@@ -107,8 +127,13 @@ body {
         font-size: 1.5rem;
         font-weight: 700;
         color: $grey-shade200;
+        padding-right: 2px;
       }
     }
+  }
+
+  strong {
+    font-weight: 700;
   }
 
   .display1 {
@@ -161,6 +186,17 @@ body {
     cursor: pointer;
     transition: color .15s ease-in-out;
   
+    &:hover {
+      color: $primary
+    }
+  }
+
+  .fa-return-btn {
+    color:$orange-shade300;
+    transition: color .15s ease-in-out;
+    cursor: pointer;
+    font-size: 24px;
+
     &:hover {
       color: $primary
     }

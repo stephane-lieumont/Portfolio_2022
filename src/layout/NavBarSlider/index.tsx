@@ -1,18 +1,11 @@
 import gsap, { Power3, Elastic } from 'gsap';
 import React, { MouseEvent, useEffect, useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
-import { RouteAppObject } from '../../interfaces/Routes.intf'
-import Colors from '../../sass/themes/colors.module.scss'
+import { NavBarSliderProps } from '~/interfaces/Component.intf';
+import Colors from '~/sass/themes/colors.module.scss'
 
 import './style.scss';
 
-type NavBarSliderProps = {
-  defaultValueOpen?: boolean
-  animated?: boolean
-  ligth?: boolean
-  routeList?: RouteAppObject[]
-  onClick?: CallableFunction  
-}
 
 const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
     defaultValueOpen = false, 
@@ -78,8 +71,8 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
         </svg>
         <nav className='navbar__slider__menu'>
           <ul ref={menu}>
-          { routeList.map(({ path, label, name }) => (
-              path !== '*' ?
+          { routeList.map(({ path, label, name, params }) => (
+              path !== '*' && params?.mainMenuEnabled !== false ?
               <li key={name} onClick={handleClick}>
                 <NavLink to={path}>{label}</NavLink>
               </li>
