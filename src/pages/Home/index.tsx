@@ -27,8 +27,6 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
     window.scrollTo(0,0)
   }, [title])
 
-
-
   useEffect(() => {
     document.body.style.height = `${ currentPage.current?.getBoundingClientRect().height }px`
   }, [windowSize.height]);
@@ -40,7 +38,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
           <small>Romain Guilleaumes</small>
         </blockquote>
-      </div>   
+      </div>
       <div className='homepage__leftside'>
         { imgLoaded ? (
           <Background 

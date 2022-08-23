@@ -1,4 +1,5 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .button {
   outline: none;
@@ -39,5 +40,12 @@
       background-color: rgba($orange-shade300, 0.5);
       box-shadow:inset 0px 0px 0px 2px $orange-shade300;
     }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .button {
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 }
