@@ -1,29 +1,22 @@
-import RoutesApp from '../../routes/Routes.app';
+import RoutesApp from '~/routes/Routes.app';
 import './style.scss'
 import NavBarButton from '../NavBarSlider';
-import Button from '../../components/Button';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
-import { Theme } from '../../interfaces/Theme.intf';
-import Modal from '~/components/Modal';
-import CV from '~/pages/CV';
-import Contact from '~/pages/Contact';
+import Button from '~/components/Button';
+import { FunctionComponent, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router';
+import { Theme } from '~/interfaces/Theme.intf';
+import { Link } from 'react-router-dom';
+import { HeaderProps } from '~/interfaces/Component.intf';
 
-type HeaderProps = {
-  menuIsOpen?: boolean
-  menuIsLigth?: boolean
-  headerTitle?: string
-  theme?: Theme
-  onClick?: (isOpen: boolean) => void
-}
+const Header: FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, headerButtonsEnabled, theme, onClick = () => {}}) => {
+  const location = useLocation();
 
-const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuIsLigth = false, headerTitle, theme, onClick = () => {}}) => {
   const [menuHide, setMenuHide] = useState<boolean>(false)
-  const [modalContactVisible, setModalContactVisible] = useState<boolean>(false)
-  const [modalCvVisible, setModalCvVisible] = useState<boolean>(false)
   const navigate = useNavigate()
 
-  const homePageRoutePath = RoutesApp.getRouteByName('home')!.path 
+  const homePageRoutePath = RoutesApp.getRouteByName('home')
+  const contactPage = RoutesApp.getRouteByName('contact')
+  const cvPage = RoutesApp.getRouteByName('cv')
 
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
@@ -51,21 +44,21 @@ const Header: React.FunctionComponent<HeaderProps> = ({menuIsOpen = false, menuI
               </div>
             : null}
           </span>
-          <span className='head-subtitle' onClick={() => navigate(homePageRoutePath) }>
+          <span className='head-subtitle' onClick={() => navigate(homePageRoutePath!.path) }>
             <span>Stéphane</span>
             <span className='text--primary text--bold'>Lieumont</span>
           </span>
-        </h1>
+        </h1>                
         <div className='navigation'>
-          <ul className='navigation__buttons'>
-            <li><Button label='Contact' outlined white={menuIsLigth || theme === Theme.dark} onClick={ () => setModalContactVisible(true) } /></li>
-            <li><Button label='Mon CV' outlined white={menuIsLigth || theme === Theme.dark} onClick={ () => setModalCvVisible(true) } /></li>
-          </ul>
+          { headerButtonsEnabled !== false && (
+            <ul className='navigation__buttons'>
+              <li><Link to={contactPage!.path} state={{ backgroundLocation: location }} ><Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} /></Link></li>
+              <li><Link to={cvPage!.path} state={{ backgroundLocation: location }} ><Button label={cvPage!.label} outlined white={menuIsLigth || theme === Theme.dark} /></Link></li>
+            </ul>
+          )}
         </div>   
       </div>
       <NavBarButton routeList={RoutesApp.routeList} ligth={menuIsLigth || theme === Theme.dark} onClick={onClick}/>
-      <Modal title='Mon Parcours' width='40%' heigth='80%' displayOn={modalCvVisible} onClose={() => setModalCvVisible(false)}><CV /></Modal>
-      <Modal title='Contactez-moi' heigth='70%' displayOn={modalContactVisible} onClose={() => setModalContactVisible(false)}><Contact /></Modal>     
     </header>
   );
 }

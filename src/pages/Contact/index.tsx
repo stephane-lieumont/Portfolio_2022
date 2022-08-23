@@ -1,8 +1,10 @@
 import { faLocation, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fragment, FunctionComponent, MouseEvent } from 'react';
+import { FunctionComponent, MouseEvent, useEffect, useRef } from 'react';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
+import { useOnLoadImages } from '~/hooks/useOnLoadImages';
+import { PageProps } from '~/interfaces/Component.intf';
 import { HTMLFormType } from '~/interfaces/Forms.intf';
 import { FormContactActions } from '~/store/formContact.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
@@ -10,7 +12,14 @@ import { firstLetterUpper } from '~/utils/formatString';
 import { FormValidator } from '~/utils/formValidator';
 import './style.scss'
 
-const Contact: FunctionComponent = () => {
+const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const imagesLoaded = useOnLoadImages(wrapperRef);
+
+  useEffect(() => {
+    document.title = title
+  })
+
   const formInputName = useAppSelector((state) => state.formContactSlice.formInputName )
   const formInputEmail = useAppSelector((state) => state.formContactSlice.formInputEmail )
   const formInputMessage = useAppSelector((state) => state.formContactSlice.formInputMessage )
@@ -39,11 +48,8 @@ const Contact: FunctionComponent = () => {
   }
 
   return (
-    <Fragment>
-      <div className='contact'>
-        <div className="contact__bg">
-          <img src={require('../../assets/profile/profil-stephane-lieumont-contact.jpg')} alt="profil stéphane lieumont"/>
-        </div>
+    <div ref={wrapperRef} className={`contact`}>
+      <div className='contact__content'>
         <p>
           Un projet, une question où juste un Hello World ?
         </p>
@@ -108,12 +114,15 @@ const Contact: FunctionComponent = () => {
           />
           <Button label='Envoyer' onClick={onSubmit} />
         </form>
-        <ul className='contact__card'>
-          <li><FontAwesomeIcon icon={faPhone} className={'fa-icon'}/> 06.37.35.35.79</li>
-          <li><FontAwesomeIcon icon={faLocation} className={'fa-icon'}/> 31470 Fontenilles, FRANCE</li>
-        </ul>
       </div>
-    </Fragment>
+      <ul className='contact__card'>
+        <li><FontAwesomeIcon icon={faPhone} className={'fa-icon'}/> 06.37.35.35.79</li>
+        <li><FontAwesomeIcon icon={faLocation} className={'fa-icon'}/> 31470 Fontenilles, FRANCE</li>
+      </ul>
+      <div className="contact__bg">
+        <img className={imagesLoaded ? '' : 'loading'} src={require('../../assets/profile/profil-stephane-lieumont-contact.jpg')} alt="profil stéphane lieumont"/>
+      </div>
+    </div>
   );
 }
 

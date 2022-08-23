@@ -1,31 +1,11 @@
 import { Fragment, FunctionComponent } from 'react';
 
-import { ReactComponent as TriangleSVG } from '../../assets/background/triangle.svg'
-import { ReactComponent as CircleDoubleSVG } from '../../assets/background/double-circle.svg'
-import { ReactComponent as ReapeatPointsSVG } from '../../assets/background/repeat-points-2.svg'
+import { ReactComponent as TriangleSVG } from '~/assets/background/triangle.svg'
+import { ReactComponent as CircleDoubleSVG } from '~/assets/background/double-circle.svg'
+import { ReactComponent as ReapeatPointsSVG } from '~/assets/background/repeat-points-2.svg'
 
 import './style.scss';
-
-type BackgroundProps = {
-  darken?: boolean
-  ligthen?: boolean
-  triangle?: boolean
-  points?: boolean
-  circle?: boolean
-  triangleProperties?: SVGproperties
-  pointsProperties?: SVGproperties
-  circleProperties?: SVGproperties
-}
-
-export type SVGproperties = {
-  top?:string
-  rigth?:string
-  bottom?:string
-  left?:string
-  rotate?:string
-  size?:string
-  delayAnimation?:number
-}
+import { BackgroundProps } from '~/interfaces/Component.intf';
 
 const Background: FunctionComponent<BackgroundProps> = ({ 
   darken = false, 

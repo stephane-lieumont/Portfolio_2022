@@ -1,16 +1,9 @@
 import { faClose } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { FunctionComponent, MouseEvent, useEffect, useState } from "react"
-import { PortfolioData } from "~/interfaces/Data.intf"
+import { ImageViewerProps } from "~/interfaces/Component.intf"
 import { firstLetterUpper } from "~/utils/formatString"
 import './style.scss'
-
-type ImageViewerProps = {
-  imageData?: PortfolioData,
-  displayOn?: boolean,
-  duration?: number,
-  onClose?: CallableFunction
-}
 
 const ImageViewer: FunctionComponent<ImageViewerProps> = ({
   imageData,

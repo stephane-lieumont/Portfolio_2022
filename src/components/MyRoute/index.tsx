@@ -1,14 +1,10 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 import { useResolvedPath, useMatch } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
+import { MyRouteProps } from '~/interfaces/Component.intf'
 import './style.scss'
 
-export type MyRouteProps = {
-  path: string,
-  children?: React.ReactElement
-}
-
-const MyRoute: React.FunctionComponent<MyRouteProps> = ({path, children}) => {
+const MyRoute: FunctionComponent<MyRouteProps> = ({path, children}) => {
   const resolvedPath = useResolvedPath(path!)
   const match = useMatch(resolvedPath.pathname)
 

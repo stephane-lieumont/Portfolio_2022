@@ -1,9 +1,14 @@
 export interface ProjectDevData {
   id: string,
   imgFile: string,
+  imgFileProject: string,
   imgAlt: string,
   title: string,
+  hashName: string,
   description: string,
+  mission: string,
+  missionSteps: string[],
+  technos: string[],
   hashtags: string[],
   released: Date,
   demoLink?: string

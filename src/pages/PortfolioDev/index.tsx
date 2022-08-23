@@ -1,17 +1,16 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
-import SmoothScroll from '../../components/SmoothScroll';
-import { PageProps } from '../../interfaces/Routes.intf';
-import Footer from '../../layout/Footer';
-import SoftSkillsPicture from '../../assets/pictures/softskills-illustration.svg'
-import { ProjectsDevData, SpecialitiesDevData } from '../../__mock__/data/dev.projects.data';
+import SmoothScroll from '~/components/SmoothScroll';
+import Footer from '~/layout/Footer';
+import SoftSkillsPicture from '~/assets/pictures/softskills-illustration.svg'
+import { ProjectsDevData, SpecialitiesDevData } from '~/datas/dev.projects.data';
 import './style.scss'
-import ProjectCard from '../../components/ProjectCard';
+import ProjectCard from '~/components/ProjectCard';
 import Background from '~/components/Background';
 import useWindowSize from '~/hooks/useWindowsSize';
 import { SpecialityData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
-
-
+import { Link } from 'react-router-dom';
+import { PageProps } from '~/interfaces/Component.intf';
 
 const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const specialities: SpecialityData[] = SpecialitiesDevData
@@ -27,14 +26,14 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
   const sectionSoftSkills = useRef<HTMLDivElement>(null)
   const windowSize = useWindowSize();
 
-
   useEffect(() => {
     document.title = title
 
     setTimeout(() => {
       setContentLoaded(true)
+      window.scrollTo(0,0)
     }, 500);
-  })
+  }, [title])
 
   useEffect(() => {
     const offsetApear = windowSize.height * 0.6;
@@ -116,14 +115,14 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
             <h2 className={`display1 reveal${ appearSectionProjects && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
             <ul className="portfolio-dev__projects__list">
               {ProjectsDevData.map( (project, index) => (
-                <li key={`project${project.id}`} className="portfolio-dev__projects__item">
-                  <ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} />
-                </li>
+                <Link className="portfolio-dev__projects__item" key={`${project.id}`} to={`${project.hashName}`} onClick={() => { window.scrollTo(0,0) }}>
+                  <li><ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} /></li>
+                </Link>
               ))}
-             </ul>
+            </ul>
           </div>
         </section>
-        <Footer />      
+        <Footer />
       </div>
     </SmoothScroll>
   );
