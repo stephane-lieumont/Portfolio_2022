@@ -1,10 +1,12 @@
-import { FunctionComponent, useEffect } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import Background from '~/components/Background';
 import { PageProps } from '~/interfaces/Component.intf';
 
 import './style.scss'
 
 const Error: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false)
+
   useEffect(() => {
     document.title = title
     window.scrollTo(0,0)
@@ -36,7 +38,7 @@ const Error: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
               delayAnimation: 300
             }}
           />
-        <img src={require('~/assets/gif/travolta-comfused.gif')} alt="travolta confusion page introuvable" />
+        <img className={!imgLoaded ? 'loading' : '' } onLoad={() => setImgLoaded(true)} src={require('~/assets/gif/travolta-comfused.gif')} alt="travolta confusion page introuvable" />
       </div>
       <div className='error-page__rigthside'>
         <Background 

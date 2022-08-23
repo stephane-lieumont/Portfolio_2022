@@ -16,13 +16,13 @@ const SocialSideBar: FunctionComponent<SocialSideBarProps> = ({menuIsOpen = fals
     <div className={`social-sidebar${ menuIsOpen ? ' social-sidebar--hidden' : ''}`}>
       <ul>
         <li onMouseEnter={() => setHoverGithub(true)} onMouseLeave={() => setHoverGithub(false)}>
-          <SocialIcon url='https://github.com/StephaneLi' bgColor={hoverGithub ? 'black' : ligthen ? 'white' : Colors.secondary} fgColor={hoverGithub ? 'white' : 'transparent'} />
+          <SocialIcon url='https://github.com/StephaneLi' target={'_blank'} bgColor={hoverGithub ? 'black' : ligthen ? 'white' : Colors.secondary} fgColor={hoverGithub ? 'white' : 'transparent'} />
         </li>
         <li onMouseEnter={() => setHoverLinkedin(true)} onMouseLeave={() => setHoverLinkedin(false)}>
-          <SocialIcon url='https://www.linkedin.com/in/stephane-lieumont/'  bgColor={hoverLinkedin ? '#0E76A8' : ligthen ? 'white' :Colors.secondary}  fgColor={hoverLinkedin ? 'white' : 'transparent'} />
+          <SocialIcon url='https://www.linkedin.com/in/stephane-lieumont/' target={'_blank'} bgColor={hoverLinkedin ? '#0E76A8' : ligthen ? 'white' :Colors.secondary}  fgColor={hoverLinkedin ? 'white' : 'transparent'} />
         </li>
         <li onMouseEnter={() => setHoverArtstation(true)} onMouseLeave={() => setHoverArtstation(false)}>
-          <SocialIcon url='https://s-lieumont.artstation.com/'  bgColor={ hoverArtstation ? '#13aff0' : ligthen ? 'white' : Colors.secondary } defaultSVG={ ArtstationIcon }  fgColor={hoverArtstation ? 'white' : 'transparent'} />
+          <SocialIcon url='https://s-lieumont.artstation.com/' target={'_blank'} bgColor={ hoverArtstation ? '#13aff0' : ligthen ? 'white' : Colors.secondary } defaultSVG={ ArtstationIcon }  fgColor={hoverArtstation ? 'white' : 'transparent'} />
         </li>
       </ul>
     </div>
