@@ -1,4 +1,5 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .homepage {
   position: absolute;
@@ -98,6 +99,36 @@
           opacity: 0;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .homepage {
+    flex-direction: column-reverse;
+
+    &__blockquote {
+      display:none;
+    }
+
+    &__rigthside {
+      flex-basis: auto;
+      min-height: 500px;
+
+      &__demo-real {
+        margin: 0;
+      }
+
+      img {
+        width: 100%;
+        max-width: 500px;
+        min-width: 300px;
+        height: auto;
+      }
+    }
+
+    &__leftside {
+      flex-basis: auto;
     }
   }
 }
