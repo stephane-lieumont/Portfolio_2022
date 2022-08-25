@@ -1,10 +1,8 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .project-web {
   .project {
-
-
-
     h3 {
       margin-top: 10px;
       font-size: 1.4rem!important;
@@ -37,4 +35,17 @@
     }
   }
 }
+
+@media only screen and (max-width: $screen-lg) {
+  .project__release {
+    &__content {
+      width: 100%!important;
+    }
+    .row {
+      flex-direction: column!important;
+    }
+  }
+}
+
+
 

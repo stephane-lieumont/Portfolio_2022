@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect, useRef, useState } from "react"
 import { useOnLoadImages } from "~/hooks/useOnLoadImages"
 import { CarouselProps } from "~/interfaces/Component.intf"
+import Background from "../Background"
 import Loader from "../Loader"
 import './style.scss'
 

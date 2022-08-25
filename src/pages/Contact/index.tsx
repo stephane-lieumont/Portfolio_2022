@@ -1,9 +1,8 @@
 import { faLocation, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FunctionComponent, MouseEvent, useEffect, useRef } from 'react';
+import { FunctionComponent, MouseEvent, useEffect, useState } from 'react';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
-import { useOnLoadImages } from '~/hooks/useOnLoadImages';
 import { PageProps } from '~/interfaces/Component.intf';
 import { HTMLFormType } from '~/interfaces/Forms.intf';
 import { FormContactActions } from '~/store/formContact.store';
@@ -13,8 +12,7 @@ import { FormValidator } from '~/utils/formValidator';
 import './style.scss'
 
 const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const imagesLoaded = useOnLoadImages(wrapperRef);
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false)
 
   useEffect(() => {
     document.title = title
@@ -48,7 +46,7 @@ const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) =
   }
 
   return (
-    <div ref={wrapperRef} className={`contact`}>
+    <div className={`contact`}>
       <div className='contact__content'>
         <p>
           Un projet, une question où juste un Hello World ?
@@ -120,7 +118,7 @@ const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) =
         <li><FontAwesomeIcon icon={faLocation} className={'fa-icon'}/> 31470 Fontenilles, FRANCE</li>
       </ul>
       <div className="contact__bg">
-        <img className={imagesLoaded ? '' : 'loading'} src={require('../../assets/profile/profil-stephane-lieumont-contact.jpg')} alt="profil stéphane lieumont"/>
+        <img className={imgLoaded ? '' : 'loading'} onLoad={() => setImgLoaded(true)} src={require('../../assets/profile/profil-stephane-lieumont-contact.jpg')} alt="profil stéphane lieumont"/>
       </div>
     </div>
   );

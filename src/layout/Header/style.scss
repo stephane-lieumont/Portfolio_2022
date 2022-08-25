@@ -96,11 +96,16 @@
   }
 }
 
-@media only screen and (max-width: $screen-lg) {
+@media only screen and (max-width: $screen-xl) {
   .header {
     .navigation {
       display: none;
     }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .header {
     h1 {
       line-height: 1.2rem!important;
 
@@ -129,6 +134,12 @@
         &::after, &::before {
           width: 20px!important;
           height: 2px;
+          transform: translateY(8px);
+        } 
+        &::after {
+          width: 20px!important;
+          height: 2px;
+          transform: translateY(-8px);
         }        
       }
     }

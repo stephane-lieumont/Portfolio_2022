@@ -57,24 +57,7 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
       <SmoothScroll onChanged={(value) => setScrollYPosition(value)}>
         <Fragment>          
           <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'> 
-            <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} /> 
-            <Background
-                darken
-                triangle={false}
-                pointsProperties = {{
-                  top: `${10 + (scrollYPosition / 90)}%`,
-                  left: '90%',
-                  rotate: '145deg',
-                  size: '300px',
-                  delayAnimation:150
-                }}
-                circleProperties = {{
-                  top: `${20 - (scrollYPosition / 70)}%`,
-                  rigth: '90%',
-                  size: '350px',
-                  delayAnimation: 300
-                }}
-              /> 
+            <Carousel slides={SliderImagesData} parralaxScrollY={scrollYPosition} />
               <section ref={sectionSpecialities} className='section portfolio-cgi__specialities'>      
                 <Background
                   darken
@@ -94,7 +77,7 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
                   }}
                 />    
                 <div className='section__content'>            
-                  <h2 className={`display1 reveal${ appearSectionSpecialities ? ' reveal--0' : '' }`}>Spécialités</h2>
+                  <h2 className={`display1 reveal${ appearSectionSpecialities ? ' reveal--0' : '' }`}><span>Spécialités</span></h2>
                   <ul className='specialities'>
                     { specialities.map((speciality, index) => (
                      <li key={`speciality-${index}`} className={`specialities__item${ appearSectionSpecialities ? ` specialities__item__reveal--${index}` : ''}`}>
@@ -107,7 +90,7 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
               </section>
               <section ref={sectionPortfolio} className='section portfolio-cgi__projects'>
                 <div className='section__content--fullwidth'>
-                  <h2 className={`display1 reveal${ appearSectionPortfolio ? ' reveal--0' : '' }`}>Réalisations</h2>
+                  <h2 className={`display1 reveal${ appearSectionPortfolio ? ' reveal--0' : '' }`}><span>Réalisations</span></h2>
                   <Gallery portfolioData={ PortfolioImagesData } onClick={ (imageData) => handleGalleryImageOnClick(imageData) } />          
                 </div>          
               </section>

@@ -1,14 +1,12 @@
-import { FunctionComponent, useEffect, useRef } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import Button from '~/components/Button';
 import './style.scss'
 import fileDownload from 'js-file-download';
 import axios from 'axios';
 import { PageProps } from '~/interfaces/Component.intf';
-import { useOnLoadImages } from '~/hooks/useOnLoadImages';
 
 const CVModal: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const imagesLoaded = useOnLoadImages(wrapperRef);
+  const [imgLoaded, setImgLoaded] = useState<boolean>(true)
 
   useEffect(() => {
     document.title = title
@@ -24,9 +22,9 @@ const CVModal: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) =
   }
 
   return (
-    <div ref={wrapperRef} className='cv-container'>
+    <div className='cv-container'>
       <div className='cv'>
-        <img className={imagesLoaded ? '' : 'loading'} height={1132} width={800} src={require('~/assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.jpg')} alt='CV stéphane Lieumont Developpeur Frontend'/>
+        <img className={imgLoaded ? '' : 'loading'} height={1132} width={800} onLoad={() => setImgLoaded(true)} src={require('~/assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.jpg')} alt='CV stéphane Lieumont Developpeur Frontend'/>
       </div>
       <Button label='Télécharger' onClick={handleDownload} />
     </div>
