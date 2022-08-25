@@ -1,3 +1,5 @@
+@import '../../sass/abstract/variables';
+
 body {
   background-color: $secondary;
 
@@ -98,6 +100,15 @@ body {
     }
   }
 
+  @media only screen and (max-width: $screen-lg) {
+    .section {
+      &__content {
+        margin:0;
+        padding:0 15px;
+      }
+    }
+  }
+
   blockquote {
     color: $grey-shade200!important;
     font-size: 0.9rem;
@@ -137,8 +148,9 @@ body {
   }
 
   .display1 {
-    display: inline-block;
-    line-height: 45px;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
     font-size: 1.7rem;
     margin: 40px 0;
     padding: 0 25px;
@@ -147,6 +159,10 @@ body {
     background-repeat: no-repeat;
     background-size: 43px;
     background-position: center left;
+
+    span {
+      line-height: 1.3rem!important;
+    }
   }
 
   .image-placeholder {
@@ -211,8 +227,7 @@ body {
     text-align: center;
     color: $primary;
     font-weight: 600;
-    gap: 3%;
-    
+    gap: 3%;  
 
     &__item {
       font-size: 1.2rem;
@@ -241,6 +256,22 @@ body {
               animation-delay: (150ms * $i) + 300ms;
             } 
           }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: $screen-lg) {
+    .specialities {
+      flex-wrap: wrap;
+
+      &__item {
+        width: 100px;
+        height: 150px;
+
+        img {
+          object-fit: cover;
+          height: 70px;
         }
       }
     }

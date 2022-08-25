@@ -102,3 +102,15 @@
   }
 }
 
+@media only screen and (max-width: $screen-md) {
+  .carousel {
+    &__container {
+      height: 50vh!important;
+
+      img {
+        max-height: 60vh;
+      }
+    }
+  }
+}
+
