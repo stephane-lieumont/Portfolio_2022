@@ -6,7 +6,7 @@ import axios from 'axios';
 import { PageProps } from '~/interfaces/Component.intf';
 
 const CVModal: FunctionComponent<PageProps> = ({ title = 'titre de la page' }) => {
-  const [imgLoaded, setImgLoaded] = useState<boolean>(true)
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false)
 
   useEffect(() => {
     document.title = title
