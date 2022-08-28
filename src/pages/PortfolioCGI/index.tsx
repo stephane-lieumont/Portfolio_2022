@@ -89,9 +89,9 @@ const PortfolioCGI: React.FunctionComponent<PageProps> = ({title = 'titre de la 
                 </div>       
               </section>
               <section ref={sectionPortfolio} className='section portfolio-cgi__projects'>
-                <div className='section__content--fullwidth'>
+                <div className='section__content section__content--fullwidth'>
                   <h2 className={`display1 reveal${ appearSectionPortfolio ? ' reveal--0' : '' }`}><span>Réalisations</span></h2>
-                  <Gallery portfolioData={ PortfolioImagesData } onClick={ (imageData) => handleGalleryImageOnClick(imageData) } />          
+                  <Gallery portfolioData={ PortfolioImagesData } onClick={ (imageData) => handleGalleryImageOnClick(imageData) } visible={appearSectionPortfolio} />          
                 </div>          
               </section>
               <Footer />      

@@ -94,7 +94,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           />
         ) : null}
         <div className='homepage__rigthside__demo-real'></div>
-        <img className={!imgLoaded ? 'loading' : '' } width={600} height={470} onLoad={() => setImgLoaded(true) } src={require('~/assets/profile/profil-stephane-lieumont.png')} alt='profil stéphane lieumont' />
+        <img className={!imgLoaded ? 'loading' : '' } width={600} height={470} onLoad={() => setImgLoaded(true) } src={require('~/assets/profile/profil-stephane-lieumont-min.png')} alt='profil stéphane lieumont' />
       </div>
     </div>
   );
