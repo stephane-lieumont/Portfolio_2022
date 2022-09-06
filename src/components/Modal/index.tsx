@@ -34,6 +34,7 @@ const Modal: FunctionComponent<ModalProps> = ({
     const timer = setTimeout(() => {
       setIsAnimateClose(false)
       if(dismissNavigator) onDismiss()
+      
       onClose()
       clearTimeout(timer)
     }, duration);
