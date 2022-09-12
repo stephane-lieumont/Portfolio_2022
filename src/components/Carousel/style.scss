@@ -4,7 +4,7 @@
 .carousel {
   opacity:0;
   transition: opacity 0.3s ease-in;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: 1;
 
@@ -12,9 +12,15 @@
     opacity: 1;
   }
 
+  &__loader {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+  }
+
   &__container {
     position: relative;
-    width: 100%;
+    width: 100vw;
     min-width: $screen-md;
     height: 100vh;
     overflow: hidden;
@@ -26,6 +32,7 @@
       bottom: 0;
       left: 0;
       height: 3px;
+      width: 100%;
       background: $primary;
       z-index: 3;
       animation-name: carrousel-progress;
@@ -38,6 +45,7 @@
   &__group {
     position: relative;
     height: 100%;
+    width: 100vw;
     opacity: 0;
     transition: opacity .3s ease-in-out;
 
@@ -77,8 +85,8 @@
     }
 
     img {
-      min-width: 100%;
       height: 120vh;
+      min-width: 100vw;
       object-fit: cover;
     }
   }
@@ -97,7 +105,7 @@
       width: 0%;
     }
     100% {
-      width: 100%;
+      width: 100vw;
     }
   }
 }
@@ -105,12 +113,19 @@
 @media only screen and (max-width: $screen-md) {
   .carousel {
     &__container {
-      height: 50vh!important;
+      height: 70vh!important;
 
       img {
-        max-height: 60vh;
+        max-height: 80vh;
       }
     }
+
+    &__item {
+      &__alt {
+        left: 20px;
+      }
+    }
+  
   }
 }
 

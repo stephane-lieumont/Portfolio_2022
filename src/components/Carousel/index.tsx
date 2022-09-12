@@ -30,7 +30,9 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
     <div className={`carousel${ visible ? ' carousel--visible' : ''}`} ref={wrapperRef}>
       <div className={`carousel__container`}>
         { imagesLoaded === false ? (
-          <Loader /> 
+          <div className="carousel__loader">
+            <Loader />
+          </div>          
         ) : (
           <div className={`carousel__container__progress`} style={{animationDuration: delay + 'ms'}}></div>
         )}        
