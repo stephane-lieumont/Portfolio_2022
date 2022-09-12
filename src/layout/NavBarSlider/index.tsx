@@ -1,8 +1,10 @@
 import gsap, { Power3, Elastic } from 'gsap';
 import React, { MouseEvent, useEffect, useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
+import useWindowSize from '~/hooks/useWindowsSize';
 import { NavBarSliderProps } from '~/interfaces/Component.intf';
 import Colors from '~/sass/themes/colors.module.scss'
+import Screen from '~/sass/abstract/variables.module.scss'
 
 import './style.scss';
 
@@ -25,6 +27,9 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
 
   const [open, setOpen] = useState<boolean>(defaultValueOpen)
   const [isAnimated, setIsAnimated] = useState<boolean>(false)
+  const [mobileNav, setMobileNav] = useState<boolean>(true)
+
+  const windowSize = useWindowSize();
 
   const handleClick = (e : MouseEvent<HTMLElement>) => {
     e.preventDefault()
@@ -46,7 +51,6 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
     slideIn.current
       .to(wrapper.current, { x:0, duration: 0.9, ease: Power3.easeInOut, onStart: () => setIsAnimated(true) })
       .to(startPoints.current, { attr: { d: middlePoints.current!.getAttribute('d') ?? '' }, duration: 0.2, ease: Elastic.easeInOut}, 0).addLabel("rectangleStart", ">")
-      .to(menu.current.querySelectorAll('li'), { x: 0, opacity: 1, delay: 0.4, stagger: { each: 0.15 }}, 0)
       .to(startPoints.current, { attr: { d: startPoints.current!.getAttribute('d') ?? ''  }, duration: 0.7, ease: Elastic.easeInOut, onComplete: () => setIsAnimated(false) }, "rectangleStart")
 
     slideOut.current
@@ -56,12 +60,16 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
       .pause()
   }, [])
 
+  useEffect(() => {
+    windowSize.width <  Number(Screen.screenXl.replace('px', '')) ? setMobileNav(true) : setMobileNav(false)
+  }, [windowSize])
+
   return (
     <div>
       <div className={`navbar__button${ animated ? ' navbar__button--animated' : ''}${ ligth ? ' navbar__button--ligth' : ''}${ open ? ' open' : ''}`} onClick={handleClick} >
         <div className='navbar__button__burger'></div>
       </div>
-      <div className='navbar__slider' ref={wrapper}>
+      <div className={`navbar__slider${ open ? ' open' : ''}`} ref={wrapper}>
         <svg fill='none' height='100%' preserveAspectRatio='none' viewBox='0 0 210 297' width='100%' xmlns='http://www.w3.org/2000/svg'>
           <path d='M 210,297 H 0 C 0,297 0,230.472 0,148.5 0,66.528001 0,0 0,0 h 210 z' fill={Colors.secondary} id='start' ref={startPoints}></path>
           <defs>
@@ -71,11 +79,11 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
         </svg>
         <nav className='navbar__slider__menu'>
           <ul ref={menu}>
-          { routeList.map(({ path, label, name, params }) => (
+          { routeList.map(({ path, label, name, params }, index) => (
               path !== '*' && params?.mainMenuEnabled !== false ?
-              <li key={name} onClick={handleClick}>
-                <NavLink to={path}>{label}</NavLink>
-              </li>
+              <li className={ open ? `delay--${index}` : ''} key={name} onClick={handleClick}><NavLink to={path}>{label}</NavLink></li>
+              : mobileNav === true && (name === 'contact' || name === 'cv') ?
+              <li className={ open ? `delay--${index}` : ''} key={name} onClick={handleClick}><NavLink to={path}>{label}</NavLink></li>
               : null
             )) 
           }

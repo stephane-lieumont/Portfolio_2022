@@ -35,6 +35,7 @@ export type CarouselProps = {
 
 export type GalleryProps = {
   portfolioData?: PortfolioData[], 
+  visible?: boolean,
   onClick?: (imageData: PortfolioData) => void
 }
 

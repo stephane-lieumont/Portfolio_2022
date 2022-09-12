@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect, useRef, useState } from "react"
 import { useOnLoadImages } from "~/hooks/useOnLoadImages"
 import { CarouselProps } from "~/interfaces/Component.intf"
+import Background from "../Background"
 import Loader from "../Loader"
 import './style.scss'
 
@@ -29,7 +30,9 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
     <div className={`carousel${ visible ? ' carousel--visible' : ''}`} ref={wrapperRef}>
       <div className={`carousel__container`}>
         { imagesLoaded === false ? (
-          <Loader /> 
+          <div className="carousel__loader">
+            <Loader />
+          </div>          
         ) : (
           <div className={`carousel__container__progress`} style={{animationDuration: delay + 'ms'}}></div>
         )}        

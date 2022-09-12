@@ -71,8 +71,10 @@ const ProjectWeb: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
           <section className='section'>
             <div className='project section__content'>
               <div className={`project__title reveal${ imgLoaded ? ' reveal--0' : '' }`}>
-                <FontAwesomeIcon icon={faArrowAltCircleLeft} className='fa-return-btn' onClick={handleReturn} />
-                <h2 className={`display1`}>{ dataProject?.title }</h2>
+                <div className='project__title__return'>
+                  <FontAwesomeIcon icon={faArrowAltCircleLeft} className='fa-return-btn' onClick={handleReturn} />
+                </div>                
+                <h2 className={`display1`}><span>{ dataProject?.title }</span></h2>
               </div>
               <div className='project__pitch'>
                 <img

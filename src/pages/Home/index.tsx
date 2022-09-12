@@ -27,8 +27,6 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
     window.scrollTo(0,0)
   }, [title])
 
-
-
   useEffect(() => {
     document.body.style.height = `${ currentPage.current?.getBoundingClientRect().height }px`
   }, [windowSize.height]);
@@ -40,7 +38,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
           <small>Romain Guilleaumes</small>
         </blockquote>
-      </div>   
+      </div>
       <div className='homepage__leftside'>
         { imgLoaded ? (
           <Background 
@@ -96,7 +94,7 @@ const Home: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           />
         ) : null}
         <div className='homepage__rigthside__demo-real'></div>
-        <img className={!imgLoaded ? 'loading' : '' } width={600} height={470} onLoad={() => setImgLoaded(true) } src={require('~/assets/profile/profil-stephane-lieumont.png')} alt='profil stéphane lieumont' />
+        <img className={!imgLoaded ? 'loading' : '' } width={600} height={470} onLoad={() => setImgLoaded(true) } src={require('~/assets/profile/profil-stephane-lieumont-min.png')} alt='profil stéphane lieumont' />
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
+@import '../../sass/abstract/variables';
+
 .social-sidebar {
   position: fixed;
   bottom:160px;
   right:60px;
-  z-index: 1;
+  z-index: 3;
   opacity: 1;
   transition: opacity .3s ease-in-out;
 
@@ -24,5 +26,24 @@
         transform: scale(1.1);
       }
     }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .social-sidebar {
+    right:20px;
+
+    li {
+      a {
+        height: 35px!important;
+        width: 35px!important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-md) {
+  .social-sidebar {
+    right:10px;
   }
 }

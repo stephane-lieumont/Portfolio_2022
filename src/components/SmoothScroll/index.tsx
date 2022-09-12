@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useRef } from "react";
+import { useLocation } from "react-router";
 import useWindowSize from "~/hooks/useWindowsSize";
 import { SmoothScrollProps } from "~/interfaces/Component.intf";
 import "./style.scss";
@@ -6,6 +7,7 @@ import "./style.scss";
 
 const SmoothScroll: FunctionComponent<SmoothScrollProps> = ({ children, offset = false, onChanged = () => {} }) => {
   const windowSize = useWindowSize();
+  const location = useLocation();
   const scrollingContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,7 +22,7 @@ const SmoothScroll: FunctionComponent<SmoothScrollProps> = ({ children, offset =
       params.current = window.scrollY;
       params.previous += (params.current - params.previous) * params.ease;
       params.rounded = Math.round(params.previous);
-  
+      
       if(scrollingContainerRef.current) {
         params.previous > 1 ?
         scrollingContainerRef.current.style.transform = `translateY(-${params.rounded }px)` :
@@ -32,16 +34,14 @@ const SmoothScroll: FunctionComponent<SmoothScrollProps> = ({ children, offset =
     };
 
     requestAnimationFrame(() => smoothScrollingHandler());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    // timer fix scale effect
     let timer = setTimeout(() => {
       setBodyHeight();
       clearTimeout(timer)
-    }, 700);    
-  }, [windowSize]);
+    }, 500);    
+  }, [windowSize, location]);
 
   const setBodyHeight = () => {
     if(scrollingContainerRef.current) {

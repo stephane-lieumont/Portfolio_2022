@@ -29,11 +29,15 @@ const App: React.FunctionComponent = () => {
 
   useEffect(() => {
     let route = RoutesApp.getRouteByPath(location.pathname)
+    
     if(!route) route = RoutesApp.getRouteByName('error')
-    if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
-    if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)
     setCurrentRoute(route)
+
+    if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
+    if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)    
     if(!state) setHeaderTitle(route?.headerTitle)
+    state ? document.body.classList.add('heigth-auto') : document.body.classList.remove('heigth-auto')
+    
   }, [location, state])
 
   const handleClickMenu = (value: boolean) => {
