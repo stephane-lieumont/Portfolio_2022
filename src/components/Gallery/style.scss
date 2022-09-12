@@ -1,3 +1,5 @@
+@import '../../sass/abstract/variables';
+
 .gallery {
   position: relative;
   width: 100%;
@@ -146,6 +148,27 @@
       opacity: 1;
     }
   }
+}
 
-
+@media only screen and (max-width: $screen-sm) {
+  .gallery {
+    &__grid {
+      &__item {
+        &--single {
+          grid-row: span 1;
+          grid-column: span 1;
+        }
+  
+        &--double-row {
+          grid-row: span 1;
+          grid-column: span 1;
+        }
+  
+        &--double-column {
+          grid-row: span 1;
+          grid-column: span 1;
+        }
+      }
+    }
+  }
 }

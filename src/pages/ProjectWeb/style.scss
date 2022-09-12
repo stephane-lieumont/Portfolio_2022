@@ -9,8 +9,19 @@
     }
 
     &__title {
+      position: relative;
+
       h2 {
-        margin-left: 20px;
+        margin-left: 40px;
+      }
+
+      &__return {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
       }
     }
   
