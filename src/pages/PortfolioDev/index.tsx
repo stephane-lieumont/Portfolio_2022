@@ -79,7 +79,7 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
           ) : null } 
           <section ref={sectionSpecialities} className='section portfolio-dev__specialities'>          
             <div className='section__content'>            
-              <h2 className={`display1 reveal${ appearSectionSpecialities && contentLoaded ? ' reveal--0' : '' }`}>Spécialités</h2>
+              <h2 className={`display1 reveal${ appearSectionSpecialities && contentLoaded ? ' reveal--0' : '' }`}><span>Spécialités</span></h2>
               <ul className='specialities'>
                 { specialities.map((speciality, index) => (
                   <li key={`speciality-${index}`} className={`specialities__item${ appearSectionSpecialities  && contentLoaded  ? ` specialities__item__reveal--${index}` : ''}`}>
@@ -92,7 +92,7 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
           </section>
           <section ref={sectionSoftSkills} className='section portfolio-dev__softskills'>
             <div className='section__content'>
-              <h2 className={`display1 reveal${ appearSectionSoftSkills && contentLoaded ? ' reveal--0' : '' }`}>Compétences transverses</h2>
+              <h2 className={`display1 reveal${ appearSectionSoftSkills && contentLoaded ? ' reveal--0' : '' }`}><span>Compétences transverses</span></h2>
               <div className='row'>
                 <div className={`row--col1 reveal${ appearSectionSoftSkills && contentLoaded ? ' reveal--1' : '' }`}>
                   <h3>Autonomie et curiosité</h3>
@@ -112,7 +112,7 @@ const PortfolioDev: FunctionComponent<PageProps> = ({title = 'titre de la page'}
         </div>        
         <section ref={sectionProject} className='section portfolio-dev__projects'>
           <div className='section__content'>
-            <h2 className={`display1 reveal${ appearSectionProjects && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
+            <h2 className={`display1 reveal${ appearSectionProjects && contentLoaded ? ' reveal--0' : '' }`}><span>Réalisations</span></h2>
             <ul className="portfolio-dev__projects__list">
               {ProjectsDevData.map( (project, index) => (
                 <Link className="portfolio-dev__projects__item" key={`${project.id}`} to={`${project.hashName}`} onClick={() => { window.scrollTo(0,0) }}>

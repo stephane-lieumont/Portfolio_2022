@@ -1,18 +1,27 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .project-web {
   .project {
-
-
-
     h3 {
       margin-top: 10px;
       font-size: 1.4rem!important;
     }
 
     &__title {
+      position: relative;
+
       h2 {
-        margin-left: 20px;
+        margin-left: 40px;
+      }
+
+      &__return {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
       }
     }
   
@@ -37,4 +46,17 @@
     }
   }
 }
+
+@media only screen and (max-width: $screen-lg) {
+  .project__release {
+    &__content {
+      width: 100%!important;
+    }
+    .row {
+      flex-direction: column!important;
+    }
+  }
+}
+
+
 

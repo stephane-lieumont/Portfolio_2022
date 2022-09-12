@@ -46,6 +46,17 @@ main {
     justify-content: space-between;
     align-items: center;
     pointer-events: all;
+    min-width: 360px;
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  main {
+    font-size: 0.8rem;
+
+    h2 {
+      font-size: 1.2rem!important;
+    }
   }
 }
 

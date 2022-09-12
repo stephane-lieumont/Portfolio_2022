@@ -1,4 +1,4 @@
-import { createRef, FunctionComponent, MouseEvent, SyntheticEvent, useMemo, useState } from 'react';
+import { createRef, Fragment, FunctionComponent, MouseEvent, SyntheticEvent, useMemo, useState } from 'react';
 import { GalleryProps } from '~/interfaces/Component.intf';
 import { PortfolioData } from '~/interfaces/Data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
@@ -6,7 +6,7 @@ import './style.scss';
 
 
 
-const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick}) => { 
+const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], visible = true, onClick}) => { 
   let [imageLoadCounter, setImageLoadCounter] = useState<number>(0)
   const [displayLoader, setDisplayLoader] = useState<boolean>(true)
   
@@ -47,18 +47,22 @@ const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], onClick})
                 'gallery__grid__item--single '
               }`}      
             >
-            <img className='loading' src={imageData.imgFileThumb} alt={imageData.imgAlt} ref={refsById[imageData.id]} onLoad={handleLoadImage} />
-            <div className='gallery__grid__item__desc loading'>
-              <h4>{ firstLetterUpper(imageData.title) }</h4>
-              <p>{ imageData.released.getFullYear() }</p>
-              <ul className='icon-custom__list'>
-                { imageData.stack.map((stackItem) => (
-                  <li key={stackItem.toString} className="icon-custom">
-                    <i className={`icon-custom__container ${ stackItem.iconClass }`}></i>
-                  </li>
-                ))}
-              </ul>           
-            </div>
+            { visible && (
+              <Fragment>
+                <img className='loading' src={imageData.imgFileThumb} alt={imageData.imgAlt} ref={refsById[imageData.id]} onLoad={handleLoadImage} />
+                <div className='gallery__grid__item__desc loading'>
+                  <h4>{ firstLetterUpper(imageData.title) }</h4>
+                  <p>{ imageData.released.getFullYear() }</p>
+                  <ul className='icon-custom__list'>
+                    { imageData.stack.map((stackItem) => (
+                      <li key={stackItem.toString} className="icon-custom">
+                        <i className={`icon-custom__container ${ stackItem.iconClass }`}></i>
+                      </li>
+                    ))}
+                  </ul>           
+                </div>
+              </Fragment>
+            )}
           </div>
         ))}
       </div>

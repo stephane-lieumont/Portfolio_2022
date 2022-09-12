@@ -1,4 +1,5 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .image-viewer {
   position: fixed;
@@ -153,3 +154,24 @@
     }
   }
 }
+
+@media only screen and (max-width: $screen-sm) {
+  .image-viewer {
+    h2, h2 span {
+      font-size: 0.8rem!important;
+      bottom:10px;
+      left: 20px;
+    }
+
+    .icon-custom__list {
+      gap: 5px;
+      bottom: 20px;
+      right: 20px;
+
+      i {
+        font-size: 20px!important;
+      }      
+    }
+  }
+}
+

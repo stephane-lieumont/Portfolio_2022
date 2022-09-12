@@ -1,4 +1,5 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .portfolio-dev {
   background-color: white;
@@ -45,6 +46,33 @@
 
       &:hover {
         transform: translateY(-20px) scale(1.05);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .portfolio-dev {
+    &__projects {
+      &__list {
+        padding: 0;
+        margin: 0;
+      }
+
+      &__item {
+        max-width: inherit;
+      }
+    }
+
+    &__softskills {
+      .row {
+        flex-direction: column-reverse!important;
+        width: 100%;
+
+        img {
+          min-width: auto;
+          width: 100%;
+        }
       }
     }
   }
