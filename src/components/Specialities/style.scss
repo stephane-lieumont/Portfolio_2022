@@ -1,12 +1,15 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .specialities {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: stretch;
   text-align: center;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: $screen-lg;
   color: $primary;
 
   &__item {
@@ -23,6 +26,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 1em;
 
       img {
         object-fit: cover;
@@ -31,8 +35,6 @@
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
       }
-
-
     }
 
     p {
@@ -87,5 +89,17 @@
   100% {
     transform: translateY(0px);
     opacity: 1; 
+  }
+}
+
+@media only screen and (max-width: $screen-sm) {
+  .specialities  {
+    &__item {
+      &__picture {
+        max-width: 70px;
+        max-height: 70px;
+      }
+      
+    }
   }
 }

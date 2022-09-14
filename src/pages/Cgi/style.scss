@@ -1,0 +1,12 @@
+@import '../../sass/themes/colors';
+
+.portfolio-cgi {
+  background-color: $grey;
+
+  &__projects {
+    background-color: $secondary;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom:60px;
+  }
+}

@@ -1,6 +1,7 @@
 
 import { RouteAppObject } from '~/interfaces/Routes.intf'
 import { Theme } from '~/interfaces/Theme.intf'
+import Cgi from '~/pages/Cgi'
 import Dev from '~/pages/Dev'
 import DevProject from '~/pages/DevProject'
 import Home from '~/pages/Home'
@@ -46,18 +47,19 @@ const routeList: RouteAppObject[] = [
       mainMenuEnabled: false
     }
   },
-  /*
+  
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',
     label: 'Portfolio CGI',
-    Component: <PortfolioCGI title='CGI | Stéphane Lieumont'/>,
+    Component: <Cgi title='CGI | Stéphane Lieumont'/>,
     headerTitle: "graphiste 3D",    
     params: {
       menuIconLigth: false,
       theme: Theme.dark
     }
   },
+  /*
   { 
     path: '/contact-stephane-lieumont', 
     name: 'contact',

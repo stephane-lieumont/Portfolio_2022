@@ -2,15 +2,9 @@
 @import '../../sass/abstract/variables';
 
 .portfolio-dev {
-  &__specialities, &__softskills, &__projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 3em;
-  }
-
   &__softskills { 
+    padding-top:0;
+    
     &__container {
       display: flex;
       justify-content: center;

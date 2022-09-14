@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     padding-right: 2em;
+    align-items: flex-start;
     transition: flex-basis .45s cubic-bezier(0,.43,.16,1);
 
     blockquote {

@@ -50,7 +50,7 @@ const DevProject: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
                 top: `${1 + (scrollPosition / 90)}%`,
                 rigth: '15%',
                 rotate: '260deg',
-                size: '90px',
+                size: '70px',
                 delayAnimation: 0
               }}
               pointsProperties = {{
