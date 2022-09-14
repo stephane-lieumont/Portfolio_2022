@@ -25,7 +25,7 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
   }, [title])
 
   return (
-    <div ref={currentPage}  className={`homepage${ !imgLoaded ? ' homepage--loading' : ''}`} data-testid='page-home'>
+    <div ref={currentPage}  className={`min-heigth-screen homepage${ !imgLoaded ? ' homepage--loading' : ''}`} data-testid='page-home'>
       <section className='homepage__leftside' style={{ paddingTop: headerheigth + 'px' }}>
         <blockquote>
           <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
