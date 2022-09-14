@@ -11,6 +11,7 @@ import { layoutActions } from '~/store/layout.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
 import Screen from '~/sass/abstract/variables.module.scss'
 import useWindowSize from '~/hooks/useWindowsSize';
+import useScrollPosition from '~/hooks/useScrollPosition';
 
 const Header: FunctionComponent<HeaderProps> = ({
   menuIsOpen = false, 
@@ -30,18 +31,11 @@ const Header: FunctionComponent<HeaderProps> = ({
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const windowsSize = useWindowSize()
+  const scrollPosition = useScrollPosition()
 
   const homePageRoutePath = RoutesApp.getRouteByName('home')
   const contactPage = RoutesApp.getRouteByName('contact')
   const cvPage = RoutesApp.getRouteByName('cv')
-
-  // Init event Header
-  useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-    return (() => {
-      document.removeEventListener('scroll', handleScroll);
-    })
-  }, [])
 
   useEffect(() => {    
     if(headerheigth !== refHeaderContainer.current?.clientHeight && refHeaderContainer) {
@@ -49,18 +43,17 @@ const Header: FunctionComponent<HeaderProps> = ({
     }
 
     // On path homepage with mobile device nav button become darkmode 
-    if(menuIsLigth && theme !== Theme.dark && location.pathname === RoutesApp.getRouteByName('home')?.path ) {
+    if(location.pathname === RoutesApp.getRouteByName('home')?.path ) {
       windowsSize.width <  parseInt(Screen.screenLg) ? setNavButtonLigth(false) : setNavButtonLigth(true)
     } else {
-      setNavButtonLigth(menuIsLigth || theme !== Theme.dark)
+      setNavButtonLigth(menuIsLigth || theme === Theme.dark)
     }
 
-  }, [dispatch, headerheigth, menuIsLigth, refHeaderContainer, theme, windowsSize])
+  }, [dispatch, headerheigth, location.pathname, menuIsLigth, refHeaderContainer, theme, windowsSize])
 
-  // Handle scroll event
-  const handleScroll = () => {
-    setMenuHide(window.scrollY > 70)
-  }
+  useEffect(() => {
+    window.scrollY > 70 ? setMenuHide(true) : setMenuHide(false)
+  }, [scrollPosition])
 
   return (
     <header ref={refHeaderContainer} className={`header${ theme === Theme.dark ? ' header--dark' : ' header--ligth' }${ menuIsOpen || menuHide ? ' header--eventnone' : ''}`} data-testid='layout-header'>

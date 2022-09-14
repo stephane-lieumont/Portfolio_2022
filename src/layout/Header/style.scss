@@ -51,9 +51,15 @@
         font-size: 2rem;
 
         &__append {
+          margin-left: 0.3em;
+          font-size: 1.4rem;
           display: inline-block;
           opacity: 0;
-          animation: title-append .25s ease-out both 0.3s;         
+          animation: title-append .25s ease-out both 0.3s;        
+          
+          &::first-letter {
+            color: $primary
+          } 
         }
 
         &::first-letter {
