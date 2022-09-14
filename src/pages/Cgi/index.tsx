@@ -8,7 +8,6 @@ import Gallery from '~/components/Gallery';
 import { PortfolioData, SpecialityData } from '~/interfaces/Data.intf';
 import ImageViewer from '~/components/ImageViewer';
 import Background from '~/components/Background';
-import { firstLetterUpper } from '~/utils/formatString';
 import useWindowSize from '~/hooks/useWindowsSize';
 import { PageProps } from '~/interfaces/Component.intf';
 import useScrollPosition from '~/hooks/useScrollPosition';
