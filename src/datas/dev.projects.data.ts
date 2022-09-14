@@ -113,25 +113,25 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déploiement de l\'image <strong>Docker</strong> sur les serveurs d\'AWS',
     ],
     technos:[
-      'webpack',      
-      'javascript',
-      'html',
-      'sass',
-      'node',
-      'git',
-      'gitlab',
-      'docker',
-      'confluence',
-      'jira'
+      'Webpack',      
+      'Javascript',
+      'Html',
+      'Sass',
+      'Node',
+      'Git',
+      'Gitlab',
+      'Docker',
+      'Confluence',
+      'Jira'
     ],
     imgFile: CTPwebAppImg,
     imgFileProject: CTPwebAppImgProject,
     imgAlt: 'case tes potes - web application 2021',
     hashtags: [
-      'webpack',
-      'typescript',
-      'sass',
-      'nodejs'
+      'Webpack',
+      'Typescript',
+      'Sass',
+      'Nodejs'
     ],
     released: new Date('2021-11-17'),
     demoLink: '/tete'
@@ -154,22 +154,22 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déploiement de l\'application avec <strong>GitHub page</strong>'
     ],
     technos:[
-      'react',      
-      'typescript',
-      'html',
-      'sass',
-      'git',
-      'github',
-      'docker'
+      'React',      
+      'Typescript',
+      'Html',
+      'Sass',
+      'Git',
+      'Github',
+      'Docker'
     ],
     imgFile: KasaOcImg,
     imgFileProject: KasaOcImgProject,
     imgAlt: 'Kasa OpenClassrooms - landingpage 2021',
     hashtags: [
-      'react',
-      'typescript',
-      'sass',
-      'nodejs'
+      'React',
+      'Typescript',
+      'Sass',
+      'Nodejs'
     ],
     released: new Date('2021-12-10'),
     demoLink: '/tete'
@@ -188,15 +188,15 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déployer le site sur un serveur mutualisé'
     ],
     technos:[
-      'html',
-      'jquery',
-      'git'
+      'Html',
+      'Jquery',
+      'Git'
     ],
     imgFile: Portfolio2018Img,
     imgFileProject: Portfolio2018ImgProject,
     imgAlt: 'portfolio 3d - 2018',
     hashtags: [
-      'javascript',
+      'Javascript',
       'CSS',
     ],
     released: new Date('2018-09-17'),
@@ -219,16 +219,16 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déploiement du site sur un serveur mutualisé'
     ],
     technos:[
-      'html',
-      'javascript',
-      'php',
-      'photoshop'
+      'Html',
+      'Javascript',
+      'Php',
+      'Photoshop'
     ],
     imgFile: Pixmodels2015Img,
     imgFileProject: Pixmodels2015ImgProject,
     imgAlt: 'pixmodels - agence de communication audiovisuel',
     hashtags: [
-      'javascript',
+      'Javascript',
       'PHP',
       'CSS',
     ],

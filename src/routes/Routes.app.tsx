@@ -1,6 +1,7 @@
 
 import { RouteAppObject } from '~/interfaces/Routes.intf'
 import { Theme } from '~/interfaces/Theme.intf'
+import Dev from '~/pages/Dev'
 import Home from '~/pages/Home'
 
 //import Contact from '~/pages/Contact'
@@ -22,18 +23,18 @@ const routeList: RouteAppObject[] = [
       theme: Theme.ligth
     }
   },
-  /*
   { 
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
     label: 'Portfolio Dev',
-    Component: <PortfolioDev title='Web | Stéphane Lieumont' />, 
+    Component: <Dev title='Web | Stéphane Lieumont' />, 
     headerTitle: "Web & mobile",    
     params: {
       menuIconLigth: false,
       theme: Theme.ligth
     }
   },
+  /*
   { 
     path: '/portfolio-stephane-lieumont-developpeur/:params', 
     name: 'project-web',

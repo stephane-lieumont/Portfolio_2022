@@ -44,6 +44,7 @@ main {
 }
 
 section {
+  position: relative;
   padding: 3rem 6rem;
 }
 
@@ -53,18 +54,26 @@ h1 {
 
 h1, h2, h3, h4 {
   font-weight: 600;
+  margin-bottom: 1em;
 }
 
 h2 {
   font-size: 1.8em;
+  font-weight: 600;
 }
 
 h3 {
-  font-size: 1.6em;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: $primary;
 }
 
 h4 {
   font-size: 1.2em;
+}
+
+p {
+  margin-bottom: 1em;
 }
 
 a {
@@ -105,16 +114,15 @@ img {
 }
 
 .display1 {
-  display: flex;
-  align-items: center;
+  display: inline-block;
   min-height: 45px;
-  font-size: 1.7rem;
-  margin: 40px 0;
+  line-height: 45px;
+  font-size: 1.7em;
+  margin-bottom: 2em;
   padding: 0 25px;
-  text-align: center;
   background-image: url('../../assets/icons/triangle001-primary.svg');
   background-repeat: no-repeat;
-  background-size: 43px;
+  background-size: 45px;
   background-position: center left;
 
   span {
