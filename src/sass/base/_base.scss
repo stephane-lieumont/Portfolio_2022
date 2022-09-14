@@ -45,7 +45,12 @@ main {
 
 section {
   position: relative;
-  padding: 3rem 6rem;
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
 }
 
 h1 {
@@ -121,9 +126,15 @@ img {
   align-items: center;
 
   &__content {
+    position: relative;
     flex: 1 0 100%;
     height: 100%;
+    width: 100%;
   }
+}
+
+.section__group {
+  position: relative;
 }
 
 .background {
@@ -152,7 +163,7 @@ img {
 
 @media only screen and (max-width: $screen-lg) {
   section {
-    padding: 1em 2rem;
+    padding: 3rem 2rem;
   }
 }
 

@@ -52,7 +52,7 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   return (
       <div className='page portfolio-dev' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='page-portfolio-dev'>
         <div className='page__content'>
-          <section>
+          <div className='section__group'>
             { contentLoaded ? (
               <Background 
                 ligthen
@@ -78,11 +78,11 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
                 }}
               />  
             ) : null } 
-            <div ref={sectionSpecialities} className='portfolio-dev__specialities'>           
+            <section ref={sectionSpecialities} className='portfolio-dev__specialities'>           
               <h2 className={`display1 reveal${ appearSectionSpecialities && contentLoaded ? ' reveal--0' : '' }`}>Spécialités</h2>
               <Specialities specialities={specialities} contentLoaded={contentLoaded} />
-            </div>
-            <div ref={sectionSoftSkills} className='portfolio-dev__softskills'> 
+            </section>
+            <section ref={sectionSoftSkills} className='portfolio-dev__softskills'> 
               <h2 className={`display1 reveal${ appearSectionSoftSkills && contentLoaded ? ' reveal--0' : '' }`}>Compétences transverses</h2>
               <div className='portfolio-dev__softskills__container limit-width-content'>
                 <div className={`portfolio-dev__softskills__container__content reveal${ appearSectionSoftSkills && contentLoaded ? ' reveal--1' : '' }`}>
@@ -98,8 +98,8 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
                   <img src={SoftSkillsPicture} width={500} alt="soft-skills stéphane lieumont" />
                 </div>          
               </div>
-            </div>
-          </section>        
+            </section>
+          </div>        
           <section ref={sectionProject} className='portfolio-dev__projects'>
             <h2 className={`display1 reveal${ appearSectionProjects && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
             <ul className="portfolio-dev__projects__list">

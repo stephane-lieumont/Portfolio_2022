@@ -31,7 +31,7 @@ const App: React.FunctionComponent = () => {
     if(!route) setCurrentRoute(RoutesApp.getRouteByName('error'))
     if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
     if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)    
-    if(!state) setHeaderTitle(route?.headerTitle)    
+    if(!state) setHeaderTitle(route?.headerTitle)
   }, [location, state])
 
   const handleClickMenu = (value: boolean) => {
@@ -64,7 +64,7 @@ const App: React.FunctionComponent = () => {
             theme={ currentTheme } 
             headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled }
           />
-          <main className={`${menuIsOpen ? 'scale' : ''}${ currentRoute?.params?.theme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
+          <main className={`${menuIsOpen ? 'scale' : ''}${ currentTheme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
             { globalRoutes.length > 0 && (
               <Routes location={state?.backgroundLocation || location}>
                 { globalRoutes.map(({ path, Component }) => (              
@@ -113,7 +113,7 @@ const App: React.FunctionComponent = () => {
           </main>
           <SocialSideBar 
             menuIsOpen={menuIsOpen} 
-            ligthen={currentRoute?.params?.theme === Theme.dark}
+            ligthen={currentTheme === Theme.dark}
           />
         </Fragment>
       ) : null /** PLACEHOLDER GENERAL LOADER */}
