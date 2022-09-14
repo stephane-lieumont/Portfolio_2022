@@ -1,6 +1,6 @@
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FunctionComponent, useEffect, useRef, useState, Fragment } from 'react'
+import { FunctionComponent, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import Background from '~/components/Background'
 import Button from '~/components/Button'

@@ -127,6 +127,7 @@
 @media only screen and (max-width: $screen-lg) {
   .header {
     height: auto;
+    padding: 1.5rem;
 
     h1 {
       line-height: 2.5rem!important;
@@ -134,30 +135,6 @@
       span {
         font-size: 1.8rem!important;
       }      
-    }
-  }
-}
-
-@media only screen and (max-width: $screen-sm) {
-  .header {
-    .navbar__button {
-      height: 20px;
-      width: 20px;
-
-      &__burger {
-        height: 2px;
-        
-        &::after, &::before {
-          width: 20px!important;
-          height: 2px;
-          transform: translateY(8px);
-        } 
-        &::after {
-          width: 20px!important;
-          height: 2px;
-          transform: translateY(-8px);
-        }        
-      }
     }
   }
 }

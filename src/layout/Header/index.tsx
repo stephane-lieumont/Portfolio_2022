@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { HeaderProps } from '~/interfaces/Component.intf';
 import { layoutActions } from '~/store/layout.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
+import Screen from '~/sass/abstract/variables.module.scss'
 import useWindowSize from '~/hooks/useWindowsSize';
 
 const Header: FunctionComponent<HeaderProps> = ({
@@ -22,6 +23,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 
   const location = useLocation();
   const [menuHide, setMenuHide] = useState<boolean>(false)
+  const [navButtonLigth, setNavButtonLigth] = useState<boolean>(false)
   const refHeaderContainer = useRef<HTMLDivElement>(null)
   const headerheigth = useAppSelector((state) => state.layoutSlice.headerHeigth)
 
@@ -45,7 +47,15 @@ const Header: FunctionComponent<HeaderProps> = ({
     if(headerheigth !== refHeaderContainer.current?.clientHeight && refHeaderContainer) {
       dispatch(layoutActions.setHeaderHeigth(refHeaderContainer.current!.clientHeight))
     }
-  }, [dispatch, headerheigth, refHeaderContainer, windowsSize])
+
+    // On path homepage with mobile device nav button become darkmode 
+    if(menuIsLigth && theme !== Theme.dark && location.pathname === RoutesApp.getRouteByName('home')?.path ) {
+      windowsSize.width <  parseInt(Screen.screenLg) ? setNavButtonLigth(false) : setNavButtonLigth(true)
+    } else {
+      setNavButtonLigth(menuIsLigth || theme !== Theme.dark)
+    }
+
+  }, [dispatch, headerheigth, menuIsLigth, refHeaderContainer, theme, windowsSize])
 
   // Handle scroll event
   const handleScroll = () => {
@@ -88,7 +98,7 @@ const Header: FunctionComponent<HeaderProps> = ({
       </div>
       <NavBarButton 
         routeList={RoutesApp.routeList} 
-        ligth={menuIsLigth || theme === Theme.dark} 
+        ligth={navButtonLigth} 
         onClick={onClick}
       />
     </header>
