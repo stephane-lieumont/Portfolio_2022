@@ -29,21 +29,15 @@
   }
 }
 
-@media only screen and (max-width: $screen-lg) {
+@media only screen and (max-width: $screen-md) {
   .social-sidebar {
-    right:20px;
+    right:2rem;
 
     li {
       a {
-        height: 35px!important;
-        width: 35px!important;
+        height: 40px!important;
+        width: 40px!important;
       }
     }
-  }
-}
-
-@media only screen and (max-width: $screen-md) {
-  .social-sidebar {
-    right:10px;
   }
 }

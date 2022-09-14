@@ -105,8 +105,15 @@
 
     &__leftside {
       flex: 0 0 100%;
+
       &__content {
         margin: 3rem 0;
+        margin-top: 6rem;
+        text-align: center;
+
+        &__nav {
+          justify-content: center;
+        }
       }
     }
 

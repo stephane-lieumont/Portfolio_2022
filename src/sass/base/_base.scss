@@ -27,6 +27,7 @@ main {
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   background-color: white;
   transition: transform 0.45s ease-in-out;
+  transform-origin: top;
 
   &.scale {
     transform: scale(0.9);
@@ -170,5 +171,13 @@ img {
 @media only screen and (max-width: $screen-md) {
   body {
     font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: $screen-md) {
+  main {
+    &.scale {
+      transform: inherit;
+    }
   }
 }

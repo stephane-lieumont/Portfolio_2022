@@ -136,6 +136,7 @@
     min-width: 200px;
     max-width: 270px;
     height: 100vh;
+    z-index: 9;
     transform: translateX(100%);
 
     svg path{
@@ -196,7 +197,7 @@
   }
 }
 
-@media only screen and (max-width: $screen-lg) {
+@media only screen and (max-width: $screen-md) {
   .navbar__button {
       top: 15px;
       right: 1em;
