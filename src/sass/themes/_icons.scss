@@ -3,6 +3,36 @@
   src: local('icons'), url('../../assets/fonts/icons.woff') format('woff');
 }
 
+.fa-icon {
+  margin-right: 5px!important;
+}
+
+.fa-close-btn {
+  border: 1px solid;
+  height: 14px;
+  width: 14px;
+  padding: 3px;
+  border-radius: 50%;
+  color:$secondary;
+  cursor: pointer;
+  transition: color .15s ease-in-out;
+
+  &:hover {
+    color: $primary
+  }
+}
+
+.fa-return-btn {
+  color:$orange-shade300;
+  transition: color .15s ease-in-out;
+  cursor: pointer;
+  font-size: 24px;
+
+  &:hover {
+    color: $primary
+  }
+}
+
 .icon-custom {
   display:block;
   font-size:2em;

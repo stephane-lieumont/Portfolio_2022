@@ -1,92 +1,73 @@
 @import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
-
 
 .homepage {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  z-index: 1;
 
-  &__blockquote {
-    position: absolute;
-    top: 85px;
-    left: 0;
-    padding: 30px 60px;
-    width: 50%;
-    p {
-      margin:0!important;
-      padding: 0!important;
-    }
-  }
-
-  &__rigthside, &__leftside {
-    position: relative;
+  &__leftside, &__rigthside {
     flex: 1 0 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;    
+    position: relative;
+    overflow: hidden;
   }
 
-  &__rigthside {    
-    position: relative;
+  &__leftside {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    background: $primary;
-    overflow: hidden;
-    transition: opacity .45s ease-in;
-    opacity: 1;
+    padding-right: 2em;
+    transition: flex-basis .45s cubic-bezier(0,.43,.16,1);
 
-    &__demo-real {
-      width: 100%;
-      height: 40%;
-      background: $secondary;
-      min-height: 300px;
-      opacity: 0.3;
-      margin-top: 150px;
+    blockquote {
+      color: $grey-shade200!important;
+      font-size: 1.4rem;
+      z-index: 1;
+    
+      .quote {
+        opacity: 0.3;
+      }
+      
+      small {
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
     }
+
+    &__content {
+      flex-grow: 1;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        margin-bottom: 0.8em;
+      }
+
+      &__nav {
+        display: flex;
+        flex-direction: row;
+        margin: 1.2em 0;
+        gap: 1em;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__rigthside {
+    position: relative;
+    transition: opacity .45s ease-in;
 
     img {
       position: absolute;
-      left: 0;
       bottom: 0;
+      left: 0;
+      width: 80%;
+      max-width: 600px;
       transform: translateX(0);
       opacity: 1;
-
       transition: all 1s cubic-bezier(0,.43,.16,1)!important;
-    }
-  }
-
-  &__leftside {    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    padding-top: 15px;
-    transition: flex-basis .45s cubic-bezier(0,.43,.16,1);
-
-    &__content {
-      max-width: 700px;
-      width: 100%;
-      padding: 30px;
-
-      &__title {
-        span {
-          color: $primary;
-        }
-      }
-  
-      &__nav {
-        display: flex;
-        justify-content: flex-start;
-        gap:20px;
-      }
     }
   }
 
@@ -103,56 +84,6 @@
           transform: translateX(500px);
           opacity: 0;
         }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: $screen-lg) {
-  .homepage {
-    flex-direction: column-reverse;
-
-    h2 {
-      white-space: inherit!important;
-    }
-
-    &__blockquote {
-      display:none;
-    }
-
-    &__rigthside {
-      flex-basis: auto;
-      min-height: 500px;
-
-      &__demo-real {
-        margin: 0;
-      }
-
-      img {
-        width: 100%;
-        max-width: 500px;
-        min-width: 300px;
-        height: auto;
-      }
-    }
-
-    &__leftside {
-      flex-basis: auto;
-    }
-  }
-}
-
-@media only screen and (max-width: $screen-sm) {
-  .homepage {
-    &__leftside__content__nav {
-      flex-direction: column;
-      align-self: center;
-      justify-content: center;
-      text-align: center;
-      gap: 15px;
-
-      .button {
-        width: 150px;
       }
     }
   }

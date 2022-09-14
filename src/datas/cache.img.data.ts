@@ -1,6 +1,6 @@
 import img1 from '../assets/background/circle.svg'
 import img2 from '../assets/background/double-circle.svg'
-import img3 from '../assets/background/repeat-points-2.svg'
+import img3 from '../assets/background/repeat-points.svg'
 import img4 from '../assets/gif/travolta-comfused.gif'
 import img5 from '../assets/icons/3dsmax.png'
 import img6 from '../assets/icons/arrow-next.svg'
