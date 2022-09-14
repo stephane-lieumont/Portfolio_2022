@@ -2,6 +2,7 @@
 import { RouteAppObject } from '~/interfaces/Routes.intf'
 import { Theme } from '~/interfaces/Theme.intf'
 import Dev from '~/pages/Dev'
+import DevProject from '~/pages/DevProject'
 import Home from '~/pages/Home'
 
 //import Contact from '~/pages/Contact'
@@ -33,19 +34,19 @@ const routeList: RouteAppObject[] = [
       menuIconLigth: false,
       theme: Theme.ligth
     }
-  },
-  /*
+  },  
   { 
     path: '/portfolio-stephane-lieumont-developpeur/:params', 
     name: 'project-web',
     label: 'Projet Web',
     headerTitle: 'Projet web',
-    Component: <ProjectWeb title='Web | Projet' />,
+    Component: <DevProject title='Web | Projet' />,
     params: {
       theme: Theme.ligth,
       mainMenuEnabled: false
     }
   },
+  /*
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',

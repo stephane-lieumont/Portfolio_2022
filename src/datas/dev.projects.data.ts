@@ -113,16 +113,16 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déploiement de l\'image <strong>Docker</strong> sur les serveurs d\'AWS',
     ],
     technos:[
-      'Webpack',      
-      'Javascript',
-      'Html',
-      'Sass',
-      'Node',
-      'Git',
-      'Gitlab',
-      'Docker',
-      'Confluence',
-      'Jira'
+      'webpack',      
+      'javascript',
+      'html',
+      'sass',
+      'node',
+      'git',
+      'gitlab',
+      'docker',
+      'confluence',
+      'jira'
     ],
     imgFile: CTPwebAppImg,
     imgFileProject: CTPwebAppImgProject,
@@ -154,13 +154,13 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déploiement de l\'application avec <strong>GitHub page</strong>'
     ],
     technos:[
-      'React',      
-      'Typescript',
-      'Html',
-      'Sass',
-      'Git',
-      'Github',
-      'Docker'
+      'react',      
+      'typescript',
+      'html',
+      'sass',
+      'git',
+      'github',
+      'docker'
     ],
     imgFile: KasaOcImg,
     imgFileProject: KasaOcImgProject,
@@ -188,9 +188,9 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déployer le site sur un serveur mutualisé'
     ],
     technos:[
-      'Html',
-      'Jquery',
-      'Git'
+      'html',
+      'jquery',
+      'git'
     ],
     imgFile: Portfolio2018Img,
     imgFileProject: Portfolio2018ImgProject,
@@ -219,10 +219,10 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Déploiement du site sur un serveur mutualisé'
     ],
     technos:[
-      'Html',
-      'Javascript',
-      'Php',
-      'Photoshop'
+      'html',
+      'javascript',
+      'php',
+      'photoshop'
     ],
     imgFile: Pixmodels2015Img,
     imgFileProject: Pixmodels2015ImgProject,
