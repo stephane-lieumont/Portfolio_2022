@@ -3,10 +3,11 @@
 
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: inherit;
   width: 100%;
-  padding: 30px 60px;
+  height: 100px;
+  padding: 3rem 6rem;
+  padding-bottom: 0;
   z-index: 2;
 
   &--eventnone {
@@ -46,14 +47,17 @@
       flex: 1 0 50%;
 
       .head-title {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 2rem;
+        font-weight: 700;
+        font-size: 2rem;
 
         &__append {
           display: inline-block;
           opacity: 0;
           animation: title-append .25s ease-out both 0.3s;         
+        }
+
+        &::first-letter {
+          color: $primary
         }
       }
   
@@ -61,13 +65,12 @@
         display: flex;
         flex-direction: row;
         gap: 5px;
-        cursor: pointer;
+        cursor: pointer; 
+        font-weight: 500;
 
-        .text--primary {         
-          background: $primary;
-          background-clip: text;
-          -webkit-background-clip: text; 
-          color: transparent;
+        &--primary {
+          color: $primary;
+          font-weight: 600; 
         }
       }
   
@@ -96,6 +99,23 @@
   }
 }
 
+@keyframes title-append {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  60% {
+    opacity: .3;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media only screen and (max-width: $screen-xl) {
   .header {
     .navigation {
@@ -106,11 +126,13 @@
 
 @media only screen and (max-width: $screen-lg) {
   .header {
+    height: auto;
+
     h1 {
-      line-height: 1.2rem!important;
+      line-height: 2.5rem!important;
 
       span {
-        font-size: 1.4rem!important;
+        font-size: 1.8rem!important;
       }      
     }
   }
@@ -118,12 +140,6 @@
 
 @media only screen and (max-width: $screen-sm) {
   .header {
-    padding: 30px;
-    h1, h1 span {
-      line-height: 0.9rem;
-      font-size: 1.2rem!important;
-    }
-
     .navbar__button {
       height: 20px;
       width: 20px;
@@ -143,23 +159,5 @@
         }        
       }
     }
-  }
-}
-
-
-@keyframes title-append {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-
-  60% {
-    opacity: .3;
-    transform: scale(1.05);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }

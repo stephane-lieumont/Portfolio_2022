@@ -8,7 +8,7 @@ const initialState: FormContactState = {
 }
 
 const formContactSlice:Slice = createSlice({
-  name: 'formEmployee',
+  name: 'formContact',
   initialState: {...initialState},
   reducers: {
     reset: (state: FormContactState) => {

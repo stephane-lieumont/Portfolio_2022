@@ -1,14 +1,17 @@
-import Error from '~/pages/Error'
-import Home from '~/pages/Home'
-import PortfolioCGI from '~/pages/PortfolioCGI'
-import PortfolioDev from '~/pages/PortfolioDev'
+
 import { RouteAppObject } from '~/interfaces/Routes.intf'
 import { Theme } from '~/interfaces/Theme.intf'
-import Contact from '~/pages/Contact'
-import CV from '~/pages/CV'
-import ProjectWeb from '~/pages/ProjectWeb'
+import Home from '~/pages/Home'
 
-const routeList: RouteAppObject[] = [
+//import Contact from '~/pages/Contact'
+//import CV from '~/pages/CV'
+//import ProjectWeb from '~/pages/ProjectWeb'
+//import Error from '~/pages/Error'
+//import Home from '~/pages/Home'
+//import PortfolioCGI from '~/pages/PortfolioCGI'
+//import PortfolioDev from '~/pages/PortfolioDev'
+
+const routeList: RouteAppObject[] = [  
   { 
     path: '/', 
     name: 'home',
@@ -19,6 +22,7 @@ const routeList: RouteAppObject[] = [
       theme: Theme.ligth
     }
   },
+  /*
   { 
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
@@ -86,6 +90,7 @@ const routeList: RouteAppObject[] = [
       theme: Theme.ligth
     }
   }
+  */
 ]
 
 const getRouteByName = (name: string):RouteAppObject | undefined => {

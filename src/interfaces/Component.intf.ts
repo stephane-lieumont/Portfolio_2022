@@ -57,22 +57,11 @@ export type ModalProps = {
   onClose?: CallableFunction
 }
 
-export type MyRouteProps = {
-  path: string,
-  children?: React.ReactElement
-}
 
 export type ProjectCardProps = {
   projectData: ProjectDevData
   className?:string
 }
-
-export type SmoothScrollProps = {
-  children: JSX.Element,
-  offset?: boolean,
-  onChanged?: (scrollY: number) => void
-}
-
 //--- Interfaces Layout ---//
 
 export type HeaderProps = {
@@ -81,6 +70,7 @@ export type HeaderProps = {
   headerTitle?: string
   headerButtonsEnabled?: boolean
   theme?: Theme
+  onSizeChange?: (heigth: number) => void
   onClick?: (isOpen: boolean) => void
 }
 
@@ -103,5 +93,3 @@ export type PageProps = {
   title?: string
   isModal?: boolean
 }
-
-

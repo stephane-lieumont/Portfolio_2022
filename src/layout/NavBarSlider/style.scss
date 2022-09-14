@@ -3,8 +3,9 @@
 .navbar {
   &__button {
     position: fixed;
-    top: 45px;
-    right: 60px;
+    top: 35px;
+    bottom: 0;
+    right: 6rem;
     width: 50px;
     height: 50px;
     display: flex;
