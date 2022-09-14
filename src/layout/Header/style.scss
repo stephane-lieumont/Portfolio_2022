@@ -47,11 +47,11 @@
       flex: 1 0 50%;
 
       .head-title {
-        font-weight: 700;
+        font-weight: 600;
         font-size: 2rem;
 
         &__append {
-          margin-left: 0.3em;
+          text-indent: 5px;
           font-size: 1.4rem;
           display: inline-block;
           opacity: 0;
@@ -132,10 +132,17 @@
 
 @media only screen and (max-width: $screen-lg) {
   .header {
-    height: auto;
+    height: 70px;
     padding: 1.5rem;
 
     h1 {
+      .head-title {
+        font-size: 1.2rem!important;
+
+        &__append {
+          font-size: 1.2rem!important;
+        }
+      }
       line-height: 2.5rem!important;
 
       span {
