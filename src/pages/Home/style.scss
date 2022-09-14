@@ -1,4 +1,5 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .homepage {
   display: flex;
@@ -21,7 +22,7 @@
 
     blockquote {
       color: $grey-shade200!important;
-      font-size: 1.4rem;
+      font-size: 1em;
       z-index: 1;
     
       .quote {
@@ -30,7 +31,7 @@
       
       small {
         font-weight: 700;
-        font-size: 1.2rem;
+        font-size: 0.8em;
       }
     }
 
@@ -43,6 +44,10 @@
 
       h2 {
         margin-bottom: 0.8em;
+
+        span {
+          white-space:nowrap;
+        }
       }
 
       &__nav {
@@ -85,6 +90,23 @@
           opacity: 0;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .homepage {
+    flex-direction: column;
+
+    &__leftside {
+      flex: 0 0 100%;
+      &__content {
+        margin: 3rem 0;
+      }
+    }
+
+    &__rigthside {
+      flex: 1 0 100%;
     }
   }
 }
