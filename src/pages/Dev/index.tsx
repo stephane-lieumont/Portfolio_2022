@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { PageProps } from '~/interfaces/Component.intf';
 import useScrollPosition from '~/hooks/useScrollPosition';
 import { useAppSelector } from '~/store/main.store';
+import Specialities from '~/components/Specialities';
 
 const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const specialities: SpecialityData[] = SpecialitiesDevData
@@ -38,7 +39,7 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   }, [title])
 
   useEffect(() => {
-    const offsetApear = windowSize.height * 0.6;
+    const offsetApear = windowSize.height * 0.3;
     const revealSectionSpecialities = scrollPosition >= sectionSpecialities.current!.offsetTop - windowSize.height + 300    
     const revealSectionSoftSkills = scrollPosition >= sectionSoftSkills.current!.offsetTop - windowSize.height + 300
     const revealSectionProjects = scrollPosition >= sectionProject.current!.offsetTop - windowSize.height + offsetApear
@@ -50,7 +51,7 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   }, [scrollPosition, windowSize, appearSectionSpecialities, appearSectionSoftSkills])
 
   return (
-      <div className='page portfolio-dev' style={{ paddingTop: headerheigth + 'px' }} data-testid='page-portfolio-dev'>
+      <div className='page portfolio-dev' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='page-portfolio-dev'>
         <section>
           { contentLoaded ? (
             <Background 
@@ -79,14 +80,7 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
           ) : null } 
           <div ref={sectionSpecialities} className='portfolio-dev__specialities'>           
             <h2 className={`display1 reveal${ appearSectionSpecialities && contentLoaded ? ' reveal--0' : '' }`}>Spécialités</h2>
-            <ul className='specialities'>
-              { specialities.map((speciality, index) => (
-                <li key={`speciality-${index}`} className={`specialities__item${ appearSectionSpecialities  && contentLoaded  ? ` specialities__item__reveal--${index}` : ''}`}>
-                  <img height={speciality.size} src={speciality.src} alt={speciality.alt} />
-                  <p>{ firstLetterUpper(speciality.name) }</p>
-                </li>
-              ))}
-            </ul>
+            <Specialities specialities={specialities} contentLoaded={contentLoaded} />
           </div>
           <div ref={sectionSoftSkills} className='portfolio-dev__softskills'> 
             <h2 className={`display1 reveal${ appearSectionSoftSkills && contentLoaded ? ' reveal--0' : '' }`}>Compétences transverses</h2>
