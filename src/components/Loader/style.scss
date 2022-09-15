@@ -13,6 +13,8 @@ $color: $primary;
 }
 
 .loader {
+  z-index: 1;
+  
   .lightgreen,
   .darkgreen {
     margin: auto;

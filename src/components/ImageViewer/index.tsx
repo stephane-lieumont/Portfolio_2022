@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { FunctionComponent, MouseEvent, useEffect, useState } from "react"
 import { ImageViewerProps } from "~/interfaces/Component.intf"
 import { firstLetterUpper } from "~/utils/formatString"
+import Loader from "../Loader"
 import './style.scss'
 
 const ImageViewer: FunctionComponent<ImageViewerProps> = ({
@@ -13,6 +14,7 @@ const ImageViewer: FunctionComponent<ImageViewerProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>()
   const [isAnimateClose, setIsAnimateClose] = useState<boolean>(false)
+  const [imageLoaded, setImageLoaded] = useState<boolean>(false)
 
   useEffect(() => {
     if(displayOn) {
@@ -23,10 +25,11 @@ const ImageViewer: FunctionComponent<ImageViewerProps> = ({
   const handleCloseModal = (e: MouseEvent<SVGSVGElement>) => {
     e.preventDefault()
     setIsOpen(false)
-    setIsAnimateClose(true)
+    setIsAnimateClose(true)    
 
     const timer = setTimeout(() => {
       setIsAnimateClose(false)
+      setImageLoaded(false)
       onClose()
       clearTimeout(timer)
     }, duration);
@@ -39,9 +42,10 @@ const ImageViewer: FunctionComponent<ImageViewerProps> = ({
       className={`image-viewer${ isOpen ? ' image-viewer--open' : isAnimateClose ? ' image-viewer--close' : '' }`} 
       style={{animationDuration: `${duration / 2}ms`}}
       data-testid='modal'    
-    >      
+    >
+      { !imageLoaded && ( <Loader /> ) }  
       <div 
-        className="image-viewer__container"
+        className={`image-viewer__container${ imageLoaded ? ' loaded' : '' }`}
         style={{animationDuration: `${duration / 2}ms`, animationDelay: `${isOpen ? duration : 0}ms`}} 
       >
         <h2>{ firstLetterUpper(imageData?.title) } <span>{ imageData?.released.getFullYear() }</span></h2>
@@ -52,9 +56,9 @@ const ImageViewer: FunctionComponent<ImageViewerProps> = ({
             </li>
           ))}
         </ul>
-        <img src={imageData?.imgFile} alt={imageData?.imgAlt} />
+        <img onLoad={() => setImageLoaded(true)} src={imageData?.imgFile} alt={imageData?.imgAlt} />
         <FontAwesomeIcon icon={faClose} className={'image-viewer__container__close'} onClick={handleCloseModal} />
-      </div>      
+      </div>
     </div>
   );
 }
