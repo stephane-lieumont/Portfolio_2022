@@ -82,7 +82,7 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
           { routeList.map(({ path, label, name, params }, index) => (
               path !== '*' && params?.mainMenuEnabled !== false ?
               <li className={ `${open ? `delay--${index}` : ''}${ location.pathname === path ? ' active' : '' }`} key={name} onClick={handleClick}><NavLink to={path}>{label}</NavLink></li>
-              : mobileNav === true && (name === 'contact' || name === 'cv') ?
+              : mobileNav === true && (name === 'contact') ?
               <li className={ open ? `delay--${index}` : ''} key={name} onClick={handleClick}><NavLink to={path}>{label}</NavLink></li>
               : null
             )) 

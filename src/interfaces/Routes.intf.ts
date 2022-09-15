@@ -14,6 +14,7 @@ export type RouteParams = {
   menuIconLigth?: boolean
   mainMenuEnabled?: boolean
   headerButtonsEnabled?: boolean
+  socialTheme?: Theme
 }
 
 

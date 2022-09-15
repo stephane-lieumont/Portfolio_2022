@@ -8,11 +8,13 @@ import { CacheImages } from './datas/cache.img.data';
 import { RouteAppObject } from '~/interfaces/Routes.intf';
 import { Theme } from '~/interfaces/Theme.intf';
 import PageLoader from './components/PageLoader';
+import Contact from './pages/Contact';
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   const [menuIsLigth, setMenuIsLigth] = useState<boolean>(false)
   const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.ligth)
+  const [currentSocialTheme, setCurrentSocialTheme] = useState<Theme>(Theme.ligth)
   const [headerTitle, setHeaderTitle] = useState<string>()
   const [currentRoute, setCurrentRoute] = useState<RouteAppObject>()
   const [appCacheLoaded, setAppCacheLoaded] = useState<boolean>(false)
@@ -33,7 +35,8 @@ const App: React.FunctionComponent = () => {
     let route = RoutesApp.getRouteByPath(location.pathname)    
     if(!route) setCurrentRoute(RoutesApp.getRouteByName('error'))
     if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
-    if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)    
+    if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)
+    if(!state) setCurrentSocialTheme(route?.params?.socialTheme ?? route?.params?.theme ?? Theme.ligth)
     if(!state) setHeaderTitle(route?.headerTitle)
   }, [location, state])
 
@@ -87,44 +90,44 @@ const App: React.FunctionComponent = () => {
                 ))} 
               </Routes>
             )}            
-            {/* Show the modal when a `backgroundLocation` is set */}
-              {state?.backgroundLocation && (
-                <Routes>
-                  { contactRoute != null && (
-                    <Route 
-                      path={contactRoute?.path} 
-                      element={
-                        <Modal 
-                          title={contactRoute?.headerTitle} 
-                          heigth='70%' 
-                          dismissNavigator 
-                        >
-                          {contactRoute?.Component}
-                        </Modal>
-                      } 
-                    />
-                  )}
-                  { cvRoute != null && (
-                    <Route 
-                      path={cvRoute?.path}
-                      element={
-                        <Modal 
-                          title={cvRoute?.headerTitle}  
-                          width='40%' 
-                          heigth='80%'
-                          dismissNavigator 
-                        >
-                          {cvRoute?.Component}
-                        </Modal>
-                      }
-                    />
-                  )}
-                </Routes>
-              )}
+            {state?.backgroundLocation && (
+              <Routes>
+                { contactRoute != null && (
+                  <Route 
+                    path={contactRoute?.path} 
+                    element={
+                      <Modal 
+                        title={contactRoute?.headerTitle} 
+                        heigth='70%'
+                        width='100%' 
+                        dismissNavigator
+                      >
+                        <Contact title={contactRoute?.headerTitle} isModal/>
+                      </Modal>
+                    } 
+                  />
+                )}
+                { cvRoute != null && (
+                  <Route 
+                    path={cvRoute?.path}
+                    element={
+                      <Modal 
+                        title={cvRoute?.headerTitle}  
+                        width='40%' 
+                        heigth='80%'
+                        dismissNavigator 
+                      >
+                        {cvRoute?.Component}
+                      </Modal>
+                    }
+                  />
+                )}
+              </Routes>
+            )}
           </main>
           <SocialSideBar 
             menuIsOpen={menuIsOpen} 
-            ligthen={currentTheme === Theme.dark}
+            ligthen={currentSocialTheme === Theme.dark}
           />
         </Fragment>
       ) : <PageLoader visible={appLoaderVisible} />}

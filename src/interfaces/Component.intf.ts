@@ -57,11 +57,15 @@ export type ModalProps = {
   onClose?: CallableFunction
 }
 
-
 export type ProjectCardProps = {
   projectData: ProjectDevData
   className?:string
 }
+
+export type BadgeContactProps = {
+  className?: string
+}
+
 //--- Interfaces Layout ---//
 
 export type HeaderProps = {

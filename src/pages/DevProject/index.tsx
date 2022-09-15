@@ -104,7 +104,7 @@ const DevProject: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
             </div>
           </section>
         </div>       
-      <Footer />
+      { imgLoaded && <Footer /> }
     </div>
   );
 }

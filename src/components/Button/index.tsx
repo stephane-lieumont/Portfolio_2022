@@ -12,7 +12,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   }) => {
   
   return (
-    <button className={`button${ outlined ? ' button--outlined' : ''}${ white ? ' button--white' : ''} ${ className }`} onClick={onClick}>
+    <button className={`button${ outlined ? ' button--outlined' : ''}${ white ? ' button--white' : ''} ${ className ?? '' }`} onClick={onClick}>
       {label}
     </button>
   );
