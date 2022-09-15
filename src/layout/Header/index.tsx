@@ -52,7 +52,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   }, [dispatch, headerheigth, location.pathname, menuIsLigth, refHeaderContainer, theme, windowsSize])
 
   useEffect(() => {
-    window.scrollY > 70 ? setMenuHide(true) : setMenuHide(false)
+    window.scrollY > 20 ? setMenuHide(true) : setMenuHide(false)
   }, [scrollPosition])
 
   return (
@@ -73,18 +73,22 @@ const Header: FunctionComponent<HeaderProps> = ({
           </span>
         </h1>                
         <div className='navigation'>
-          { headerButtonsEnabled !== false && contactPage != null && cvPage != null && (
+          { headerButtonsEnabled !== false && (
             <ul className='navigation__buttons'>
-              <li>
-                <Link to={contactPage!.path} state={{ backgroundLocation: location }} >
-                  <Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} />
-                </Link>
-              </li>
-              <li>
-                <Link to={cvPage!.path} state={{ backgroundLocation: location }} >
-                  <Button label={cvPage!.label} outlined white={menuIsLigth || theme === Theme.dark} />
-                </Link>
-              </li>
+              { contactPage && location.pathname !== contactPage.path && (
+                <li>
+                  <Link to={contactPage!.path} state={{ backgroundLocation: location }} >
+                    <Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} />
+                  </Link>
+                </li>
+              )}
+              { cvPage && location.pathname !== cvPage.path && (
+                <li>
+                  <Link to={cvPage!.path} state={{ backgroundLocation: location }} >
+                    <Button label={cvPage!.label} outlined white={menuIsLigth || theme === Theme.dark} />
+                  </Link>
+                </li>
+              )}
             </ul>
           )}
         </div>

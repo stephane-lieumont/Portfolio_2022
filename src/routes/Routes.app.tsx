@@ -2,18 +2,11 @@
 import { RouteAppObject } from '~/interfaces/Routes.intf'
 import { Theme } from '~/interfaces/Theme.intf'
 import Cgi from '~/pages/Cgi'
+import Contact from '~/pages/Contact'
 import Dev from '~/pages/Dev'
 import DevProject from '~/pages/DevProject'
 import Error from '~/pages/Error'
 import Home from '~/pages/Home'
-
-//import Contact from '~/pages/Contact'
-//import CV from '~/pages/CV'
-//import ProjectWeb from '~/pages/ProjectWeb'
-//import Error from '~/pages/Error'
-//import Home from '~/pages/Home'
-//import PortfolioCGI from '~/pages/PortfolioCGI'
-//import PortfolioDev from '~/pages/PortfolioDev'
 
 const routeList: RouteAppObject[] = [  
   { 
@@ -59,8 +52,7 @@ const routeList: RouteAppObject[] = [
       menuIconLigth: false,
       theme: Theme.dark
     }
-  },
-  /*
+  },  
   { 
     path: '/contact-stephane-lieumont', 
     name: 'contact',
@@ -69,10 +61,12 @@ const routeList: RouteAppObject[] = [
     Component: <Contact title='Contactez-moi'/>,   
     params: {
       theme: Theme.ligth,
-      mainMenuEnabled: false,
+      mainMenuEnabled: false,      
+      socialTheme: Theme.dark,
       headerButtonsEnabled: false
-    } 
+    }
   },
+  /*
   { 
     path: '/cv-stephane-lieumont', 
     name: 'cv',
