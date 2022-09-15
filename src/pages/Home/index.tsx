@@ -1,12 +1,13 @@
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FunctionComponent, useEffect, useRef, useState } from 'react'
+import { FunctionComponent, useEffect, useRef, useState, Fragment } from 'react'
 import { useNavigate } from 'react-router'
 import Background from '~/components/Background'
 import Button from '~/components/Button'
 import { PageProps } from '~/interfaces/Component.intf'
 import RoutesApp from '~/routes/Routes.app'
 import { useAppSelector } from '~/store/main.store'
+import demoReal from '~/assets/movies/demoreal_2022.mp4'
 import './style.scss'
 
 const Home: FunctionComponent<PageProps> = ({title}) => {
@@ -75,17 +76,28 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
       </section>
       <section className='homepage__rigthside background--primary' style={{ paddingTop: headerheigth + 'px' }}>
         { imgLoaded && (
-          <Background 
-            triangle={false} 
-            points={false}
-            circleProperties = {{
-              top: '85%',
-              left: '88%',
-              size: '250px',
-              delayAnimation: 300
-            }}        
-          />
+          <Fragment>
+            <Background 
+              triangle={false} 
+              points={false}
+              circleProperties = {{
+                top: '85%',
+                left: '88%',
+                size: '250px',
+                delayAnimation: 300
+              }}        
+            />
+            <div className='homepage__rigthside__demoreal'>
+              <video width={'100%'} height={'100%'} autoPlay muted  loop>
+                <source src={demoReal} type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+              <div className='vignet-up'></div>
+              <div className='vignet-down'></div>
+            </div>
+          </Fragment>
         )}
+
         <img 
           className={!imgLoaded ? 'loading' : '' } 
           width={600} 
