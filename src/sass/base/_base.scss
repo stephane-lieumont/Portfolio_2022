@@ -13,7 +13,6 @@ html {
 
 body {
   font-size: 1.4rem;
-  background-color: $secondary;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote {
@@ -98,6 +97,16 @@ img {
 
   &.loading {
     opacity: 0;
+  }
+}
+
+.react-app {
+  background: white!important;
+  min-height: 100vh;
+  width: 100%;
+
+  &.dark {
+    background: $secondary!important;
   }
 }
 

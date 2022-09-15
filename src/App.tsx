@@ -7,6 +7,7 @@ import RoutesApp from '~/routes/Routes.app';
 import { CacheImages } from './datas/cache.img.data';
 import { RouteAppObject } from '~/interfaces/Routes.intf';
 import { Theme } from '~/interfaces/Theme.intf';
+import PageLoader from './components/PageLoader';
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
@@ -15,6 +16,7 @@ const App: React.FunctionComponent = () => {
   const [headerTitle, setHeaderTitle] = useState<string>()
   const [currentRoute, setCurrentRoute] = useState<RouteAppObject>()
   const [appCacheLoaded, setAppCacheLoaded] = useState<boolean>(false)
+  const [appLoaderVisible, setAppLoaderVisible] = useState<boolean>(false)
   const location = useLocation()
 
   let state = location.state as { backgroundLocation?: Location };
@@ -23,6 +25,7 @@ const App: React.FunctionComponent = () => {
   const cvRoute = RoutesApp.getRouteByName('cv')
 
   useEffect(() => {
+    setAppLoaderVisible(true)
     cacheImages(CacheImages)
   }, [])
 
@@ -49,21 +52,29 @@ const App: React.FunctionComponent = () => {
     })
 
     await Promise.all(promises)
-    setAppCacheLoaded(true)
+
+    // Hide loader app
+    setAppLoaderVisible(false)
+
+    // Display content
+    let timer = setTimeout(() => {
+      setAppCacheLoaded(true)
+      clearTimeout(timer)
+    }, 700);
   }
 
   return (
-    <div data-testid="app" className="react-app">
+    <div data-testid="app" className={`react-app${ currentTheme === Theme.dark ? ' dark' : '' }`}>
+      <Header 
+        onClick={handleClickMenu}
+        menuIsOpen={menuIsOpen} 
+        menuIsLigth={menuIsLigth} 
+        headerTitle={headerTitle} 
+        theme={ currentTheme } 
+        headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled }
+      />
       { appCacheLoaded ? (
-        <Fragment>    
-          <Header 
-            onClick={handleClickMenu}
-            menuIsOpen={menuIsOpen} 
-            menuIsLigth={menuIsLigth} 
-            headerTitle={headerTitle} 
-            theme={ currentTheme } 
-            headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled }
-          />
+        <Fragment>
           <main className={`${menuIsOpen ? 'scale' : ''}${ currentTheme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
             { globalRoutes.length > 0 && (
               <Routes location={state?.backgroundLocation || location}>
@@ -116,7 +127,7 @@ const App: React.FunctionComponent = () => {
             ligthen={currentTheme === Theme.dark}
           />
         </Fragment>
-      ) : null /** PLACEHOLDER GENERAL LOADER */}
+      ) : <PageLoader visible={appLoaderVisible} />}
     </div>
   )
 }

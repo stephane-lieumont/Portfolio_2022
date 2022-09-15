@@ -45,6 +45,7 @@
       
     h1 {
       flex: 1 0 50%;
+      animation: display-title .5s ease-in;
 
       .head-title {
         font-weight: 600;
@@ -119,6 +120,15 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes display-title {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
