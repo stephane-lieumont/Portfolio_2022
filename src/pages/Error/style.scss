@@ -1,0 +1,30 @@
+@import '../../sass/themes/colors';
+
+.error {
+  &__container {
+    padding-bottom: 0;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &__title {
+      text-align: center;
+      font-size: 1.2em;
+
+      h2 {
+        font-size: 6em;
+        margin: 0;
+        color: $primary;
+        opacity: 0.7;
+      }
+
+      p{
+        font-weight: 700;
+        color: $grey-shade200;
+      }
+    }
+
+    img {
+      min-width: 300px;
+    }
+  }
+}

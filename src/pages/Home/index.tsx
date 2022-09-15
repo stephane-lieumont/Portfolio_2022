@@ -31,29 +31,31 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
           <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
           <small>Romain Guilleaumes</small>
         </blockquote>
-          <Background 
-            ligthen
-            triangleProperties = {{
-              top: '20%',
-              rigth: '20%',
-              rotate: '260deg',
-              size: '150px',
-              delayAnimation: 0
-            }}
-            pointsProperties = {{
-              top: '80%',
-              left: '70%',
-              rotate: '145deg',
-              size: '400px',
-              delayAnimation:150
-            }}
-            circleProperties = {{
-              top: '85%',
-              rigth: '80%',
-              size: '350px',
-              delayAnimation: 300
-            }} 
-          />
+          { imgLoaded && (
+            <Background 
+              ligthen
+              triangleProperties = {{
+                top: '20%',
+                rigth: '20%',
+                rotate: '260deg',
+                size: '150px',
+                delayAnimation: 0
+              }}
+              pointsProperties = {{
+                top: '80%',
+                left: '70%',
+                rotate: '145deg',
+                size: '400px',
+                delayAnimation:150
+              }}
+              circleProperties = {{
+                top: '85%',
+                rigth: '80%',
+                size: '350px',
+                delayAnimation: 300
+              }} 
+            />
+          )}
           <div className='homepage__leftside__content'>
             <h2 className={`reveal${ imgLoaded ? ' reveal--3' : ''}`}>
               Developpeur Frontend & <span className='text--primary'>Graphiste 3D</span>
@@ -72,16 +74,18 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
           </div>
       </section>
       <section className='homepage__rigthside background--primary' style={{ paddingTop: headerheigth + 'px' }}>
-        <Background 
-          triangle={false} 
-          points={false}
-          circleProperties = {{
-            top: '85%',
-            left: '88%',
-            size: '250px',
-            delayAnimation: 300
-          }}        
-        />
+        { imgLoaded && (
+          <Background 
+            triangle={false} 
+            points={false}
+            circleProperties = {{
+              top: '85%',
+              left: '88%',
+              size: '250px',
+              delayAnimation: 300
+            }}        
+          />
+        )}
         <img 
           className={!imgLoaded ? 'loading' : '' } 
           width={600} 

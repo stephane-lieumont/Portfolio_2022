@@ -27,7 +27,6 @@ main {
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   background-color: white;
   transition: transform 0.45s ease-in-out;
-  transform-origin: top;
 
   &.scale {
     transform: scale(0.9);

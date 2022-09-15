@@ -4,6 +4,7 @@ import { Theme } from '~/interfaces/Theme.intf'
 import Cgi from '~/pages/Cgi'
 import Dev from '~/pages/Dev'
 import DevProject from '~/pages/DevProject'
+import Error from '~/pages/Error'
 import Home from '~/pages/Home'
 
 //import Contact from '~/pages/Contact'
@@ -84,6 +85,7 @@ const routeList: RouteAppObject[] = [
       headerButtonsEnabled: false
     }  
   },
+  */
   {
     path: '*', 
     name: 'error',
@@ -93,8 +95,7 @@ const routeList: RouteAppObject[] = [
       menuIconLigth: true,
       theme: Theme.ligth
     }
-  }
-  */
+  } 
 ]
 
 const getRouteByName = (name: string):RouteAppObject | undefined => {
