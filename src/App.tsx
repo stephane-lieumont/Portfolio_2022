@@ -64,7 +64,7 @@ const App: React.FunctionComponent = () => {
   }
 
   return (
-    <div data-testid="app" className={`react-app${ currentTheme === Theme.dark ? ' dark' : '' }`}>
+    <div data-testid="app" className={`react-app${ currentTheme === Theme.dark || menuIsOpen ? ' dark' : '' }`}>
       <Header 
         onClick={handleClickMenu}
         menuIsOpen={menuIsOpen} 

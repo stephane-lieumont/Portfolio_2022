@@ -23,7 +23,6 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote {
 
 main {
   min-height: 100vh;
-  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   background-color: white;
   transition: transform 0.45s ease-in-out;
 
@@ -104,6 +103,7 @@ img {
   background: white!important;
   min-height: 100vh;
   width: 100%;
+  transition: background-color 0.45s ease-in-out;
 
   &.dark {
     background: $secondary!important;

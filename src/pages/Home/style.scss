@@ -68,6 +68,39 @@
   &__rigthside {
     position: relative;
     transition: opacity .45s ease-in;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+
+    &__demoreal {
+      position:relative;
+      margin-top: 2rem;
+      width: 100%;
+      height: auto;
+      z-index: 0;
+
+      .vignet-up {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 7%;
+        width: 100%;
+        background: white;
+        background: linear-gradient(180deg, rgba($primary,1) 10%, rgba($primary,0) 100%);
+        z-index: 2;
+      }
+
+      .vignet-down {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 15%;
+        width: 100%;
+        background: white;
+        background: linear-gradient(0deg, rgba($primary,1) 10%, rgba($primary,0) 100%);
+        z-index: 2;
+      }
+    }
 
     img {
       position: absolute;
@@ -94,6 +127,11 @@
           transform: translateX(500px);
           opacity: 0;
         }
+
+        video {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
@@ -119,6 +157,14 @@
 
     &__rigthside {
       flex: 1 0 100%;
+      padding: 0!important;
+
+      &__demoreal {
+        margin:0;
+        .vignet-up {
+          display: none;
+        }
+      }
     }
   }
 }
