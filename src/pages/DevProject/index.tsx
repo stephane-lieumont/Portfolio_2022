@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import parse from 'html-react-parser'
 import { firstLetterUpper } from '~/utils/formatString';
-import Loader from '~/components/Loader';
 import useScrollPosition from '~/hooks/useScrollPosition';
 import { useAppSelector } from '~/store/main.store';
 
@@ -41,37 +40,32 @@ const DevProject: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
   }
 
   return (
-      <div className='page project-web' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='page-project-web'>
+      <div className='page project' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='page-project'>
         <div className='page__content'>
-        { imgLoaded ? (
-            <Background
-              ligthen
-              triangleProperties = {{
-                top: `${1 + (scrollPosition / 90)}%`,
-                rigth: '15%',
-                rotate: '260deg',
-                size: '70px',
-                delayAnimation: 0
-              }}
-              pointsProperties = {{
-                top: `${80 - (scrollPosition / 60)}%`,
-                left: '90%',
-                rotate: '145deg',
-                size: '300px',
-                delayAnimation:150
-              }}
-              circleProperties = {{
-                top: `${85 - (scrollPosition / 50)}%`,
-                rigth: '90%',
-                size: '350px',
-                delayAnimation: 300
-              }}
-            />  
-          ) : (
-            <Loader />
-          ) }
+          <Background
+            ligthen
+            triangleProperties = {{
+              top: `${1 + (scrollPosition / 90)}%`,
+              left: '65%',
+              rotate: '260deg',
+              size: '70px',
+              delayAnimation: 0
+            }}
+            pointsProperties = {{
+              top: `${70 - (scrollPosition / 60)}%`,
+              left: '80%',
+              rotate: '145deg',
+              size: '300px',
+              delayAnimation:150
+            }}
+            circleProperties = {{
+              top: `${95 - (scrollPosition / 50)}%`,
+              rigth: '80%',
+              size: '350px',
+              delayAnimation: 300
+            }}
+          />
           <section>
-
             <div className={`project__title reveal${ imgLoaded ? ' reveal--0' : '' }`}>
               <div className='project__title__return'>
                 <FontAwesomeIcon icon={faArrowAltCircleLeft} className='fa-return-btn' onClick={handleReturn} />
