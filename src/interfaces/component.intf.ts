@@ -20,6 +20,8 @@ export type BackgroundProps = {
 export type ButtonProps = {
   label?: string
   outlined?: boolean
+  loading?: boolean
+  valid?:boolean
   white?:boolean
   className?:string
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
