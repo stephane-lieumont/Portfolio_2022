@@ -1,4 +1,4 @@
-import { ProjectDevData, SpecialityData } from "~/interfaces/Data.intf"
+import { ProjectDevData, SpecialityData } from "~/interfaces/data.intf"
 
 import CTPappMobileImg from '~/assets/medias/projects/case-tes-potes-mobile-2022.jpg'
 import CTPappMobileImgProject from '~/assets/medias/projects/case-tes-potes-mobile-2022_project.jpg'

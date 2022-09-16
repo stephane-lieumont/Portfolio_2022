@@ -1,5 +1,5 @@
 import { Slice, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { FormContactState } from '~/interfaces/Forms.intf';
+import { FormContactState } from '~/interfaces/forms.intf';
 
 const initialState: FormContactState = {
   formInputName: {label: "nom", name: "name", error: false, errorMessage: "veuillez sasir votre nom", inputIsValid: false},

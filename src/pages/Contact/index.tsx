@@ -2,10 +2,12 @@ import { FunctionComponent, useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import Background from '~/components/Background';
 import BadgeContact from '~/components/BadgeContact';
+import Button from '~/components/Button';
 import useWindowSize from '~/hooks/useWindowsSize';
-import { PageProps } from '~/interfaces/Component.intf';
+import { PageProps } from '~/interfaces/component.intf';
 import Footer from '~/layout/Footer';
-import RoutesApp from '~/routes/Routes.app';
+import RoutesApp from '~/routes/routes.app';
+import { downloadCV } from '~/services/download.srv';
 import { useAppSelector } from '~/store/main.store';
 import FormContact from './FormContact';
 
@@ -55,14 +57,13 @@ const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page', isM
           </p>
           <FormContact />          
         </section> 
-        <BadgeContact className='contact__card'/>       
+        <BadgeContact className='contact__card'/>  
+        { !isModal && <Button className='contact__cv' label={'Mon CV'} onClick={downloadCV} outlined /> }       
         <div className="contact__bg">
           <img className={imgLoaded ? '' : 'loading'} onLoad={() => setImgLoaded(true)} src={require('../../assets/profile/profil-stephane-lieumont-contact.jpg')} alt="profil stéphane lieumont"/>
         </div>
-      </div>
-      { !isModal && (
-        <Footer />
-      )}      
+      </div>      
+      { !isModal && <Footer /> }
     </div>
   );
 }

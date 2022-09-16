@@ -1,7 +1,7 @@
 import { faClose } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { FunctionComponent, MouseEvent, useEffect, useState } from "react"
-import { ImageViewerProps } from "~/interfaces/Component.intf"
+import { ImageViewerProps } from "~/interfaces/component.intf"
 import { firstLetterUpper } from "~/utils/formatString"
 import Loader from "../Loader"
 import './style.scss'

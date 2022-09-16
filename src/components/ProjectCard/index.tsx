@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react'
-import { ProjectCardProps } from '~/interfaces/Component.intf'
+import { ProjectCardProps } from '~/interfaces/component.intf'
 import { firstLetterUpper } from '~/utils/formatString'
 import './style.scss'
 

@@ -1,5 +1,5 @@
 import { Slice, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { LayoutState } from '~/interfaces/Forms.intf';
+import { LayoutState } from '~/interfaces/forms.intf';
 
 const initialState: LayoutState = {
   headerHeigth: 0

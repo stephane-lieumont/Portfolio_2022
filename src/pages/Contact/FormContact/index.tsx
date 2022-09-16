@@ -1,7 +1,7 @@
 import { FunctionComponent, MouseEvent } from 'react';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
-import { HTMLFormType } from '~/interfaces/Forms.intf';
+import { HTMLFormType } from '~/interfaces/forms.intf';
 import { FormContactActions } from '~/store/formContact.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
 import { firstLetterUpper } from '~/utils/formatString';
