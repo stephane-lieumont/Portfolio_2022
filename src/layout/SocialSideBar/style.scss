@@ -2,11 +2,12 @@
 
 .social-sidebar {
   position: fixed;
-  bottom:160px;
-  right:60px;
+  bottom:9em;
+  right:2em;
   z-index: 3;
   opacity: 1;
   transition: opacity .3s ease-in-out;
+  animation: display-social-sidebar .3s ease-in both;
 
   &--hidden {
     opacity: 0;
@@ -29,21 +30,24 @@
   }
 }
 
-@media only screen and (max-width: $screen-lg) {
-  .social-sidebar {
-    right:20px;
-
-    li {
-      a {
-        height: 35px!important;
-        width: 35px!important;
-      }
-    }
+@keyframes display-social-sidebar {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 @media only screen and (max-width: $screen-md) {
   .social-sidebar {
-    right:10px;
+    right:2rem;
+
+    li {
+      a {
+        height: 40px!important;
+        width: 40px!important;
+      }
+    }
   }
 }

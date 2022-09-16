@@ -1,14 +1,14 @@
+
+import { RouteAppObject } from '~/interfaces/routes.intf'
+import { Theme } from '~/interfaces/theme.intf'
+import Cgi from '~/pages/Cgi'
+import Contact from '~/pages/Contact'
+import Dev from '~/pages/Dev'
+import DevProject from '~/pages/DevProject'
 import Error from '~/pages/Error'
 import Home from '~/pages/Home'
-import PortfolioCGI from '~/pages/PortfolioCGI'
-import PortfolioDev from '~/pages/PortfolioDev'
-import { RouteAppObject } from '~/interfaces/Routes.intf'
-import { Theme } from '~/interfaces/Theme.intf'
-import Contact from '~/pages/Contact'
-import CV from '~/pages/CV'
-import ProjectWeb from '~/pages/ProjectWeb'
 
-const routeList: RouteAppObject[] = [
+const routeList: RouteAppObject[] = [  
   { 
     path: '/', 
     name: 'home',
@@ -23,35 +23,36 @@ const routeList: RouteAppObject[] = [
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
     label: 'Portfolio Dev',
-    Component: <PortfolioDev title='Web | Stéphane Lieumont' />, 
+    Component: <Dev title='Web | Stéphane Lieumont' />, 
     headerTitle: "Web & mobile",    
     params: {
       menuIconLigth: false,
       theme: Theme.ligth
     }
-  },
+  },  
   { 
     path: '/portfolio-stephane-lieumont-developpeur/:params', 
     name: 'project-web',
     label: 'Projet Web',
     headerTitle: 'Projet web',
-    Component: <ProjectWeb title='Web | Projet' />,
+    Component: <DevProject title='Web | Projet' />,
     params: {
       theme: Theme.ligth,
       mainMenuEnabled: false
     }
   },
+  
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',
     label: 'Portfolio CGI',
-    Component: <PortfolioCGI title='CGI | Stéphane Lieumont'/>,
+    Component: <Cgi title='CGI | Stéphane Lieumont'/>,
     headerTitle: "graphiste 3D",    
     params: {
       menuIconLigth: false,
       theme: Theme.dark
     }
-  },
+  },  
   { 
     path: '/contact-stephane-lieumont', 
     name: 'contact',
@@ -60,21 +61,10 @@ const routeList: RouteAppObject[] = [
     Component: <Contact title='Contactez-moi'/>,   
     params: {
       theme: Theme.ligth,
-      mainMenuEnabled: false,
+      mainMenuEnabled: false,      
+      socialTheme: Theme.dark,
       headerButtonsEnabled: false
-    } 
-  },
-  { 
-    path: '/cv-stephane-lieumont', 
-    name: 'cv',
-    label: 'Mon CV',
-    headerTitle: "Mon Parcours",
-    Component: <CV title='CV Stéphane Lieumont' />, 
-    params: {
-      theme: Theme.ligth,
-      mainMenuEnabled: false,
-      headerButtonsEnabled: false
-    }  
+    }
   },
   {
     path: '*', 
@@ -85,7 +75,7 @@ const routeList: RouteAppObject[] = [
       menuIconLigth: true,
       theme: Theme.ligth
     }
-  }
+  } 
 ]
 
 const getRouteByName = (name: string):RouteAppObject | undefined => {

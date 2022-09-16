@@ -1,4 +1,4 @@
-import { ProjectDevData, SpecialityData } from "~/interfaces/Data.intf"
+import { ProjectDevData, SpecialityData } from "~/interfaces/data.intf"
 
 import CTPappMobileImg from '~/assets/medias/projects/case-tes-potes-mobile-2022.jpg'
 import CTPappMobileImgProject from '~/assets/medias/projects/case-tes-potes-mobile-2022_project.jpg'
@@ -128,10 +128,10 @@ export const ProjectsDevData: ProjectDevData[] = [
     imgFileProject: CTPwebAppImgProject,
     imgAlt: 'case tes potes - web application 2021',
     hashtags: [
-      'webpack',
-      'typescript',
-      'sass',
-      'nodejs'
+      'Webpack',
+      'Typescript',
+      'Sass',
+      'Nodejs'
     ],
     released: new Date('2021-11-17'),
     demoLink: '/tete'
@@ -166,10 +166,10 @@ export const ProjectsDevData: ProjectDevData[] = [
     imgFileProject: KasaOcImgProject,
     imgAlt: 'Kasa OpenClassrooms - landingpage 2021',
     hashtags: [
-      'react',
-      'typescript',
-      'sass',
-      'nodejs'
+      'React',
+      'Typescript',
+      'Sass',
+      'Nodejs'
     ],
     released: new Date('2021-12-10'),
     demoLink: '/tete'
@@ -196,7 +196,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     imgFileProject: Portfolio2018ImgProject,
     imgAlt: 'portfolio 3d - 2018',
     hashtags: [
-      'javascript',
+      'Javascript',
       'CSS',
     ],
     released: new Date('2018-09-17'),
@@ -228,7 +228,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     imgFileProject: Pixmodels2015ImgProject,
     imgAlt: 'pixmodels - agence de communication audiovisuel',
     hashtags: [
-      'javascript',
+      'Javascript',
       'PHP',
       'CSS',
     ],

@@ -1,0 +1,10 @@
+@import '../../sass/themes/colors';
+
+.badge-contact {
+  display: inline-block;
+  background-color: $primary;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

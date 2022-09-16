@@ -2,10 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 import { TypedUseSelectorHook, useDispatch } from "react-redux";
 import formContactSlice from "./formContact.store";
+import layoutSlice from "./layout.store";
 
 const store = configureStore({
   reducer: {
     formContactSlice: formContactSlice.reducer,
+    layoutSlice: layoutSlice.reducer
   }
 })
 

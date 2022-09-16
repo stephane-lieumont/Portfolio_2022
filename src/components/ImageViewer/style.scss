@@ -22,9 +22,14 @@
 
     .image-viewer {
       &__container {
-        animation-name: image-viewer-container-appear;
-        animation-timing-function: ease-out;
-        animation-fill-mode: both;
+        opacity: 0;
+        transform: none;
+                
+        &.loaded {
+          animation-name: image-viewer-container-appear;
+          animation-timing-function: ease-out;
+          animation-fill-mode: both;
+        }
       }
     }
   }

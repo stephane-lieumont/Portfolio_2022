@@ -5,17 +5,16 @@
   outline: none;
   background: none;
   border: none;
-
-  font-size: 15px;
+  font-size: 1.4rem;
   font-weight: 300;
   line-height: 20px;
   text-transform: uppercase;
   background-color: $primary;
   color: white;
-  padding: 7px 30px;
-  border-radius: 17px;
+  padding: 0.5em 30px;
+  margin: 0.5em auto;
+  border-radius: 2em;
   transition: all 0.2s ease-in-out;
-
   cursor: pointer;
 
   &:hover {
@@ -45,7 +44,7 @@
 
 @media only screen and (max-width: $screen-lg) {
   .button {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
     white-space: nowrap;
   }
 }
