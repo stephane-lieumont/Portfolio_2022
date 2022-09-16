@@ -1,0 +1,137 @@
+@import '../../sass/themes/colors';
+
+.page-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  opacity: 0;
+  transition: all .6s ease-in-out;
+  transform: translateY(10px);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  p {
+    margin: 0;
+    font-weight: 700;
+    color: $grey-shade200;
+  }
+}
+
+.loading {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+  height: 2em;
+  font-weight: 700;
+
+  span {
+    position: relative;
+    display: inline-block;
+    color: $grey-shade200;
+    animation: loadingTxt 2s infinite;
+    animation-delay: calc(.15s * var(--i));
+    
+  }
+}
+
+@keyframes loadingTxt {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-5px)
+  }
+}
+
+.pacman-container {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  height: 45px;
+  width: 50%;
+  margin: 0 auto;
+  max-width: 150px;
+
+  .pacman {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+    transform: translateX(-5px);
+  
+    &::before,
+    &::after {
+        position: absolute;
+        top: -20px;
+        display: block;
+        border-radius: 50%;
+        content: "";
+        height: 0px;
+        width: 0px;
+    }
+  
+    &::before {
+        animation: chunk-top .5s ease infinite;
+        border: 20px solid $primary;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+  
+    &::after {
+        animation: chunk-bottom .5s ease infinite;
+        border: 20px solid $primary;
+        border-right-color: transparent;
+        border-top-color: transparent;
+    }
+  }
+  
+  .path {
+    display: flex;
+    justify-content: space-around;
+    animation: eating-path .5s linear infinite;
+    width: 100%;
+  
+    &::before {
+        background: $grey-shade200;
+        border-radius: 50%;
+        content: "";
+        height: 0.5rem;
+        width: 0.5rem;
+    }
+  }
+}
+
+@keyframes chunk-top {
+  0%,
+  100% {
+      transform: rotate(-45deg);
+  }
+  50% {
+      transform: rotate(-80deg);
+  }
+}
+
+@keyframes chunk-bottom {
+  0%,
+  100% {
+      transform: rotate(-40deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+}
+
+@keyframes eating-path {
+  0% {
+      transform: translateX(50%);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}

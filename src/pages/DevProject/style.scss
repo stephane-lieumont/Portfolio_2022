@@ -1,0 +1,68 @@
+@import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
+
+.project {
+  &__title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+
+    h2 {
+      margin-bottom:0;
+      margin-left: 20px;
+    }
+  }
+
+  &__pitch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    img {
+      display:block;
+      width: 100%;
+    }
+  }
+
+  &__release {
+    padding-bottom: 3em;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
+    }
+
+    &__content {
+      width: 70%;
+    }
+
+    .icon-custom {
+      &__container {
+        color:$primary!important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .project {
+    &__release {
+      text-align: center!important;
+
+      &__container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__content {
+        width: 100%;
+        text-align: left!important;
+      }
+    }
+  }
+}

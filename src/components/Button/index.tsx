@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonProps } from '~/interfaces/Component.intf';
+import { ButtonProps } from '~/interfaces/component.intf';
 import './style.scss';
 
 
@@ -12,7 +12,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   }) => {
   
   return (
-    <button className={`button${ outlined ? ' button--outlined' : ''}${ white ? ' button--white' : ''} ${ className }`} onClick={onClick}>
+    <button className={`button${ outlined ? ' button--outlined' : ''}${ white ? ' button--white' : ''} ${ className ?? '' }`} onClick={onClick}>
       {label}
     </button>
   );

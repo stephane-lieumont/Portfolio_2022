@@ -3,7 +3,9 @@
 .gallery {
   position: relative;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  z-index: 1;
   
   &__grid, &__fakegrid {
     position: relative;
@@ -40,6 +42,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         top: 0;
         left: 0;
         height: 100%;
@@ -54,16 +57,18 @@
         }
 
         h4 {
-          font-size: 1rem;
+          font-size: 1em;
           font-weight: 600;
           transform: translateY(30px);
           transition: transform .3s ease-in-out;
+          margin: 0;
         }
 
         p {
-          font-size: 0.8rem;
+          font-size: 0.8em;
           transform: translateY(30px);
           transition: transform .3s ease-in-out;
+          margin: 0;
         }
 
         ul {

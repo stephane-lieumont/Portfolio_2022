@@ -3,35 +3,63 @@
   src: local('icons'), url('../../assets/fonts/icons.woff') format('woff');
 }
 
+.fa-icon {
+  margin-right: 5px!important;
+}
+
+.fa-close-btn {
+  border: 1px solid;
+  height: 14px;
+  width: 14px;
+  padding: 3px;
+  border-radius: 50%;
+  color:$secondary;
+  cursor: pointer;
+  transition: color .15s ease-in-out;
+
+  &:hover {
+    color: $primary
+  }
+}
+
+.fa-return-btn {
+  color:$orange-shade300;
+  transition: color .15s ease-in-out;
+  cursor: pointer;
+  font-size: 24px;
+
+  &:hover {
+    color: $primary
+  }
+}
+
 .icon-custom {
   display:block;
   font-size:2em;
   padding:3px;
   position: relative;
-  
-  cursor: pointer;
 
   span {
     position: absolute;
     bottom: 50%;
     left: 50%;
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 1.2rem;
     visibility: hidden;
     transform: translate(-50%, 50%);
-    background-color: $orange-shade300;
+    background-color: rgba($color: #000000, $alpha: 0.4);
     color: white;
     padding: 2px 5px;
     border-radius: 3px;
     opacity: 0;
+    pointer-events: none;
   }
 
   &:hover {
     span {
       transition: all .25s ease-in-out .1s;
       opacity: 1;
-      transform: translate(-50%, -100%)!important;
+      transform: translate(-50%, -2em)!important;
       visibility: visible;
     }
   } 

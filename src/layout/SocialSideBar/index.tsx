@@ -3,7 +3,7 @@ import { SocialIcon } from 'react-social-icons'
 import Colors from '~/sass/themes/colors.module.scss'
 import { ArtstationIcon } from '~/assets/icons/SocialIconsCustom';
 import './style.scss';
-import { SocialSideBarProps } from '~/interfaces/Component.intf';
+import { SocialSideBarProps } from '~/interfaces/component.intf';
 
 
 const SocialSideBar: FunctionComponent<SocialSideBarProps> = ({menuIsOpen = false, ligthen = false}) => {

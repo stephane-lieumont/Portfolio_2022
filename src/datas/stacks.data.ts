@@ -1,4 +1,4 @@
-import { StackItem, StackType } from "~/interfaces/Data.intf";
+import { StackItem, StackType } from "~/interfaces/data.intf";
 
 export const StackList: StackItem[] = [
   {

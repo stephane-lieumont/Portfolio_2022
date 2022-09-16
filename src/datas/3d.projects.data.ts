@@ -38,7 +38,7 @@ import ImgPortfolio015Thumb from '~/assets/medias/portfolio/21-Lego-Minions-2016
 import ImgPortfolio016Thumb from '~/assets/medias/portfolio/22-1-Extraterrestre-2016-min.jpg'
 
 
-import { SliderImageData, PortfolioData, StackType, SpecialityData } from '~/interfaces/Data.intf'
+import { SliderImageData, PortfolioData, StackType, SpecialityData } from '~/interfaces/data.intf'
 import { getStack } from '~/utils/stackUtils'
 
 export const SliderImagesData: SliderImageData[] = [
