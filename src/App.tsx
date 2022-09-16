@@ -9,6 +9,8 @@ import { RouteAppObject } from '~/interfaces/routes.intf';
 import { Theme } from '~/interfaces/theme.intf';
 import PageLoader from './components/PageLoader';
 import Contact from './pages/Contact';
+import useWindowSize from './hooks/useWindowsSize';
+import Screen from '~/sass/abstract/variables.module.scss'
 
 const App: React.FunctionComponent = () => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
@@ -20,6 +22,7 @@ const App: React.FunctionComponent = () => {
   const [appCacheLoaded, setAppCacheLoaded] = useState<boolean>(false)
   const [appLoaderVisible, setAppLoaderVisible] = useState<boolean>(false)
   const location = useLocation()
+  const windowsSize = useWindowSize()
 
   let state = location.state as { backgroundLocation?: Location };
   const globalRoutes = RoutesApp.routeList
@@ -39,6 +42,16 @@ const App: React.FunctionComponent = () => {
     if(!state) setCurrentSocialTheme(route?.params?.socialTheme ?? route?.params?.theme ?? Theme.ligth)
     if(!state) setHeaderTitle(route?.headerTitle)
   }, [location, state])
+
+  // Specific theme layout change for responsive design
+  useEffect(() => {
+    if(location.pathname === RoutesApp.getRouteByName('home')?.path ) {
+      windowsSize.width <  parseInt(Screen.screenLg) ? setMenuIsLigth(false) : setMenuIsLigth(true)
+    }
+    if(location.pathname === RoutesApp.getRouteByName('contact')?.path ) {
+      windowsSize.width <  parseInt(Screen.screenLg) ? setCurrentSocialTheme(Theme.ligth) : setCurrentSocialTheme(Theme.dark)
+    }
+  }, [windowsSize, location])
 
   const handleClickMenu = (value: boolean) => {
     setMenuIsOpen(value)

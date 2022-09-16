@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 import { HeaderProps } from '~/interfaces/component.intf';
 import { layoutActions } from '~/store/layout.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
-import Screen from '~/sass/abstract/variables.module.scss'
-import useWindowSize from '~/hooks/useWindowsSize';
 import useScrollPosition from '~/hooks/useScrollPosition';
 import { downloadCV } from '~/services/download.srv';
 
@@ -31,7 +29,6 @@ const Header: FunctionComponent<HeaderProps> = ({
 
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  const windowsSize = useWindowSize()
   const scrollPosition = useScrollPosition()
 
   const homePageRoutePath = RoutesApp.getRouteByName('home')
@@ -42,14 +39,8 @@ const Header: FunctionComponent<HeaderProps> = ({
       dispatch(layoutActions.setHeaderHeigth(refHeaderContainer.current!.clientHeight))
     }
 
-    // On path homepage with mobile device nav button become darkmode 
-    if(location.pathname === RoutesApp.getRouteByName('home')?.path ) {
-      windowsSize.width <  parseInt(Screen.screenLg) ? setNavButtonLigth(false) : setNavButtonLigth(true)
-    } else {
-      setNavButtonLigth(menuIsLigth || theme === Theme.dark)
-    }
-    
-  }, [dispatch, headerheigth, location.pathname, menuIsLigth, refHeaderContainer, theme, windowsSize])
+    setNavButtonLigth(menuIsLigth || theme === Theme.dark)    
+  }, [dispatch, headerheigth, location.pathname, menuIsLigth, refHeaderContainer, theme])
 
   useEffect(() => {
     window.scrollY > 20 ? setMenuHide(true) : setMenuHide(false)
