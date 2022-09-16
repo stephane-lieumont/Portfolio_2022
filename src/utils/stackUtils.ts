@@ -1,4 +1,4 @@
-import { StackType } from "~/interfaces/Data.intf"
+import { StackType } from "~/interfaces/data.intf"
 import { StackList } from "~/datas/stacks.data"
 
 export const getStack = (type: StackType) => {

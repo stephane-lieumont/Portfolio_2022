@@ -1,0 +1,13 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .4s ease-out;
+
+  @for $i from 0 through 50 {
+    &--#{$i} {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 200ms * $i;
+    }
+  }
+}

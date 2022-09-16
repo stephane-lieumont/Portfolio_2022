@@ -1,13 +1,12 @@
 import gsap, { Power3, Elastic } from 'gsap';
 import React, { MouseEvent, useEffect, useState, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import useWindowSize from '~/hooks/useWindowsSize';
-import { NavBarSliderProps } from '~/interfaces/Component.intf';
+import { NavBarSliderProps } from '~/interfaces/component.intf';
 import Colors from '~/sass/themes/colors.module.scss'
 import Screen from '~/sass/abstract/variables.module.scss'
 
 import './style.scss';
-
 
 const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
     defaultValueOpen = false, 
@@ -30,6 +29,7 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
   const [mobileNav, setMobileNav] = useState<boolean>(true)
 
   const windowSize = useWindowSize();
+  const location = useLocation()
 
   const handleClick = (e : MouseEvent<HTMLElement>) => {
     e.preventDefault()
@@ -81,8 +81,8 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
           <ul ref={menu}>
           { routeList.map(({ path, label, name, params }, index) => (
               path !== '*' && params?.mainMenuEnabled !== false ?
-              <li className={ open ? `delay--${index}` : ''} key={name} onClick={handleClick}><NavLink to={path}>{label}</NavLink></li>
-              : mobileNav === true && (name === 'contact' || name === 'cv') ?
+              <li className={ `${open ? `delay--${index}` : ''}${ location.pathname === path ? ' active' : '' }`} key={name} onClick={handleClick}><NavLink to={path}>{label}</NavLink></li>
+              : mobileNav === true && (name === 'contact') ?
               <li className={ open ? `delay--${index}` : ''} key={name} onClick={handleClick}><NavLink to={path}>{label}</NavLink></li>
               : null
             )) 

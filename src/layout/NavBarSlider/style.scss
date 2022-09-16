@@ -1,10 +1,12 @@
 @import '../../sass/themes/colors';
+@import '../../sass/abstract/variables';
 
 .navbar {
   &__button {
     position: fixed;
-    top: 45px;
-    right: 60px;
+    top: 35px;
+    bottom: 0;
+    right: 6rem;
     width: 50px;
     height: 50px;
     display: flex;
@@ -12,7 +14,7 @@
     align-items: center;
     cursor: pointer;
     transition: all .2s ease-in-out;
-    z-index: 10;    
+    z-index: 4;    
     
     &::before {
       content: '';
@@ -134,6 +136,7 @@
     min-width: 200px;
     max-width: 270px;
     height: 100vh;
+    z-index: 3;
     transform: translateX(100%);
 
     svg path{
@@ -150,7 +153,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 2.5vw;
+        gap: 1em;
         height: 100vh;
         list-style: none;
         padding: 40px;
@@ -172,6 +175,12 @@
             }
           }
 
+          &.active {
+            a {
+              color: $primary;
+            }
+          }
+
           a {
             color: white;
             text-decoration: none;
@@ -190,6 +199,36 @@
         transform: translateX(0)!important;
         opacity: 1!important;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-md) {
+  .navbar__button {
+      top: 15px;
+      right: 1em;
+  }
+}
+
+@media only screen and (max-width: $screen-sm) {
+  .navbar__button {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+
+    &__burger {
+      height: 2px;
+      
+      &::after, &::before {
+        width: 20px!important;
+        height: 2px;
+        transform: translateY(8px);
+      } 
+      &::after {
+        width: 20px!important;
+        height: 2px;
+        transform: translateY(-8px);
+      }        
     }
   }
 }

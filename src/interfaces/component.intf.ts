@@ -1,8 +1,8 @@
 import { ReactElement } from "react"
-import { PortfolioData, ProjectDevData, SliderImageData } from "./Data.intf"
-import { SVGproperties } from "./Object.intf"
-import { RouteAppObject } from "./Routes.intf"
-import { Theme } from "./Theme.intf"
+import { PortfolioData, ProjectDevData, SliderImageData } from "./data.intf"
+import { SVGproperties } from "./object.intf"
+import { RouteAppObject } from "./routes.intf"
+import { Theme } from "./theme.intf"
 
 //--- Interfaces Components ---//
 
@@ -57,20 +57,13 @@ export type ModalProps = {
   onClose?: CallableFunction
 }
 
-export type MyRouteProps = {
-  path: string,
-  children?: React.ReactElement
-}
-
 export type ProjectCardProps = {
   projectData: ProjectDevData
   className?:string
 }
 
-export type SmoothScrollProps = {
-  children: JSX.Element,
-  offset?: boolean,
-  onChanged?: (scrollY: number) => void
+export type BadgeContactProps = {
+  className?: string
 }
 
 //--- Interfaces Layout ---//
@@ -81,6 +74,7 @@ export type HeaderProps = {
   headerTitle?: string
   headerButtonsEnabled?: boolean
   theme?: Theme
+  onSizeChange?: (heigth: number) => void
   onClick?: (isOpen: boolean) => void
 }
 
@@ -103,5 +97,3 @@ export type PageProps = {
   title?: string
   isModal?: boolean
 }
-
-
