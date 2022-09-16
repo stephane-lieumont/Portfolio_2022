@@ -156,13 +156,18 @@
 
 @media only screen and (max-width: $screen-lg) {
   .header {
-    height: 70px;
+    height: 90px;
     padding: 1.5rem;
+    padding-bottom: 0;
   }
 }
 
 @media only screen and (max-width: $screen-md) {
   .header {
+    height: 70px;
+    padding: 1.5rem;
+    padding-bottom: 0;
+    
     h1 {
       .head-title {
         font-size: 1.2rem!important;

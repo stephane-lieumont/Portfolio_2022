@@ -15,8 +15,8 @@ import { downloadCV } from '~/services/download.srv';
 const Header: FunctionComponent<HeaderProps> = ({
   menuIsOpen = false, 
   menuIsLigth = false, 
-  headerTitle, 
-  headerButtonsEnabled, 
+  headerTitle,
+  headerButtonsEnabled = true, 
   theme,
   onClick = () => {}
 }) => {
@@ -40,7 +40,7 @@ const Header: FunctionComponent<HeaderProps> = ({
     }
 
     setNavButtonLigth(menuIsLigth || theme === Theme.dark)    
-  }, [dispatch, headerheigth, location.pathname, menuIsLigth, refHeaderContainer, theme])
+  }, [dispatch, headerheigth, location.pathname, menuIsLigth, refHeaderContainer.current?.clientHeight, theme])
 
   useEffect(() => {
     window.scrollY > 20 ? setMenuHide(true) : setMenuHide(false)
@@ -62,7 +62,7 @@ const Header: FunctionComponent<HeaderProps> = ({
             <span>Stéphane</span>
             <span className="head-subtitle--primary">Lieumont</span>
           </span>
-        </h1>                
+        </h1>
         <div className='navigation'>
           { headerButtonsEnabled !== false && (
             <ul className='navigation__buttons'>
