@@ -80,7 +80,7 @@ const Input: FunctionComponent<InputType> = ({
     <div 
       data-testid="input-container"
       className={
-        `input${ htmlFormType === HTMLFormType.textarea ? ' input--textarea' : ''}${ textInput !== '' ? ' input--active' : ''}${ onFocusInput ? ' input--focus' : ''}${ errorStatus ?  ' input--error' : ''}${ readOnly ?  ' input--read' : ''}`
+        `input${ htmlFormType === HTMLFormType.textarea ? ' input--textarea' : ''}${ textInput !== '' ? ' input--active' : ''}${ onFocusInput ? ' input--focus' : ''}${ disabled ? ' input--disabled' : ''}${ errorStatus ?  ' input--error' : ''}${ readOnly ?  ' input--read' : ''}`
       }
     >
       <label htmlFor={name} className={prependIcon ? 'indent' : '' }>{label}</label>

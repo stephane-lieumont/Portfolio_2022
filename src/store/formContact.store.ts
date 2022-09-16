@@ -2,8 +2,8 @@ import { Slice, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { FormContactState } from '~/interfaces/forms.intf';
 
 const initialState: FormContactState = {
-  formInputName: {label: "nom", name: "name", error: false, errorMessage: "veuillez sasir votre nom", inputIsValid: false},
-  formInputEmail: {label: "email", name: "email", error: false, errorMessage: "veuillez saisir un email valide", inputIsValid: false},
+  formInputName: {label: "nom", name: "from_name", error: false, errorMessage: "veuillez sasir votre nom", inputIsValid: false},
+  formInputEmail: {label: "email", name: "from_email", error: false, errorMessage: "veuillez saisir un email valide", inputIsValid: false},
   formInputMessage: {label: "message", name: "message", error: false, errorMessage: "veuillez saisir un messsage", inputIsValid: false}
 }
 
