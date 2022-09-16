@@ -1,7 +1,7 @@
 import { faLocation, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { BadgeContactProps } from '~/interfaces/Component.intf';
+import { BadgeContactProps } from '~/interfaces/component.intf';
 import './style.scss';
 
 const BadgeContact: React.FunctionComponent<BadgeContactProps> = ({ className = '' }) => {  

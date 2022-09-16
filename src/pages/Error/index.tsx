@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import Background from '~/components/Background';
-import { PageProps } from '~/interfaces/Component.intf';
+import { PageProps } from '~/interfaces/component.intf';
 import Footer from '~/layout/Footer';
 import { useAppSelector } from '~/store/main.store';
 

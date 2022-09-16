@@ -40,10 +40,13 @@
     }
   }
 
-  &__card {
+  &__card, &__cv {
     justify-self: flex-end;
     align-self: center;
-    z-index: 3;
+    z-index: 2;
+  }
+
+  &__cv {
     margin-bottom: 3rem;
   }
 }
@@ -58,7 +61,7 @@
 
     &__card {
       position: absolute;
-      bottom: 0;
+      bottom: 2em;
       right: 2em;
     }
   }

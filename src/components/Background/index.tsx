@@ -5,7 +5,7 @@ import { ReactComponent as CircleDoubleSVG } from '~/assets/background/double-ci
 import { ReactComponent as ReapeatPointsSVG } from '~/assets/background/repeat-points.svg'
 
 import './style.scss';
-import { BackgroundProps } from '~/interfaces/Component.intf';
+import { BackgroundProps } from '~/interfaces/component.intf';
 
 const Background: FunctionComponent<BackgroundProps> = ({ 
   darken = false, 

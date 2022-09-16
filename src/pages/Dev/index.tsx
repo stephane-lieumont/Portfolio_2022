@@ -6,9 +6,9 @@ import './style.scss'
 import ProjectCard from '~/components/ProjectCard';
 import Background from '~/components/Background';
 import useWindowSize from '~/hooks/useWindowsSize';
-import { SpecialityData } from '~/interfaces/Data.intf';
+import { SpecialityData } from '~/interfaces/data.intf';
 import { Link } from 'react-router-dom';
-import { PageProps } from '~/interfaces/Component.intf';
+import { PageProps } from '~/interfaces/component.intf';
 import useScrollPosition from '~/hooks/useScrollPosition';
 import { useAppSelector } from '~/store/main.store';
 import Specialities from '~/components/Specialities';

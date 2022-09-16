@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonProps } from '~/interfaces/Component.intf';
+import { ButtonProps } from '~/interfaces/component.intf';
 import './style.scss';
 
 

@@ -5,11 +5,11 @@ import { PortfolioImagesData, SliderImagesData, SpecialitiesCgiData } from '~/da
 
 import './style.scss'
 import Gallery from '~/components/Gallery';
-import { PortfolioData, SpecialityData } from '~/interfaces/Data.intf';
+import { PortfolioData, SpecialityData } from '~/interfaces/data.intf';
 import ImageViewer from '~/components/ImageViewer';
 import Background from '~/components/Background';
 import useWindowSize from '~/hooks/useWindowsSize';
-import { PageProps } from '~/interfaces/Component.intf';
+import { PageProps } from '~/interfaces/component.intf';
 import useScrollPosition from '~/hooks/useScrollPosition';
 import Specialities from '~/components/Specialities';
 

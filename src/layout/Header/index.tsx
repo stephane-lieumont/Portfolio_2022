@@ -1,17 +1,18 @@
-import RoutesApp from '~/routes/Routes.app';
+import RoutesApp from '~/routes/routes.app';
 import './style.scss'
 import NavBarButton from '../NavBarSlider';
 import Button from '~/components/Button';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { Theme } from '~/interfaces/Theme.intf';
+import { Theme } from '~/interfaces/theme.intf';
 import { Link } from 'react-router-dom';
-import { HeaderProps } from '~/interfaces/Component.intf';
+import { HeaderProps } from '~/interfaces/component.intf';
 import { layoutActions } from '~/store/layout.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
 import Screen from '~/sass/abstract/variables.module.scss'
 import useWindowSize from '~/hooks/useWindowsSize';
 import useScrollPosition from '~/hooks/useScrollPosition';
+import { downloadCV } from '~/services/download.srv';
 
 const Header: FunctionComponent<HeaderProps> = ({
   menuIsOpen = false, 
@@ -35,7 +36,6 @@ const Header: FunctionComponent<HeaderProps> = ({
 
   const homePageRoutePath = RoutesApp.getRouteByName('home')
   const contactPage = RoutesApp.getRouteByName('contact')
-  const cvPage = RoutesApp.getRouteByName('cv')
 
   useEffect(() => {    
     if(headerheigth !== refHeaderContainer.current?.clientHeight && refHeaderContainer) {
@@ -48,7 +48,7 @@ const Header: FunctionComponent<HeaderProps> = ({
     } else {
       setNavButtonLigth(menuIsLigth || theme === Theme.dark)
     }
-
+    
   }, [dispatch, headerheigth, location.pathname, menuIsLigth, refHeaderContainer, theme, windowsSize])
 
   useEffect(() => {
@@ -82,13 +82,9 @@ const Header: FunctionComponent<HeaderProps> = ({
                   </Link>
                 </li>
               )}
-              { cvPage && location.pathname !== cvPage.path && (
-                <li>
-                  <Link to={cvPage!.path} state={{ backgroundLocation: location }} >
-                    <Button label={cvPage!.label} outlined white={menuIsLigth || theme === Theme.dark} />
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Button label={'Mon CV'} onClick={downloadCV} outlined white={menuIsLigth || theme === Theme.dark} />
+              </li>
             </ul>
           )}
         </div>

@@ -2,9 +2,9 @@ import { FunctionComponent, MouseEvent, useEffect, useState } from 'react';
 import Footer from '~/layout/Footer';
 import './style.scss'
 import Background from '~/components/Background';
-import { PageProps } from '~/interfaces/Component.intf';
+import { PageProps } from '~/interfaces/component.intf';
 import { useNavigate, useParams } from 'react-router';
-import { ProjectDevData } from '~/interfaces/Data.intf';
+import { ProjectDevData } from '~/interfaces/data.intf';
 import { ProjectsDevData } from '~/datas/dev.projects.data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';

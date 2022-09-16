@@ -3,10 +3,10 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import SocialSideBar from '~/layout/SocialSideBar';
 import Header from '~/layout/Header';
 import Modal from '~/components/Modal';
-import RoutesApp from '~/routes/Routes.app';
+import RoutesApp from '~/routes/routes.app';
 import { CacheImages } from './datas/cache.img.data';
-import { RouteAppObject } from '~/interfaces/Routes.intf';
-import { Theme } from '~/interfaces/Theme.intf';
+import { RouteAppObject } from '~/interfaces/routes.intf';
+import { Theme } from '~/interfaces/theme.intf';
 import PageLoader from './components/PageLoader';
 import Contact from './pages/Contact';
 

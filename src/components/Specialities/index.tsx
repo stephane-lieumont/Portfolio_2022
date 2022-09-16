@@ -1,5 +1,5 @@
 import React from 'react';
-import { SpecialityData } from '~/interfaces/Data.intf';
+import { SpecialityData } from '~/interfaces/data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
 import './style.scss';
 
