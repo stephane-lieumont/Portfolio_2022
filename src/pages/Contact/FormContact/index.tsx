@@ -1,4 +1,6 @@
-import { FunctionComponent, MouseEvent } from 'react';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FunctionComponent, MouseEvent, useState } from 'react';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
 import { HTMLFormType } from '~/interfaces/forms.intf';
@@ -6,9 +8,11 @@ import { FormContactActions } from '~/store/formContact.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
 import { firstLetterUpper } from '~/utils/formatString';
 import { FormValidator } from '~/utils/formValidator';
-import './style.scss'
 
 const FormContact: FunctionComponent = () => {
+  const [errorMessageApi, setErrorMessageApi] = useState<string>()
+  const [validForm, setValidForm] = useState<boolean>()
+  const [lodaingForm, setLoadingForm] = useState<boolean>(false)
 
   const formInputName = useAppSelector((state) => state.formContactSlice.formInputName )
   const formInputEmail = useAppSelector((state) => state.formContactSlice.formInputEmail )
@@ -96,7 +100,18 @@ const FormContact: FunctionComponent = () => {
           )
         }}
       />
-      <Button label='Envoyer' onClick={onSubmit} />
+      <Button 
+        label='Envoyer' 
+        valid={validForm}
+        loading={lodaingForm}
+        onClick={onSubmit} 
+      />
+      { errorMessageApi && (
+        <p className='form-error'>
+          <i><FontAwesomeIcon size={'lg'} icon={faCircleExclamation} /></i>
+          {errorMessageApi}
+        </p>
+      )}      
     </form>
   );
 }
