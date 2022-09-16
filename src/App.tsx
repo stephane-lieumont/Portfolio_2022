@@ -36,7 +36,7 @@ const App: React.FunctionComponent = () => {
 
   useEffect(() => {
     let route = RoutesApp.getRouteByPath(location.pathname)    
-    if(!route) setCurrentRoute(RoutesApp.getRouteByName('error'))
+    route ? setCurrentRoute(route) : setCurrentRoute(RoutesApp.getRouteByName('error'))
     if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
     if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)
     if(!state) setCurrentSocialTheme(route?.params?.socialTheme ?? route?.params?.theme ?? Theme.ligth)
@@ -49,7 +49,7 @@ const App: React.FunctionComponent = () => {
       windowsSize.width <  parseInt(Screen.screenLg) ? setMenuIsLigth(false) : setMenuIsLigth(true)
     }
     if(location.pathname === RoutesApp.getRouteByName('contact')?.path ) {
-      windowsSize.width <  parseInt(Screen.screenLg) ? setCurrentSocialTheme(Theme.ligth) : setCurrentSocialTheme(Theme.dark)
+      windowsSize.width <  parseInt(Screen.screenLg) ? setCurrentSocialTheme(Theme.ligth) : setCurrentSocialTheme(Theme.dark)      
     }
   }, [windowsSize, location])
 
