@@ -18,26 +18,6 @@
     animation-fill-mode: both;
   }
 
-  @keyframes svg-appear {
-    0% {
-      opacity: 0;
-      transform: rotate(0deg) scale(0);
-    }
-
-    50% {
-      transform: rotate(20deg) scale(1.1);
-    }
-
-    70% {
-      transform: rotate(-10deg) scale(0.9);
-    }
-
-    100% {
-      opacity: 1;
-      transform: rotate(0deg) scale(1);
-    }
-  }
-
   .fill {
     &--primary {
       fill: $primary;
@@ -87,6 +67,26 @@
 
     &--grey {
       stroke: $grey-shade100;
+    }
+  }
+
+  @keyframes svg-appear {
+    0% {
+      opacity: 0;
+      transform: rotate(0deg) scale(0);
+    }
+
+    50% {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    70% {
+      transform: rotate(-10deg) scale(0.9);
+    }
+
+    100% {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
     }
   }
 }

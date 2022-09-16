@@ -1,6 +1,6 @@
 import { createRef, Fragment, FunctionComponent, MouseEvent, SyntheticEvent, useMemo, useState } from 'react';
-import { GalleryProps } from '~/interfaces/Component.intf';
-import { PortfolioData } from '~/interfaces/Data.intf';
+import { GalleryProps } from '~/interfaces/component.intf';
+import { PortfolioData } from '~/interfaces/data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
 import './style.scss';
 

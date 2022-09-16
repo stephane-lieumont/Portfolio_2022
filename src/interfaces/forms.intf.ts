@@ -29,6 +29,10 @@ export interface FormContactState {
   formInputMessage: InputType
 }
 
+export interface LayoutState {
+  headerHeigth: number
+}
+
 export enum HTMLFormType {
   input,
   textarea

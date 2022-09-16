@@ -5,6 +5,7 @@
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 1.4rem;
 
   &--textarea {
     height: 100%;
@@ -63,7 +64,6 @@
       outline: none;
       border: none;
       caret-color: $secondary;
-      font-size: 1rem;
       transition: border .3s ease-in-out;
       z-index: 2;    
       border-radius: 5px;  
@@ -88,7 +88,7 @@
     top:0;
     left: 0;
     opacity: 0.5;
-    line-height: 1.3rem;
+    line-height: 22px;
     transform-origin: center left;
     transition: transform .15s ease-in-out;
 
@@ -100,8 +100,8 @@
   &__error-message {
     position: absolute;
     right:10px;
-    bottom: 0px;
-    font-size: 0.6rem;
+    bottom: 6px;
+    font-size: 1rem;
     color: $danger!important;
     animation: error .25s ease-in both;
     text-align: right;
@@ -111,7 +111,7 @@
 
   &--focus, &--active {
     label {  
-      font-size: 0.95rem!important;
+      font-size: 1.3rem!important;
       opacity: 1;    
       transform: translate(-5px, -85%) scale(0.85);
     }
@@ -123,7 +123,7 @@
     }
 
     .input__content {
-      border: 1px  solid $primary;
+      border: 2px  solid $primary;
 
       i {
         color: $primary;
@@ -137,7 +137,7 @@
     }
 
     .input__content {
-      border: 1px  solid $danger;
+      border: 2px  solid rgba($danger, 0.5);
     }
   }
 

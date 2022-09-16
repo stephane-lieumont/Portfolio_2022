@@ -34,6 +34,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 0.8em;
 
   &:hover {
     &::before {
@@ -83,8 +84,7 @@
     justify-content: flex-start;
     width: 100%;
     align-items: flex-start;
-    padding:20px;
-    padding-top: 20%;
+    padding:1em 2em;
     transition: all .15s ease-in-out;
     opacity: 0;
     transform: translateY(50%);
@@ -94,9 +94,8 @@
       display: flex;
       flex-wrap: wrap;      
       color:$orange-shade200;
-      font-size: 0.8rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 0.3em;
       gap: 10px!important;
 
       li::before {

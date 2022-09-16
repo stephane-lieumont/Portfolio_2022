@@ -11,7 +11,8 @@
   width: 100%;
   background-color: $grey;
   color:white;
-  font-size: 0.75rem;
+  font-size: 0.75em;
+  animation: display-footer .3s ease-in-out both;
   
   p {
     margin: 0!important;
@@ -22,5 +23,14 @@
       color: $primary;
       font-weight: 500;
     }
+  }
+}
+
+@keyframes display-footer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

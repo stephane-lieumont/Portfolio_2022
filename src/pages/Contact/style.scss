@@ -2,137 +2,84 @@
 @import '../../sass/abstract/variables';
 
 .contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center!important;
-  align-items: flex-start!important;
-  width: 100%;
-  min-height: 80vh;
-  padding: 70px 0px;
+  .page__content {
+    position: inherit;
+    max-width: $screen-xl;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .background-svg {
+    z-index: 2;
+  }
 
   &__content {
-    position: relative;
-    z-index: 3;
-    height: 70%;
-    width: 100%;
-    max-width: 600px;
-    margin:60px;
-
-    form {    
-      flex: 1 0 100%;
-      width: 100%;
-      height: 100%;
-      max-width: $screen-lg;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      min-width: 240px;
-    }
-  
-    p {
-      margin-top:30px;
-      width: 100%;
-      max-width: $screen-lg;
-      font-weight: 600;
-    }
-  
-    span {
-      font-size: 0.7rem!important;
-      font-weight: 700;
-    }
-
-    .button {
-      align-self: center;
-      margin-top: 10px;
-    }
+    flex-grow: 1;
+    width: 70%;
+    min-width: 300px;
+    max-width: 700px;
+    z-index: 2;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 0;
+    padding-bottom: 3rem;
   }
 
   &__bg {
     position: absolute;
-    height: 100%;
-    width: 100%;
     bottom: 0;
     right: 0;
-    text-align: right;
-    z-index: 1;
-      
+    height: 100%;
+    z-index: 0;
+
     img {
-      object-fit:cover;
+      object-fit: cover;
       height: 100%;
-      min-width: 50%;
-      object-position: top;
+      min-height: 450px;
     }
   }
 
-  &__card {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    display: inline-block;
-    background-color: $primary;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 0.7rem;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  &__card, &__cv {
+    justify-self: flex-end;
+    align-self: center;
     z-index: 2;
   }
-}
 
-.modal {  
-  .contact {
-    padding: 0px 30px;
-
-    &__content {
-      align-self: flex-start;
-      height: calc(100% - 70px);
-      width: 50%!important;
-      margin: 0!important;
-    }
-
-    form {
-      height: 100%;
-    }
-
-    form, p {
-      padding: 0!important;
-    }
-
-    &__card, &__bg {
-      display: block!important;
-    }
+  &__cv {
+    margin-bottom: 3rem;
   }
 }
 
-@media only screen and (max-width: $screen-xl) {
+.contact-modal { 
   .contact {
-    &__bg {
-      display: none
-    }
-
     &__content {
-      max-width: inherit;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    form, p {
-      justify-self: center!important;
-      align-self: center!important;
-      max-width: 600px;
-      padding: 0 55px;
       width: 100%;
+      margin: 0;
+      padding: 0;
     }
 
+    &__card {
+      position: absolute;
+      bottom: 2em;
+      right: 2em;
+    }
   }
 }
 
-@media only screen and (max-width: $screen-md) {
-  .contact {
-    &__card {
+@media only screen and (max-width: $screen-lg) {
+  .contact  {
+    &__content {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__bg {
       display: none;
     }
+  }
+
+  .contact-modal {
+    width: 100%;
   }
 }

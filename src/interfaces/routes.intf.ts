@@ -1,4 +1,4 @@
-import { Theme } from "./Theme.intf"
+import { Theme } from "./theme.intf"
 
 export type RouteAppObject = {
   path: string
@@ -14,6 +14,7 @@ export type RouteParams = {
   menuIconLigth?: boolean
   mainMenuEnabled?: boolean
   headerButtonsEnabled?: boolean
+  socialTheme?: Theme
 }
 
 

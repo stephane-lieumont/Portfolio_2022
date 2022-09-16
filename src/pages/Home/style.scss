@@ -1,92 +1,117 @@
 @import '../../sass/themes/colors';
 @import '../../sass/abstract/variables';
 
-
 .homepage {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  width: 100%;
+  width: 100vw;
+  min-height: 100vh;
   overflow: hidden;
-  z-index: 1;
 
-  &__blockquote {
-    position: absolute;
-    top: 85px;
-    left: 0;
-    padding: 30px 60px;
-    width: 50%;
-    p {
-      margin:0!important;
-      padding: 0!important;
+  &__leftside, &__rigthside {
+    flex: 1 0 50%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__leftside {
+    display: flex;
+    flex-direction: column;
+    padding-right: 2em;
+    align-items: flex-start;
+    transition: flex-basis .45s cubic-bezier(0,.43,.16,1);
+
+    blockquote {
+      color: $grey-shade200!important;
+      font-size: 1em;
+      z-index: 1;
+    
+      .quote {
+        opacity: 0.3;
+      }
+      
+      small {
+        font-weight: 700;
+        font-size: 0.8em;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &__content {
+      flex-grow: 1;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 600px;
+
+      h2 {
+        margin-bottom: 0.8em;
+
+        span {
+          white-space:nowrap;
+        }
+      }
+
+      &__nav {
+        display: flex;
+        flex-direction: row;
+        margin: 1.2em 0;
+        gap: 1em;
+        z-index: 1;
+      }
     }
   }
 
-  &__rigthside, &__leftside {
+  &__rigthside {
     position: relative;
-    flex: 1 0 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;    
-  }
-
-  &__rigthside {    
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background: $primary;
-    overflow: hidden;
     transition: opacity .45s ease-in;
-    opacity: 1;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
 
-    &__demo-real {
+    &__demoreal {
+      position:relative;
+      margin-top: 2rem;
       width: 100%;
-      height: 40%;
-      background: $secondary;
-      min-height: 300px;
-      opacity: 0.3;
-      margin-top: 150px;
+      height: auto;
+      z-index: 0;
+
+      .vignet-up {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 7%;
+        width: 100%;
+        background: white;
+        background: linear-gradient(180deg, rgba($primary,1) 10%, rgba($primary,0) 100%);
+        z-index: 2;
+      }
+
+      .vignet-down {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 15%;
+        width: 100%;
+        background: white;
+        background: linear-gradient(0deg, rgba($primary,1) 10%, rgba($primary,0) 100%);
+        z-index: 2;
+      }
     }
 
     img {
       position: absolute;
-      left: 0;
       bottom: 0;
+      left: 0;
+      width: 80%;
+      max-width: 600px;
       transform: translateX(0);
       opacity: 1;
-
       transition: all 1s cubic-bezier(0,.43,.16,1)!important;
-    }
-  }
-
-  &__leftside {    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    padding-top: 15px;
-    transition: flex-basis .45s cubic-bezier(0,.43,.16,1);
-
-    &__content {
-      max-width: 700px;
-      width: 100%;
-      padding: 30px;
-
-      &__title {
-        span {
-          color: $primary;
-        }
-      }
-  
-      &__nav {
-        display: flex;
-        justify-content: flex-start;
-        gap:20px;
-      }
     }
   }
 
@@ -103,6 +128,11 @@
           transform: translateX(500px);
           opacity: 0;
         }
+
+        video {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
@@ -110,49 +140,31 @@
 
 @media only screen and (max-width: $screen-lg) {
   .homepage {
-    flex-direction: column-reverse;
+    flex-direction: column;
 
-    h2 {
-      white-space: inherit!important;
-    }
+    &__leftside {
+      flex: 0 0 100%;
 
-    &__blockquote {
-      display:none;
+      &__content {
+        margin: 3rem 0;
+        margin-top: 6rem;
+        text-align: center;
+
+        &__nav {
+          justify-content: center;
+        }
+      }
     }
 
     &__rigthside {
-      flex-basis: auto;
-      min-height: 500px;
+      flex: 1 0 100%;
+      padding: 0!important;
 
-      &__demo-real {
-        margin: 0;
-      }
-
-      img {
-        width: 100%;
-        max-width: 500px;
-        min-width: 300px;
-        height: auto;
-      }
-    }
-
-    &__leftside {
-      flex-basis: auto;
-    }
-  }
-}
-
-@media only screen and (max-width: $screen-sm) {
-  .homepage {
-    &__leftside__content__nav {
-      flex-direction: column;
-      align-self: center;
-      justify-content: center;
-      text-align: center;
-      gap: 15px;
-
-      .button {
-        width: 150px;
+      &__demoreal {
+        margin:0;
+        .vignet-up {
+          display: none;
+        }
       }
     }
   }
