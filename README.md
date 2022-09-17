@@ -1,4 +1,4 @@
-# Portfolio Stéphane LIEUMONT (opensource)
+# Portfolio Stéphane Lieumont
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 Responsive 3D portfolio application and web development. This application presents my works and my web skills
