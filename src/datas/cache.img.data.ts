@@ -1,7 +1,6 @@
 import img1 from '../assets/background/circle.svg'
 import img2 from '../assets/background/double-circle.svg'
 import img3 from '../assets/background/repeat-points.svg'
-import img4 from '../assets/gif/travolta-comfused.gif'
 import img5 from '../assets/icons/3dsmax.png'
 import img6 from '../assets/icons/arrow-next.svg'
 import img7 from '../assets/icons/flutter.png'
@@ -17,17 +16,14 @@ import img16 from '../assets/icons/vray.png'
 import img17 from '../assets/icons/vue.png'
 import img18 from '../assets/icons/webpack.png'
 import img19 from '../assets/icons/zbrush.png'
-import img20 from '../assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.jpg'
 import img21 from '../assets/pictures/softskills-illustration.svg'
 import img22 from '../assets/profile/profil-stephane-lieumont.png'
-import img23 from '../assets/profile/profil-stephane-lieumont-contact.jpg'
 
 
 export const CacheImages: string[] = [
   img1,
   img2,
   img3,
-  img4,
   img5,
   img6,
   img7,
@@ -43,8 +39,6 @@ export const CacheImages: string[] = [
   img17,
   img18,
   img19,
-  img20,
   img21,
   img22,
-  img23,
 ]

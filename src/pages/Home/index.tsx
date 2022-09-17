@@ -74,7 +74,7 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
             </div>
           </div>
       </section>
-      <section className='homepage__rigthside background--primary' style={{ paddingTop: headerheigth + 'px' }}>
+      <div className='homepage__rigthside background--primary' style={{ paddingTop: headerheigth + 'px' }}>
         { imgLoaded && (
           <Fragment>
             <Background 
@@ -88,7 +88,7 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
               }}        
             />
             <div className='homepage__rigthside__demoreal'>
-              <video width={'100%'} height={'100%'} autoPlay muted  loop>
+              <video autoPlay muted  loop>
                 <source src={demoReal} type="video/mp4" />
                 Your browser does not support HTML5 video.
               </video>
@@ -106,7 +106,7 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
           src={require('~/assets/profile/profil-stephane-lieumont-min.png')} 
           alt='profil stéphane lieumont'
         />
-      </section>
+      </div>
     </div>
   )
 }
