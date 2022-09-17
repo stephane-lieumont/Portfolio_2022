@@ -68,8 +68,8 @@ const Header: FunctionComponent<HeaderProps> = ({
             <ul className='navigation__buttons'>
               { contactPage && location.pathname !== contactPage.path && (
                 <li>
-                  <Link to={contactPage!.path} state={{ backgroundLocation: location }} >
-                    <Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} />
+                  <Link to={contactPage!.path} state={{ backgroundLocation: location }} className="no-style" >
+                    <Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} link />
                   </Link>
                 </li>
               )}

@@ -101,6 +101,12 @@
         background: linear-gradient(0deg, rgba($primary,1) 10%, rgba($primary,0) 100%);
         z-index: 2;
       }
+
+      video {
+        width: 100%;        
+        object-fit: cover;
+        height: auto;
+      }
     }
 
     img {
@@ -164,6 +170,10 @@
         margin:0;
         .vignet-up {
           display: none;
+        }
+
+        video {
+          max-height: 300px;
         }
       }
     }

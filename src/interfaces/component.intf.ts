@@ -23,6 +23,7 @@ export type ButtonProps = {
   loading?: boolean
   valid?:boolean
   white?:boolean
+  link?:boolean
   className?:string
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }

@@ -11,10 +11,26 @@ const Button: React.FunctionComponent<ButtonProps> = ({
     loading,
     valid,
     white,
+    link = false,
     className,
     onClick = () => {}
   }) => {
   
+  if(link) return (
+    <div 
+      className={
+        `button
+        ${ outlined ? ' button--outlined' : ''}
+        ${ white ? ' button--white' : ''}
+        ${ loading ? ' button--loading' : ''}
+        ${ valid ? ' button--valid' : ''} 
+        ${ className ?? ''}`}
+    >
+      { valid && <i><FontAwesomeIcon icon={faCheckCircle} /></i> }
+      {label}
+    </div>
+  )
+
   return (
     <button 
       className={
