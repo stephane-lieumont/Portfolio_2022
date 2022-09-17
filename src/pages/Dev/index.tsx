@@ -104,9 +104,11 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
             <h2 className={`display1 reveal${ appearSectionProjects && contentLoaded ? ' reveal--0' : '' }`}>Réalisations</h2>
             <ul className="portfolio-dev__projects__list">
               {ProjectsDevData.map( (project, index) => (
-                <Link className="portfolio-dev__projects__item" key={`${project.id}`} to={`${project.hashName}`} onClick={() => { window.scrollTo(0,0) }}>
-                  <li><ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} /></li>
-                </Link>
+                <li className="portfolio-dev__projects__item" key={`${project.id}`}>
+                  <Link   to={`${project.hashName}`} onClick={() => { window.scrollTo(0,0) }}>
+                    <ProjectCard projectData={project} className={appearSectionProjects ? `project-card-container__reveal--${index}` : `project-card-container__hide--${index}`} />
+                  </Link>
+                </li>
               ))}
             </ul>
           </section>
