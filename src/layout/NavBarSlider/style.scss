@@ -50,6 +50,7 @@
       background: $primary;
       border-radius: 3px;
       transition: all .2s ease-in-out;
+      animation: display-burger .3s ease-in .2s both;
   
       &::before, &::after {
         content: '';
@@ -200,6 +201,15 @@
         opacity: 1!important;
       }
     }
+  }
+}
+
+@keyframes display-burger {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

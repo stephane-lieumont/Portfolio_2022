@@ -81,14 +81,16 @@ const App: React.FunctionComponent = () => {
 
   return (
     <div data-testid="app" className={`react-app${ currentTheme === Theme.dark || menuIsOpen ? ' dark' : '' }`}>
-      <Header 
-        onClick={handleClickMenu}
-        menuIsOpen={menuIsOpen} 
-        menuIsLigth={menuIsLigth} 
-        headerTitle={headerTitle} 
-        theme={ currentTheme } 
-        headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled }
-      />
+      { appCacheLoaded && (
+        <Header 
+          onClick={handleClickMenu}
+          menuIsOpen={menuIsOpen} 
+          menuIsLigth={menuIsLigth} 
+          headerTitle={headerTitle} 
+          theme={ currentTheme } 
+          headerButtonsEnabled={ currentRoute?.params?.headerButtonsEnabled }
+        />
+      )}
       { appCacheLoaded ? (
         <Fragment>
           <main className={`${menuIsOpen ? 'scale' : ''}${ currentTheme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
