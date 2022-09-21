@@ -106,7 +106,7 @@ const DevProject: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
                   </ul>
                   { dataProject?.demoLink && (
                     <div className={`project__release__demo reveal${ imgLoaded ? ' reveal--6' : '' }`}>
-                      <Link to={dataProject?.demoLink}>
+                      <Link to={dataProject?.demoLink} target='_blank'>
                         <Button outlined label="demo" link />
                       </Link>
                     </div>

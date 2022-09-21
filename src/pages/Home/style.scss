@@ -23,7 +23,7 @@
 
     blockquote {
       color: $grey-shade200!important;
-      font-size: 1em;
+      font-size: 1.2rem;
       z-index: 1;
     
       .quote {
@@ -61,6 +61,7 @@
         flex-direction: row;
         margin: 1.2em 0;
         gap: 1em;
+        grid-gap: 1em;
         z-index: 1;
       }
     }
@@ -114,7 +115,9 @@
       bottom: 0;
       left: 0;
       width: 80%;
+      object-fit: cover;
       max-width: 600px;
+      max-height: 100%;
       transform: translateX(0);
       opacity: 1;
       transition: all 1s cubic-bezier(0,.43,.16,1)!important;
@@ -152,7 +155,7 @@
       flex: 0 0 100%;
 
       &__content {
-        margin: 3rem 0;
+        margin: 3rem auto;
         margin-top: 6rem;
         text-align: center;
 
