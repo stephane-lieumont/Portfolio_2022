@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import Background from '~/components/Background';
+
 import './style.scss'
 
 const Footer: FunctionComponent = () => {

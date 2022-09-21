@@ -2,9 +2,8 @@ import { FunctionComponent, useEffect, useRef, useState } from "react"
 import { useOnLoadImages } from "~/hooks/useOnLoadImages"
 import { CarouselProps } from "~/interfaces/component.intf"
 import Loader from "../Loader"
+
 import './style.scss'
-
-
 
 const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScrollY = 0, visible = true, delay = 5000, handleLoad = () => {}}: CarouselProps) => {
   const [indexImg, setIndexImg] = useState<number>(-1)

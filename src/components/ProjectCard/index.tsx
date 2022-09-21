@@ -1,6 +1,7 @@
 import { FunctionComponent, useState } from 'react'
 import { ProjectCardProps } from '~/interfaces/component.intf'
 import { firstLetterUpper } from '~/utils/formatString'
+
 import './style.scss'
 
 const ProjectCard: FunctionComponent<ProjectCardProps> = ({ projectData, className }) => {

@@ -2,9 +2,9 @@ import { FunctionComponent, useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
 import Colors from '~/sass/themes/colors.module.scss'
 import { ArtstationIcon } from '~/assets/icons/SocialIconsCustom';
-import './style.scss';
 import { SocialSideBarProps } from '~/interfaces/component.intf';
 
+import './style.scss';
 
 const SocialSideBar: FunctionComponent<SocialSideBarProps> = ({menuIsOpen = false, ligthen = false}) => {
   const [hoverGithub, setHoverGithub] = useState<boolean>(false)

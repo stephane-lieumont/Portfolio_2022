@@ -1,5 +1,5 @@
 import { ReactElement } from "react"
-import { PortfolioData, ProjectDevData, SliderImageData } from "./data.intf"
+import { PortfolioData, ProjectDevData, SliderImageData, SpecialityData } from "./data.intf"
 import { SVGproperties } from "./object.intf"
 import { RouteAppObject } from "./routes.intf"
 import { Theme } from "./theme.intf"
@@ -67,6 +67,15 @@ export type ProjectCardProps = {
 
 export type BadgeContactProps = {
   className?: string
+}
+
+export type PageLoaderProps = {
+  visible?: boolean
+}
+
+export type SpecialitiesProps = {
+  specialities?: SpecialityData[],
+  contentLoaded?: boolean
 }
 
 //--- Interfaces Layout ---//

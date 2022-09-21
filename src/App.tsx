@@ -1,15 +1,15 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import { CacheImages } from './datas/cache.img.data';
+import RoutesApp from '~/routes/routes.app';
+import useWindowSize from './hooks/useWindowsSize';
 import SocialSideBar from '~/layout/SocialSideBar';
 import Header from '~/layout/Header';
+import Contact from './pages/Contact';
 import Modal from '~/components/Modal';
-import RoutesApp from '~/routes/routes.app';
-import { CacheImages } from './datas/cache.img.data';
+import PageLoader from './components/PageLoader';
 import { RouteAppObject } from '~/interfaces/routes.intf';
 import { Theme } from '~/interfaces/theme.intf';
-import PageLoader from './components/PageLoader';
-import Contact from './pages/Contact';
-import useWindowSize from './hooks/useWindowsSize';
 import Screen from '~/sass/abstract/variables.module.scss'
 
 const App: React.FunctionComponent = () => {

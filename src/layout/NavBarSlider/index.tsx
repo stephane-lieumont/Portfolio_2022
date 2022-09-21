@@ -1,7 +1,7 @@
-import gsap, { Power3, Elastic } from 'gsap';
 import React, { MouseEvent, useEffect, useState, useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import useWindowSize from '~/hooks/useWindowsSize';
+import gsap, { Power3, Elastic } from 'gsap';
 import { NavBarSliderProps } from '~/interfaces/component.intf';
 import Colors from '~/sass/themes/colors.module.scss'
 import Screen from '~/sass/abstract/variables.module.scss'

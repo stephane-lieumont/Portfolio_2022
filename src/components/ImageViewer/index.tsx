@@ -1,12 +1,14 @@
+import { FunctionComponent, MouseEvent, useEffect, useState } from "react"
 import { faArrowCircleLeft, faArrowCircleRight, faClose } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { FunctionComponent, MouseEvent, useEffect, useState } from "react"
 import { ImageViewerProps } from "~/interfaces/component.intf"
 import { firstLetterUpper } from "~/utils/formatString"
 import { PortfolioImagesData } from '~/datas/3d.projects.data';
 import Loader from "../Loader"
-import './style.scss'
 import { PortfolioData } from "~/interfaces/data.intf"
+
+import './style.scss'
+
 
 const ImageViewer: FunctionComponent<ImageViewerProps> = ({
   imageData,

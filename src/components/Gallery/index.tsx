@@ -2,9 +2,8 @@ import { createRef, Fragment, FunctionComponent, MouseEvent, SyntheticEvent, use
 import { GalleryProps } from '~/interfaces/component.intf';
 import { PortfolioData } from '~/interfaces/data.intf';
 import { firstLetterUpper } from '~/utils/formatString';
+
 import './style.scss';
-
-
 
 const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], visible = true, onClick}) => { 
   let [imageLoadCounter, setImageLoadCounter] = useState<number>(0)

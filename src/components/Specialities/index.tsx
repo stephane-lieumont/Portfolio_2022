@@ -1,16 +1,10 @@
-import React from 'react';
-import { SpecialityData } from '~/interfaces/data.intf';
+import { FunctionComponent } from 'react';
+import { SpecialitiesProps } from '~/interfaces/component.intf';
 import { firstLetterUpper } from '~/utils/formatString';
+
 import './style.scss';
 
-
-type SpecialitiesProps = {
-  specialities?: SpecialityData[],
-  contentLoaded?: boolean
-}
-
-
-const Specialities: React.FunctionComponent<SpecialitiesProps> = ({ specialities = [], contentLoaded = false }) => {
+const Specialities: FunctionComponent<SpecialitiesProps> = ({ specialities = [], contentLoaded = false }) => {
   return (
     <ul className='specialities'>
       { specialities.map((speciality, index) => (

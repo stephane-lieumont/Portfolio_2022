@@ -1,6 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { FunctionComponent, useState, ChangeEvent, useEffect, MouseEvent, FocusEvent } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { HTMLFormType, InputType } from "~/interfaces/forms.intf"
+
 import './style.scss'
 
 const Input: FunctionComponent<InputType> = ({

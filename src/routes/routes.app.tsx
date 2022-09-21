@@ -1,12 +1,11 @@
-
-import { RouteAppObject } from '~/interfaces/routes.intf'
-import { Theme } from '~/interfaces/theme.intf'
 import Cgi from '~/pages/Cgi'
 import Contact from '~/pages/Contact'
 import Dev from '~/pages/Dev'
 import DevProject from '~/pages/DevProject'
 import Error from '~/pages/Error'
 import Home from '~/pages/Home'
+import { RouteAppObject } from '~/interfaces/routes.intf'
+import { Theme } from '~/interfaces/theme.intf'
 
 const routeList: RouteAppObject[] = [  
   { 

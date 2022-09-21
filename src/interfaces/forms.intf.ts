@@ -1,5 +1,5 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { HTMLInputTypeAttribute } from "react"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
 
 export type InputType = {
   prependIcon?: IconProp

@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import './style.scss';
 
+import './style.scss';
 
 const Loader: FunctionComponent = () => {  
   return (

@@ -8,7 +8,6 @@ import store from '~/store/main.store';
 
 import './sass/main.scss'
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

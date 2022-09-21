@@ -1,13 +1,14 @@
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FunctionComponent, useEffect, useRef, useState, Fragment } from 'react'
 import { useNavigate } from 'react-router'
+import demoReal from '~/assets/movies/demoreal_2022.mp4'
+import RoutesApp from '~/routes/routes.app'
+import { useAppSelector } from '~/store/main.store'
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Background from '~/components/Background'
 import Button from '~/components/Button'
 import { PageProps } from '~/interfaces/component.intf'
-import RoutesApp from '~/routes/routes.app'
-import { useAppSelector } from '~/store/main.store'
-import demoReal from '~/assets/movies/demoreal_2022.mp4'
+
 import './style.scss'
 
 const Home: FunctionComponent<PageProps> = ({title}) => {

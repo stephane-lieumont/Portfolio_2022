@@ -1,17 +1,17 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
-import Carousel from '~/components/Carousel';
-import Footer from '~/layout/Footer';
 import { PortfolioImagesData, SliderImagesData, SpecialitiesCgiData } from '~/datas/3d.projects.data';
-
-import './style.scss'
+import useWindowSize from '~/hooks/useWindowsSize';
+import useScrollPosition from '~/hooks/useScrollPosition';
+import Footer from '~/layout/Footer';
 import Gallery from '~/components/Gallery';
-import { PortfolioData, SpecialityData } from '~/interfaces/data.intf';
 import ImageViewer from '~/components/ImageViewer';
 import Background from '~/components/Background';
-import useWindowSize from '~/hooks/useWindowsSize';
-import { PageProps } from '~/interfaces/component.intf';
-import useScrollPosition from '~/hooks/useScrollPosition';
+import Carousel from '~/components/Carousel';
 import Specialities from '~/components/Specialities';
+import { PageProps } from '~/interfaces/component.intf';
+import { PortfolioData, SpecialityData } from '~/interfaces/data.intf';
+
+import './style.scss'
 
 const Cgi: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const specialities: SpecialityData[] = SpecialitiesCgiData

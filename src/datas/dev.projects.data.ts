@@ -95,7 +95,7 @@ export const ProjectsDevData: ProjectDevData[] = [
       'nodejs'
     ],
     released: new Date('2022-03-15'),
-    demoLink: '/tertenpion'
+    demoLink: '/demo/casetespotes-landingpage'
   },
   {
     id:'3',
@@ -134,7 +134,7 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Nodejs'
     ],
     released: new Date('2021-11-17'),
-    demoLink: '/tete'
+    demoLink: '/demo/casetespotes-webapp'
   },
   {
     id:'4',
@@ -172,7 +172,7 @@ export const ProjectsDevData: ProjectDevData[] = [
       'Nodejs'
     ],
     released: new Date('2021-12-10'),
-    demoLink: '/tete'
+    demoLink: '/demo/openclassrooms-kasa'
   },
   {
     id:'5',
@@ -200,7 +200,7 @@ export const ProjectsDevData: ProjectDevData[] = [
       'CSS',
     ],
     released: new Date('2018-09-17'),
-    demoLink: '/tete'
+    demoLink: '/demo/portfolio2018'
   },
   {
     id:'6',
@@ -232,7 +232,8 @@ export const ProjectsDevData: ProjectDevData[] = [
       'PHP',
       'CSS',
     ],
-    released: new Date('2015-06-02')
+    released: new Date('2015-06-02'),
+    demoLink: '/demo/pixmodels'
   }
 ]
 

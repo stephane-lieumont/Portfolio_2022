@@ -1,8 +1,8 @@
 import { FunctionComponent, useEffect, useState } from 'react';
+import { useAppSelector } from '~/store/main.store';
+import Footer from '~/layout/Footer';
 import Background from '~/components/Background';
 import { PageProps } from '~/interfaces/component.intf';
-import Footer from '~/layout/Footer';
-import { useAppSelector } from '~/store/main.store';
 
 import './style.scss'
 

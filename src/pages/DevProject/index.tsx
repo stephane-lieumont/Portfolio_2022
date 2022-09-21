@@ -1,17 +1,20 @@
 import { FunctionComponent, MouseEvent, useEffect, useState } from 'react';
-import Footer from '~/layout/Footer';
-import './style.scss'
-import Background from '~/components/Background';
-import { PageProps } from '~/interfaces/component.intf';
+import parse from 'html-react-parser'
+import { Link } from 'react-router-dom';
 import { useNavigate, useParams } from 'react-router';
-import { ProjectDevData } from '~/interfaces/data.intf';
+import { useAppSelector } from '~/store/main.store';
+import useScrollPosition from '~/hooks/useScrollPosition';
+import { firstLetterUpper } from '~/utils/formatString';
 import { ProjectsDevData } from '~/datas/dev.projects.data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
-import parse from 'html-react-parser'
-import { firstLetterUpper } from '~/utils/formatString';
-import useScrollPosition from '~/hooks/useScrollPosition';
-import { useAppSelector } from '~/store/main.store';
+import Footer from '~/layout/Footer';
+import Button from '~/components/Button';
+import Background from '~/components/Background';
+import { ProjectDevData } from '~/interfaces/data.intf';
+import { PageProps } from '~/interfaces/component.intf';
+
+import './style.scss'
 
 const DevProject: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   const params = useParams()
@@ -95,11 +98,20 @@ const DevProject: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
                     ))}
                   </ul>
                 </div>
-                <ul className={`icon-custom__list reveal${ imgLoaded ? ' reveal--4' : '' }`}>
-                  { dataProject?.technos.map((item, index) => (
-                    <li key={`techno-${index}`} className="icon-custom"><i className={`icon-custom__container icon-custom--${ item.toLowerCase() }`}></i><span>{firstLetterUpper(item)}</span></li>
-                  ))}
-                </ul>
+                <div>
+                  <ul className={`icon-custom__list reveal${ imgLoaded ? ' reveal--4' : '' }`}>
+                    { dataProject?.technos.map((item, index) => (
+                      <li key={`techno-${index}`} className="icon-custom"><i className={`icon-custom__container icon-custom--${ item.toLowerCase() }`}></i><span>{firstLetterUpper(item)}</span></li>
+                    ))}
+                  </ul>
+                  { dataProject?.demoLink && (
+                    <div className={`project__release__demo reveal${ imgLoaded ? ' reveal--6' : '' }`}>
+                      <Link to={dataProject?.demoLink}>
+                        <Button outlined label="demo" link />
+                      </Link>
+                    </div>
+                  )}                  
+                </div>
               </div>
             </div>
           </section>

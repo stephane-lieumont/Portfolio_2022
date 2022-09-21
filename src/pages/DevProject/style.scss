@@ -40,6 +40,17 @@
       width: 70%;
     }
 
+    &__demo {
+      display: flex;
+      justify-content: center;
+      margin:2em;
+
+      .button {
+        display: inline-block;
+        margin: 0;
+      }
+    }
+
     .icon-custom {
       &__container {
         color:$primary!important;

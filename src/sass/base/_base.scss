@@ -217,7 +217,11 @@ form {
 
 @media only screen and (max-width: $screen-md) {
   body {
-    font-size: 1.2em;
+    font-size: 1.6em;
+
+    .display1, h2, h3 {
+      font-size: 1.2em;
+    }
   }
 }
 

@@ -1,16 +1,17 @@
-import RoutesApp from '~/routes/routes.app';
-import './style.scss'
-import NavBarButton from '../NavBarSlider';
-import Button from '~/components/Button';
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { Theme } from '~/interfaces/theme.intf';
 import { Link } from 'react-router-dom';
-import { HeaderProps } from '~/interfaces/component.intf';
+import RoutesApp from '~/routes/routes.app';
+import useScrollPosition from '~/hooks/useScrollPosition';
+import NavBarButton from '../NavBarSlider';
+import Button from '~/components/Button';
 import { layoutActions } from '~/store/layout.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
-import useScrollPosition from '~/hooks/useScrollPosition';
 import { downloadCV } from '~/services/download.srv';
+import { Theme } from '~/interfaces/theme.intf';
+import { HeaderProps } from '~/interfaces/component.intf';
+
+import './style.scss'
 
 const Header: FunctionComponent<HeaderProps> = ({
   menuIsOpen = false, 

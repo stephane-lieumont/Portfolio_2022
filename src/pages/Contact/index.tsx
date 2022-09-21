@@ -1,15 +1,15 @@
 import { FunctionComponent, useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import Background from '~/components/Background';
-import BadgeContact from '~/components/BadgeContact';
-import Button from '~/components/Button';
 import useWindowSize from '~/hooks/useWindowsSize';
-import { PageProps } from '~/interfaces/component.intf';
-import Footer from '~/layout/Footer';
 import RoutesApp from '~/routes/routes.app';
 import { downloadCV } from '~/services/download.srv';
 import { useAppSelector } from '~/store/main.store';
+import Footer from '~/layout/Footer';
+import Background from '~/components/Background';
+import BadgeContact from '~/components/BadgeContact';
+import Button from '~/components/Button';
 import FormContact from './FormContact';
+import { PageProps } from '~/interfaces/component.intf';
 
 import './style.scss'
 
