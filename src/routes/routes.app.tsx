@@ -21,7 +21,7 @@ const routeList: RouteAppObject[] = [
   { 
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
-    label: 'Portfolio Dev',
+    label: 'Développeur',
     Component: <Dev title='Web | Stéphane Lieumont' />, 
     headerTitle: "Web & mobile",    
     params: {
@@ -44,7 +44,7 @@ const routeList: RouteAppObject[] = [
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',
-    label: 'Portfolio CGI',
+    label: 'Graphisme 3D',
     Component: <Cgi title='CGI | Stéphane Lieumont'/>,
     headerTitle: "graphiste 3D",    
     params: {

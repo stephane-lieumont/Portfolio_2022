@@ -2,7 +2,7 @@ import fileDownload from "js-file-download"
 import axios from 'axios';
 
 export const downloadCV = () => {
-  axios.get(require('~/assets/pdf/CV_LIEUMONT-stephane_2022_FrontEnd.pdf'), {
+  axios.get(require('~/assets/pdf/CV_LIEUMONT stephane_2022_FrontEnd.pdf'), {
     responseType: 'blob',
   })
   .then((res) => {
