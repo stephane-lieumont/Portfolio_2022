@@ -24,6 +24,8 @@ export type ButtonProps = {
   valid?:boolean
   white?:boolean
   link?:boolean
+  downloaded?:boolean
+  downloadIcon?:boolean
   className?:string
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }

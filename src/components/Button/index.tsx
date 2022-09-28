@@ -1,5 +1,5 @@
 import React from 'react';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ButtonProps } from '~/interfaces/component.intf';
 
@@ -11,6 +11,8 @@ const Button: React.FunctionComponent<ButtonProps> = ({
     loading,
     valid,
     white,
+    downloaded = false,
+    downloadIcon = false,
     link = false,
     className,
     onClick = () => {}
@@ -24,9 +26,11 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         ${ white ? ' button--white' : ''}
         ${ loading ? ' button--loading' : ''}
         ${ valid ? ' button--valid' : ''} 
+        ${ downloaded ? ' button--downloaded' : ''} 
         ${ className ?? ''}`}
     >
       { valid && <i><FontAwesomeIcon icon={faCheckCircle} /></i> }
+      { downloadIcon && <i><FontAwesomeIcon icon={faDownload} /></i> }
       {label}
     </div>
   )
@@ -39,10 +43,12 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         ${ white ? ' button--white' : ''}
         ${ loading ? ' button--loading' : ''}
         ${ valid ? ' button--valid' : ''} 
+        ${ downloaded ? ' button--downloaded' : ''} 
         ${ className ?? ''}`} 
       onClick={onClick}
     >
       { valid && <i><FontAwesomeIcon icon={faCheckCircle} /></i> }
+      { downloadIcon && <i><FontAwesomeIcon icon={faDownload} /></i> }
       {label}
     </button>
   );

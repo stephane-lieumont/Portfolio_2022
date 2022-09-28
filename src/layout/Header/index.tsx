@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { FunctionComponent, useEffect, useRef, useState, MouseEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import RoutesApp from '~/routes/routes.app';
@@ -7,11 +7,11 @@ import NavBarButton from '../NavBarSlider';
 import Button from '~/components/Button';
 import { layoutActions } from '~/store/layout.store';
 import { useAppDispatch, useAppSelector } from '~/store/main.store';
-import { downloadCV } from '~/services/download.srv';
 import { Theme } from '~/interfaces/theme.intf';
 import { HeaderProps } from '~/interfaces/component.intf';
 
 import './style.scss'
+import { downloadCV } from '~/utils/downloadCV';
 
 const Header: FunctionComponent<HeaderProps> = ({
   menuIsOpen = false, 
@@ -25,6 +25,8 @@ const Header: FunctionComponent<HeaderProps> = ({
   const location = useLocation();
   const [menuHide, setMenuHide] = useState<boolean>(false)
   const [navButtonLigth, setNavButtonLigth] = useState<boolean>(false)
+  const [isLoadingCV, setIsLoadingCV] = useState(false)
+  const [isDownloadCV, setIsDownloadCV] = useState(false)
   const refHeaderContainer = useRef<HTMLDivElement>(null)
   const headerheigth = useAppSelector((state) => state.layoutSlice.headerHeigth)
 
@@ -46,6 +48,15 @@ const Header: FunctionComponent<HeaderProps> = ({
   useEffect(() => {
     window.scrollY > 20 ? setMenuHide(true) : setMenuHide(false)
   }, [scrollPosition])
+
+  const handleClickCV = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    setIsLoadingCV(true)
+    downloadCV(() => {
+      setIsLoadingCV(false)
+      setIsDownloadCV(true)
+    })    
+  }
 
   return (
     <header ref={refHeaderContainer} className={`header${ theme === Theme.dark ? ' header--dark' : ' header--ligth' }${ menuIsOpen || menuHide ? ' header--eventnone' : ''}`} data-testid='layout-header'>
@@ -75,7 +86,15 @@ const Header: FunctionComponent<HeaderProps> = ({
                 </li>
               )}
               <li>
-                <Button label={'Mon CV'} onClick={downloadCV} outlined white={menuIsLigth || theme === Theme.dark} />
+                <Button 
+                  label={'Mon CV'}
+                  onClick={(e) => handleClickCV(e)}
+                  loading={isLoadingCV}
+                  downloaded={isDownloadCV}
+                  downloadIcon={true}
+                  outlined                   
+                  white={menuIsLigth || theme === Theme.dark} 
+                />
               </li>
             </ul>
           )}
