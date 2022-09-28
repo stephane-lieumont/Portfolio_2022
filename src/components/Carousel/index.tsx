@@ -7,16 +7,26 @@ import './style.scss'
 
 const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScrollY = 0, visible = true, delay = 5000, handleLoad = () => {}}: CarouselProps) => {
   const [indexImg, setIndexImg] = useState<number>(-1)
+  const [progressBarWidth, setProgressBarWidth] = useState<number>(0)
   const [parallaxValue, setParallaxValue] = useState<number>()
   const wrapperRef = useRef<HTMLDivElement>(null);
   const imagesLoaded = useOnLoadImages(wrapperRef);
 
   useEffect(() => {
     if(imagesLoaded === true) {
+      
+      setProgressBarWidth(100)
+
       const timer = setTimeout(() => {
         indexImg < slides.length - 1 ? setIndexImg(indexImg + 1) : setIndexImg(0) 
         clearTimeout(timer)
       }, delay);
+
+      setProgressBarWidth(0)
+      const timerProgress = setTimeout(() => {
+        setProgressBarWidth(100)
+        clearTimeout(timerProgress)
+      }, 100)
     }
   }, [indexImg, slides, delay, imagesLoaded]);
 
@@ -27,13 +37,12 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
   return (
     <div className={`carousel${ visible ? ' carousel--visible' : ''}`} ref={wrapperRef}>
       <div className={`carousel__container`}>
-        { imagesLoaded === false ? (
+        { imagesLoaded === false && (
           <div className="carousel__loader">
             <Loader />
-          </div>          
-        ) : (
-          <div className={`carousel__container__progress`} style={{animationDuration: delay + 'ms'}}></div>
+          </div>
         )}
+        <div className={`carousel__container__progress`} style={{transitionDuration: progressBarWidth === 0 ? 0  + 'ms' :  delay + 'ms', width: progressBarWidth + "%"}}></div> 
         <ul className={`carousel__group${ imagesLoaded === true ? ' carousel__group--show' : ''}`} style={{transform: 'translateY(' + parallaxValue + 'px)'  }}>
           {slides?.map(({title, released, imgFile, imgAlt}, index) => (
             <li 
@@ -51,6 +60,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
             </li>
           ))}
         </ul>
+
       </div>
     </div>
   );

@@ -33,12 +33,11 @@
       bottom: 0;
       left: 0;
       height: 3px;
-      width: 100%;
+      width: 0;
       background: $primary;
+      transition-property: width;
+      transition-timing-function: linear;
       z-index: 1;
-      animation-name: carrousel-progress;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
       opacity: 0.5;
     }
   }
@@ -98,15 +97,6 @@
     }
     100% {
       opacity: 0;
-    }
-  }
-  
-  @keyframes carrousel-progress {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100vw;
     }
   }
 }
