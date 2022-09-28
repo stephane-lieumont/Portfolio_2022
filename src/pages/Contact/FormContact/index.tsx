@@ -1,5 +1,5 @@
 
-import { FormEvent, FunctionComponent, useRef, useState } from 'react';
+import { FormEvent, FunctionComponent, useRef, useState, useEffect } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { ServiceEmailJs } from '~/services/emailjs.srv';
 import { FormContactActions } from '~/store/formContact.store';
@@ -31,7 +31,6 @@ const FormContact: FunctionComponent = () => {
   
   const form = useRef<HTMLFormElement>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-
   const dispatch = useAppDispatch()
 
   const checkFormNoErrors = (): boolean => {
@@ -71,8 +70,7 @@ const FormContact: FunctionComponent = () => {
   }
 
   return (
-    <form ref={form} onSubmit={onSubmit}>      
-
+    <form ref={form} onSubmit={onSubmit}>
       <Input 
         label={firstLetterUpper(formInputName.label)}
         name={formInputName.name}
