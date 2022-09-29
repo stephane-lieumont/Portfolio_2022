@@ -1,5 +1,5 @@
 
-import { FormEvent, FunctionComponent, useRef, useState, useEffect } from 'react';
+import { FormEvent, FunctionComponent, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { ServiceEmailJs } from '~/services/emailjs.srv';
 import { FormContactActions } from '~/store/formContact.store';

@@ -15,7 +15,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
     downloadIcon = false,
     link = false,
     className,
-    onClick = () => {}
+    onClick
   }) => {
   
   if(link) return (
@@ -28,9 +28,10 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         ${ valid ? ' button--valid' : ''} 
         ${ downloaded ? ' button--downloaded' : ''} 
         ${ className ?? ''}`}
+      data-testid="button"
     >
-      { valid && <i><FontAwesomeIcon icon={faCheckCircle} /></i> }
-      { downloadIcon && <i><FontAwesomeIcon icon={faDownload} /></i> }
+      { valid && <i data-testid="icon"><FontAwesomeIcon icon={faCheckCircle} /></i> }
+      { downloadIcon && <i data-testid="icon"><FontAwesomeIcon icon={faDownload} /></i> }
       {label}
     </div>
   )
@@ -46,9 +47,10 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         ${ downloaded ? ' button--downloaded' : ''} 
         ${ className ?? ''}`} 
       onClick={onClick}
+      data-testid="button"
     >
-      { valid && <i><FontAwesomeIcon icon={faCheckCircle} /></i> }
-      { downloadIcon && <i><FontAwesomeIcon icon={faDownload} /></i> }
+      { valid && <i data-testid="icon"><FontAwesomeIcon icon={faCheckCircle} /></i> }
+      { downloadIcon && <i data-testid="icon"><FontAwesomeIcon icon={faDownload} /></i> }
       {label}
     </button>
   );

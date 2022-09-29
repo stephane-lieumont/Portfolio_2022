@@ -5,7 +5,7 @@ import Loader from "../Loader"
 
 import './style.scss'
 
-const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScrollY = 0, visible = true, delay = 5000, handleLoad = () => {}}: CarouselProps) => {
+const Carousel: FunctionComponent<CarouselProps> = ({slides, parralaxScrollY = 0, visible = true, delay = 5000}: CarouselProps) => {
   const [indexImg, setIndexImg] = useState<number>(-1)
   const [progressBarWidth, setProgressBarWidth] = useState<number>(0)
   const [parallaxValue, setParallaxValue] = useState<number>()
@@ -35,7 +35,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({slides = [], parralaxScroll
   }, [parralaxScrollY])  
 
   return (
-    <div className={`carousel${ visible ? ' carousel--visible' : ''}`} ref={wrapperRef}>
+    <div className={`carousel${ visible ? ' carousel--visible' : ''}`} ref={wrapperRef} data-testid='caroussel'>
       <div className={`carousel__container`}>
         { imagesLoaded === false && (
           <div className="carousel__loader">

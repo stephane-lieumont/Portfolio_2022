@@ -34,7 +34,7 @@ const Background: FunctionComponent<BackgroundProps> = ({
   },
 }) => {
   return (
-    <div className={`background-svg${ darken ? ' background-svg--darken' : ligthen ? ' background-svg--ligthen' : ''}`}>
+    <div className={`background-svg${ darken ? ' background-svg--darken' : ligthen ? ' background-svg--ligthen' : ''}`} data-testid="background">
       <Fragment>
         { triangle ? (
           <div 

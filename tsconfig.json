@@ -26,6 +26,7 @@
   },
   "include": [
     "src",
-    "src/config/custom.d.ts"
+    "src/config/custom.d.ts",
+    "src/config/config.jest.tsx"
   ]
 }

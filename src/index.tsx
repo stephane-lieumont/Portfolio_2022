@@ -18,7 +18,7 @@ root.render(
         <App />
       </Router>
     </React.Fragment >
-  </Provider>
+  </Provider>,
 );
 
 reportWebVitals();
