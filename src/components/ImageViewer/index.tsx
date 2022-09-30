@@ -39,7 +39,7 @@ const ImageViewer: FunctionComponent<ImageViewerProps> = ({
     }
   }, [displayOn])
 
-  const handleCloseModal = (e: MouseEvent<SVGSVGElement>) => {
+  const handleCloseModal = (e: MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
     setIsOpen(false)
     setIsAnimateClose(true)    
@@ -84,8 +84,8 @@ const ImageViewer: FunctionComponent<ImageViewerProps> = ({
   ) : (
     <div
       className={`image-viewer${ isOpen ? ' image-viewer--open' : isAnimateClose ? ' image-viewer--close' : '' }`} 
-      style={{animationDuration: `${duration / 2}ms`}}
-      data-testid='modal'    
+      style={{animationDuration: `${duration / 2}ms`}} 
+      data-testid='image-viewer'    
     >
       { !imageLoaded && ( <Loader /> ) }  
       <div 
@@ -101,12 +101,12 @@ const ImageViewer: FunctionComponent<ImageViewerProps> = ({
           ))}
         </ul>
         { !refreshImg && <img onLoad={() => setImageLoaded(true)} src={imageDataSelected?.imgFile} alt={imageDataSelected?.imgAlt} /> }
-        <FontAwesomeIcon icon={faClose} className={'image-viewer__container__close'} onClick={handleCloseModal} />
+        <i onClick={handleCloseModal} data-testid="btn-close"><FontAwesomeIcon icon={faClose} className={'image-viewer__container__close'} /></i>
       </div>
       <div className="image-viewer__controllers">
-        <i><FontAwesomeIcon icon={faArrowCircleLeft} onClick={handlePreviousImg} /></i>
+        <i data-testid="btn-previous" onClick={handlePreviousImg}><FontAwesomeIcon icon={faArrowCircleLeft} /></i>
         <div>{ imageIndex + 1 } / { PortfolioImagesData.length }</div>
-        <i><FontAwesomeIcon icon={faArrowCircleRight} onClick={handleNextImg} /></i>
+        <i data-testid="btn-next" onClick={handleNextImg}><FontAwesomeIcon icon={faArrowCircleRight} /></i>
       </div>
     </div>
   );

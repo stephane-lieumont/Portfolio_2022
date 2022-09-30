@@ -101,7 +101,7 @@ const Input: FunctionComponent<InputType> = ({
             disabled={disabled}     
             value={textInput}
           />
-        ) : htmlFormType === HTMLFormType.textarea ? (
+        ) : htmlFormType === HTMLFormType.textarea && (
           <textarea 
             id={name} 
             data-testid={'input'}
@@ -114,7 +114,7 @@ const Input: FunctionComponent<InputType> = ({
             disabled={disabled}     
             value={textInput}
           />
-        ) : null }
+        )}
 
         { appendIcon ? <i data-testid="append-icon"><FontAwesomeIcon icon={appendIcon} /></i> : null }
       </div>

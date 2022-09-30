@@ -33,7 +33,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({portfolioData = [], visible =
   }
 
   return (
-    <div className='gallery'>
+    <div className='gallery' data-testid='gallery'>
       <div className='gallery__grid'>      
         { portfolioData.map((imageData, index) => (
           <div key={imageData.id} 

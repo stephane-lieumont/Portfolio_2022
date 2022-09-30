@@ -6,7 +6,7 @@
     "moduleNameMapper": {
       "^~/(.*)$": "<rootDir>/src/$1"
     },
-    "modulePathIgnorePatterns": ["<rootDir>/src/assets/", "<rootDir>/src/config/", "<rootDir>/src/datas/"]
+    "testPathIgnorePatterns": ["<rootDir>/src/assets/*", "<rootDir>/src/config/*", "<rootDir>/src/datas/*", "<rootDir>/src/interfaces/*"]
   },
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
