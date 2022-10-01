@@ -5,7 +5,7 @@ import './style.scss';
 
 const PageLoader: FunctionComponent<PageLoaderProps> = ({ visible = true }) => {  
   return (
-    <div className={`page-loader${ visible ? ' visible' : '' }`}>
+    <div className={`page-loader${ visible ? ' visible' : '' }`} data-testid="page-loader">
       <div className="pacman-container">
         <div className="pacman"></div>
         <div className="path"></div>

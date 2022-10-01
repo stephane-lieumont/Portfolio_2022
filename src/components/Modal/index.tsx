@@ -14,7 +14,7 @@ const Modal: FunctionComponent<ModalProps> = ({
   displayOn = true,
   dismissNavigator = false,
   duration = 300,
-  onClose = () => {}
+  onClose
 }) => {
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const Modal: FunctionComponent<ModalProps> = ({
     }
   }, [displayOn])
 
-  const handleCloseModal = (e: MouseEvent<SVGSVGElement>) => {
+  const handleCloseModal = (e: MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
     setIsOpen(false)
     setIsAnimateClose(true)
@@ -36,7 +36,7 @@ const Modal: FunctionComponent<ModalProps> = ({
       setIsAnimateClose(false)
       if(dismissNavigator) onDismiss()
       
-      onClose()
+      onClose && onClose()
       clearTimeout(timer)
     }, duration);
   }
@@ -57,7 +57,7 @@ const Modal: FunctionComponent<ModalProps> = ({
       >
         <div className='modal__box__header'>
           <h2>{ title }</h2>
-          <FontAwesomeIcon icon={faClose} className={'fa-close-btn'} onClick={handleCloseModal} />
+          <i onClick={handleCloseModal} data-testid="btn-close" ><FontAwesomeIcon icon={faClose} className={'fa-close-btn'} /></i>
         </div>
         <div className='modal__box__content'>
           { children }

@@ -6,7 +6,7 @@ import Input from '.'
 
 import '../../config/config.jest'
 
-describe('When call Component Input component', () => {
+describe('When call Component Input', () => {
   test('Should render Input default component', () => {      
     render(<Input />)
 
