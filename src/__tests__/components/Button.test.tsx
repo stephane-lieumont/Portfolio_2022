@@ -1,7 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import Button from '.'
-
-import '../../config/config.jest'
+import Button from '~/components/Button';
 
 describe('When call Component Button', () => {
   test('Should render Button default component', () => {

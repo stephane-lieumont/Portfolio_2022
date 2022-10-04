@@ -13,7 +13,7 @@ const SocialSideBar: FunctionComponent<SocialSideBarProps> = ({menuIsOpen = fals
 
  
   return (
-    <div className={`social-sidebar${ menuIsOpen ? ' social-sidebar--hidden' : ''}`}>
+    <div className={`social-sidebar${ menuIsOpen ? ' social-sidebar--hidden' : ''}`} data-testid='social-slider'>
       <ul>
         <li onMouseEnter={() => setHoverGithub(true)} onMouseLeave={() => setHoverGithub(false)}>
           <SocialIcon url='https://github.com/StephaneLi' target={'_blank'} bgColor={hoverGithub ? 'black' : ligthen ? 'white' : Colors.secondary} fgColor={hoverGithub ? 'white' : 'transparent'} />

@@ -1,10 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router';
-import { Router } from 'react-router';
-import Modal from '.'
-
-import '../../config/config.jest'
+import Modal from '~/components/Modal';
 
 describe('When call Component Modal', () => {
   test('Should render Modal default component', () => {      

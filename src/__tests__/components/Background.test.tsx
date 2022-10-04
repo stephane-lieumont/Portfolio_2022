@@ -1,7 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Background from '.'
-
-import '../../config/config.jest'
+import Background from '~/components/Background';
 
 describe('When call Component Background', () => {
   test('Should render Background default component', () => {

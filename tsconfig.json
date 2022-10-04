@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "lib": [
       "dom",
       "dom.iterable",
@@ -22,11 +23,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "outDir": "./dist"
+  },
+  "compileOnSave": true,
+  "moduleNameMapper": {
+    "^~/(.*)$": "<rootDir>/src/$1"
   },
   "include": [
     "src",
     "src/config/custom.d.ts",
-    "src/config/config.jest.tsx"
+    "src/config/config.jest.ts"
   ]
 }

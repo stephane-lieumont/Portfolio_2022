@@ -7,7 +7,7 @@ const Footer: FunctionComponent = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer" data-testid='layout-footer'>
+    <footer className="footer" data-testid='footer'>
       <Background 
         points={false} 
         darken

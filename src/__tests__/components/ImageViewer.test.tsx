@@ -1,10 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
+import ImageViewer from '~/components/ImageViewer';
 import { PortfolioImagesData } from '~/__mocks__/datas/3d.projects.data';
-
-import ImageViewer from '.'
-
-import '../../config/config.jest'
 
 describe('When call Component ImageViewer', () => {
   test('Should render ImageViewer default component', () => {       

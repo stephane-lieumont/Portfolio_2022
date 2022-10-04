@@ -39,8 +39,7 @@ const routeList: RouteAppObject[] = [
       theme: Theme.ligth,
       mainMenuEnabled: false
     }
-  },
-  
+  },  
   { 
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',

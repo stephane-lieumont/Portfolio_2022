@@ -19,7 +19,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   headerTitle,
   headerButtonsEnabled = true, 
   theme,
-  onClick = () => {}
+  onClick
 }) => {
 
   const location = useLocation();
@@ -59,7 +59,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   }
 
   return (
-    <header ref={refHeaderContainer} className={`header${ theme === Theme.dark ? ' header--dark' : ' header--ligth' }${ menuIsOpen || menuHide ? ' header--eventnone' : ''}`} data-testid='layout-header'>
+    <header ref={refHeaderContainer} className={`header${ theme === Theme.dark ? ' header--dark' : ' header--ligth' }${ menuIsOpen || menuHide ? ' header--eventnone' : ''}`} data-testid='header'>
       <div className={`header__main${ menuIsOpen || menuHide ? ' header__main--hidden' : ''}`}>
         <h1>
           <span className='head-title'>
@@ -79,13 +79,13 @@ const Header: FunctionComponent<HeaderProps> = ({
           { headerButtonsEnabled !== false && (
             <ul className='navigation__buttons'>
               { contactPage && location.pathname !== contactPage.path && (
-                <li>
+                <li  data-testid="contact-btn">
                   <Link to={contactPage!.path} state={{ backgroundLocation: location }} className="no-style" >
                     <Button label={contactPage!.label} outlined white={menuIsLigth || theme === Theme.dark} link />
                   </Link>
                 </li>
               )}
-              <li>
+              <li data-testid="cv-btn">
                 <Button 
                   label={'Mon CV'}
                   onClick={(e) => handleClickCV(e)}
@@ -93,7 +93,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                   downloaded={isDownloadCV}
                   downloadIcon={true}
                   outlined                   
-                  white={menuIsLigth || theme === Theme.dark} 
+                  white={menuIsLigth || theme === Theme.dark}                  
                 />
               </li>
             </ul>

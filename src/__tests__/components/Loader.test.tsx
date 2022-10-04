@@ -1,8 +1,5 @@
 import { render, screen } from '@testing-library/react';
-
-import Loader from '.'
-
-import '../../config/config.jest'
+import Loader from '~/components/Loader';
 
 describe('When call Component Loader', () => {
   test('Should render Loader default component', () => {      

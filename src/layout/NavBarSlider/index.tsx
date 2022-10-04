@@ -65,8 +65,8 @@ const NavBarSlider: React.FunctionComponent<NavBarSliderProps> = ({
   }, [windowSize])
 
   return (
-    <div>
-      <div className={`navbar__button${ animated ? ' navbar__button--animated' : ''}${ ligth ? ' navbar__button--ligth' : ''}${ open ? ' open' : ''}`} onClick={handleClick} >
+    <div data-testid='navbar'>
+      <div  data-testid='navbar-button' className={`navbar__button${ animated ? ' navbar__button--animated' : ''}${ ligth ? ' navbar__button--ligth' : ''}${ open ? ' open' : ''}`} onClick={handleClick} >
         <div className='navbar__button__burger'></div>
       </div>
       <div className={`navbar__slider${ open ? ' open' : ''}`} ref={wrapper}>

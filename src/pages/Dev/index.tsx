@@ -51,7 +51,7 @@ const Dev: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   }, [scrollPosition, windowSize, appearSectionSpecialities, appearSectionSoftSkills])
 
   return (
-      <div className='page portfolio-dev' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='page-portfolio-dev'>
+      <div className='page portfolio-dev' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='dev-page'>
         <div className='page__content'>
           <div className='section__group'>
             { contentLoaded ? (

@@ -1,9 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import Gallery from '.'
-
-import '../../config/config.jest'
 import { PortfolioImagesData } from '~/__mocks__/datas/3d.projects.data';
-
+import Gallery from '~/components/Gallery';
 
 describe('When call Component Gallery', () => {
   test('Should render Gallery default component', () => {   

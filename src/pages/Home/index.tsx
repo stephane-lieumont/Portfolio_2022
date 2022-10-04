@@ -27,7 +27,7 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
   }, [title])
 
   return (
-    <div ref={currentPage}  className={`min-heigth-screen homepage${ !imgLoaded ? ' homepage--loading' : ''}`} data-testid='page-home'>
+    <div ref={currentPage}  className={`min-heigth-screen homepage${ !imgLoaded ? ' homepage--loading' : ''}`} data-testid='homepage'>
       <section className='homepage__leftside' style={{ paddingTop: headerheigth + 'px' }}>
         <blockquote className={`reveal${ imgLoaded ? ' reveal--1' : ''}`}>
           <p><FontAwesomeIcon size='xs' icon={faQuoteLeft} className="quote" /> La passion est un désir qui se mue en plaisir <FontAwesomeIcon size='xs'icon={faQuoteRight} className="quote" /></p>
@@ -67,10 +67,10 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
             </p>
             <div className='homepage__leftside__content__nav'>
               <div className={`reveal${ imgLoaded ? ' reveal--5' : ''}`}>
-                <Button label='profil dev' onClick={linkPortfolioDev ? () => navigate(linkPortfolioDev) : () => {} } />
+                <Button label='profil dev' onClick={() => navigate(linkPortfolioDev!)} />
               </div>
               <div className={`reveal${ imgLoaded ? ' reveal--6' : ''}`}>
-                <Button label="profil 3D" outlined onClick={linkPortfolioCgi ? () => navigate(linkPortfolioCgi) : () => {}} />
+                <Button label="profil 3D" outlined onClick={() => navigate(linkPortfolioCgi!)} />
               </div>
             </div>
           </div>

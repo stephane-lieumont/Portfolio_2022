@@ -16,7 +16,7 @@ const Error: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
   }, [title])
 
   return (
-    <div className='page error' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='page-error'>
+    <div className='page error' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='error-page'>
       <Background
           ligthen
           triangleProperties = {{

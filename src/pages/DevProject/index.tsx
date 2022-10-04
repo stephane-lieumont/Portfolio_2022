@@ -43,7 +43,7 @@ const DevProject: FunctionComponent<PageProps> = ({title = 'titre de la page'}) 
   }
 
   return (
-      <div className='page project' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='page-project'>
+      <div className='page project' style={{ paddingTop: headerheigth + 30 + 'px' }} data-testid='project-page'>
         <div className='page__content'>
           <Background
             ligthen

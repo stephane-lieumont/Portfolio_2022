@@ -1,7 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PageLoader from '.'
-
-import '../../config/config.jest'
+import PageLoader from '~/components/PageLoader';
 
 describe('When call Component PageLoader', () => {
   test('Should render PageLoader default component', () => {      
