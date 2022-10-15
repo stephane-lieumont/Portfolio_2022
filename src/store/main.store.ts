@@ -16,7 +16,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
 
-export type ReducerFormEmployee = typeof formContactSlice.reducer;
-export type StateFormEmployee = ReturnType<ReducerFormEmployee>;
+export type ReducerFormContact = typeof formContactSlice.reducer;
+export type StateFormContact = ReturnType<ReducerFormContact>;
 
 export default store;
