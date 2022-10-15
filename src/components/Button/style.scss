@@ -31,6 +31,13 @@
     background: transparent;
     color: $primary;
     font-weight: 500;
+
+    &.button--loading{
+      &::after {
+        border: 1px solid $primary!important;
+        border-bottom-color: transparent!important;
+      }
+    }
   }
 
   &--white {
@@ -42,9 +49,14 @@
       background-color: rgba($orange-shade300, 0.5);
       box-shadow:inset 0px 0px 0px 2px $orange-shade300;
     }
+
+    &.button--loading{
+      &::after {
+        border: 1px solid white!important;
+        border-bottom-color: transparent!important;
+      }
+    }
   }
-
-
 
   &--loading {
     color: transparent;
