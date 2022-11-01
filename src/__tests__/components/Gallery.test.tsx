@@ -1,6 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { PortfolioImagesData } from '~/__mocks__/datas/3d.projects.data';
+import { PortfolioImagesData } from '~/datas/3d.projects.data';
 import Gallery from '~/components/Gallery';
+
+jest.mock('~/datas/3d.projects.data', () => jest.requireActual('~/__mocks__/datas/3d.projects.data'));
 
 describe('When call Component Gallery', () => {
   test('Should render Gallery default component', () => {   
@@ -14,7 +16,7 @@ describe('When call Component Gallery', () => {
     render(<Gallery portfolioData={PortfolioImagesData} />)
 
     const handleLoadImageTest = jest.fn() 
-    const images = document.querySelectorAll("img");
+    const images = screen.getAllByRole('img');
 
     images.forEach(image => {
       image.addEventListener('load', handleLoadImageTest)   
@@ -36,7 +38,7 @@ describe('When call Component Gallery', () => {
     render(<Gallery portfolioData={PortfolioImagesData} onClick={callback} />)
 
     const handleClickImage = jest.fn() 
-    const image = document.querySelectorAll("img")[0];
+    const image = screen.getAllByRole('img')[0];
 
     image.addEventListener('click', handleClickImage)
     fireEvent.click(image)
@@ -48,7 +50,7 @@ describe('When call Component Gallery', () => {
     render(<Gallery portfolioData={PortfolioImagesData}/>)
 
     const handleClickImage = jest.fn() 
-    const image = document.querySelectorAll("img")[0];
+    const image = screen.getAllByRole('img')[0];
 
     image.addEventListener('click', handleClickImage)
     fireEvent.click(image)

@@ -3,16 +3,17 @@ import Contact from '~/pages/Contact'
 import Dev from '~/pages/Dev'
 import DevProject from '~/pages/DevProject'
 import Error from '~/pages/Error'
-import Home from '~/pages/Home'
 import { RouteAppObject } from '~/interfaces/routes.intf'
 import { Theme } from '~/interfaces/theme.intf'
+import HomePage from '~/pages/HomePage'
 
-const routeList: RouteAppObject[] = [  
+export const RouteList: RouteAppObject[] = [  
   { 
     path: '/', 
     name: 'home',
     label: 'Accueil',
-    Component: <Home title='Portfolio | Stéphane Lieumont' />,    
+    title: 'Portfolio | Stéphane Lieumont',
+    Component: HomePage,    
     params: {
       menuIconLigth: true,
       theme: Theme.ligth
@@ -22,7 +23,8 @@ const routeList: RouteAppObject[] = [
     path: '/portfolio-stephane-lieumont-developpeur', 
     name: 'dev',
     label: 'Développeur',
-    Component: <Dev title='Web | Stéphane Lieumont' />, 
+    title:'Web | Stéphane Lieumont',
+    Component: Dev, 
     headerTitle: "Web & mobile",    
     params: {
       menuIconLigth: false,
@@ -34,7 +36,8 @@ const routeList: RouteAppObject[] = [
     name: 'project-web',
     label: 'Projet Web',
     headerTitle: 'Projet web',
-    Component: <DevProject title='Web | Projet' />,
+    title:'Web | Projet',
+    Component: DevProject,
     params: {
       theme: Theme.ligth,
       mainMenuEnabled: false
@@ -44,7 +47,8 @@ const routeList: RouteAppObject[] = [
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',
     label: 'Graphisme 3D',
-    Component: <Cgi title='CGI | Stéphane Lieumont'/>,
+    title: 'CGI | Stéphane Lieumont',
+    Component: Cgi,
     headerTitle: "graphiste 3D",    
     params: {
       menuIconLigth: false,
@@ -56,7 +60,8 @@ const routeList: RouteAppObject[] = [
     name: 'contact',
     label: 'Contact',
     headerTitle: "Contactez-moi",
-    Component: <Contact title='Contactez-moi'/>,   
+    title:'Contactez-moi',
+    Component: Contact,   
     params: {
       theme: Theme.ligth,
       mainMenuEnabled: false,      
@@ -67,7 +72,8 @@ const routeList: RouteAppObject[] = [
   {
     path: '*', 
     name: 'error',
-    Component: <Error title='Error404'/>,
+    title: 'Error404',
+    Component: Error,
     headerTitle: 'Page introuvable',    
     params: {
       menuIconLigth: true,
@@ -76,15 +82,15 @@ const routeList: RouteAppObject[] = [
   } 
 ]
 
-const getRouteByName = (name: string):RouteAppObject | undefined => {
-  return routeList.find(route => route.name === name)
+export const getRouteByName = (name: string):RouteAppObject | undefined => {
+  return RouteList.find(route => route.name === name)
 }
 
-const getRouteByPath = (path: string):RouteAppObject | undefined => {
+export const getRouteByPath = (path: string):RouteAppObject | undefined => {
   // Keep dynamic pass level 1
   const dynamicPath : string = path.split('/').pop() ?? ''
 
-  return routeList.find((route) => { 
+  return RouteList.find((route) => { 
     // check route exactPath
     let routeMatch = route.path === path
 
@@ -94,12 +100,3 @@ const getRouteByPath = (path: string):RouteAppObject | undefined => {
     return routeMatch  
   })
 }
-
-
-const RoutesApp = {
-  routeList,
-  getRouteByName,
-  getRouteByPath
-}
-
-export default RoutesApp

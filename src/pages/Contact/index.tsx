@@ -1,7 +1,6 @@
 import { FunctionComponent, useEffect, useState, useRef, MouseEvent } from 'react';
 import { useNavigate } from 'react-router';
 import useWindowSize from '~/hooks/useWindowsSize';
-import RoutesApp from '~/routes/routes.app';
 import { useAppSelector } from '~/store/main.store';
 import Footer from '~/layout/Footer';
 import Background from '~/components/Background';
@@ -12,6 +11,7 @@ import { PageProps } from '~/interfaces/component.intf';
 
 import './style.scss'
 import { downloadCV } from '~/utils/downloadCV';
+import { getRouteByName } from '~/routes/routes.app';
 
 const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page', isModal = false }) => {
   const [imgLoaded, setImgLoaded] = useState<boolean>(false)
@@ -29,7 +29,7 @@ const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page', isM
 
   useEffect(() => {
     if(windowSize.width < 700 && isModal) {
-      navigate(RoutesApp.getRouteByName('contact')!.path)
+      navigate(getRouteByName('contact')!.path)
     }
   }, [isModal, navigate, windowSize])
 
@@ -43,7 +43,7 @@ const Contact: FunctionComponent<PageProps> = ({ title = 'titre de la page', isM
   }
   
   return (
-    <div ref={currentPage} className={`${isModal ? ' contact-modal' : 'page'} contact`}>
+    <div ref={currentPage} className={`${isModal ? ' contact-modal' : 'page'} contact`} data-testid='contact-page'>
       <div 
         className={!isModal ? `page__content limit-width-content` : ''} 
         style={{ 

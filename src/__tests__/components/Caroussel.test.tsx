@@ -1,15 +1,31 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { SliderImagesData } from '~/__mocks__/datas/3d.projects.data';
+import { fireEvent, render, screen, waitFor} from '@testing-library/react';
 import * as hooks from '~/hooks/useOnLoadImages';
-import { act } from 'react-dom/test-utils';
 import Carousel from '~/components/Carousel';
+import { SliderImagesData } from '~/datas/3d.projects.data';
+import React from 'react';
 
+jest.mock('~/datas/3d.projects.data', () => jest.requireActual('~/__mocks__/datas/3d.projects.data'));
+jest.useFakeTimers()
 
 describe('When call Component Caroussel', () => {
   test('Should render Caroussel default component', () => {   
+    jest.spyOn(hooks, "useOnLoadImages");
+
     render(<Carousel slides={SliderImagesData} />)
 
     const component = screen.getByTestId('caroussel')
+
+    const handleLoadImage = jest.fn()
+    const handleErrorImage = jest.fn()
+
+    const image = screen.getAllByRole("img")[0] as HTMLImageElement;
+
+    image.addEventListener('load', handleLoadImage)
+    image.addEventListener('error', handleErrorImage)
+
+    fireEvent.load(image)
+    fireEvent.error(image)
+
     expect(component).toBeInTheDocument()
   });
 
@@ -27,41 +43,31 @@ describe('When call Component Caroussel', () => {
     expect(component).toBeInTheDocument()
   });
 
-  test('Should add first image slide on img url', async () => { 
-    jest.spyOn(hooks, 'useOnLoadImages' ).mockImplementation(() => true)
+  test('Should add first image slide on img url', async () => {     
+    render(<Carousel slides={SliderImagesData} />);
     
-    act(() => {
-      render(<Carousel slides={SliderImagesData} />);
-    })
-
     const handleLoadImage = jest.fn() 
-    const image = document.querySelector("img") as HTMLImageElement;
+    const image = screen.getAllByRole("img")[0] as HTMLImageElement;
     image.addEventListener('onload', handleLoadImage)
     
-    act(() => {
-      fireEvent.load(image);
-    })
+    fireEvent.load(image);    
 
     expect(image.src).toContain("maison-moderne-2014.jpg");
   });
 
-  test('Should render Caroussel with timer event', async () => { 
+  test('Should render Caroussel with timer event', async () => {
     const delay = 100
     const delayTest = delay * (SliderImagesData.length * 2)
 
     jest.spyOn(hooks, 'useOnLoadImages' ).mockImplementation(() => true)
-
-    jest.useRealTimers()
     jest.spyOn(global, 'setTimeout')
     
-    act(() => {
     render(<Carousel slides={SliderImagesData} delay={delay} />)
-    })
-
-    const image = document.querySelector("img") as HTMLImageElement;
     
-    await act(async () => {
-      fireEvent.load(image);
+    const image = screen.getAllByRole('img')[0] as HTMLImageElement;
+    fireEvent.load(image);
+
+    await waitFor(async () => {      
       await new Promise((r) => setTimeout(r, delayTest))   
     })
         

@@ -1,7 +1,6 @@
 import { FunctionComponent, useEffect, useRef, useState, Fragment } from 'react'
 import { useNavigate } from 'react-router'
 import demoReal from '~/assets/movies/demoreal_2022.mp4'
-import RoutesApp from '~/routes/routes.app'
 import { useAppSelector } from '~/store/main.store'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,17 +9,19 @@ import Button from '~/components/Button'
 import { PageProps } from '~/interfaces/component.intf'
 
 import './style.scss'
+import { getRouteByName } from '~/routes/routes.app'
 
-const Home: FunctionComponent<PageProps> = ({title}) => {
 
-  const navigate = useNavigate()
+const HomePage: FunctionComponent<PageProps> = ({title = 'titre de la page'}) => {
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false) 
+  
   const currentPage = useRef<HTMLDivElement>(null)
   const headerheigth = useAppSelector((state) => state.layoutSlice.headerHeigth)
 
-  const [imgLoaded, setImgLoaded] = useState<boolean>(false) 
+  const portfolioDevlink = getRouteByName('dev')?.path ?? '#'
+  const portfolioCgiLink = getRouteByName('cgi')?.path ?? '#'
 
-  const linkPortfolioDev = RoutesApp.getRouteByName('dev')?.path
-  const linkPortfolioCgi = RoutesApp.getRouteByName('cgi')?.path
+  const navigate = useNavigate()
 
   useEffect(() => {
     document.title = title ?? 'document title not found'
@@ -67,10 +68,14 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
             </p>
             <div className='homepage__leftside__content__nav'>
               <div className={`reveal${ imgLoaded ? ' reveal--5' : ''}`}>
-                <Button label='profil dev' onClick={() => navigate(linkPortfolioDev!)} />
+                <Button label='profil dev' onClick={() =>{
+                  navigate(portfolioDevlink) 
+                }} />
               </div>
               <div className={`reveal${ imgLoaded ? ' reveal--6' : ''}`}>
-                <Button label="profil 3D" outlined onClick={() => navigate(linkPortfolioCgi!)} />
+                <Button label="profil 3D" outlined onClick={() => {
+                  navigate(portfolioCgiLink)
+                }} />
               </div>
             </div>
           </div>
@@ -112,4 +117,4 @@ const Home: FunctionComponent<PageProps> = ({title}) => {
   )
 }
 
-export default Home;
+export default HomePage;

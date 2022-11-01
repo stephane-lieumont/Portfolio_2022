@@ -4,6 +4,7 @@
   "private": false,
   "jest": {
     "testEnvironment": "jsdom",
+    "watchAll": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**",
@@ -57,7 +58,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "test": "react-app-rewired test --watchAll --coverage",
     "eject": "react-app-rewired eject"
   },
   "eslintConfig": {

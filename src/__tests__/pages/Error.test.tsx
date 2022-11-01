@@ -32,8 +32,7 @@ describe('When call Error Page', () => {
       </Provider>
     )      
 
-    const component = screen.getByTestId('error-page')
-    const img = component.querySelectorAll('img')[0]
+    const img = screen.getAllByRole('img')[0]
     img.addEventListener('load', handleLoad)
 
     fireEvent.load(img)

@@ -54,7 +54,7 @@ const Cgi: React.FunctionComponent<PageProps> = ({title = 'titre de la page'}) =
 
   return (
     <Fragment >       
-      <div className='page portfolio-cgi' data-testid='page-portfolio-cgi'>
+      <div className='page portfolio-cgi' data-testid='cgi-page'>
         <div className='page__content'>
           <Carousel slides={SliderImagesData} parralaxScrollY={scrollPosition} />
           <section ref={sectionSpecialities} className='portfolio-cgi__specialities'>      

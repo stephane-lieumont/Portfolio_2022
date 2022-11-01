@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { CacheImages } from './datas/cache.img.data';
-import RoutesApp from '~/routes/routes.app';
+import { getRouteByName, getRouteByPath, RouteList } from '~/routes/routes.app';
 import useWindowSize from './hooks/useWindowsSize';
 import SocialSideBar from '~/layout/SocialSideBar';
 import Header from '~/layout/Header';
@@ -25,18 +25,16 @@ const App: React.FunctionComponent = () => {
   const windowsSize = useWindowSize()
 
   let state = location.state as { backgroundLocation?: Location };
-  const globalRoutes = RoutesApp.routeList
-  const contactRoute = RoutesApp.getRouteByName('contact')
-  const cvRoute = RoutesApp.getRouteByName('cv')
-
+  const contactRoute = getRouteByName('contact')
+  
   useEffect(() => {
     setAppLoaderVisible(true)
     cacheImages(CacheImages)
   }, [])
 
   useEffect(() => {
-    let route = RoutesApp.getRouteByPath(location.pathname)    
-    route ? setCurrentRoute(route) : setCurrentRoute(RoutesApp.getRouteByName('error'))
+    let route = getRouteByPath(location.pathname)    
+    route ? setCurrentRoute(route) : setCurrentRoute(getRouteByName('error'))
     if(!state) setMenuIsLigth(route?.params?.menuIconLigth ?? false)
     if(!state) setCurrentTheme(route?.params?.theme ?? Theme.ligth)
     if(!state) setCurrentSocialTheme(route?.params?.socialTheme ?? route?.params?.theme ?? Theme.ligth)
@@ -45,10 +43,10 @@ const App: React.FunctionComponent = () => {
 
   // Specific theme layout change for responsive design
   useEffect(() => {
-    if(location.pathname === RoutesApp.getRouteByName('home')?.path ) {
+    if(location.pathname === getRouteByName('home')?.path ) {
       windowsSize.width <  parseInt(Screen.screenLg) ? setMenuIsLigth(false) : setMenuIsLigth(true)
     }
-    if(location.pathname === RoutesApp.getRouteByName('contact')?.path ) {
+    if(location.pathname === getRouteByName('contact')?.path ) {
       windowsSize.width <  parseInt(Screen.screenLg) ? setCurrentSocialTheme(Theme.ligth) : setCurrentSocialTheme(Theme.dark)      
     }
   }, [windowsSize, location])
@@ -94,13 +92,13 @@ const App: React.FunctionComponent = () => {
       { appCacheLoaded ? (
         <Fragment>
           <main className={`${menuIsOpen ? 'scale' : ''}${ currentTheme === Theme.dark ? ' theme-dark' : ' theme-ligth' }`}>
-            { globalRoutes.length > 0 && (
+            { RouteList.length > 0 && (
               <Routes location={state?.backgroundLocation || location}>
-                { globalRoutes.map(({ path, Component }) => (              
+                { RouteList.map(({ path, Component, title }) => (              
                   <Route 
                     key={path}
                     path={path} 
-                    element={Component}
+                    element={<Component title={title} />}
                   />
                 ))} 
               </Routes>
@@ -120,21 +118,6 @@ const App: React.FunctionComponent = () => {
                         <Contact title={contactRoute?.headerTitle} isModal/>
                       </Modal>
                     } 
-                  />
-                )}
-                { cvRoute != null && (
-                  <Route 
-                    path={cvRoute?.path}
-                    element={
-                      <Modal 
-                        title={cvRoute?.headerTitle}  
-                        width='40%' 
-                        heigth='80%'
-                        dismissNavigator 
-                      >
-                        {cvRoute?.Component}
-                      </Modal>
-                    }
                   />
                 )}
               </Routes>

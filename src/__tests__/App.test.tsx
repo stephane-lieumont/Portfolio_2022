@@ -1,23 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
-import Dev from '~/pages/Dev';
+import App from '~/App';
 import store from '~/store/main.store';
 
 window.scrollTo = jest.fn()
 
-describe('When call Dev Page', () => {
-  test('Should render Dev default', () => {      
+describe('When call React App', () => {
+  
+  test('Should render Home Page default', () => {      
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <Dev />
+          <App />
         </MemoryRouter>
       </Provider>
     )      
 
-    const component = screen.getByTestId('dev-page')
+    const component = screen.getByTestId('app')
 
     expect(component).toBeInTheDocument()
-  })
+  });  
 })

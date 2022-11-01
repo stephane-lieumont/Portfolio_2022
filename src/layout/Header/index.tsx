@@ -1,7 +1,6 @@
 import { FunctionComponent, useEffect, useRef, useState, MouseEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import RoutesApp from '~/routes/routes.app';
 import useScrollPosition from '~/hooks/useScrollPosition';
 import NavBarButton from '../NavBarSlider';
 import Button from '~/components/Button';
@@ -12,6 +11,7 @@ import { HeaderProps } from '~/interfaces/component.intf';
 
 import './style.scss'
 import { downloadCV } from '~/utils/downloadCV';
+import { getRouteByName, RouteList } from '~/routes/routes.app';
 
 const Header: FunctionComponent<HeaderProps> = ({
   menuIsOpen = false, 
@@ -34,8 +34,8 @@ const Header: FunctionComponent<HeaderProps> = ({
   const dispatch = useAppDispatch()
   const scrollPosition = useScrollPosition()
 
-  const homePageRoutePath = RoutesApp.getRouteByName('home')
-  const contactPage = RoutesApp.getRouteByName('contact')
+  const homePageRoutePath = getRouteByName('home')
+  const contactPage = getRouteByName('contact')
 
   useEffect(() => {    
     if(headerheigth !== refHeaderContainer.current?.clientHeight && refHeaderContainer) {
@@ -101,7 +101,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         </div>
       </div>
       <NavBarButton 
-        routeList={RoutesApp.routeList} 
+        routeList={RouteList} 
         ligth={navButtonLigth} 
         onClick={onClick}
       />

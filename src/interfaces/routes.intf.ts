@@ -1,11 +1,14 @@
+import React from "react"
+import { PageProps } from "./component.intf"
 import { Theme } from "./theme.intf"
 
 export type RouteAppObject = {
   path: string
   name: string
   label?: string
+  title?: string
   headerTitle?:string
-  Component: JSX.Element  
+  Component:React.FunctionComponent<PageProps>
   params?: RouteParams
 }
 
