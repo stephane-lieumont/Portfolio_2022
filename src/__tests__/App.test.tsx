@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor, waitForElementToBeRemoved} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import App from '~/App';
@@ -8,7 +8,7 @@ window.scrollTo = jest.fn()
 
 describe('When call React App', () => {
   
-  test('Should render Home Page default', () => {      
+  test('Should render App default', () => {      
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -20,5 +20,5 @@ describe('When call React App', () => {
     const component = screen.getByTestId('app')
 
     expect(component).toBeInTheDocument()
-  });  
+  });
 })

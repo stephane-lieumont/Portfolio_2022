@@ -128,7 +128,7 @@ const App: React.FunctionComponent = () => {
             ligthen={currentSocialTheme === Theme.dark}
           />
         </Fragment>
-      ) : <PageLoader visible={appLoaderVisible} />}
+      ) : <div data-testid="loading"><PageLoader visible={appLoaderVisible} /></div>}
     </div>
   )
 }

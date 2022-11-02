@@ -1,4 +1,9 @@
-import { render } from '@testing-library/react';
+import { render, screen} from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { Route, Routes } from 'react-router';
+import { BrowserRouter  as Router } from 'react-router-dom';
+import DevProject from '~/pages/DevProject';
+import store from '~/store/main.store';
 
 describe('When call DevProject Page', () => {
   beforeAll(() => {
@@ -12,8 +17,20 @@ describe('When call DevProject Page', () => {
   })
 
 
-  test('Should render DevProject default', () => {   
+  test('Should render DevProject default', () => {
+    render(
+      <Provider store={store}>
+        <Router>
+          <Routes location={'/portfolio-stephane-lieumont-developpeur/case-tes-potes-application-mobile-2022'}>          
+              <Route path={'/portfolio-stephane-lieumont-developpeur/:params'} element={<DevProject title={'test'} />} />
+          </Routes>
+        </Router>
+      </Provider>
+    )
 
+    const component = screen.getByTestId('project-page')
+
+    expect(component).toBeInTheDocument()
   })
 
 })
