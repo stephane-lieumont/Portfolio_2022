@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '~/config/config.jest'
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from 'react-router';
 import Modal from '~/components/Modal';

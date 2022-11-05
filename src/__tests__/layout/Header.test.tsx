@@ -1,5 +1,5 @@
 /* eslint-disable testing-library/no-node-access */
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '~/config/config.jest'
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import Header from '~/layout/Header';

@@ -1,9 +1,11 @@
-import { render, screen} from '@testing-library/react';
+import { render, screen} from '~/config/config.jest'
 import { Provider } from 'react-redux';
-import { Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
 import { BrowserRouter  as Router } from 'react-router-dom';
 import DevProject from '~/pages/DevProject';
 import store from '~/store/main.store';
+
+window.scrollTo = jest.fn()
 
 describe('When call DevProject Page', () => {
   beforeAll(() => {
@@ -32,5 +34,4 @@ describe('When call DevProject Page', () => {
 
     expect(component).toBeInTheDocument()
   })
-
 })

@@ -1,8 +1,9 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '~/config/config.jest'
 import { Provider } from 'react-redux';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
 import HomePage from '~/pages/HomePage';
 import store from '~/store/main.store';
+
 
 window.scrollTo = jest.fn()
 

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor} from '@testing-library/react';
+import { fireEvent, render, screen, waitFor} from '~/config/config.jest'
 import * as hooks from '~/hooks/useOnLoadImages';
 import Carousel from '~/components/Carousel';
 import { SliderImagesData } from '~/datas/3d.projects.data';

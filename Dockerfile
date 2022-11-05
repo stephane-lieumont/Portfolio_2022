@@ -1,7 +1,12 @@
 FROM node as react-build
 WORKDIR /app
 COPY . ./
+
 RUN npm i
+
+# genenv
+RUN --mount=type=secret,id=REACT_APP_EMAIL_SERVICE --mount=type=secret,id=REACT_APP_CAPTCHA_SITE_KEY export REACT_APP_EMAIL_SERVICE=$(cat /run/secrets/REACT_APP_EMAIL_SERVICE ) export REACT_APP_CAPTCHA_SITE_KEY=$(cat /run/secrets/REACT_APP_CAPTCHA_SITE_KEY )
+  
 RUN npm run build
 
 FROM nginx:alpine

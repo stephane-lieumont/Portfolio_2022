@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '~/config/config.jest'
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import Error from '~/pages/Error';

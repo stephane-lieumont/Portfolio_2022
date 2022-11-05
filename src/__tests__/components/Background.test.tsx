@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '~/config/config.jest'
 import Background from '~/components/Background';
 
 describe('When call Component Background', () => {

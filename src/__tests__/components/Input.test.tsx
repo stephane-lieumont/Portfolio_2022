@@ -1,5 +1,5 @@
 import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '~/config/config.jest'
 import { act } from 'react-dom/test-utils';
 import Input from '~/components/Input';
 import { HTMLFormType } from '~/interfaces/forms.intf';

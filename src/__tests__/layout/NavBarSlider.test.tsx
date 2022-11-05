@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '~/config/config.jest'
 import { MemoryRouter } from 'react-router';
 import NavBarSlider from '~/layout/NavBarSlider';
 

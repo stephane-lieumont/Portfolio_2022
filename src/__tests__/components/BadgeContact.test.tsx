@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '~/config/config.jest'
 import BadgeContact from '~/components/BadgeContact';
 
 describe('When call Component BadgeContact', () => {

@@ -1,11 +1,12 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '~/config/config.jest'
 import { Provider } from 'react-redux';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
 import Contact from '~/pages/Contact';
 import { ServiceEmailJs } from '~/services/emailjs.srv';
 import store from '~/store/main.store';
 
 window.scrollTo = jest.fn()
+
 
 describe('When call Contact Page', () => {
   test('Should render Contact default', () => {      
@@ -60,8 +61,8 @@ describe('When call Contact Page', () => {
     expect(handleClick).toBeCalled()
   })
 
-  test('Should fill form submit end send email', async () => {
-    jest.spyOn(ServiceEmailJs, 'sendFormData').mockResolvedValue({ status: 200, text: '' })
+  test('Should fill form submit end send email', async () => {    
+    jest.spyOn(ServiceEmailJs, 'sendFormData').mockResolvedValue({ status: 200, text: '' }) 
 
     render(
       <Provider store={store}>
@@ -93,11 +94,8 @@ describe('When call Contact Page', () => {
     fireEvent.change(inputEmail, {target: {value: 'test@test.com'}})
     fireEvent.change(inputMessage, {target: {value: 'test de message pour simulation jest avec minimum 20 charactères'}})
 
-    fireEvent.click(button)
-
-    await new Promise((r) => setTimeout(r, 2000))
-
+    fireEvent.click(button)    
     expect(handleClick).toBeCalled()
-    expect(handleInpuChange).toBeCalled()
+    expect(handleInpuChange).toBeCalled() 
   })
 })

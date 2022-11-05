@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '~/config/config.jest'
 import ImageViewer from '~/components/ImageViewer';
 import { PortfolioImagesData } from '~/datas/3d.projects.data';
 

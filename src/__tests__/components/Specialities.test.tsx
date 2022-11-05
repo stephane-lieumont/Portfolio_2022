@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '~/config/config.jest'
 import Specialities from '~/components/Specialities';
 import { SpecialitiesDevData } from '~/__mocks__/datas/dev.projects.data';
 

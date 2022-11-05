@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '~/config/config.jest'
 import PageLoader from '~/components/PageLoader';
 
 describe('When call Component PageLoader', () => {

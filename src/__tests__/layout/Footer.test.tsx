@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '~/config/config.jest'
 import Footer from '~/layout/Footer';
 
 describe('When call Layout Footer', () => {

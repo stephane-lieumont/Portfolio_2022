@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '~/config/config.jest'
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import Dev from '~/pages/Dev';
