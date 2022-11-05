@@ -1,4 +1,4 @@
-import { render, screen, waitFor, waitForElementToBeRemoved} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import App from '~/App';
