@@ -46,7 +46,7 @@ jobs:
       uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
       with:
         context: .
-        secrets: |
+        build-args: |
           "REACT_APP_EMAIL_SERVICE=${{ secrets.REACT_APP_EMAIL_SERVICE }}"
           "REACT_APP_CAPTCHA_SITE_KEY=${{ secrets.REACT_APP_CAPTCHA_SITE_KEY }}"          
         push: true
