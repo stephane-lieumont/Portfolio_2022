@@ -8,8 +8,8 @@ RUN --mount=type=secret,id=REACT_APP_EMAIL_SERVICE \
   --mount=type=secret,id=REACT_APP_CAPTCHA_SITE_KEY \
   export REACT_APP_EMAIL_SERVICE=$(cat /run/secrets/PORTFOLIO_EMAIL_SERVICE ) && \
   export REACT_APP_CAPTCHA_SITE_KEY=$(cat /run/secrets/PORTFOLIO_CAPTCHA_SITE_KEY ) && \
-  echo "Secret Email is $(cat /run/secrets/PORTFOLIO_EMAIL_SERVICE)" && \
-  echo "Secret CAPTCHA is $(cat /root/.ssh/PORTFOLIO_CAPTCHA_SITE_KEY)"
+  echo "Secret Email is $(cat /run/secrets/REACT_APP_EMAIL_SERVICE)" && \
+  echo "Secret CAPTCHA is $(cat /root/.ssh/REACT_APP_CAPTCHA_SITE_KEY)"
   
 RUN npm run build
 
