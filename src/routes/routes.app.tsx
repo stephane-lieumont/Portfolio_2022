@@ -47,7 +47,7 @@ export const RouteList: RouteAppObject[] = [
     path: '/portfolio-stephane-lieumont-cgi', 
     name: 'cgi',
     label: 'Graphisme 3D',
-    title: 'CGI | Stéphane Lieumont',
+    title: 'Graphiste 3D | Stéphane Lieumont',
     Component: Cgi,
     headerTitle: "graphiste 3D",    
     params: {
@@ -60,7 +60,7 @@ export const RouteList: RouteAppObject[] = [
     name: 'contact',
     label: 'Contact',
     headerTitle: "Contactez-moi",
-    title:'Contactez-moi',
+    title:'Contact | Stéphane Lieumont',
     Component: Contact,   
     params: {
       theme: Theme.ligth,
@@ -72,7 +72,7 @@ export const RouteList: RouteAppObject[] = [
   {
     path: '*', 
     name: 'error',
-    title: 'Error404',
+    title: 'Error404 | Stéphane Lieumont',
     Component: Error,
     headerTitle: 'Page introuvable',    
     params: {
