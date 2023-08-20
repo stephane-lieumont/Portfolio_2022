@@ -1,5 +1,5 @@
-@import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
+@import "../../sass/themes/colors";
+@import "../../sass/abstract/variables";
 
 .navbar {
   &__button {
@@ -13,117 +13,123 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all .2s ease-in-out;
-    z-index: 4;    
-    
+    transition: all 0.2s ease-in-out;
+    z-index: 4;
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
-      left: 0;      
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba($grey-shade100, 0.2)!important;;
+      background-color: rgba($grey-shade100, 0.2) !important;
       border-radius: 50%;
       box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 16px;
       opacity: 0;
-      transition: opacity .3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
       z-index: -1;
     }
-    
+
     &:hover {
       &::before {
         opacity: 1;
       }
 
       .navbar__button__burger {
-        background: $primary!important;
-        &::before, &::after {
-          background: $primary!important;
+        background: $primary !important;
+        &::before,
+        &::after {
+          background: $primary !important;
         }
       }
     }
-  
+
     &__burger {
       width: 27px;
       height: 3px;
       background: $primary;
       border-radius: 3px;
-      transition: all .2s ease-in-out;
-      animation: display-burger .3s ease-in .2s both;
-  
-      &::before, &::after {
-        content: '';
+      transition: all 0.2s ease-in-out;
+      animation: display-burger 0.3s ease-in 0.2s both;
+
+      &::before,
+      &::after {
+        content: "";
         position: absolute;
         width: 27px;
         height: 3px;
         background: $primary;
         border-radius: 3px;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
       }
-  
+
       &::before {
         transform: translateY(-10px);
       }
-  
+
       &::after {
         transform: translateY(10px);
       }
     }
-  
+
     &--ligth {
       .navbar__button__burger {
-        background: #fff!important;
-        &::before, &::after {
-          background: #fff!important;
+        background: #fff !important;
+        &::before,
+        &::after {
+          background: #fff !important;
         }
       }
 
       &:hover {
         .navbar__button__burger {
-          background: #fff!important;
-          &::before, &::after {
-            background: #fff!important;
+          background: #fff !important;
+          &::before,
+          &::after {
+            background: #fff !important;
           }
         }
       }
     }
-  
+
     &.open {
       .navbar__button__burger {
-        background: transparent!important;
-  
-        &::before, &::after {
-          background: $grey-shade200!important;
+        background: transparent !important;
+
+        &::before,
+        &::after {
+          background: $grey-shade200 !important;
         }
       }
 
-      .social-sidebar{
+      .social-sidebar {
         pointer-events: none;
       }
     }
 
     &.open:hover {
       .navbar__button__burger {
-        &::before, &::after {
-          background: $primary!important
-        } 
+        &::before,
+        &::after {
+          background: $primary !important;
+        }
       }
     }
-  
+
     &.open.navbar__button--animated {
       .navbar__button__burger {
         transform: translateX(-50px);
         background: transparent;
-  
+
         &::before {
           transform: rotate(45deg) translate(35px, -35px);
-          background: $grey-shade200!important;
+          background: $grey-shade200 !important;
         }
-    
+
         &::after {
           transform: rotate(-45deg) translate(35px, 35px);
-          background: $grey-shade200!important;
+          background: $grey-shade200 !important;
         }
       }
     }
@@ -140,8 +146,8 @@
     z-index: 3;
     transform: translateX(100%);
 
-    svg path{
-      fill: $grey!important;
+    svg path {
+      fill: $grey !important;
     }
 
     &__menu {
@@ -167,12 +173,12 @@
           transform: translateX(100%);
           opacity: 0;
           cursor: pointer;
-          transition: all .5s ease-in-out;
+          transition: all 0.5s ease-in-out;
 
-          &.delay{
+          &.delay {
             @for $i from 0 through 10 {
               &--#{$i} {
-                transition-delay: 0.10s * $i;
+                transition-delay: 0.1s * $i;
               }
             }
           }
@@ -198,8 +204,8 @@
 
     &.open {
       li {
-        transform: translateX(0)!important;
-        opacity: 1!important;
+        transform: translateX(0) !important;
+        opacity: 1 !important;
       }
     }
   }
@@ -216,8 +222,8 @@
 
 @media only screen and (max-width: $screen-md) {
   .navbar__button {
-      top: 15px;
-      right: 1em;
+    top: 15px;
+    right: 1em;
   }
 }
 
@@ -229,19 +235,18 @@
 
     &__burger {
       height: 2px;
-      
-      &::after, &::before {
-        width: 20px!important;
+
+      &::after,
+      &::before {
+        width: 20px !important;
         height: 2px;
         transform: translateY(8px);
-      } 
+      }
       &::after {
-        width: 20px!important;
+        width: 20px !important;
         height: 2px;
         transform: translateY(-8px);
-      }        
+      }
     }
   }
 }
-
-

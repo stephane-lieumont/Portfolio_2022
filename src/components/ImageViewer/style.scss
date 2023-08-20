@@ -1,5 +1,5 @@
-@import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
+@import "../../sass/themes/colors";
+@import "../../sass/abstract/variables";
 
 .image-viewer {
   position: fixed;
@@ -11,7 +11,7 @@
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 10;
   padding: 2rem;
 
@@ -25,7 +25,7 @@
       &__container {
         opacity: 0;
         transform: none;
-                
+
         &.loaded {
           animation-name: image-viewer-container-appear;
           animation-timing-function: ease-out;
@@ -58,16 +58,16 @@
     justify-content: center;
 
     &--hide.loaded {
-      animation-name: image-viewer-container-disappear!important;
-      animation-timing-function: ease-in!important;
-      animation-fill-mode: both!important;
+      animation-name: image-viewer-container-disappear !important;
+      animation-timing-function: ease-in !important;
+      animation-fill-mode: both !important;
     }
 
     &::before {
       position: absolute;
       top: 0;
       left: 0;
-      content:'';
+      content: "";
       height: 100%;
       width: 100%;
       background-image: linear-gradient(315deg, rgba(#000, 0.3), rgba(#000, 0));
@@ -80,8 +80,8 @@
       flex-direction: column;
       bottom: 30px;
       left: 30px;
-      background-image: inherit!important;
-      margin:0!important;
+      background-image: inherit !important;
+      margin: 0 !important;
       z-index: 2;
 
       span {
@@ -100,21 +100,21 @@
     }
 
     &__close {
-      position:absolute;
-      top:20px;
+      position: absolute;
+      top: 20px;
       right: 20px;
       border: 1px solid;
       height: 14px;
       width: 14px;
       padding: 3px;
       border-radius: 50%;
-      color:white;
+      color: white;
       cursor: pointer;
-      transition: color .15s ease-in-out;
+      transition: color 0.15s ease-in-out;
       z-index: 2;
-    
+
       &:hover {
-        color: $primary
+        color: $primary;
       }
     }
 
@@ -188,22 +188,22 @@
 
 @media only screen and (max-width: $screen-sm) {
   .image-viewer {
-    h2, h2 span {
-      font-size: 0.8rem!important;
-      bottom:10px;
+    h2,
+    h2 span {
+      font-size: 0.8rem !important;
+      bottom: 10px;
       left: 20px;
     }
 
     .icon-custom__list {
       gap: 5px;
-      grid-gap:5px;
+      grid-gap: 5px;
       bottom: 20px;
       right: 20px;
 
       i {
-        font-size: 20px!important;
-      }      
+        font-size: 20px !important;
+      }
     }
   }
 }
-

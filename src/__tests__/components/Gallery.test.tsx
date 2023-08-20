@@ -1,62 +1,62 @@
-import { fireEvent, render, screen } from '~/config/config.jest'
-import { PortfolioImagesData } from '~/datas/3d.projects.data';
-import Gallery from '~/components/Gallery';
+/* eslint-disable react/react-in-jsx-scope */
+import Gallery from "~/components/Gallery";
+import { fireEvent, render, screen } from "~/config/config.jest";
+import { PortfolioImagesData } from "~/datas/3d.projects.data";
 
-jest.mock('~/datas/3d.projects.data', () => jest.requireActual('~/__mocks__/datas/3d.projects.data'))
+jest.mock("~/datas/3d.projects.data", () =>
+  jest.requireActual("~/__mocks__/datas/3d.projects.data")
+);
 
-describe('When call Component Gallery', () => {
-  test('Should render Gallery default component', () => {  
-    
-    
-    render(<Gallery />)
+describe("When call Component Gallery", () => {
+  test("Should render Gallery default component", () => {
+    render(<Gallery />);
 
-    const component = screen.getByTestId('gallery')
-    expect(component).toBeInTheDocument()
+    const component = screen.getByTestId("gallery");
+    expect(component).toBeInTheDocument();
   });
 
-  test('Should load images of Gallery component', async () => {     
-    render(<Gallery portfolioData={PortfolioImagesData} />)
+  test("Should load images of Gallery component", async () => {
+    render(<Gallery portfolioData={PortfolioImagesData} />);
 
-    const handleLoadImageTest = jest.fn() 
-    const images = screen.getAllByRole('img');
+    const handleLoadImageTest = jest.fn();
+    const images = screen.getAllByRole("img");
 
-    images.forEach(image => {
-      image.addEventListener('load', handleLoadImageTest)   
-    })
+    images.forEach((image) => {
+      image.addEventListener("load", handleLoadImageTest);
+    });
 
-    images.forEach(image => {  
+    images.forEach((image) => {
       fireEvent.load(image);
-    })
+    });
 
-    await new Promise((r) => setTimeout(r, 100))   
+    await new Promise((r) => setTimeout(r, 100));
 
-
-    expect(handleLoadImageTest).toBeCalledTimes(PortfolioImagesData.length)
+    expect(handleLoadImageTest).toBeCalledTimes(PortfolioImagesData.length);
   });
 
-  test('Should click on first image with callback of Gallery component', () => {
-    const callback = jest.fn()  
+  test("Should click on first image with callback of Gallery component", () => {
+    const callback = jest.fn();
 
-    render(<Gallery portfolioData={PortfolioImagesData} onClick={callback} />)
+    render(<Gallery portfolioData={PortfolioImagesData} onClick={callback} />);
 
-    const handleClickImage = jest.fn() 
-    const image = screen.getAllByRole('img')[0];
+    const handleClickImage = jest.fn();
+    const image = screen.getAllByRole("img")[0];
 
-    image.addEventListener('click', handleClickImage)
-    fireEvent.click(image)
+    image.addEventListener("click", handleClickImage);
+    fireEvent.click(image);
 
-    expect(handleClickImage).toBeCalled()
+    expect(handleClickImage).toBeCalled();
   });
 
-  test('Should click on first image without callback of Gallery component', () => {
-    render(<Gallery portfolioData={PortfolioImagesData}/>)
+  test("Should click on first image without callback of Gallery component", () => {
+    render(<Gallery portfolioData={PortfolioImagesData} />);
 
-    const handleClickImage = jest.fn() 
-    const image = screen.getAllByRole('img')[0];
+    const handleClickImage = jest.fn();
+    const image = screen.getAllByRole("img")[0];
 
-    image.addEventListener('click', handleClickImage)
-    fireEvent.click(image)
+    image.addEventListener("click", handleClickImage);
+    fireEvent.click(image);
 
-    expect(handleClickImage).toBeCalled()
+    expect(handleClickImage).toBeCalled();
   });
-})
+});

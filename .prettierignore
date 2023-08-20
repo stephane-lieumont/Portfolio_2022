@@ -1,0 +1,6 @@
+node_modules
+/build
+/nginx
+/public
+src/__mocks__/
+src/assets/

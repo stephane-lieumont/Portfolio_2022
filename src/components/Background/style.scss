@@ -1,4 +1,4 @@
-@import '../../sass/themes/colors';
+@import "../../sass/themes/colors";
 
 .background-svg {
   position: absolute;
@@ -10,7 +10,9 @@
   overflow: hidden;
   pointer-events: none;
 
-  .triangle, .repeat-point, .circle-double {
+  .triangle,
+  .repeat-point,
+  .circle-double {
     position: absolute;
     animation-name: svg-appear;
     animation-duration: 650ms;

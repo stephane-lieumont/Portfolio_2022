@@ -1,4 +1,4 @@
-@import '../../sass/themes/colors';
+@import "../../sass/themes/colors";
 
 .error {
   &__container {
@@ -17,7 +17,7 @@
         opacity: 0.7;
       }
 
-      p{
+      p {
         font-weight: 700;
         color: $grey-shade200;
       }

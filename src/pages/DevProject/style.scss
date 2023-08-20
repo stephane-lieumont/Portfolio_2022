@@ -1,5 +1,5 @@
-@import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
+@import "../../sass/themes/colors";
+@import "../../sass/abstract/variables";
 
 .project {
   &__title {
@@ -10,7 +10,7 @@
     margin-bottom: 3em;
 
     h2 {
-      margin-bottom:0;
+      margin-bottom: 0;
       margin-left: 20px;
     }
   }
@@ -22,7 +22,7 @@
     align-content: center;
 
     img {
-      display:block;
+      display: block;
       width: 100%;
     }
   }
@@ -44,7 +44,7 @@
     &__demo {
       display: flex;
       justify-content: center;
-      margin:2em;
+      margin: 2em;
 
       .button {
         display: inline-block;
@@ -54,7 +54,7 @@
 
     .icon-custom {
       &__container {
-        color:$primary!important;
+        color: $primary !important;
       }
     }
   }
@@ -63,7 +63,7 @@
 @media only screen and (max-width: $screen-lg) {
   .project {
     &__release {
-      text-align: center!important;
+      text-align: center !important;
 
       &__container {
         flex-direction: column;
@@ -73,7 +73,7 @@
 
       &__content {
         width: 100%;
-        text-align: left!important;
+        text-align: left !important;
       }
     }
   }

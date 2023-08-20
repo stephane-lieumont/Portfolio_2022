@@ -1,4 +1,4 @@
-@import '../../sass/themes/colors';
+@import "../../sass/themes/colors";
 
 .input {
   position: relative;
@@ -22,22 +22,24 @@
   }
 
   input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
-  input:-webkit-autofill:focus, 
-  input:-webkit-autofill:active{
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
     background-clip: text !important;
     -webkit-text-fill-color: $secondary !important;
   }
 
-  label, input, textarea {
+  label,
+  input,
+  textarea {
     padding: 5px 10px;
     line-height: 20px;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif!important;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
     flex: 1 0 auto;
   }
 
   &__content {
-    border: 2px  solid $grey-shade400;
+    border: 2px solid $grey-shade400;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -52,18 +54,19 @@
       line-height: 18px;
     }
 
-    input, textarea {
-      display:block;
+    input,
+    textarea {
+      display: block;
       width: 100%;
       height: 100%;
       outline: none;
       border: none;
       caret-color: $secondary;
-      transition: border .3s ease-in-out;
-      z-index: 2;    
-      border-radius: 5px;  
+      transition: border 0.3s ease-in-out;
+      z-index: 2;
+      border-radius: 5px;
       background: rgba(white, 0.5);
-      color: $secondary!important;
+      color: $secondary !important;
     }
 
     textarea {
@@ -80,12 +83,12 @@
 
   label {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     opacity: 0.5;
     line-height: 22px;
     transform-origin: center left;
-    transition: transform .15s ease-in-out;
+    transition: transform 0.15s ease-in-out;
 
     &.indent {
       left: 25px;
@@ -94,31 +97,32 @@
 
   &__error-message {
     position: absolute;
-    right:10px;
+    right: 10px;
     bottom: 6px;
     font-size: 1rem;
-    color: $danger!important;
-    animation: error .25s ease-in both;
+    color: $danger !important;
+    animation: error 0.25s ease-in both;
     text-align: right;
-    padding: 0!important;
-    margin: 0!important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  &--focus, &--active {
-    label {  
-      font-size: 1.3rem!important;
-      opacity: 1;    
+  &--focus,
+  &--active {
+    label {
+      font-size: 1.3rem !important;
+      opacity: 1;
       transform: translate(-5px, -85%) scale(0.85);
     }
   }
 
   &--focus {
-    label { 
+    label {
       color: $primary;
     }
 
     .input__content {
-      border: 2px  solid $primary;
+      border: 2px solid $primary;
 
       i {
         color: $primary;
@@ -127,19 +131,23 @@
   }
 
   &--error {
-    label, input, textarea, i {      
-      color: $danger!important;
+    label,
+    input,
+    textarea,
+    i {
+      color: $danger !important;
     }
 
     .input__content {
-      border: 2px  solid rgba($danger, 0.5);
+      border: 2px solid rgba($danger, 0.5);
     }
   }
 
-  &--read {     
-    .input__content, input { 
-      cursor: pointer;      
-    } 
+  &--read {
+    .input__content,
+    input {
+      cursor: pointer;
+    }
   }
 
   @keyframes error {
@@ -147,24 +155,22 @@
       opacity: 0;
       transform: translate(3px, 20px);
     }
-  
+
     25% {
       transform: translate(-3px, 20px);
     }
-  
+
     50% {
       transform: translate(3px, 20px);
     }
-  
+
     75% {
       transform: translate(-3px, 20px);
     }
-  
+
     100% {
       opacity: 1;
       transform: translate(0px, 20px);
     }
-  }  
+  }
 }
-
-

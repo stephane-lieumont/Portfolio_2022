@@ -42,10 +42,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Environment variables
 
-|Variable|Required|Type|Default|
-|:---|:---:|:---:|:---:|
-|REACT_APP_EMAIL_SERVICE|```true```|```String```|```N/A```|
-|REACT_APP_CAPTCHA_SITE_KEY|```true```|```String```|```N/A```|
+| Variable                   | Required |   Type   | Default |
+| :------------------------- | :------: | :------: | :-----: |
+| REACT_APP_EMAIL_SERVICE    |  `true`  | `String` |  `N/A`  |
+| REACT_APP_CAPTCHA_SITE_KEY |  `true`  | `String` |  `N/A`  |
 
 ## Learn More
 

@@ -1,5 +1,5 @@
-@import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
+@import "../../sass/themes/colors";
+@import "../../sass/abstract/variables";
 
 .homepage {
   display: flex;
@@ -8,7 +8,8 @@
   min-height: 100vh;
   overflow: hidden;
 
-  &__leftside, &__rigthside {
+  &__leftside,
+  &__rigthside {
     flex: 1 0 50%;
     position: relative;
     overflow: hidden;
@@ -19,17 +20,17 @@
     flex-direction: column;
     padding-right: 2em;
     align-items: flex-start;
-    transition: flex-basis .45s cubic-bezier(0,.43,.16,1);
+    transition: flex-basis 0.45s cubic-bezier(0, 0.43, 0.16, 1);
 
     blockquote {
-      color: $grey-shade200!important;
+      color: $grey-shade200 !important;
       font-size: 1.2rem;
       z-index: 1;
-    
+
       .quote {
         opacity: 0.3;
       }
-      
+
       small {
         font-weight: 700;
         font-size: 0.8em;
@@ -52,7 +53,7 @@
         margin-bottom: 0.8em;
 
         span {
-          white-space:nowrap;
+          white-space: nowrap;
         }
       }
 
@@ -69,13 +70,13 @@
 
   &__rigthside {
     position: relative;
-    transition: opacity .45s ease-in;
+    transition: opacity 0.45s ease-in;
     justify-content: flex-start;
     margin: 0;
     padding: 0;
 
     &__demoreal {
-      position:relative;
+      position: relative;
       margin-top: 2rem;
       width: 100%;
       height: auto;
@@ -88,7 +89,7 @@
         height: 7%;
         width: 100%;
         background: white;
-        background: linear-gradient(180deg, rgba($primary,1) 10%, rgba($primary,0) 100%);
+        background: linear-gradient(180deg, rgba($primary, 1) 10%, rgba($primary, 0) 100%);
         z-index: 2;
       }
 
@@ -99,12 +100,12 @@
         height: 15%;
         width: 100%;
         background: white;
-        background: linear-gradient(0deg, rgba($primary,1) 10%, rgba($primary,0) 100%);
+        background: linear-gradient(0deg, rgba($primary, 1) 10%, rgba($primary, 0) 100%);
         z-index: 2;
       }
 
       video {
-        width: 100%;        
+        width: 100%;
         object-fit: cover;
         height: auto;
       }
@@ -120,14 +121,14 @@
       max-height: 100%;
       transform: translateX(0);
       opacity: 1;
-      transition: all 1s cubic-bezier(0,.43,.16,1)!important;
+      transition: all 1s cubic-bezier(0, 0.43, 0.16, 1) !important;
     }
   }
 
   &--loading {
     .homepage {
       &__leftside {
-        flex-basis:100%!important;
+        flex-basis: 100% !important;
       }
 
       &__rigthside {
@@ -167,10 +168,10 @@
 
     &__rigthside {
       flex: 1 0 100%;
-      padding: 0!important;
+      padding: 0 !important;
 
       &__demoreal {
-        margin:0;
+        margin: 0;
         .vignet-up {
           display: none;
         }
