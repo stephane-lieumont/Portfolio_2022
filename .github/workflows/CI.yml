@@ -1,24 +1,25 @@
-name: Docker Image CI
+name: CI
 
 on:
-  push:
-    branches: ["main"]
+  workflow_call:
+    secrets:
+      GH_TOKEN:
+        required: true
   pull_request:
     branches: ["main"]
 
 jobs:
-  test:
+  ci:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
-        run: npm install
-      - name: Run test
-        run: npm test
+        run: yarn
+      - name: Run checks
+        run: yarn ci
 
-  build:
-    needs: [test]
+  build-production:
+    needs: ["ci"]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -34,13 +35,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-        with:
-          images: ghcr.io/stephane-lieumont/portfolio
-
+   
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
