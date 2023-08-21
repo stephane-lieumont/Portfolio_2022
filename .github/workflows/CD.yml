@@ -3,7 +3,7 @@ name: Deploy / docker images
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 jobs:
   workflow-call:
