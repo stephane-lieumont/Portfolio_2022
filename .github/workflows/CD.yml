@@ -11,7 +11,7 @@ jobs:
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy-demo:
+  deploy:
     needs: [workflow-call]
     runs-on: ubuntu-latest
 

@@ -47,4 +47,3 @@ jobs:
             "REACT_APP_CAPTCHA_SITE_KEY=${{ secrets.REACT_APP_CAPTCHA_SITE_KEY }}"
           push: true
           tags: ghcr.io/stephane-lieumont/portfolio:latest
-          labels: ${{ steps.meta.outputs.labels }}
