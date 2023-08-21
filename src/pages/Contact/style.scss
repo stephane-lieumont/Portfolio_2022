@@ -1,11 +1,11 @@
-@import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
+@import "../../sass/themes/colors";
+@import "../../sass/abstract/variables";
 
 .contact {
   .page__content {
     position: inherit;
     max-width: $screen-xl;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
@@ -44,7 +44,8 @@
     }
   }
 
-  &__card, &__cv {
+  &__card,
+  &__cv {
     position: relative;
     justify-self: flex-end;
     align-self: center;
@@ -61,12 +62,12 @@
   }
 }
 
-.contact-modal { 
+.contact-modal {
   width: 50%;
   height: 100%;
 
   .grecaptcha-badge {
-    display: none!important;
+    display: none !important;
   }
 
   .contact {
@@ -85,7 +86,7 @@
 }
 
 @media only screen and (max-width: $screen-lg) {
-  .contact  {
+  .contact {
     &__content {
       width: 100%;
       margin: 0 auto;

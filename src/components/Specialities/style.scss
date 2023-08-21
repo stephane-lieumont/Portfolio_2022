@@ -1,5 +1,5 @@
-@import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
+@import "../../sass/themes/colors";
+@import "../../sass/abstract/variables";
 
 .specialities {
   display: flex;
@@ -48,14 +48,14 @@
       @for $i from 0 through 50 {
         &--#{$i} {
           img {
-            animation: speciality-bubble-appear .4s ease-in both;
+            animation: speciality-bubble-appear 0.4s ease-in both;
             animation-delay: (150ms * $i) + 300ms;
-          } 
-          
+          }
+
           p {
-            animation: speciality-title-appear .2s ease-out both;
+            animation: speciality-title-appear 0.2s ease-out both;
             animation-delay: (150ms * $i) + 300ms;
-          } 
+          }
         }
       }
     }
@@ -68,7 +68,7 @@
     transform: scale(0);
   }
   60% {
-    transform: scale(1.1);    
+    transform: scale(1.1);
   }
   85% {
     transform: scale(0.9);
@@ -88,18 +88,17 @@
 
   100% {
     transform: translateY(0px);
-    opacity: 1; 
+    opacity: 1;
   }
 }
 
 @media only screen and (max-width: $screen-sm) {
-  .specialities  {
+  .specialities {
     &__item {
       &__picture {
         max-width: 70px;
         max-height: 70px;
       }
-      
     }
   }
 }

@@ -1,28 +1,28 @@
-@import '../../sass/abstract/variables';
+@import "../../sass/abstract/variables";
 
 .social-sidebar {
   position: fixed;
-  bottom:9em;
-  right:2em;
+  bottom: 9em;
+  right: 2em;
   z-index: 3;
   opacity: 1;
-  transition: opacity .3s ease-in-out;
-  animation: display-social-sidebar .3s ease-in both;
+  transition: opacity 0.3s ease-in-out;
+  animation: display-social-sidebar 0.3s ease-in both;
 
   &--hidden {
     opacity: 0;
   }
 
   ul {
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 10px;
     grid-gap: 10px;
 
     li {
       opacity: 0.2;
-      transition: all .17s ease-in-out;
-      
+      transition: all 0.17s ease-in-out;
+
       &:hover {
         opacity: 1;
         transform: scale(1.1);
@@ -42,12 +42,12 @@
 
 @media only screen and (max-width: $screen-md) {
   .social-sidebar {
-    right:2rem;
+    right: 2rem;
 
     li {
       a {
-        height: 40px!important;
-        width: 40px!important;
+        height: 40px !important;
+        width: 40px !important;
       }
     }
   }

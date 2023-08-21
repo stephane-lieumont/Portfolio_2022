@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  workflow_call:
+    secrets:
+      GH_TOKEN:
+        required: true
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn
+      - name: Run checks
+        run: yarn ci
+
+  build-production:
+    needs: ["ci"]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          build-args: |
+            "REACT_APP_EMAIL_SERVICE=${{ secrets.REACT_APP_EMAIL_SERVICE }}"
+            "REACT_APP_CAPTCHA_SITE_KEY=${{ secrets.REACT_APP_CAPTCHA_SITE_KEY }}"
+          push: true
+          tags: ghcr.io/stephane-lieumont/portfolio:latest
+          labels: ${{ steps.meta.outputs.labels }}

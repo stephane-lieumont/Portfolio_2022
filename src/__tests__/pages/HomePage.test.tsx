@@ -1,63 +1,62 @@
-import { fireEvent, render, screen } from '~/config/config.jest'
-import { Provider } from 'react-redux';
-import { MemoryRouter } from 'react-router-dom';
-import HomePage from '~/pages/HomePage';
-import store from '~/store/main.store';
+/* eslint-disable react/react-in-jsx-scope */
+import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
+import { fireEvent, render, screen } from "~/config/config.jest";
+import HomePage from "~/pages/HomePage";
+import store from "~/store/main.store";
 
+window.scrollTo = jest.fn();
 
-window.scrollTo = jest.fn()
-
-describe('When call Home Page', () => {
-  
-  test('Should render Home Page default', () => {      
+describe("When call Home Page", () => {
+  test("Should render Home Page default", () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <HomePage title='test' />
+          <HomePage title="test" />
         </MemoryRouter>
       </Provider>
-    )      
+    );
 
-    const component = screen.getByTestId('homepage')
+    const component = screen.getByTestId("homepage");
 
-    expect(component).toBeInTheDocument()
-  });  
-  test('Should navigate with buttons', () => { 
-    const handleClick = jest.fn()
-    
+    expect(component).toBeInTheDocument();
+  });
+  test("Should navigate with buttons", () => {
+    const handleClick = jest.fn();
+
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <HomePage title='test' />
+          <HomePage title="test" />
         </MemoryRouter>
       </Provider>
-    )      
+    );
 
-    const buttons = screen.getAllByTestId('button')
+    const buttons = screen.getAllByTestId("button");
 
-    buttons.forEach( item => {
-      item.addEventListener('click', handleClick)
-      fireEvent.click(item)
-    })
+    buttons.forEach((item) => {
+      item.addEventListener("click", handleClick);
+      fireEvent.click(item);
+    });
 
-    expect(handleClick).toBeCalledTimes(buttons.length)
-  });  
-  test('Should load main image', () => { 
-    const handleLoad = jest.fn()
-    
+    expect(handleClick).toBeCalledTimes(buttons.length);
+  });
+  test("Should load main image", () => {
+    const handleLoad = jest.fn();
+
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <HomePage title='test' />
+          <HomePage title="test" />
         </MemoryRouter>
       </Provider>
-    )      
+    );
 
-    const img = screen.getAllByRole('img')[0]
-    img.addEventListener('load', handleLoad)
+    const img = screen.getAllByRole("img")[0];
+    img.addEventListener("load", handleLoad);
 
-    fireEvent.load(img)
+    fireEvent.load(img);
 
-    expect(handleLoad).toBeCalled()
-  }); 
-})
+    expect(handleLoad).toBeCalled();
+  });
+});

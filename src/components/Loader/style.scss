@@ -1,4 +1,4 @@
-@import '../../sass/themes/colors';
+@import "../../sass/themes/colors";
 
 $s: 15px; //size
 $m: 3px; //margin
@@ -14,7 +14,7 @@ $color: $primary;
 
 .loader {
   z-index: 1;
-  
+
   .lightgreen,
   .darkgreen {
     margin: auto;
@@ -27,27 +27,39 @@ $color: $primary;
     height: 40px;
     border-radius: 50%;
   }
-  
+
   .lightgreen {
     z-index: 999;
     background-color: rgba($color: $orange-shade200, $alpha: 0.8);
     animation: hide1 2s ease infinite;
   }
-  
+
   .darkgreen {
     background-color: rgba($color: $orange-shade300, $alpha: 0.4);
     animation: hide2 2s ease infinite;
   }
-  
+
   @keyframes hide1 {
-    0% {transform: scale(1)}
-    50% {transform: scale(0)}
-    100% {transform: scale(1)}
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
-  
+
   @keyframes hide2 {
-    0% {transform: scale(0)}
-    50% {transform: scale(1)}
-    100% {transform: scale(0)}
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
   }
 }

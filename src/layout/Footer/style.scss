@@ -1,5 +1,5 @@
-@import '../../sass/abstract/variables';
-@import '../../sass/themes/colors';
+@import "../../sass/abstract/variables";
+@import "../../sass/themes/colors";
 
 .footer {
   position: relative;
@@ -10,12 +10,12 @@
   height: 100px;
   width: 100%;
   background-color: $grey;
-  color:white;
+  color: white;
   font-size: 0.75em;
-  animation: display-footer .3s ease-in-out both;
-  
+  animation: display-footer 0.3s ease-in-out both;
+
   p {
-    margin: 0!important;
+    margin: 0 !important;
     z-index: 1;
     padding: 0 30px;
     text-align: center;

@@ -1,4 +1,4 @@
-@import '../../sass/abstract/variables';
+@import "../../sass/abstract/variables";
 
 .gallery {
   position: relative;
@@ -6,8 +6,9 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
   z-index: 1;
-  
-  &__grid, &__fakegrid {
+
+  &__grid,
+  &__fakegrid {
     position: relative;
     height: 100%;
     width: 100%;
@@ -15,11 +16,12 @@
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-auto-rows: 240px;
     grid-gap: 3px;
-    gap:3px;
-    grid-auto-flow:dense;
+    gap: 3px;
+    grid-auto-flow: dense;
     z-index: 2;
 
-    &__item, &__fakeitem {
+    &__item,
+    &__fakeitem {
       position: relative;
       overflow: hidden;
       cursor: pointer;
@@ -33,7 +35,9 @@
           opacity: 1;
         }
 
-        h4, p, ul {
+        h4,
+        p,
+        ul {
           transform: translateY(0);
         }
       }
@@ -48,7 +52,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0, 0, 0, 0.6);
         z-index: 10;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
@@ -61,14 +65,14 @@
           font-size: 1em;
           font-weight: 600;
           transform: translateY(30px);
-          transition: transform .3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
           margin: 0;
         }
 
         p {
           font-size: 0.8em;
           transform: translateY(30px);
-          transition: transform .3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
           margin: 0;
         }
 
@@ -77,18 +81,18 @@
           justify-content: center;
           align-items: center;
           transform: translateY(80px);
-          transition: transform .3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
         }
       }
 
       &__reveal {
-        opacity: 0!important;
-        transition: all .45s ease-out;
+        opacity: 0 !important;
+        transition: all 0.45s ease-out;
         transform: translateY(15px) scale(1.2);
-        
+
         @for $i from 0 through 50 {
           &--#{$i} {
-            opacity: 1!important;
+            opacity: 1 !important;
             transition-delay: 0.15s * $i;
             transform: translateX(0) scale(1);
           }
@@ -115,7 +119,7 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: all 0.3s ease!important;
+        transition: all 0.3s ease !important;
 
         &.loading {
           transform: scale(1.2);
@@ -124,7 +128,7 @@
     }
 
     &__fakeitem {
-      background-color: rgba(white, 0.05)!important;        
+      background-color: rgba(white, 0.05) !important;
       height: 100%;
       width: 100%;
     }
@@ -132,7 +136,7 @@
 
   &__fakegrid {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     margin: 0;
     pointer-events: none;
@@ -164,12 +168,12 @@
           grid-row: span 1;
           grid-column: span 1;
         }
-  
+
         &--double-row {
           grid-row: span 1;
           grid-column: span 1;
         }
-  
+
         &--double-column {
           grid-row: span 1;
           grid-column: span 1;

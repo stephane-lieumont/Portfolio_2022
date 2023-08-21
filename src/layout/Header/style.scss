@@ -1,5 +1,5 @@
-@import '../../sass/themes/colors';
-@import '../../sass/abstract/variables';
+@import "../../sass/themes/colors";
+@import "../../sass/abstract/variables";
 
 .header {
   position: fixed;
@@ -11,10 +11,11 @@
   z-index: 3;
 
   &--eventnone {
-    pointer-events: none!important;
+    pointer-events: none !important;
 
-    .navbar__button, .navbar__slider {
-      pointer-events: all!important;
+    .navbar__button,
+    .navbar__slider {
+      pointer-events: all !important;
     }
   }
 
@@ -25,13 +26,13 @@
   &__main {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
     justify-content: space-between;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     .navigation {
       opacity: 1;
-      transition: all .3s ease-in-out .5s;
+      transition: all 0.3s ease-in-out 0.5s;
     }
 
     &--hidden {
@@ -42,10 +43,10 @@
         opacity: 0;
       }
     }
-      
+
     h1 {
       flex: 1 0 50%;
-      animation: display-title .5s ease-in;
+      animation: display-title 0.5s ease-in;
       margin-bottom: 0;
 
       .head-title {
@@ -57,36 +58,36 @@
           font-size: 1.4rem;
           display: inline-block;
           opacity: 0;
-          animation: title-append .25s ease-out both 0.3s;        
-          
+          animation: title-append 0.25s ease-out both 0.3s;
+
           &::first-letter {
-            color: $primary
-          } 
+            color: $primary;
+          }
         }
 
         &::first-letter {
-          color: $primary
+          color: $primary;
         }
       }
-  
+
       .head-subtitle {
         display: flex;
         flex-direction: row;
         gap: 5px;
         grid-gap: 5px;
-        cursor: pointer; 
+        cursor: pointer;
         font-weight: 500;
 
         &--primary {
           color: $primary;
-          font-weight: 600; 
+          font-weight: 600;
         }
       }
-  
+
       display: flex;
       flex-direction: column;
-    } 
-  
+    }
+
     .navigation {
       flex: 1 0 50%;
       max-width: 50%;
@@ -95,14 +96,14 @@
       align-items: center;
       margin: 0;
       padding: 0 60px;
-      animation: display-navigation .3s ease-in-out .5s both;
+      animation: display-navigation 0.3s ease-in-out 0.5s both;
 
       &__buttons {
         flex: 1 0 auto;
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
-        flex-wrap: nowrap;      
+        flex-wrap: nowrap;
         align-items: center;
         gap: 2rem;
         grid-gap: 2rem;
@@ -118,7 +119,7 @@
   }
 
   60% {
-    opacity: .3;
+    opacity: 0.3;
     transform: scale(1.05);
   }
 
@@ -142,7 +143,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -169,20 +170,20 @@
     height: 70px;
     padding: 1.5rem;
     padding-bottom: 0;
-    
+
     h1 {
       .head-title {
-        font-size: 1.2rem!important;
+        font-size: 1.2rem !important;
 
         &__append {
-          font-size: 1.2rem!important;
+          font-size: 1.2rem !important;
         }
       }
-      line-height: 2.5rem!important;
+      line-height: 2.5rem !important;
 
       span {
-        font-size: 1.8rem!important;
-      }      
+        font-size: 1.8rem !important;
+      }
     }
   }
 }

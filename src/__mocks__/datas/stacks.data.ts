@@ -2,33 +2,33 @@ import { StackItem, StackType } from "~/interfaces/data.intf";
 
 export const StackList: StackItem[] = [
   {
-    toString:'3DSmax',
+    toString: "3DSmax",
     type: StackType.max,
-    iconClass: 'icon-custom--3dsmax'
+    iconClass: "icon-custom--3dsmax",
   },
   {
-    toString:'Vray',
+    toString: "Vray",
     type: StackType.vray,
-    iconClass: 'icon-custom--vray'
+    iconClass: "icon-custom--vray",
   },
   {
-    toString:'Substance',
+    toString: "Substance",
     type: StackType.substance,
-    iconClass: 'icon-custom--substance-painter'
+    iconClass: "icon-custom--substance-painter",
   },
   {
-    toString:'ZBrush',
+    toString: "ZBrush",
     type: StackType.zbrush,
-    iconClass: 'icon-custom--zbrush'
+    iconClass: "icon-custom--zbrush",
   },
   {
-    toString:'Illustrator',
+    toString: "Illustrator",
     type: StackType.illustrator,
-    iconClass: 'icon-custom--illustrator'
+    iconClass: "icon-custom--illustrator",
   },
   {
-    toString:'Photoshop',
+    toString: "Photoshop",
     type: StackType.photoshop,
-    iconClass: 'icon-custom--photoshop'
-  }
-]
+    iconClass: "icon-custom--photoshop",
+  },
+];

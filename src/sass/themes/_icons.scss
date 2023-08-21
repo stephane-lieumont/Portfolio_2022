@@ -1,10 +1,12 @@
 @font-face {
-  font-family: 'icons';
-  src: local('icons'), url('../../assets/fonts/icons.woff') format('woff');
+  font-family: "icons";
+  src:
+    local("icons"),
+    url("../../assets/fonts/icons.woff") format("woff");
 }
 
 .fa-icon {
-  margin-right: 5px!important;
+  margin-right: 5px !important;
 }
 
 .fa-close-btn {
@@ -13,37 +15,37 @@
   width: 14px;
   padding: 3px;
   border-radius: 50%;
-  color:$secondary;
+  color: $secondary;
   cursor: pointer;
-  transition: color .15s ease-in-out;
+  transition: color 0.15s ease-in-out;
 
   &:hover {
-    color: $primary
+    color: $primary;
   }
 }
 
 .fa-return-btn {
-  color:$orange-shade300;
-  transition: color .15s ease-in-out;
+  color: $orange-shade300;
+  transition: color 0.15s ease-in-out;
   cursor: pointer;
   font-size: 24px;
 
   &:hover {
-    color: $primary
+    color: $primary;
   }
 }
 
 .icon-custom {
-  display:block;
-  font-size:2em;
-  padding:3px;
+  display: block;
+  font-size: 2em;
+  padding: 3px;
   position: relative;
 
   span {
     position: absolute;
     bottom: 50%;
     left: 50%;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.2rem;
     visibility: hidden;
     transform: translate(-50%, 50%);
@@ -57,12 +59,12 @@
 
   &:hover {
     span {
-      transition: all .25s ease-in-out .1s;
+      transition: all 0.25s ease-in-out 0.1s;
       opacity: 1;
-      transform: translate(-50%, -2em)!important;
+      transform: translate(-50%, -2em) !important;
       visibility: visible;
     }
-  } 
+  }
 
   &__list {
     text-align: center;
@@ -75,20 +77,20 @@
     grid-gap: 10px;
   }
 
-  &__container {    
-    font-family: 'icons'!important;
+  &__container {
+    font-family: "icons" !important;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
     font-size: 35px;
-    vertical-align:middle;
+    vertical-align: middle;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  &--cv::before {    
+  &--cv::before {
     content: "\e912";
   }
   &--portfolio::before {

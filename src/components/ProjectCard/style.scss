@@ -1,4 +1,4 @@
-@import '../../sass/themes/colors';
+@import "../../sass/themes/colors";
 
 .project-card-container {
   display: block;
@@ -27,7 +27,7 @@
 .project-card {
   position: relative;
   height: 100%;
-  width: 100%;   
+  width: 100%;
   overflow: hidden;
   background-color: white;
   display: flex;
@@ -49,13 +49,12 @@
     }
   }
 
-
   &__picture {
     flex-grow: 1;
     width: 100%;
     background: $grey-shade400;
     overflow: hidden;
-    
+
     img {
       width: 100%;
       min-height: 100%;
@@ -65,14 +64,14 @@
 
   &::before {
     position: absolute;
-    top:0;
-    left:0;
-    content:'';
+    top: 0;
+    left: 0;
+    content: "";
     height: 100%;
     width: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,0.9) 15%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0) 100%);
     opacity: 0;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
 
   &__content {
@@ -84,29 +83,29 @@
     justify-content: flex-start;
     width: 100%;
     align-items: flex-start;
-    padding:1em 2em;
-    transition: all .15s ease-in-out;
+    padding: 1em 2em;
+    transition: all 0.15s ease-in-out;
     opacity: 0;
     transform: translateY(50%);
     z-index: 2;
 
     &__hashtags {
       display: flex;
-      flex-wrap: wrap;      
-      color:$orange-shade200;
+      flex-wrap: wrap;
+      color: $orange-shade200;
       font-weight: 700;
       margin-bottom: 0.3em;
-      gap: 10px!important;
-      grid-gap: 10px!important;
+      gap: 10px !important;
+      grid-gap: 10px !important;
 
       li::before {
-        content: '#';
+        content: "#";
       }
     }
 
     &__title {
-      color: white!important;
-      margin-bottom: 5px!important;
+      color: white !important;
+      margin-bottom: 5px !important;
       width: 100%;
 
       span {
