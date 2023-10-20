@@ -22,7 +22,7 @@ const SocialSideBar: React.FunctionComponent<SocialSideBarProps> = ({
       <ul>
         <li onMouseEnter={() => setHoverGithub(true)} onMouseLeave={() => setHoverGithub(false)}>
           <SocialIcon
-            url="https://github.com/StephaneLi"
+            url="https://github.com/stephane-lieumont"
             target={"_blank"}
             bgColor={hoverGithub ? "black" : ligthen ? "white" : Colors.secondary}
             fgColor={hoverGithub ? "white" : "transparent"}
