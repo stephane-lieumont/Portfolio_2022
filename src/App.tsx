@@ -43,7 +43,7 @@ const App: React.FunctionComponent = () => {
     if (!state) setHeaderTitle(route?.headerTitle);
   }, [location, state]);
 
-  console.log(process.env.REACT_APP_CAPTCHA_SITE_KEY)
+  console.log(process.env.REACT_APP_CAPTCHA_SITE_KEY);
 
   // Specific theme layout change for responsive design
   useEffect(() => {
