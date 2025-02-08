@@ -17,44 +17,39 @@ export const ProjectsDevData: ProjectDevData[] = [
     id: "1",
     title: "Case Tes Potes - Mobile",
     hashName: "case-tes-potes-application-mobile-2022",
-    description: `Case Tes Potes veut casser les codes des sites de rencontre en mettant 
-    l'amitié au cœur de l'amour pour faciliter les rencontres et accompagner les célibataires, 
-    de la recherche de profils à l'organisation de la première rencontre. Ces dernier·ères 
-    n'ont plus qu'à se laisser guider et faire confiance à leur meilleur·e ami·e "Caseur" / "Caseuse".`,
-    mission: `Mon rôle en tant que co-fondateur et lead developer était de réaliser une application avec les fonctionnalités essentiels pour tester le produit sur le marché`,
+    description:
+      "Case Tes Potes réinvente les sites de rencontre en mettant l'accent sur l'amitié dans les relations amoureuses. L'objectif est de faciliter les rencontres en guidant les célibataires à travers chaque étape, depuis la recherche de profils jusqu'à l'organisation de la première rencontre. Grâce à l'accompagnement d'un·e 'Caseur' ou 'Caseuse', les utilisateurs se laissent guider pour vivre une expérience de rencontre unique et authentique.",
+    mission:
+      "En tant que co-fondateur et lead developer, ma mission était de concevoir et développer une application mobile avec des fonctionnalités clés pour tester le produit sur le marché. Mon rôle a impliqué la définition de la stratégie technique, la gestion du développement et l'assurance qualité pour offrir une première version performante et attrayante",
     missionSteps: [
-      "Etude et définition des <strong>Users Stories</strong>",
-      "Mise en place d'une <strong>Roadmap produit</strong>",
-      "Réalisation d'une maquette interactive sous <strong>AdobeXD</strong>",
-      "<strong>Gestion du projet</strong> avec une équipe de deux developpeurs",
-      "Developpement d'une application avec <strong>Flutter</strong>",
+      "Analyse approfondie des besoins et définition des <strong>Users Stories</strong> pour comprendre les attentes des utilisateurs.",
+      "Création d'une <strong>Roadmap produit</strong> détaillant les priorités de développement et les étapes de livraison.",
+      "Conception d'une maquette interactive sous <strong>Adobe XD</strong>, permettant de visualiser l'expérience utilisateur avant le développement.",
+      "Pilotage du projet en tant que chef d'équipe, en collaboration avec une équipe de deux développeurs, pour assurer la cohérence technique et la progression des tâches.",
+      "Développement de l'application mobile en utilisant <strong>Flutter</strong>, pour une solution multiplateforme efficace sur <strong>Android</strong> et <strong>iOS</strong>.",
     ],
     technos: ["flutter", "dart", "xd", "illustrator", "git", "gitlab", "confluence", "jira"],
     imgFile: CTPappMobileImg,
     imgFileProject: CTPappMobileImgProject,
-    imgAlt: "case tes potes - appication mobile",
+    imgAlt: "case tes potes - application mobile",
     hashtags: ["flutter", "dart", "Android", "IOS"],
     released: new Date("2022-08-30"),
   },
   {
     id: "2",
-    title: "Case Tes Potes - landing-page",
+    title: "Case Tes Potes - Landing Page",
     hashName: "case-tes-potes-landing-page-2022",
-    description: `La landing page est une page web distincte, créée spécifiquement 
-    pour les besoins de la campagne de marketing ou de publicité de l'application.
-    C’est sur cette page que les utilisateurs peuvent se préinscrire pour la phase de test fermée. 
-    Il est également possible de contacter l'équipe pour plus d'informations.`,
-    mission: `La landing page communique avec une API de Sendinblue pour la campagne de communication.
-    Les informations de contact sont enregistrées dans les listes de diffusion.<br /> 
-    Elle enregistre également les données utilisateurs dans une base de données Mongo 
-    à travers une Api développé avec Koa`,
+    description:
+      "La landing page a été conçue spécifiquement pour soutenir la campagne marketing de l'application. Elle sert de point d'entrée principal pour les utilisateurs souhaitant se préinscrire à la phase de test fermée. Cette page permet également aux visiteurs de contacter l'équipe pour plus d'informations et de suivre l'évolution du projet.",
+    mission:
+      "La mission consistait à développer une landing page interactive qui se connecte à l'API de Sendinblue pour gérer la campagne de communication. Les informations de contact des utilisateurs sont automatiquement ajoutées aux listes de diffusion, tandis que les données sont également stockées dans une base de données MongoDB via une API développée avec Koa",
     missionSteps: [
-      "Définition du besoin",
-      "Maquette avec <strong>Figma</strong>",
-      "Développement de l'application avec <strong>React.js</strong>",
-      "Développement de l'API avec <strong>Koa</strong> et communication avec l'API de <strong>Sendinblue</strong>",
-      "Tests unitaires et tests d'intégration avec <strong>Jest</strong>",
-      "Déploiement de l'image <strong>Docker</strong> sur les serveur d'AWS",
+      "Analyse du besoin et définition des objectifs de la landing page pour aligner la conception avec la stratégie marketing.",
+      "Création d'une maquette interactive de la landing page sous <strong>Figma</strong>, en prenant en compte l'UX/UI.",
+      "Développement de la page avec <strong>React.js</strong>, pour garantir une expérience utilisateur rapide et fluide.",
+      "Développement d'une API avec <strong>Koa</strong>, permettant la gestion des utilisateurs et l'intégration avec l'API de <strong>Sendinblue</strong> pour l'envoi d'emails de communication.",
+      "Mise en place de tests unitaires et d'intégration avec <strong>Jest</strong> pour assurer la robustesse du code.",
+      "Déploiement de l'application sous forme d'image <strong>Docker</strong> sur les serveurs AWS pour une gestion optimale de l'infrastructure.",
     ],
     technos: [
       "react",
@@ -71,7 +66,7 @@ export const ProjectsDevData: ProjectDevData[] = [
     ],
     imgFile: CTPlandingPageImg,
     imgFileProject: CTPlandingPageImgProject,
-    imgAlt: "case tes potes - landingpage 2022",
+    imgAlt: "Case Tes Potes - Landing Page 2022",
     hashtags: ["react", "typescript", "sass", "nodejs"],
     released: new Date("2022-03-15"),
     demoLink: "/demo/casetespotes-landingpage",
@@ -80,16 +75,15 @@ export const ProjectsDevData: ProjectDevData[] = [
     id: "3",
     title: "Case Tes Potes - Web Application",
     hashName: "case-tes-potes-webapp-pour-app-mobile-2021",
-    description: `L'une des fonctionnalités de l'application Case tes potes nécessite  le témoignage de plusieurs ami·es pour compléter le profil du célibataire.
-    C'est pourquoi une web App accessible via un lien d'invitation a été développé pour recueillir ces informations. 
-    Cette fonctionnalité évite de télécharger l'application pour décrire son ami·e.`,
-    mission: `Cette fonctionnalité a été conçu avec web pack et communique avec l'API de l'application mobile.<br />
-    Elle vérifie l'invitation et l'identité de l'utilisateur pour lui permettre de faire une description de son ami·e`,
+    description:
+      "L'une des fonctionnalités clés de l'application Case Tes Potes repose sur les témoignages d'ami·es pour enrichir le profil d'un célibataire. Afin de simplifier ce processus, une Web App accessible via un lien d'invitation a été développée, permettant aux proches de compléter ces informations sans avoir à télécharger l'application mobile.",
+    mission:
+      "Cette Web App a été conçue avec Webpack et communique directement avec l'API de l'application mobile. Elle assure la validation des invitations et l'authentification des utilisateurs avant de leur permettre de rédiger une description de leur ami·e",
     missionSteps: [
-      "Maquette de l'application avec <strong>Adobe XD</strong> en accord l'application mobile",
-      "Développement de l'application avec Webpack en <strong>Vanilla Javascript</strong>",
-      "Tests Unitaires et tests d'intégration avec <strong>Jest</strong>",
-      "Déploiement de l'image <strong>Docker</strong> sur les serveurs d'AWS",
+      "Création d'une maquette sous <strong>Adobe XD</strong> en cohérence avec l'expérience utilisateur de l'application mobile.",
+      "Développement de la Web App avec <strong>Webpack</strong> et <strong>Vanilla JavaScript</strong> pour une exécution légère et rapide.",
+      "Mise en place de tests unitaires et d'intégration avec <strong>Jest</strong> afin de garantir la fiabilité de l'application.",
+      "Déploiement de l'application sous forme d'image <strong>Docker</strong> sur les serveurs AWS pour assurer performance et scalabilité.",
     ],
     technos: [
       "webpack",
@@ -105,78 +99,74 @@ export const ProjectsDevData: ProjectDevData[] = [
     ],
     imgFile: CTPwebAppImg,
     imgFileProject: CTPwebAppImgProject,
-    imgAlt: "case tes potes - web application 2021",
-    hashtags: ["Webpack", "Typescript", "Sass", "Nodejs"],
+    imgAlt: "Case Tes Potes - Web Application 2021",
+    hashtags: ["Webpack", "JavaScript", "Sass", "Nodejs"],
     released: new Date("2021-11-17"),
     demoLink: "/demo/casetespotes-webapp",
   },
   {
     id: "4",
-    title: "Kasa - Openclassrooms",
+    title: "Kasa - OpenClassrooms",
     hashName: "kasa-application-react-openclassrooms-2021",
-    description: `Dans le cadre d'un des projet Openclassrooms, il était demandé d'intégrer le design d'une maquette figma avec la technologie React.js.
-    Ce projet fut ma première application React.js avec l'utilisation de react-router et typescript.`,
-    mission: `Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec un code legacy important. 
-    Laura, la CTO, a donc lancé une refonte totale pour passer à une stack complète en JavaScript avec NodeJS côté Back-end, 
-    et React côté Front-end. Kasa en a également profité pour commander de nouvelles maquettes auprès de son designer habituel, 
-    qui est en freelance`,
+    description:
+      "Dans le cadre d’un projet OpenClassrooms, l’objectif était d’intégrer le design d’une maquette Figma en utilisant React.js. Ce projet a marqué ma première expérience avec React, l’utilisation de React Router et l’apprentissage de TypeScript.",
+    mission:
+      "Le site de Kasa, développé il y a plus de 10 ans en ASP.NET, souffrait d'un code legacy important. Laura, la CTO, a initié une refonte complète pour adopter une stack JavaScript moderne avec Node.js côté Back-end et React côté Front-end. Cette transition a également été l’occasion de repenser entièrement le design de l’application",
     missionSteps: [
-      "Développer l'application <strong>React</strong> en accord avec la maquette",
-      "Initiation et maitrise de <strong>TypeScript</strong>",
-      "Utilisation de <strong>React-router</strong>",
-      "Création d'une image <strong>Docker</strong> pour le déploiement",
-      "Déploiement de l'application avec <strong>GitHub page</strong>",
+      "Développement de l'application en <strong>React</strong> en respectant fidèlement la maquette Figma.",
+      "Apprentissage et mise en pratique de <strong>TypeScript</strong> pour renforcer la robustesse du code.",
+      "Mise en place du routage avec <strong>React Router</strong>.",
+      "Création d’une image <strong>Docker</strong> pour faciliter le déploiement.",
+      "Déploiement de l’application sur <strong>GitHub Pages</strong>.",
     ],
     technos: ["react", "typescript", "html", "sass", "git", "github", "docker"],
     imgFile: KasaOcImg,
     imgFileProject: KasaOcImgProject,
-    imgAlt: "Kasa OpenClassrooms - landingpage 2021",
-    hashtags: ["React", "Typescript", "Sass", "Nodejs"],
+    imgAlt: "Kasa OpenClassrooms - Landing Page 2021",
+    hashtags: ["React", "TypeScript", "Sass", "Node.js"],
     released: new Date("2021-12-10"),
     demoLink: "/demo/openclassrooms-kasa",
   },
   {
     id: "5",
-    title: "Portfolio",
+    title: "Portfolio 3D",
     hashName: "portfolio-3d-stephane-lieumont-2018",
-    description: `Etant impressionné par l'évolution des techniques 3D dans le cinéma et les jeux vidéo depuis les années 2000, 
-    j'ai eu pour objectif de découvrir cette activité qui me fascine. Grâce à Youtube et divers supports de formations, 
-    j'ai acquis les bases de la production 3D. Par la suite, j'ai laissé place à mon imagination et à ma créativité pour concrétiser mes projets.<br />`,
-    mission: `Depuis 2008, Je souhaite présenter mes projets à travers ce portfolio en ligne. Vous pouvez retrouver mes réalisations dans la section <a href="/portfolio-stephane-lieumont-cgi">portfolio 3D</a>`,
+    description:
+      "Passionné par l'évolution des techniques 3D dans le cinéma et les jeux vidéo depuis les années 2000, j’ai voulu explorer cet univers fascinant. Grâce à YouTube et diverses formations en ligne, j’ai acquis les bases de la production 3D. J’ai ensuite laissé libre cours à mon imagination et ma créativité pour concrétiser mes projets.",
+    mission:
+      "Depuis 2008, je souhaite présenter mes créations à travers ce portfolio en ligne. Retrouvez mes réalisations dans la section <a href='/portfolio-stephane-lieumont-cgi'>portfolio 3D</a>",
     missionSteps: [
-      "Présenter mes réalisations 3D en ligne",
-      "Créer un site en <strong>jQuery HTML CSS</strong>",
-      "Déployer le site sur un serveur mutualisé",
+      "Présenter mes réalisations 3D en ligne.",
+      "Créer un site avec <strong>jQuery, HTML et CSS</strong>.",
+      "Déployer le site sur un serveur mutualisé.",
     ],
     technos: ["html", "jquery", "git"],
     imgFile: Portfolio2018Img,
     imgFileProject: Portfolio2018ImgProject,
-    imgAlt: "portfolio 3d - 2018",
-    hashtags: ["Javascript", "CSS"],
+    imgAlt: "Portfolio 3D - 2018",
+    hashtags: ["JavaScript", "CSS"],
     released: new Date("2018-09-17"),
     demoLink: "/demo/portfolio2018",
   },
   {
     id: "6",
     title: "Pixmodels",
-    hashName: "pixmodels-communication-ausiovisuelle-2015",
-    description: `J’ai créé mon entreprise en 2015. Il était important pour moi d’avoir un support de communication 
-    digitale pour présenter mes services. L’entreprise étant orienté audiovisuelle,  
-    il était donc essentiel de présenter une bonne image de marque.`,
-    mission: `Je souhaite proposer mes services et mes réalisations via un site internet. 
-    Un formulaire de contact devait être mis en place pour être contacter par des clients potentiels. 
-    L’objectif principal est de gagner en visibilité pour vendre mes prestations afin de construire une image de marque crédible`,
+    hashName: "pixmodels-communication-audiovisuelle-2015",
+    description:
+      "En 2015, j’ai créé mon entreprise et il était essentiel d’avoir une présence digitale pour présenter mes services. Étant spécialisée dans l’audiovisuel, une image de marque forte et soignée était primordiale.",
+    mission:
+      "L'objectif était de proposer mes services et réalisations via un site internet, avec un formulaire de contact pour les clients potentiels. Le but principal était de gagner en visibilité et crédibilité afin de vendre mes prestations",
     missionSteps: [
-      "Etude du besoin sur le marché",
-      "Maquette du site avec <strong>Photoshop</strong>",
-      "Création du site avec <strong>HTML, CSS, PHP, Javascript</strong>",
-      "Déploiement du site sur un serveur mutualisé",
+      "Étude du marché et des besoins.",
+      "Conception de la maquette avec <strong>Photoshop</strong>.",
+      "Développement du site en <strong>HTML, CSS, PHP et JavaScript</strong>.",
+      "Déploiement sur un serveur mutualisé.",
     ],
     technos: ["html", "javascript", "php", "photoshop"],
     imgFile: Pixmodels2015Img,
     imgFileProject: Pixmodels2015ImgProject,
-    imgAlt: "pixmodels - agence de communication audiovisuel",
-    hashtags: ["Javascript", "PHP", "CSS"],
+    imgAlt: "Pixmodels - Agence de communication audiovisuelle",
+    hashtags: ["JavaScript", "PHP", "CSS"],
     released: new Date("2015-06-02"),
     demoLink: "/demo/pixmodels",
   },

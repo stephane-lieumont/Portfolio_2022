@@ -26,7 +26,7 @@ const Footer: React.FunctionComponent = () => {
         }}
       />
       <p>
-        Designed & Developed on ReactJs ©{currentYear} by <span>Stéphane Lieumont</span>
+        Designed & Developed on React ©{currentYear} by <span>Stéphane Lieumont</span>
       </p>
     </footer>
   );

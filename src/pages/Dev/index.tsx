@@ -111,11 +111,12 @@ const Dev: React.FunctionComponent<PageProps> = ({ title = "titre de la page" })
               >
                 <h3>Autonomie et curiosité</h3>
                 <p>
-                  Mon expérience de 14 années dans le domaine de l’industrie aéronautique et les
-                  divers projets personnels que j’ai pu entreprendre mon apporter des compétences
-                  que j’utilisent au quotidien. La curiosité et la créativité sont les éléments
-                  fondamentaux qui m’animent, et me poussent à exploiter tout mon potentiel pour
-                  atteindre mes objectifs.
+                  Après une reconversion dans le domaine il y a 5 ans, j&apos;ai mis à profit mes
+                  compétences acquises au fil de 14 années d&apos;expérience dans l&apos;industrie
+                  aéronautique, ainsi que les projets personnels que j&apos;ai menés.
+                  Aujourd&apos;hui, je mets ces compétences au service de diverses missions. La
+                  curiosité et la créativité sont les moteurs qui me poussent à exploiter pleinement
+                  mon potentiel pour atteindre mes objectifs.
                 </p>
               </div>
               <div

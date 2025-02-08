@@ -68,11 +68,11 @@ const HomePage: React.FunctionComponent<PageProps> = ({ title = "titre de la pag
         )}
         <div className="homepage__leftside__content">
           <h2 className={`reveal${imgLoaded ? " reveal--3" : ""}`}>
-            Developpeur Frontend & <span className="text--primary">Graphiste 3D</span>
+            Developpeur Fullstack & <span className="text--primary">Graphiste 3D</span>
           </h2>
           <p className={`reveal${imgLoaded ? " reveal--4" : ""}`}>
-            Captivé par les nouvelles technologies depuis 2006, ma curiosité m’a amené à découvrir
-            le développement informatique et le graphisme 3D.
+            Passionné par les nouvelles technologies depuis 2006, ma curiosité m&apos;a conduit à
+            explorer le développement informatique et le design 3D.
           </p>
           <div className="homepage__leftside__content__nav">
             <div className={`reveal${imgLoaded ? " reveal--5" : ""}`}>
