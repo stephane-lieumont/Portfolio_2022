@@ -1,7 +1,6 @@
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FormEvent, useRef, useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import Button from "~/components/Button";
 import Input from "~/components/Input";
 import { HTMLFormType } from "~/interfaces/forms.intf";
@@ -15,7 +14,6 @@ export interface formContactPortfolio {
   from_name: string;
   from_email: string;
   message: string;
-  "g-recaptcha-response": string;
   [key: string]: string;
 }
 
@@ -29,7 +27,6 @@ const FormContact: React.FunctionComponent = () => {
   const formInputMessage = useAppSelector((state) => state.formContactSlice.formInputMessage);
 
   const form = useRef<HTMLFormElement>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const dispatch = useAppDispatch();
 
   const checkFormNoErrors = (): boolean => {
@@ -46,26 +43,29 @@ const FormContact: React.FunctionComponent = () => {
 
     if (checkFormNoErrors() && form.current) {
       setLoadingForm(true);
-      const token = await recaptchaRef.current?.executeAsync();
-      const payload: formContactPortfolio = {
-        from_name: firstLetterUpper(formInputName.text),
-        from_email: formInputEmail.text.toLowerCase(),
-        message: JSON.stringify(formInputMessage.text)
-          .replaceAll('"', "")
-          .replaceAll("\\n", "<br />"),
-        "g-recaptcha-response": token ?? "",
-      };
 
-      ServiceEmailJs.sendFormData(payload)
-        .then(() => {
-          setLoadingForm(false);
-          setValidForm(true);
-          dispatch(FormContactActions.reset({}));
-        })
-        .catch(() => {
-          setLoadingForm(false);
-          setErrorMessageApi("Oups ! une erreur s'est produite lors de l'envois du message.");
-        });
+      try {
+        const payload: formContactPortfolio = {
+          from_name: firstLetterUpper(formInputName.text),
+          from_email: formInputEmail.text.toLowerCase(),
+          message: JSON.stringify(formInputMessage.text)
+            .replaceAll('"', "")
+            .replaceAll("\\n", "<br />"),
+        };
+
+        ServiceEmailJs.sendFormData(payload)
+          .then(() => {
+            setLoadingForm(false);
+            setValidForm(true);
+            dispatch(FormContactActions.reset({}));
+          })
+          .catch(() => {
+            setLoadingForm(false);
+            setErrorMessageApi("Oups ! une erreur s'est produite lors de l'envois du message.");
+          });
+      } catch (error) {
+        console.error("Erreur", error);
+      }
     }
   };
 
@@ -150,14 +150,6 @@ const FormContact: React.FunctionComponent = () => {
           {errorMessageApi}
         </p>
       )}
-      <ReCAPTCHA
-        onError={(error) => {
-          setErrorMessageApi(error.currentTarget.innerHTML);
-        }}
-        ref={recaptchaRef}
-        sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY ?? ""}
-        size="invisible"
-      />
     </form>
   );
 };
